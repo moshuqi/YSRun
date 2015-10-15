@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSCalendarTitleDateView">
+            <connections>
+                <outlet property="label" destination="4lZ-O5-IpA" id="kd6-Wd-cEa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lZ-O5-IpA">
+                    <rect key="frame" x="147" y="0.0" width="66" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="ee2-K1-KIO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vtf-pp-9GZ">
+                    <rect key="frame" x="235" y="0.0" width="36" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="PxG-K0-MXu"/>
+                    </constraints>
+                    <state key="normal" image="right_arrow.png"/>
+                    <connections>
+                        <action selector="rightButtonClicked:" destination="-1" eventType="touchUpInside" id="4ig-yT-XJv"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XEH-bq-rZg">
+                    <rect key="frame" x="89" y="0.0" width="36" height="50"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="36" id="3KN-BU-thj"/>
+                    </constraints>
+                    <state key="normal" image="left_arrow.png"/>
+                    <connections>
+                        <action selector="leftButtonClicked:" destination="-1" eventType="touchUpInside" id="Bbl-IM-qVy"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="vtf-pp-9GZ" secondAttribute="bottom" id="6lP-iT-6ic"/>
+                <constraint firstItem="4lZ-O5-IpA" firstAttribute="leading" secondItem="XEH-bq-rZg" secondAttribute="trailing" constant="22" id="Nya-Ti-TuO"/>
+                <constraint firstItem="XEH-bq-rZg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="QkN-Ax-bX3"/>
+                <constraint firstAttribute="bottom" secondItem="4lZ-O5-IpA" secondAttribute="bottom" id="bM8-xd-IGq"/>
+                <constraint firstItem="4lZ-O5-IpA" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dBl-xi-ftY"/>
+                <constraint firstItem="vtf-pp-9GZ" firstAttribute="leading" secondItem="4lZ-O5-IpA" secondAttribute="trailing" constant="22" id="ezr-Ut-EWO"/>
+                <constraint firstItem="4lZ-O5-IpA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uTi-c1-o7u"/>
+                <constraint firstAttribute="bottom" secondItem="XEH-bq-rZg" secondAttribute="bottom" id="zcZ-05-S11"/>
+                <constraint firstItem="vtf-pp-9GZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="zpt-mO-fEo"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="467" y="30"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="left_arrow.png" width="16" height="27"/>
+        <image name="right_arrow.png" width="16" height="27"/>
+    </resources>
+</document>

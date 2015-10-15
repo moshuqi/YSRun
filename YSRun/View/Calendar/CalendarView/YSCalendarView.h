@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  YSCalendarView.h
 //  YSRun
 //
 //  Created by moshuqi on 15/10/15.
@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface YSCalendarView : UIView
 
+- (void)resetCalendarWithDate:(NSDate *)date;
 
 @end
-

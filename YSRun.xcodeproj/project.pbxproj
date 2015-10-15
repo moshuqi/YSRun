@@ -7,14 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57091BCF7CEF00E9073E /* YSCalendarView.m */; settings = {ASSET_TAGS = (); }; };
+		655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C570D1BCF7DFF00E9073E /* YSCalendarTitleBarView.m */; settings = {ASSET_TAGS = (); }; };
+		655C57111BCF7E3300E9073E /* YSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57101BCF7E3300E9073E /* YSCalendarWeekdayView.m */; settings = {ASSET_TAGS = (); }; };
+		655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57131BCF7EBC00E9073E /* YSCalendarTitleDateView.m */; settings = {ASSET_TAGS = (); }; };
+		655C57161BCF7F0800E9073E /* YSCalendarTitleDateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57151BCF7F0800E9073E /* YSCalendarTitleDateView.xib */; settings = {ASSET_TAGS = (); }; };
+		655C57181BCF7F3D00E9073E /* YSCalendarWeekdayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57171BCF7F3D00E9073E /* YSCalendarWeekdayView.xib */; settings = {ASSET_TAGS = (); }; };
+		655C571A1BCF7F5800E9073E /* YSCalendarTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57191BCF7F5800E9073E /* YSCalendarTitleBarView.xib */; settings = {ASSET_TAGS = (); }; };
+		655C571C1BCF845400E9073E /* YSCalendarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C571B1BCF845400E9073E /* YSCalendarView.xib */; settings = {ASSET_TAGS = (); }; };
+		655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */; settings = {ASSET_TAGS = (); }; };
+		655C57231BCF93B100E9073E /* YSDayCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57221BCF93B100E9073E /* YSDayCellModel.m */; settings = {ASSET_TAGS = (); }; };
+		655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57261BCF978300E9073E /* YSCalendarDayCell.m */; settings = {ASSET_TAGS = (); }; };
+		655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */; settings = {ASSET_TAGS = (); }; };
 		65ABA3701BCF4EAC00154E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA36F1BCF4EAC00154E87 /* main.m */; };
 		65ABA3731BCF4EAC00154E87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3721BCF4EAC00154E87 /* AppDelegate.m */; };
-		65ABA3761BCF4EAC00154E87 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3751BCF4EAC00154E87 /* ViewController.m */; };
-		65ABA3791BCF4EAC00154E87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3771BCF4EAC00154E87 /* Main.storyboard */; };
 		65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA37A1BCF4EAC00154E87 /* Assets.xcassets */; };
 		65ABA37E1BCF4EAC00154E87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA37C1BCF4EAC00154E87 /* LaunchScreen.storyboard */; };
 		65ABA3891BCF4EAC00154E87 /* YSRunTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3881BCF4EAC00154E87 /* YSRunTests.m */; };
 		65ABA3941BCF4EAC00154E87 /* YSRunUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3931BCF4EAC00154E87 /* YSRunUITests.m */; };
+		65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3AC1BCF525500154E87 /* YSCalendarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		65ABA3AF1BCF525500154E87 /* YSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3AD1BCF525500154E87 /* YSCalendarViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		65ABA3B31BCF528300154E87 /* YSRunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3B11BCF528300154E87 /* YSRunViewController.m */; settings = {ASSET_TAGS = (); }; };
+		65ABA3B41BCF528300154E87 /* YSRunViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3B21BCF528300154E87 /* YSRunViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		65ABA3B81BCF529300154E87 /* YSUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3B61BCF529300154E87 /* YSUserViewController.m */; settings = {ASSET_TAGS = (); }; };
+		65ABA3B91BCF529300154E87 /* YSUserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3B71BCF529300154E87 /* YSUserViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		65ABA3BD1BCF56FC00154E87 /* YSMainTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3BB1BCF56FC00154E87 /* YSMainTabBarViewController.m */; settings = {ASSET_TAGS = (); }; };
+		65ABA3BE1BCF56FC00154E87 /* YSMainTabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3BC1BCF56FC00154E87 /* YSMainTabBarViewController.xib */; settings = {ASSET_TAGS = (); }; };
+		65ABA3DE1BCF6CA000154E87 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C41BCF6CA000154E87 /* calendar.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3DF1BCF6CA000154E87 /* calendar_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C51BCF6CA000154E87 /* calendar_highlight.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E01BCF6CA000154E87 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C61BCF6CA000154E87 /* default.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E11BCF6CA000154E87 /* maf跑步法底色.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C71BCF6CA000154E87 /* maf跑步法底色.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E21BCF6CA000154E87 /* run.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C81BCF6CA000154E87 /* run.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E31BCF6CA000154E87 /* run_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3C91BCF6CA000154E87 /* run_highlight.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E41BCF6CA000154E87 /* tips.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CA1BCF6CA000154E87 /* tips.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E51BCF6CA000154E87 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CB1BCF6CA000154E87 /* user.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E61BCF6CA000154E87 /* user_highlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CC1BCF6CA000154E87 /* user_highlight.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E71BCF6CA000154E87 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CD1BCF6CA000154E87 /* right_arrow.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E81BCF6CA000154E87 /* 地图模式.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CE1BCF6CA000154E87 /* 地图模式.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3E91BCF6CA000154E87 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3CF1BCF6CA000154E87 /* left_arrow.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3EA1BCF6CA000154E87 /* 底色1.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D01BCF6CA000154E87 /* 底色1.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3EB1BCF6CA000154E87 /* 按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D11BCF6CA000154E87 /* 按钮.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3EC1BCF6CA000154E87 /* 按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D21BCF6CA000154E87 /* 按钮按下.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3ED1BCF6CA000154E87 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D31BCF6CA000154E87 /* star.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3EE1BCF6CA000154E87 /* 更多---Assistor.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D41BCF6CA000154E87 /* 更多---Assistor.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3EF1BCF6CA000154E87 /* 秒表.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D51BCF6CA000154E87 /* 秒表.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D61BCF6CA000154E87 /* 红底.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F11BCF6CA000154E87 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D71BCF6CA000154E87 /* 设置.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F21BCF6CA000154E87 /* 设置按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D81BCF6CA000154E87 /* 设置按下.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F31BCF6CA000154E87 /* 跑步模式.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3D91BCF6CA000154E87 /* 跑步模式.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F41BCF6CA000154E87 /* 跑步结果页文字黑底.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DA1BCF6CA000154E87 /* 跑步结果页文字黑底.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */; settings = {ASSET_TAGS = (); }; };
+		65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,13 +79,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		655C57071BCF7B9A00E9073E /* YSAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSAppMacro.h; sourceTree = "<group>"; };
+		655C57081BCF7CEF00E9073E /* YSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarView.h; sourceTree = "<group>"; };
+		655C57091BCF7CEF00E9073E /* YSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarView.m; sourceTree = "<group>"; };
+		655C570C1BCF7DFF00E9073E /* YSCalendarTitleBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarTitleBarView.h; sourceTree = "<group>"; };
+		655C570D1BCF7DFF00E9073E /* YSCalendarTitleBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarTitleBarView.m; sourceTree = "<group>"; };
+		655C570F1BCF7E3300E9073E /* YSCalendarWeekdayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarWeekdayView.h; sourceTree = "<group>"; };
+		655C57101BCF7E3300E9073E /* YSCalendarWeekdayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarWeekdayView.m; sourceTree = "<group>"; };
+		655C57121BCF7EBC00E9073E /* YSCalendarTitleDateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarTitleDateView.h; sourceTree = "<group>"; };
+		655C57131BCF7EBC00E9073E /* YSCalendarTitleDateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarTitleDateView.m; sourceTree = "<group>"; };
+		655C57151BCF7F0800E9073E /* YSCalendarTitleDateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarTitleDateView.xib; sourceTree = "<group>"; };
+		655C57171BCF7F3D00E9073E /* YSCalendarWeekdayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarWeekdayView.xib; sourceTree = "<group>"; };
+		655C57191BCF7F5800E9073E /* YSCalendarTitleBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarTitleBarView.xib; sourceTree = "<group>"; };
+		655C571B1BCF845400E9073E /* YSCalendarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarView.xib; sourceTree = "<group>"; };
+		655C571D1BCF865A00E9073E /* NSDate+YSDateLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YSDateLogic.h"; sourceTree = "<group>"; };
+		655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YSDateLogic.m"; sourceTree = "<group>"; };
+		655C57211BCF93B100E9073E /* YSDayCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDayCellModel.h; sourceTree = "<group>"; };
+		655C57221BCF93B100E9073E /* YSDayCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDayCellModel.m; sourceTree = "<group>"; };
+		655C57251BCF978300E9073E /* YSCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarDayCell.h; sourceTree = "<group>"; };
+		655C57261BCF978300E9073E /* YSCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarDayCell.m; sourceTree = "<group>"; };
+		655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarDayCell.xib; sourceTree = "<group>"; };
 		65ABA36B1BCF4EAC00154E87 /* YSRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ABA36F1BCF4EAC00154E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		65ABA3711BCF4EAC00154E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		65ABA3721BCF4EAC00154E87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		65ABA3741BCF4EAC00154E87 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		65ABA3751BCF4EAC00154E87 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		65ABA3781BCF4EAC00154E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65ABA3711BCF4EAC00154E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YSRun/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		65ABA3721BCF4EAC00154E87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YSRun/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		65ABA37A1BCF4EAC00154E87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65ABA37D1BCF4EAC00154E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65ABA37F1BCF4EAC00154E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +112,44 @@
 		65ABA38F1BCF4EAC00154E87 /* YSRunUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YSRunUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ABA3931BCF4EAC00154E87 /* YSRunUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YSRunUITests.m; sourceTree = "<group>"; };
 		65ABA3951BCF4EAC00154E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65ABA3AB1BCF525500154E87 /* YSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarViewController.h; sourceTree = "<group>"; };
+		65ABA3AC1BCF525500154E87 /* YSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarViewController.m; sourceTree = "<group>"; };
+		65ABA3AD1BCF525500154E87 /* YSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarViewController.xib; sourceTree = "<group>"; };
+		65ABA3B01BCF528300154E87 /* YSRunViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunViewController.h; sourceTree = "<group>"; };
+		65ABA3B11BCF528300154E87 /* YSRunViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunViewController.m; sourceTree = "<group>"; };
+		65ABA3B21BCF528300154E87 /* YSRunViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRunViewController.xib; sourceTree = "<group>"; };
+		65ABA3B51BCF529300154E87 /* YSUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserViewController.h; sourceTree = "<group>"; };
+		65ABA3B61BCF529300154E87 /* YSUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserViewController.m; sourceTree = "<group>"; };
+		65ABA3B71BCF529300154E87 /* YSUserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSUserViewController.xib; sourceTree = "<group>"; };
+		65ABA3BA1BCF56FC00154E87 /* YSMainTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMainTabBarViewController.h; sourceTree = "<group>"; };
+		65ABA3BB1BCF56FC00154E87 /* YSMainTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMainTabBarViewController.m; sourceTree = "<group>"; };
+		65ABA3BC1BCF56FC00154E87 /* YSMainTabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMainTabBarViewController.xib; sourceTree = "<group>"; };
+		65ABA3C41BCF6CA000154E87 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		65ABA3C51BCF6CA000154E87 /* calendar_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_highlight.png; sourceTree = "<group>"; };
+		65ABA3C61BCF6CA000154E87 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		65ABA3C71BCF6CA000154E87 /* maf跑步法底色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "maf跑步法底色.png"; sourceTree = "<group>"; };
+		65ABA3C81BCF6CA000154E87 /* run.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run.png; sourceTree = "<group>"; };
+		65ABA3C91BCF6CA000154E87 /* run_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = run_highlight.png; sourceTree = "<group>"; };
+		65ABA3CA1BCF6CA000154E87 /* tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tips.png; sourceTree = "<group>"; };
+		65ABA3CB1BCF6CA000154E87 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
+		65ABA3CC1BCF6CA000154E87 /* user_highlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_highlight.png; sourceTree = "<group>"; };
+		65ABA3CD1BCF6CA000154E87 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right_arrow.png; sourceTree = "<group>"; };
+		65ABA3CE1BCF6CA000154E87 /* 地图模式.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "地图模式.png"; sourceTree = "<group>"; };
+		65ABA3CF1BCF6CA000154E87 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left_arrow.png; sourceTree = "<group>"; };
+		65ABA3D01BCF6CA000154E87 /* 底色1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "底色1.png"; sourceTree = "<group>"; };
+		65ABA3D11BCF6CA000154E87 /* 按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮.png"; sourceTree = "<group>"; };
+		65ABA3D21BCF6CA000154E87 /* 按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "按钮按下.png"; sourceTree = "<group>"; };
+		65ABA3D31BCF6CA000154E87 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		65ABA3D41BCF6CA000154E87 /* 更多---Assistor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "更多---Assistor.png"; sourceTree = "<group>"; };
+		65ABA3D51BCF6CA000154E87 /* 秒表.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "秒表.png"; sourceTree = "<group>"; };
+		65ABA3D61BCF6CA000154E87 /* 红底.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红底.png"; sourceTree = "<group>"; };
+		65ABA3D71BCF6CA000154E87 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
+		65ABA3D81BCF6CA000154E87 /* 设置按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置按下.png"; sourceTree = "<group>"; };
+		65ABA3D91BCF6CA000154E87 /* 跑步模式.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "跑步模式.png"; sourceTree = "<group>"; };
+		65ABA3DA1BCF6CA000154E87 /* 跑步结果页文字黑底.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "跑步结果页文字黑底.png"; sourceTree = "<group>"; };
+		65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮.png"; sourceTree = "<group>"; };
+		65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮按下.png"; sourceTree = "<group>"; };
+		65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页文字框.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +177,63 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		655C57051BCF7A4B00E9073E /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				655C57241BCF971000E9073E /* DayCell */,
+				655C570B1BCF7DCD00E9073E /* TitleBar */,
+				655C57081BCF7CEF00E9073E /* YSCalendarView.h */,
+				655C57091BCF7CEF00E9073E /* YSCalendarView.m */,
+				655C571B1BCF845400E9073E /* YSCalendarView.xib */,
+				655C571D1BCF865A00E9073E /* NSDate+YSDateLogic.h */,
+				655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		655C57061BCF7B4100E9073E /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				655C57071BCF7B9A00E9073E /* YSAppMacro.h */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
+		655C570B1BCF7DCD00E9073E /* TitleBar */ = {
+			isa = PBXGroup;
+			children = (
+				655C57121BCF7EBC00E9073E /* YSCalendarTitleDateView.h */,
+				655C57131BCF7EBC00E9073E /* YSCalendarTitleDateView.m */,
+				655C57151BCF7F0800E9073E /* YSCalendarTitleDateView.xib */,
+				655C570C1BCF7DFF00E9073E /* YSCalendarTitleBarView.h */,
+				655C570D1BCF7DFF00E9073E /* YSCalendarTitleBarView.m */,
+				655C57191BCF7F5800E9073E /* YSCalendarTitleBarView.xib */,
+				655C570F1BCF7E3300E9073E /* YSCalendarWeekdayView.h */,
+				655C57101BCF7E3300E9073E /* YSCalendarWeekdayView.m */,
+				655C57171BCF7F3D00E9073E /* YSCalendarWeekdayView.xib */,
+			);
+			path = TitleBar;
+			sourceTree = "<group>";
+		};
+		655C57201BCF934500E9073E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				655C57211BCF93B100E9073E /* YSDayCellModel.h */,
+				655C57221BCF93B100E9073E /* YSDayCellModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		655C57241BCF971000E9073E /* DayCell */ = {
+			isa = PBXGroup;
+			children = (
+				655C57251BCF978300E9073E /* YSCalendarDayCell.h */,
+				655C57261BCF978300E9073E /* YSCalendarDayCell.m */,
+				655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */,
+			);
+			path = DayCell;
+			sourceTree = "<group>";
+		};
 		65ABA3621BCF4EAC00154E87 = {
 			isa = PBXGroup;
 			children = (
@@ -101,11 +257,10 @@
 		65ABA36D1BCF4EAC00154E87 /* YSRun */ = {
 			isa = PBXGroup;
 			children = (
-				65ABA3711BCF4EAC00154E87 /* AppDelegate.h */,
-				65ABA3721BCF4EAC00154E87 /* AppDelegate.m */,
-				65ABA3741BCF4EAC00154E87 /* ViewController.h */,
-				65ABA3751BCF4EAC00154E87 /* ViewController.m */,
-				65ABA3771BCF4EAC00154E87 /* Main.storyboard */,
+				655C57201BCF934500E9073E /* Models */,
+				655C57061BCF7B4100E9073E /* Macro */,
+				65ABA3A21BCF4F3100154E87 /* View */,
+				65ABA3A11BCF4F1600154E87 /* AppDelegate */,
 				65ABA37A1BCF4EAC00154E87 /* Assets.xcassets */,
 				65ABA37C1BCF4EAC00154E87 /* LaunchScreen.storyboard */,
 				65ABA37F1BCF4EAC00154E87 /* Info.plist */,
@@ -117,6 +272,7 @@
 		65ABA36E1BCF4EAC00154E87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				65ABA3BF1BCF5C5000154E87 /* Resource */,
 				65ABA36F1BCF4EAC00154E87 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -138,6 +294,100 @@
 				65ABA3951BCF4EAC00154E87 /* Info.plist */,
 			);
 			path = YSRunUITests;
+			sourceTree = "<group>";
+		};
+		65ABA3A11BCF4F1600154E87 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3711BCF4EAC00154E87 /* AppDelegate.h */,
+				65ABA3721BCF4EAC00154E87 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		65ABA3A21BCF4F3100154E87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3A81BCF520900154E87 /* Calendar */,
+				65ABA3A91BCF520900154E87 /* Run */,
+				65ABA3AA1BCF520900154E87 /* User */,
+				65ABA3BA1BCF56FC00154E87 /* YSMainTabBarViewController.h */,
+				65ABA3BB1BCF56FC00154E87 /* YSMainTabBarViewController.m */,
+				65ABA3BC1BCF56FC00154E87 /* YSMainTabBarViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		65ABA3A81BCF520900154E87 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				655C57051BCF7A4B00E9073E /* CalendarView */,
+				65ABA3AB1BCF525500154E87 /* YSCalendarViewController.h */,
+				65ABA3AC1BCF525500154E87 /* YSCalendarViewController.m */,
+				65ABA3AD1BCF525500154E87 /* YSCalendarViewController.xib */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		65ABA3A91BCF520900154E87 /* Run */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3B01BCF528300154E87 /* YSRunViewController.h */,
+				65ABA3B11BCF528300154E87 /* YSRunViewController.m */,
+				65ABA3B21BCF528300154E87 /* YSRunViewController.xib */,
+			);
+			path = Run;
+			sourceTree = "<group>";
+		};
+		65ABA3AA1BCF520900154E87 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3B51BCF529300154E87 /* YSUserViewController.h */,
+				65ABA3B61BCF529300154E87 /* YSUserViewController.m */,
+				65ABA3B71BCF529300154E87 /* YSUserViewController.xib */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		65ABA3BF1BCF5C5000154E87 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3C31BCF6CA000154E87 /* UI */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		65ABA3C31BCF6CA000154E87 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				65ABA3C41BCF6CA000154E87 /* calendar.png */,
+				65ABA3C51BCF6CA000154E87 /* calendar_highlight.png */,
+				65ABA3C61BCF6CA000154E87 /* default.png */,
+				65ABA3C71BCF6CA000154E87 /* maf跑步法底色.png */,
+				65ABA3C81BCF6CA000154E87 /* run.png */,
+				65ABA3C91BCF6CA000154E87 /* run_highlight.png */,
+				65ABA3CA1BCF6CA000154E87 /* tips.png */,
+				65ABA3CB1BCF6CA000154E87 /* user.png */,
+				65ABA3CC1BCF6CA000154E87 /* user_highlight.png */,
+				65ABA3CD1BCF6CA000154E87 /* right_arrow.png */,
+				65ABA3CE1BCF6CA000154E87 /* 地图模式.png */,
+				65ABA3CF1BCF6CA000154E87 /* left_arrow.png */,
+				65ABA3D01BCF6CA000154E87 /* 底色1.png */,
+				65ABA3D11BCF6CA000154E87 /* 按钮.png */,
+				65ABA3D21BCF6CA000154E87 /* 按钮按下.png */,
+				65ABA3D31BCF6CA000154E87 /* star.png */,
+				65ABA3D41BCF6CA000154E87 /* 更多---Assistor.png */,
+				65ABA3D51BCF6CA000154E87 /* 秒表.png */,
+				65ABA3D61BCF6CA000154E87 /* 红底.png */,
+				65ABA3D71BCF6CA000154E87 /* 设置.png */,
+				65ABA3D81BCF6CA000154E87 /* 设置按下.png */,
+				65ABA3D91BCF6CA000154E87 /* 跑步模式.png */,
+				65ABA3DA1BCF6CA000154E87 /* 跑步结果页文字黑底.png */,
+				65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */,
+				65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */,
+				65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,9 +496,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				655C571C1BCF845400E9073E /* YSCalendarView.xib in Resources */,
+				65ABA3EB1BCF6CA000154E87 /* 按钮.png in Resources */,
+				65ABA3EC1BCF6CA000154E87 /* 按钮按下.png in Resources */,
+				65ABA3DE1BCF6CA000154E87 /* calendar.png in Resources */,
 				65ABA37E1BCF4EAC00154E87 /* LaunchScreen.storyboard in Resources */,
+				65ABA3E21BCF6CA000154E87 /* run.png in Resources */,
+				65ABA3E91BCF6CA000154E87 /* left_arrow.png in Resources */,
+				65ABA3F21BCF6CA000154E87 /* 设置按下.png in Resources */,
+				655C57181BCF7F3D00E9073E /* YSCalendarWeekdayView.xib in Resources */,
+				65ABA3DF1BCF6CA000154E87 /* calendar_highlight.png in Resources */,
+				65ABA3E51BCF6CA000154E87 /* user.png in Resources */,
+				65ABA3F31BCF6CA000154E87 /* 跑步模式.png in Resources */,
+				65ABA3E41BCF6CA000154E87 /* tips.png in Resources */,
+				65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */,
+				65ABA3E61BCF6CA000154E87 /* user_highlight.png in Resources */,
+				655C57161BCF7F0800E9073E /* YSCalendarTitleDateView.xib in Resources */,
+				65ABA3F41BCF6CA000154E87 /* 跑步结果页文字黑底.png in Resources */,
+				65ABA3AF1BCF525500154E87 /* YSCalendarViewController.xib in Resources */,
+				655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */,
+				65ABA3EF1BCF6CA000154E87 /* 秒表.png in Resources */,
+				65ABA3EE1BCF6CA000154E87 /* 更多---Assistor.png in Resources */,
+				65ABA3F11BCF6CA000154E87 /* 设置.png in Resources */,
+				655C571A1BCF7F5800E9073E /* YSCalendarTitleBarView.xib in Resources */,
+				65ABA3BE1BCF56FC00154E87 /* YSMainTabBarViewController.xib in Resources */,
 				65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */,
-				65ABA3791BCF4EAC00154E87 /* Main.storyboard in Resources */,
+				65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */,
+				65ABA3EA1BCF6CA000154E87 /* 底色1.png in Resources */,
+				65ABA3B41BCF528300154E87 /* YSRunViewController.xib in Resources */,
+				65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */,
+				65ABA3E31BCF6CA000154E87 /* run_highlight.png in Resources */,
+				65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */,
+				65ABA3E11BCF6CA000154E87 /* maf跑步法底色.png in Resources */,
+				65ABA3B91BCF529300154E87 /* YSUserViewController.xib in Resources */,
+				65ABA3E71BCF6CA000154E87 /* right_arrow.png in Resources */,
+				65ABA3ED1BCF6CA000154E87 /* star.png in Resources */,
+				65ABA3E01BCF6CA000154E87 /* default.png in Resources */,
+				65ABA3E81BCF6CA000154E87 /* 地图模式.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,9 +557,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65ABA3761BCF4EAC00154E87 /* ViewController.m in Sources */,
+				65ABA3B31BCF528300154E87 /* YSRunViewController.m in Sources */,
+				655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */,
+				65ABA3B81BCF529300154E87 /* YSUserViewController.m in Sources */,
+				655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */,
 				65ABA3731BCF4EAC00154E87 /* AppDelegate.m in Sources */,
+				655C57111BCF7E3300E9073E /* YSCalendarWeekdayView.m in Sources */,
+				655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */,
+				655C57231BCF93B100E9073E /* YSDayCellModel.m in Sources */,
+				65ABA3BD1BCF56FC00154E87 /* YSMainTabBarViewController.m in Sources */,
+				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
+				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
 				65ABA3701BCF4EAC00154E87 /* main.m in Sources */,
+				655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,14 +605,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		65ABA3771BCF4EAC00154E87 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				65ABA3781BCF4EAC00154E87 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		65ABA37C1BCF4EAC00154E87 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -499,6 +785,7 @@
 				65ABA39A1BCF4EAC00154E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65ABA39B1BCF4EAC00154E87 /* Build configuration list for PBXNativeTarget "YSRunTests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +794,7 @@
 				65ABA39D1BCF4EAC00154E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65ABA39E1BCF4EAC00154E87 /* Build configuration list for PBXNativeTarget "YSRunUITests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +803,7 @@
 				65ABA3A01BCF4EAC00154E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
