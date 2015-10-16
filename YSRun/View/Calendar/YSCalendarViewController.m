@@ -8,10 +8,12 @@
 
 #import "YSCalendarViewController.h"
 #import "YSCalendarView.h"
+#import "YSTipView.h"
 
 @interface YSCalendarViewController ()
 
 @property (nonatomic, weak) IBOutlet YSCalendarView *calendarView;
+@property (nonatomic, weak) IBOutlet YSTipView *tipView;
 
 @end
 

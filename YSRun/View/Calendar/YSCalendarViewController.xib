@@ -12,7 +12,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="328" height="405"/>
+            <rect key="frame" x="0.0" y="0.0" width="328" height="738"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0Z-zH-iRB" customClass="YSCalendarView">
@@ -22,15 +22,25 @@
                         <constraint firstAttribute="height" constant="380" id="DrI-7a-L72"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unn-mf-1sk" customClass="YSTipView">
+                    <rect key="frame" x="0.0" y="420" width="328" height="152"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="152" id="Hw6-iQ-WvI"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="M0Z-zH-iRB" secondAttribute="trailing" id="334-4v-4PI"/>
+                <constraint firstItem="unn-mf-1sk" firstAttribute="top" secondItem="M0Z-zH-iRB" secondAttribute="bottom" constant="20" id="3ZY-vg-6mU"/>
+                <constraint firstAttribute="trailing" secondItem="unn-mf-1sk" secondAttribute="trailing" id="7Av-T7-IOI"/>
                 <constraint firstItem="M0Z-zH-iRB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8FI-lf-rIe"/>
                 <constraint firstItem="M0Z-zH-iRB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="BBF-2U-uZz"/>
+                <constraint firstItem="unn-mf-1sk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L35-SS-EKB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="293" y="177.5"/>
+            <point key="canvasLocation" x="293" y="344"/>
         </view>
     </objects>
 </document>

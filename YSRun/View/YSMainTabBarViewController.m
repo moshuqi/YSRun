@@ -27,7 +27,7 @@
     
     [self initViewControllers];
     
-    self.selectedIndex = 1; // 进入应用首先显示中间的视图
+    self.selectedIndex = 2; // 进入应用首先显示中间的视图
 }
 
 - (void)didReceiveMemoryWarning {

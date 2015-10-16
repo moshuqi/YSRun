@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSUserNoLoginView">
+            <rect key="frame" x="0.0" y="0.0" width="330" height="293"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mkH-kR-Pyg">
+                    <rect key="frame" x="0.0" y="10" width="330" height="46"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Ahp-aO-WTn"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="74f-DH-jrj"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="oVS-Zb-8Kr"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlF-UW-z9D">
+                    <rect key="frame" x="36" y="81" width="258" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="G3z-85-K29"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="登录">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="loginButtonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Nju-tG-RTT"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="登录后可以同步保留数据哦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-c7-M4Z">
+                    <rect key="frame" x="0.0" y="150" width="330" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="uHI-5K-PkG"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="NlF-UW-z9D" secondAttribute="trailing" constant="36" id="4vk-vJ-rih"/>
+                <constraint firstAttribute="trailing" secondItem="VFE-c7-M4Z" secondAttribute="trailing" id="BB5-CY-FEb"/>
+                <constraint firstItem="VFE-c7-M4Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="NWt-PW-Du7"/>
+                <constraint firstItem="VFE-c7-M4Z" firstAttribute="top" secondItem="NlF-UW-z9D" secondAttribute="bottom" constant="25" id="Tjr-Es-VET"/>
+                <constraint firstItem="mkH-kR-Pyg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="XVN-DF-ieE"/>
+                <constraint firstItem="mkH-kR-Pyg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Z1N-Hg-bJ7"/>
+                <constraint firstItem="NlF-UW-z9D" firstAttribute="top" secondItem="mkH-kR-Pyg" secondAttribute="bottom" constant="25" id="a6S-hy-dlL"/>
+                <constraint firstAttribute="trailing" secondItem="mkH-kR-Pyg" secondAttribute="trailing" id="oBa-RB-ah6"/>
+                <constraint firstItem="NlF-UW-z9D" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="36" id="rtc-kx-3Hj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="loginButton" destination="NlF-UW-z9D" id="fMX-pn-Ppw"/>
+                <outlet property="loginTipLabel" destination="VFE-c7-M4Z" id="r2Q-ay-CEe"/>
+                <outlet property="tableView" destination="mkH-kR-Pyg" id="AEu-b6-4Qp"/>
+            </connections>
+            <point key="canvasLocation" x="135" y="135.5"/>
+        </view>
+    </objects>
+</document>
