@@ -40,6 +40,12 @@
 		65744B391BD27FF400A15EEE /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B2E1BD27FF400A15EEE /* AFURLRequestSerialization.m */; settings = {ASSET_TAGS = (); }; };
 		65744B3A1BD27FF400A15EEE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B301BD27FF400A15EEE /* AFURLResponseSerialization.m */; settings = {ASSET_TAGS = (); }; };
 		65744B3B1BD27FF400A15EEE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B321BD27FF400A15EEE /* AFURLSessionManager.m */; settings = {ASSET_TAGS = (); }; };
+		65744B481BD280B200A15EEE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B3E1BD280B200A15EEE /* FMDatabase.m */; settings = {ASSET_TAGS = (); }; };
+		65744B491BD280B200A15EEE /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B401BD280B200A15EEE /* FMDatabaseAdditions.m */; settings = {ASSET_TAGS = (); }; };
+		65744B4A1BD280B200A15EEE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B421BD280B200A15EEE /* FMDatabasePool.m */; settings = {ASSET_TAGS = (); }; };
+		65744B4B1BD280B200A15EEE /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B441BD280B200A15EEE /* FMDatabaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		65744B4C1BD280B200A15EEE /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 65744B471BD280B200A15EEE /* FMResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		65744B4E1BD2810300A15EEE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B4D1BD2810300A15EEE /* libsqlite3.tbd */; };
 		6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576989A1BD08D920015B446 /* YSLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6576989D1BD08D920015B446 /* YSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6576989B1BD08D920015B446 /* YSLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698AA1BD08F000015B446 /* YSUserLevelView.m */; settings = {ASSET_TAGS = (); }; };
@@ -184,6 +190,18 @@
 		65744B301BD27FF400A15EEE /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		65744B311BD27FF400A15EEE /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		65744B321BD27FF400A15EEE /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		65744B3D1BD280B200A15EEE /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		65744B3E1BD280B200A15EEE /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		65744B3F1BD280B200A15EEE /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		65744B401BD280B200A15EEE /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		65744B411BD280B200A15EEE /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		65744B421BD280B200A15EEE /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		65744B431BD280B200A15EEE /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		65744B441BD280B200A15EEE /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		65744B451BD280B200A15EEE /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		65744B461BD280B200A15EEE /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		65744B471BD280B200A15EEE /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		65744B4D1BD2810300A15EEE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		657698991BD08D920015B446 /* YSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLoginViewController.h; sourceTree = "<group>"; };
 		6576989A1BD08D920015B446 /* YSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLoginViewController.m; sourceTree = "<group>"; };
 		6576989B1BD08D920015B446 /* YSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLoginViewController.xib; sourceTree = "<group>"; };
@@ -291,6 +309,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65744B4E1BD2810300A15EEE /* libsqlite3.tbd in Frameworks */,
 				65744B1C1BD27AC300A15EEE /* libc++.tbd in Frameworks */,
 				65744B1A1BD27AB400A15EEE /* libstdc++.6.0.9.tbd in Frameworks */,
 				65744B181BD27A9C00A15EEE /* libz.tbd in Frameworks */,
@@ -390,6 +409,7 @@
 		65744AF91BD2744000A15EEE /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				65744B3C1BD280B200A15EEE /* FMDB */,
 				65744B1E1BD27FA700A15EEE /* AFNetworking */,
 			);
 			path = Vendors;
@@ -398,6 +418,7 @@
 		65744B1D1BD27B2200A15EEE /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				65744B4D1BD2810300A15EEE /* libsqlite3.tbd */,
 				65744B1B1BD27AC300A15EEE /* libc++.tbd */,
 				65744B191BD27AB400A15EEE /* libstdc++.6.0.9.tbd */,
 				65744B171BD27A9C00A15EEE /* libz.tbd */,
@@ -439,6 +460,24 @@
 				65744B321BD27FF400A15EEE /* AFURLSessionManager.m */,
 			);
 			path = AFNetworking;
+			sourceTree = "<group>";
+		};
+		65744B3C1BD280B200A15EEE /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				65744B3D1BD280B200A15EEE /* FMDatabase.h */,
+				65744B3E1BD280B200A15EEE /* FMDatabase.m */,
+				65744B3F1BD280B200A15EEE /* FMDatabaseAdditions.h */,
+				65744B401BD280B200A15EEE /* FMDatabaseAdditions.m */,
+				65744B411BD280B200A15EEE /* FMDatabasePool.h */,
+				65744B421BD280B200A15EEE /* FMDatabasePool.m */,
+				65744B431BD280B200A15EEE /* FMDatabaseQueue.h */,
+				65744B441BD280B200A15EEE /* FMDatabaseQueue.m */,
+				65744B451BD280B200A15EEE /* FMDB.h */,
+				65744B461BD280B200A15EEE /* FMResultSet.h */,
+				65744B471BD280B200A15EEE /* FMResultSet.m */,
+			);
+			path = FMDB;
 			sourceTree = "<group>";
 		};
 		657698971BD08C8B0015B446 /* Login */ = {
@@ -939,6 +978,7 @@
 				655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */,
 				657698CC1BD09D900015B446 /* YSTipCell.m in Sources */,
 				657698E31BD0F2D90015B446 /* YSUserNoLoginView.m in Sources */,
+				65744B491BD280B200A15EEE /* FMDatabaseAdditions.m in Sources */,
 				657698C61BD09C210015B446 /* YSTipView.m in Sources */,
 				659619951BD1E456002110B9 /* YSNavigationBarView.m in Sources */,
 				65744B391BD27FF400A15EEE /* AFURLRequestSerialization.m in Sources */,
@@ -953,10 +993,13 @@
 				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
 				657698D21BD0EBF10015B446 /* YSUserInfoModel.m in Sources */,
+				65744B481BD280B200A15EEE /* FMDatabase.m in Sources */,
+				65744B4A1BD280B200A15EEE /* FMDatabasePool.m in Sources */,
 				65744B371BD27FF400A15EEE /* AFSecurityPolicy.m in Sources */,
 				65744B3B1BD27FF400A15EEE /* AFURLSessionManager.m in Sources */,
 				6596198F1BD1E2EA002110B9 /* YSRegisterViewController.m in Sources */,
 				65744B341BD27FF400A15EEE /* AFHTTPRequestOperationManager.m in Sources */,
+				65744B4C1BD280B200A15EEE /* FMResultSet.m in Sources */,
 				6596199B1BD1F850002110B9 /* YSTextFieldTableView.m in Sources */,
 				65ABA3701BCF4EAC00154E87 /* main.m in Sources */,
 				65744B3A1BD27FF400A15EEE /* AFURLResponseSerialization.m in Sources */,
@@ -969,6 +1012,7 @@
 				657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,
 				655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */,
+				65744B4B1BD280B200A15EEE /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
