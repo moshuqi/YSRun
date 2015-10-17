@@ -8,6 +8,7 @@
 
 #import "YSRunningRecordViewController.h"
 #import <MAMapKit/MAMapKit.h>
+#import "AFNetworking.h"
 
 @interface YSRunningRecordViewController () <MAMapViewDelegate>
 
