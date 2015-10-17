@@ -27,7 +27,7 @@
     
     [self initViewControllers];
     
-    self.selectedIndex = 2; // 进入应用首先显示中间的视图
+    self.selectedIndex = 1; // 进入应用首先显示中间的视图
 }
 
 - (void)didReceiveMemoryWarning {
@@ -62,46 +62,63 @@
 {
     self.calendarViewController = [[YSCalendarViewController alloc] init];
     
-    // 用原图，否则系统会进行渲染
-    UIImage *image = [UIImage imageNamed:@"calendar.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.calendarViewController.tabBarItem.image = image;
+    CGSize size = CGSizeMake(56, 56);
     
-    UIImage *selectedImage = [UIImage imageNamed:@"calendar_highlight.png"];
-//    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.calendarViewController.tabBarItem.selectedImage = selectedImage;
+    NSString *imageName = @"calendar.png";
+    self.calendarViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
     
-//    self.calendarViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(10, 5, 0, 5);
+    NSString *selectedImageName = @"calendar_highlight.png";
+    self.calendarViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    
+    self.calendarViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 }
 
 - (void)initRunViewController
 {
     self.runViewController = [[YSRunViewController alloc] init];
     
-    UIImage *image = [UIImage imageNamed:@"run.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.runViewController.tabBarItem.image = image;
+    CGSize size = CGSizeMake(46, 46);
     
-    UIImage *selectedImage = [UIImage imageNamed:@"run_highlight.png"];
-//    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.runViewController.tabBarItem.selectedImage = selectedImage;
+    NSString *imageName = @"run.png";
+    self.runViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
     
-//    self.runViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(15, 10, 5, 10);
+    NSString *selectedImageName = @"run_highlight.png";
+    self.runViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    
+    self.runViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 }
 
 - (void)initUserViewController
 {
     self.userViewController = [[YSUserViewController alloc] init];
     
-    UIImage *image = [UIImage imageNamed:@"user.png"];
-//    image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.userViewController.tabBarItem.image = image;
+    CGSize size = CGSizeMake(56, 56);
     
-    UIImage *selectedImage = [UIImage imageNamed:@"user_highlight.png"];
-//    selectedImage = [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    self.userViewController.tabBarItem.selectedImage = selectedImage;
+    NSString *imageName = @"user.png";
+    self.userViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
     
-//    self.userViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(10, 5, 0, 5);
+    NSString *selectedImageName = @"user_highlight.png";
+    self.userViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    
+    self.userViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+}
+
+- (UIImage *)getImageWithName:(NSString *)imageName size:(CGSize)size
+{
+    // 切图大小不匹配，自己根据尺寸需求重绘图片。临时解决方式
+    UIImage *image = [UIImage imageNamed:imageName];
+    
+    UIGraphicsBeginImageContext(size);
+    
+    [image drawInRect:CGRectMake(0,0, size.width, size.height)];
+    UIImage* newImage =UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    // 用原图，否则系统会进行渲染
+    newImage = [newImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    
+    return newImage;
 }
 
 @end

@@ -19,6 +19,7 @@
 		655C57231BCF93B100E9073E /* YSDayCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57221BCF93B100E9073E /* YSDayCellModel.m */; settings = {ASSET_TAGS = (); }; };
 		655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57261BCF978300E9073E /* YSCalendarDayCell.m */; settings = {ASSET_TAGS = (); }; };
 		655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */; settings = {ASSET_TAGS = (); }; };
+		65744AF71BD2488700A15EEE /* YSUserRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65744AF61BD2488700A15EEE /* YSUserRecordView.xib */; settings = {ASSET_TAGS = (); }; };
 		6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576989A1BD08D920015B446 /* YSLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6576989D1BD08D920015B446 /* YSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6576989B1BD08D920015B446 /* YSLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698AA1BD08F000015B446 /* YSUserLevelView.m */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +132,7 @@
 		655C57251BCF978300E9073E /* YSCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarDayCell.h; sourceTree = "<group>"; };
 		655C57261BCF978300E9073E /* YSCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarDayCell.m; sourceTree = "<group>"; };
 		655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarDayCell.xib; sourceTree = "<group>"; };
+		65744AF61BD2488700A15EEE /* YSUserRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSUserRecordView.xib; sourceTree = "<group>"; };
 		657698991BD08D920015B446 /* YSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLoginViewController.h; sourceTree = "<group>"; };
 		6576989A1BD08D920015B446 /* YSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLoginViewController.m; sourceTree = "<group>"; };
 		6576989B1BD08D920015B446 /* YSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLoginViewController.xib; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 			children = (
 				657698B11BD095F80015B446 /* YSUserRecordView.h */,
 				657698B21BD095F80015B446 /* YSUserRecordView.m */,
+				65744AF61BD2488700A15EEE /* YSUserRecordView.xib */,
 			);
 			path = UserRecord;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				65ABA3F31BCF6CA000154E87 /* 跑步模式.png in Resources */,
 				65ABA3E41BCF6CA000154E87 /* tips.png in Resources */,
 				65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */,
+				65744AF71BD2488700A15EEE /* YSUserRecordView.xib in Resources */,
 				6596199D1BD1F87F002110B9 /* YSTextFieldTableView.xib in Resources */,
 				657698C81BD09C400015B446 /* YSTipView.xib in Resources */,
 				657698E71BD0F3820015B446 /* YSUserNoLoginView.xib in Resources */,

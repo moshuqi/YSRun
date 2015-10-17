@@ -9,6 +9,7 @@
 #import "YSCalendarViewController.h"
 #import "YSCalendarView.h"
 #import "YSTipView.h"
+#import "YSAppMacro.h"
 
 @interface YSCalendarViewController ()
 
@@ -23,10 +24,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.view.backgroundColor = [UIColor yellowColor];
-    
     NSDate *currentDate = [self getCurrentDate];
     [self.calendarView resetCalendarWithDate:currentDate];
+    
+    self.view.backgroundColor = LightgrayBackgroundColor;
 }
 
 - (void)awakeFromNib

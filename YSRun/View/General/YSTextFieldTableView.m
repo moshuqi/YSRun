@@ -134,7 +134,7 @@
 
 - (void)captchaButtonClicked:(id)sender
 {
-    
+    // 发送手机短信验证码
 }
 
 @end

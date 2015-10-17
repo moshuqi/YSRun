@@ -11,7 +11,6 @@
 #import "YSAppMacro.h"
 
 #define UserSetTableViewReuseIdentifier @"UserSetTableViewReuseIdentifier"
-#define UserSettingViewBackgroundColor RGB(245, 245, 245)
 
 @interface YSUserSettingView () <UITableViewDelegate, UITableViewDataSource>
 
@@ -31,7 +30,7 @@ const CGFloat kHeightForHeader = 10;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"YSUserSetCell" bundle:nil] forCellReuseIdentifier:UserSetTableViewReuseIdentifier];
     
-    self.tableView.backgroundColor = UserSettingViewBackgroundColor;
+    self.tableView.backgroundColor = LightgrayBackgroundColor;
     self.tableView.scrollEnabled = NO;
 }
 
@@ -85,7 +84,7 @@ const CGFloat kHeightForHeader = 10;
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
     UIView *view = [UIView new];
-    view.backgroundColor = UserSettingViewBackgroundColor;
+    view.backgroundColor = LightgrayBackgroundColor;
 //    view.backgroundColor = [UIColor yellowColor];
     
     return view;

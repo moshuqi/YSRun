@@ -1,19 +1,120 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSRunViewController">
             <connections>
+                <outlet property="greenLabel" destination="VJh-Fv-rPu" id="cBk-CM-xb7"/>
+                <outlet property="methodTipView" destination="YC9-Kv-8Uh" id="zqs-IO-tve"/>
+                <outlet property="startRunningButton" destination="V3G-re-UWi" id="w8A-hQ-x0M"/>
+                <outlet property="tipLabel1" destination="Cth-lO-Tic" id="G3e-tM-x4E"/>
+                <outlet property="tipLabel2" destination="u5u-bN-TzW" id="Ehh-o4-L6X"/>
+                <outlet property="tipTitleLabel" destination="z6L-NN-hK3" id="IbC-m8-rvc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="296" height="576"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nai-8C-W38" customClass="YSUserRecordView">
+                    <rect key="frame" x="0.0" y="20" width="296" height="360"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="360" id="nq1-MG-78j"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3G-re-UWi">
+                    <rect key="frame" x="30" y="456" width="236" height="46"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="46" id="Izs-zg-RnR"/>
+                    </constraints>
+                    <state key="normal" title="开始跑步">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YC9-Kv-8Uh">
+                    <rect key="frame" x="30" y="410" width="236" height="96"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5u-bN-TzW" userLabel="tip2">
+                            <rect key="frame" x="10" y="62.5" width="216" height="23.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cth-lO-Tic" userLabel="tip1">
+                            <rect key="frame" x="10" y="38.5" width="216" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tips.png" translatesAutoresizingMaskIntoConstraints="NO" id="zD9-5D-iqZ">
+                            <rect key="frame" x="10" y="10" width="23" height="23.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="23" id="F4j-kc-vH6"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6L-NN-hK3" userLabel="tipTitle">
+                            <rect key="frame" x="43" y="10" width="96" height="23.5"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="96" id="XgD-h7-eQz"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJh-Fv-rPu" userLabel="greenLabel">
+                            <rect key="frame" x="149" y="10" width="77" height="23.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.44933962379999998" blue="0.31993062630000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="0Kw-XH-29W"/>
+                        <constraint firstAttribute="trailing" secondItem="VJh-Fv-rPu" secondAttribute="trailing" constant="10" id="1wn-u7-Aaf"/>
+                        <constraint firstItem="u5u-bN-TzW" firstAttribute="leading" secondItem="YC9-Kv-8Uh" secondAttribute="leading" constant="10" id="4LF-4O-TaZ"/>
+                        <constraint firstItem="VJh-Fv-rPu" firstAttribute="leading" secondItem="z6L-NN-hK3" secondAttribute="trailing" constant="10" id="7Bt-Di-esU"/>
+                        <constraint firstItem="VJh-Fv-rPu" firstAttribute="height" secondItem="z6L-NN-hK3" secondAttribute="height" id="99D-sm-sAX"/>
+                        <constraint firstItem="Cth-lO-Tic" firstAttribute="height" secondItem="zD9-5D-iqZ" secondAttribute="height" id="GW4-LG-8Ah"/>
+                        <constraint firstItem="u5u-bN-TzW" firstAttribute="leading" secondItem="zD9-5D-iqZ" secondAttribute="leading" id="JTz-4Q-t1u"/>
+                        <constraint firstItem="VJh-Fv-rPu" firstAttribute="top" secondItem="z6L-NN-hK3" secondAttribute="top" id="Kfk-hE-jqT"/>
+                        <constraint firstItem="Cth-lO-Tic" firstAttribute="leading" secondItem="zD9-5D-iqZ" secondAttribute="leading" id="LMh-bc-pDa"/>
+                        <constraint firstItem="u5u-bN-TzW" firstAttribute="top" secondItem="Cth-lO-Tic" secondAttribute="bottom" id="MY3-rh-E2X"/>
+                        <constraint firstItem="zD9-5D-iqZ" firstAttribute="top" secondItem="YC9-Kv-8Uh" secondAttribute="top" constant="10" id="Yoh-Dy-YkI"/>
+                        <constraint firstAttribute="trailing" secondItem="u5u-bN-TzW" secondAttribute="trailing" constant="10" id="d1o-p4-CGY"/>
+                        <constraint firstItem="z6L-NN-hK3" firstAttribute="height" secondItem="zD9-5D-iqZ" secondAttribute="height" id="mOI-OF-Wcr"/>
+                        <constraint firstAttribute="trailing" secondItem="Cth-lO-Tic" secondAttribute="trailing" constant="10" id="mXW-zd-SAS"/>
+                        <constraint firstAttribute="bottom" secondItem="u5u-bN-TzW" secondAttribute="bottom" constant="10" id="ocr-Cj-9jX"/>
+                        <constraint firstItem="z6L-NN-hK3" firstAttribute="top" secondItem="zD9-5D-iqZ" secondAttribute="top" id="pAx-rm-5q6"/>
+                        <constraint firstItem="z6L-NN-hK3" firstAttribute="leading" secondItem="zD9-5D-iqZ" secondAttribute="trailing" constant="10" id="py8-Na-zKj"/>
+                        <constraint firstItem="Cth-lO-Tic" firstAttribute="top" secondItem="zD9-5D-iqZ" secondAttribute="bottom" constant="5" id="xOu-XT-idt"/>
+                        <constraint firstItem="u5u-bN-TzW" firstAttribute="height" secondItem="zD9-5D-iqZ" secondAttribute="height" id="yJD-ul-EIk"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="V3G-re-UWi" secondAttribute="trailing" constant="30" id="6jA-I5-SSF"/>
+                <constraint firstItem="nai-8C-W38" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="8Io-nq-R5T"/>
+                <constraint firstItem="V3G-re-UWi" firstAttribute="leading" secondItem="YC9-Kv-8Uh" secondAttribute="leading" id="Efa-vB-aQC"/>
+                <constraint firstAttribute="trailing" secondItem="nai-8C-W38" secondAttribute="trailing" id="Eqa-YW-9dc"/>
+                <constraint firstItem="YC9-Kv-8Uh" firstAttribute="top" secondItem="nai-8C-W38" secondAttribute="bottom" constant="30" id="Jb3-3n-Eye"/>
+                <constraint firstItem="V3G-re-UWi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="30" id="VwJ-yl-rEA"/>
+                <constraint firstItem="V3G-re-UWi" firstAttribute="width" secondItem="YC9-Kv-8Uh" secondAttribute="width" id="cVL-Q2-RR8"/>
+                <constraint firstItem="nai-8C-W38" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nJz-wS-bta"/>
+                <constraint firstAttribute="bottom" secondItem="V3G-re-UWi" secondAttribute="bottom" constant="74" id="xJ1-wA-ihI"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="91" y="291"/>
         </view>
     </objects>
+    <resources>
+        <image name="tips.png" width="18" height="24"/>
+    </resources>
 </document>

@@ -15,5 +15,6 @@
 #define RGB(r,g,b)  RGBA(r,g,b,1.0)
 
 #define GreenBackgroundColor   RGB(4,181,108)
+#define LightgrayBackgroundColor RGB(245, 245, 245)
 
 #endif /* AppMacro_h */
