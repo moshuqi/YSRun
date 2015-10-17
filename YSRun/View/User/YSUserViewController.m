@@ -10,12 +10,15 @@
 #import "YSUserLevelView.h"
 #import "YSUserSettingView.h"
 #import "YSUserNoLoginView.h"
+#import "YSLoginViewController.h"
 
-@interface YSUserViewController ()
+@interface YSUserViewController () <YSUserNoLoginViewDelegate>
 
 @property (nonatomic, weak) IBOutlet YSUserLevelView *userLevelView;
 @property (nonatomic, weak) IBOutlet UIView *settingContentView;
 
+@property (nonatomic, strong) YSUserSettingView *userSettingView;
+@property (nonatomic, strong) YSUserNoLoginView *userNoLoginView;
 
 @end
 
@@ -25,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -49,21 +53,42 @@
     // 根据当前是否已登录来决定显示对应的视图
     
     CGRect frame = self.settingContentView.bounds;
+    
     if ([self hasLogin])
     {
-//        YSUserSettingView *userSettingView = [[YSUserSettingView alloc] initWithFrame:frame];
+        NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"YSUserSettingView" owner:self options:nil];
+        self.userSettingView = [nibViews objectAtIndex:0];
+        self.userSettingView.frame = frame;
         
+        [self.settingContentView addSubview:self.userSettingView];
+    }
+    else
+    {
         NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"YSUserNoLoginView" owner:self options:nil];
-        YSUserNoLoginView *userSettingView = [nibViews objectAtIndex:0];
-        userSettingView.frame = frame;
+        self.userNoLoginView = [nibViews objectAtIndex:0];
+        self.userNoLoginView.frame = frame;
+        self.userNoLoginView.delegate = self;
         
-        [self.settingContentView addSubview:userSettingView];
+        [self.settingContentView addSubview:self.userNoLoginView];
     }
 }
 
 - (BOOL)hasLogin
 {
-    return YES;
+    return NO;
+}
+
+- (void)enterLoginView
+{
+    YSLoginViewController *loginViewController = [[YSLoginViewController alloc] init];
+    [self.navigationController pushViewController:loginViewController animated:YES];
+}
+
+#pragma mark - YSUserNoLoginViewDelegate
+
+- (void)login
+{
+    [self enterLoginView];
 }
 
 @end

@@ -37,7 +37,7 @@
 
 - (IBAction)loginButtonClicked:(id)sender
 {
-    
+    [self.delegate login];
 }
 
 #pragma mark - UITableViewDelegate
