@@ -8,6 +8,7 @@
 
 #import "YSRunViewController.h"
 #import "YSAppMacro.h"
+#import "YSRunningRecordViewController.h"
 
 @interface YSRunViewController ()
 
@@ -54,6 +55,12 @@
     
     self.greenLabel.text = @"基于MAF180训练法>";
     self.greenLabel.textColor = GreenBackgroundColor;
+}
+
+- (IBAction)startRunning:(id)sender
+{
+    YSRunningRecordViewController *runningRecordViewController = [YSRunningRecordViewController new];
+    [self presentViewController:runningRecordViewController animated:YES completion:nil];
 }
 
 @end

@@ -20,6 +20,17 @@
 		655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57261BCF978300E9073E /* YSCalendarDayCell.m */; settings = {ASSET_TAGS = (); }; };
 		655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */; settings = {ASSET_TAGS = (); }; };
 		65744AF71BD2488700A15EEE /* YSUserRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65744AF61BD2488700A15EEE /* YSUserRecordView.xib */; settings = {ASSET_TAGS = (); }; };
+		65744B041BD2792200A15EEE /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B031BD2792200A15EEE /* MAMapKit.framework */; };
+		65744B061BD2794700A15EEE /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 65744B051BD2794700A15EEE /* AMap.bundle */; settings = {ASSET_TAGS = (); }; };
+		65744B0A1BD279CE00A15EEE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B091BD279CE00A15EEE /* CoreGraphics.framework */; };
+		65744B0C1BD279D900A15EEE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B0B1BD279D900A15EEE /* QuartzCore.framework */; };
+		65744B0E1BD279E600A15EEE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B0D1BD279E600A15EEE /* CoreLocation.framework */; };
+		65744B101BD279F200A15EEE /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B0F1BD279F200A15EEE /* CoreTelephony.framework */; };
+		65744B121BD27A0400A15EEE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B111BD27A0400A15EEE /* SystemConfiguration.framework */; };
+		65744B141BD27A2E00A15EEE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B131BD27A2E00A15EEE /* Security.framework */; };
+		65744B181BD27A9C00A15EEE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B171BD27A9C00A15EEE /* libz.tbd */; };
+		65744B1A1BD27AB400A15EEE /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B191BD27AB400A15EEE /* libstdc++.6.0.9.tbd */; };
+		65744B1C1BD27AC300A15EEE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 65744B1B1BD27AC300A15EEE /* libc++.tbd */; };
 		6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6576989A1BD08D920015B446 /* YSLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		6576989D1BD08D920015B446 /* YSLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6576989B1BD08D920015B446 /* YSLoginViewController.xib */; settings = {ASSET_TAGS = (); }; };
 		657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698AA1BD08F000015B446 /* YSUserLevelView.m */; settings = {ASSET_TAGS = (); }; };
@@ -133,6 +144,17 @@
 		655C57261BCF978300E9073E /* YSCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarDayCell.m; sourceTree = "<group>"; };
 		655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarDayCell.xib; sourceTree = "<group>"; };
 		65744AF61BD2488700A15EEE /* YSUserRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSUserRecordView.xib; sourceTree = "<group>"; };
+		65744B031BD2792200A15EEE /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MAMapKit.framework; path = ../Vendors/MAMap/MAMapKit.framework; sourceTree = "<group>"; };
+		65744B051BD2794700A15EEE /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = AMap.bundle; path = ../Vendors/MAMap/MAMapKit.framework/Versions/3.1.0.56231a5/Resources/AMap.bundle; sourceTree = "<group>"; };
+		65744B091BD279CE00A15EEE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		65744B0B1BD279D900A15EEE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		65744B0D1BD279E600A15EEE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		65744B0F1BD279F200A15EEE /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		65744B111BD27A0400A15EEE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		65744B131BD27A2E00A15EEE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		65744B171BD27A9C00A15EEE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		65744B191BD27AB400A15EEE /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		65744B1B1BD27AC300A15EEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		657698991BD08D920015B446 /* YSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLoginViewController.h; sourceTree = "<group>"; };
 		6576989A1BD08D920015B446 /* YSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLoginViewController.m; sourceTree = "<group>"; };
 		6576989B1BD08D920015B446 /* YSLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLoginViewController.xib; sourceTree = "<group>"; };
@@ -240,6 +262,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65744B1C1BD27AC300A15EEE /* libc++.tbd in Frameworks */,
+				65744B1A1BD27AB400A15EEE /* libstdc++.6.0.9.tbd in Frameworks */,
+				65744B181BD27A9C00A15EEE /* libz.tbd in Frameworks */,
+				65744B141BD27A2E00A15EEE /* Security.framework in Frameworks */,
+				65744B121BD27A0400A15EEE /* SystemConfiguration.framework in Frameworks */,
+				65744B101BD279F200A15EEE /* CoreTelephony.framework in Frameworks */,
+				65744B0E1BD279E600A15EEE /* CoreLocation.framework in Frameworks */,
+				65744B0C1BD279D900A15EEE /* QuartzCore.framework in Frameworks */,
+				65744B0A1BD279CE00A15EEE /* CoreGraphics.framework in Frameworks */,
+				65744B041BD2792200A15EEE /* MAMapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +349,39 @@
 				655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */,
 			);
 			path = DayCell;
+			sourceTree = "<group>";
+		};
+		65744AF81BD2741900A15EEE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		65744AF91BD2744000A15EEE /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		65744B1D1BD27B2200A15EEE /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				65744B1B1BD27AC300A15EEE /* libc++.tbd */,
+				65744B191BD27AB400A15EEE /* libstdc++.6.0.9.tbd */,
+				65744B171BD27A9C00A15EEE /* libz.tbd */,
+				65744B131BD27A2E00A15EEE /* Security.framework */,
+				65744B111BD27A0400A15EEE /* SystemConfiguration.framework */,
+				65744B0F1BD279F200A15EEE /* CoreTelephony.framework */,
+				65744B0D1BD279E600A15EEE /* CoreLocation.framework */,
+				65744B0B1BD279D900A15EEE /* QuartzCore.framework */,
+				65744B091BD279CE00A15EEE /* CoreGraphics.framework */,
+				65744B051BD2794700A15EEE /* AMap.bundle */,
+				65744B031BD2792200A15EEE /* MAMapKit.framework */,
+			);
+			name = Framework;
+			path = YSRun/Framework;
 			sourceTree = "<group>";
 		};
 		657698971BD08C8B0015B446 /* Login */ = {
@@ -459,6 +524,7 @@
 		65ABA3621BCF4EAC00154E87 = {
 			isa = PBXGroup;
 			children = (
+				65744B1D1BD27B2200A15EEE /* Framework */,
 				65ABA36D1BCF4EAC00154E87 /* YSRun */,
 				65ABA3871BCF4EAC00154E87 /* YSRunTests */,
 				65ABA3921BCF4EAC00154E87 /* YSRunUITests */,
@@ -479,6 +545,8 @@
 		65ABA36D1BCF4EAC00154E87 /* YSRun */ = {
 			isa = PBXGroup;
 			children = (
+				65744AF91BD2744000A15EEE /* Vendors */,
+				65744AF81BD2741900A15EEE /* Manager */,
 				655C57201BCF934500E9073E /* Models */,
 				655C57061BCF7B4100E9073E /* Macro */,
 				65ABA3A21BCF4F3100154E87 /* View */,
@@ -763,6 +831,7 @@
 				65ABA3BE1BCF56FC00154E87 /* YSMainTabBarViewController.xib in Resources */,
 				657698E51BD0F3690015B446 /* YSUserSettingView.xib in Resources */,
 				65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */,
+				65744B061BD2794700A15EEE /* AMap.bundle in Resources */,
 				659619AE1BD22443002110B9 /* YSFindPasswordViewController.xib in Resources */,
 				657698BA1BD097A70015B446 /* YSRunningResultViewController.xib in Resources */,
 				65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */,
@@ -964,6 +1033,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YSRun/Vendors/MAMap",
+				);
 				INFOPLIST_FILE = YSRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = msq.YSRun;
@@ -975,6 +1048,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/YSRun/Vendors/MAMap",
+				);
 				INFOPLIST_FILE = YSRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = msq.YSRun;

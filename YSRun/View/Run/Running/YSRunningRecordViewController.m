@@ -7,16 +7,28 @@
 //
 
 #import "YSRunningRecordViewController.h"
+#import <MAMapKit/MAMapKit.h>
 
-@interface YSRunningRecordViewController ()
+@interface YSRunningRecordViewController () <MAMapViewDelegate>
 
 @end
 
 @implementation YSRunningRecordViewController
 
+const static NSString *APIKey = @"45e4efb100710051075252c2407f9402";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [MAMapServices sharedServices].apiKey = @"用户Key";
+    
+    MAMapView *mapView = [[MAMapView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds))];
+    mapView.delegate = self;
+    
+    [self.view addSubview:mapView];
+    
+    self.view.backgroundColor = [UIColor greenColor];
 }
 
 - (void)didReceiveMemoryWarning {
