@@ -16,7 +16,7 @@
 
 @protocol YSRunningModeStatusViewDelegate <NSObject>
 
-- (void)changeMode;
+- (void)modeStatusChange;
 
 @end
 

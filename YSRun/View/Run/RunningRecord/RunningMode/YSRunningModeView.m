@@ -7,9 +7,14 @@
 //
 
 #import "YSRunningModeView.h"
+#import "YSRunningModeView+GetMethod.h"
 
 const CGFloat kPulldownViewRadius = 44;
 const CGFloat kButtonWidth = 88;
+
+@interface YSRunningModeView () <YSRunningModeStatusViewDelegate>
+
+@end
 
 @implementation YSRunningModeView
 
@@ -19,11 +24,13 @@ const CGFloat kButtonWidth = 88;
     if (self)
     {
         [self addSubviews];
-        [self addBackView];
-        self.isPause = NO;
         [self setupButtonsAppearance];
+        [self setupLabelsAppearance];
         
+        self.isPause = NO;
         self.backgroundColor = [UIColor lightGrayColor];
+        
+        [self addPulldownGesture];
     }
     
     return self;
@@ -32,25 +39,33 @@ const CGFloat kButtonWidth = 88;
 - (void)addSubviews
 {
     self.timeLabel = [[[UINib nibWithNibName:@"YSTimeLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.timeLabel.userInteractionEnabled = NO;
     [self addSubview:self.timeLabel];
     
     self.distanceLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.distanceLabel.userInteractionEnabled = NO;
+    [self.distanceLabel setSubscriptText:@"公里"];
     [self addSubview:self.distanceLabel];
     
     self.speedLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.speedLabel.userInteractionEnabled = NO;
+    [self.speedLabel setSubscriptText:@"配速"];
     [self addSubview:self.speedLabel];
     
     self.modeStatusView = [[[UINib nibWithNibName:@"YSRunningModeStatusView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.modeStatusView.delegate = self;
     [self addSubview:self.modeStatusView];
     
     self.finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.finishButton.frame = CGRectMake(0, 0, kButtonWidth, kButtonWidth);
     [self.finishButton setTitle:@"完成" forState:UIControlStateNormal];
+    [self.finishButton addTarget:self action:@selector(finishButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.finishButton];
     
     self.continueButton = [UIButton buttonWithType:UIButtonTypeCustom];
     self.continueButton.frame = CGRectMake(0, 0, kButtonWidth, kButtonWidth);
     [self.continueButton setTitle:@"继续" forState:UIControlStateNormal];
+    [self.continueButton addTarget:self action:@selector(continueButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.continueButton];
     
     self.pulldownView = [YSPulldownView defaultPulldownViewWithRadius:kPulldownViewRadius];
@@ -62,6 +77,17 @@ const CGFloat kButtonWidth = 88;
     // 子类重载
 }
 
+- (void)addPulldownGesture
+{
+    UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(pulldown:)];
+    [self.pulldownView addGestureRecognizer:panGesture];
+}
+
+- (void)setupLabelsAppearance
+{
+    // 设置标签字号大小和颜色，子类重载
+}
+
 - (void)resetLayoutWithFrame:(CGRect)frame
 {
     self.frame = frame;
@@ -71,13 +97,10 @@ const CGFloat kButtonWidth = 88;
     self.distanceLabel.frame = [self getDistanceLabelFrame];
     self.speedLabel.frame = [self getSpeedLabelFrame];
     
-    self.pulldownView.frame = [self getPulldownViewFrame];
-    self.continueButton.frame = [self getContinueButtonDisappearFrame];
-    self.finishButton.frame = [self getFinishButtonDisappearFrame];
+    [self resetButtonsPositionWithPauseStatus];
     [self setupButtonsAppearance];
     
-//    self.continueButton.frame = [self getContinueButtonAppearFrame];
-//    self.finishButton.frame = [self getFinishButtonAppearFrame];
+    [self addBackView];
 }
 
 - (void)setupButtonsAppearance
@@ -85,91 +108,139 @@ const CGFloat kButtonWidth = 88;
     // 子类重载，按钮的样式在两种模式下不一致
 }
 
-- (CGRect)getModeStatusViewFrame
+- (void)pulldown:(UIPanGestureRecognizer *)panGesture
 {
-    // 子类重载
-    return CGRectZero;
-}
-
-- (CGRect)getTimeLabelFrame
-{
-    // 子类重载
-    return CGRectZero;
-}
-
-- (CGRect)getDistanceLabelFrame
-{
-    // 子类重载
-    return CGRectZero;
-}
-
-- (CGRect)getSpeedLabelFrame
-{
-    // 子类重载
-    return CGRectZero;
-}
-
-- (CGRect)getFinishButtonAppearFrame
-{
-    CGFloat distance = 106;  // 与底边的间距
-    CGFloat d = 40;    // 与边缘的间距
-    CGSize buttonSize = [self getButtonSize];
+    CGPoint point = [panGesture locationInView:self];
+    CGPoint originPoint = [self pulldownViewOriginPoint]; // 原来中心点的位置
+    CGFloat dy = point.y - originPoint.y;
     
-    CGFloat originY = CGRectGetHeight(self.frame) - distance - buttonSize.height;
-    CGRect frame = CGRectMake(d, originY, buttonSize.width, buttonSize.height);
-    return frame;
+    if (panGesture.state == UIGestureRecognizerStateBegan)
+    {
+        
+    }
+    else if (panGesture.state == UIGestureRecognizerStateChanged)
+    {
+        
+        if (point.y >= originPoint.y)
+        {
+            CGRect frame = CGRectMake(self.pulldownView.frame.origin.x,
+                                      point.y - self.pulldownView.frame.size.height / 2,
+                                      self.pulldownView.frame.size.width,
+                                      self.pulldownView.frame.size.height);
+            self.pulldownView.frame = frame;
+            
+            [self updateButtonsPositionByDeltaY:dy];
+        }
+    }
+    else if (panGesture.state == UIGestureRecognizerStateEnded ||
+             panGesture.state == UIGestureRecognizerStateCancelled)
+    {
+        [self panGestureEndWithDeltaY:dy];
+    }
 }
 
-- (CGRect)getFinishButtonDisappearFrame
+- (void)updateButtonsPositionByDeltaY:(CGFloat)dy
 {
-    CGRect appearFrame = [self getFinishButtonAppearFrame];
-    CGFloat d = 30;
-    CGFloat originY = CGRectGetHeight(self.frame) + d + [self getButtonSize].height;
+    // 拖动过程中实时更新完成按钮和继续按钮的位置
     
-    CGRect frame = CGRectMake(appearFrame.origin.x, originY, appearFrame.size.width, appearFrame.size.height);
-    return frame;
+    CGFloat scale = dy / [self getPulldownViewOriginDistanceFromEdge];
+    
+    CGFloat continueButtonDy = [self getContinueButtonChangeDistance] * scale;
+    CGRect continueButtonFrame = [self getContinueButtonDisappearFrame];
+    CGRect continueButtonChangeFrame = CGRectMake(continueButtonFrame.origin.x,
+                                                  continueButtonFrame.origin.y - continueButtonDy,
+                                                  continueButtonFrame.size.width,
+                                                  continueButtonFrame.size.height);
+    self.continueButton.frame = continueButtonChangeFrame;
+    
+    CGFloat finishButtonDy = [self getFinishButtonChangeDistance] * scale;
+    CGRect finishButtonFrame = [self getFinishButtonDisappearFrame];
+    CGRect finishButtonChangeFrame = CGRectMake(finishButtonFrame.origin.x,
+                                                finishButtonFrame.origin.y - finishButtonDy,
+                                                finishButtonFrame.size.width,
+                                                finishButtonFrame.size.height);
+    self.finishButton.frame = finishButtonChangeFrame;
 }
 
-- (CGRect)getContinueButtonAppearFrame
+- (void)panGestureEndWithDeltaY:(CGFloat)dy
 {
-    CGFloat distance = 106;  // 与底边的间距
-    CGFloat d = 40;    // 与边缘的间距
-    CGSize buttonSize = [self getButtonSize];
+    // 手势拖动结束后，根据实际拖动的距离dy来决定按钮的显示情况。通过动画来复位按钮位置
     
-    CGFloat originX = CGRectGetWidth(self.frame) - buttonSize.width - d;
-    CGFloat originY = CGRectGetHeight(self.frame) - distance - buttonSize.height;
+    BOOL bPause = NO;
+    if (dy > ([self getPulldownViewOriginDistanceFromEdge] / 3 * 2))
+    {
+        // 拖动超过三分之二的距离则拖动按钮消失，此时暂停，并显示完成和继续按钮；否则按钮复位
+        bPause = YES;
+        [self runningPause];
+    }
     
-    CGRect frame = CGRectMake(originX, originY, buttonSize.width, buttonSize.height);
-    return frame;
+    self.isPause = bPause;
+    
+    CGRect continueButtonFrame = [self getContinueButtonDisappearFrame];
+    CGRect finishButtonFrame = [self getFinishButtonDisappearFrame];
+    CGRect pulldownViewFrame = [self getPulldownViewFrame];
+    
+    if (bPause)
+    {
+        continueButtonFrame = [self getContinueButtonAppearFrame];
+        finishButtonFrame = [self getFinishButtonAppearFrame];
+        pulldownViewFrame = [self getPulldownViewDisappearFrame];
+    }
+    
+    [UIView animateWithDuration:0.5 animations:^(){
+        self.continueButton.frame = continueButtonFrame;
+        self.finishButton.frame = finishButtonFrame;
+        self.pulldownView.frame = pulldownViewFrame;
+    }completion:nil];
 }
 
-- (CGRect)getContinueButtonDisappearFrame
+- (void)runningPause
 {
-    CGRect appearFrame = [self getContinueButtonAppearFrame];
-    CGFloat d = 30;
-    CGFloat originY = CGRectGetHeight(self.frame) + d + [self getButtonSize].height;
-    
-    CGRect frame = CGRectMake(appearFrame.origin.x, originY, appearFrame.size.width, appearFrame.size.height);
-    return frame;
+    // 跑步暂停
 }
 
-- (CGSize)getButtonSize
+- (void)runningContinue
 {
-    // 按钮的宽度
-    CGSize size = self.continueButton.frame.size;
-    return size;
+    // 跑步继续
+    
 }
 
-- (CGRect)getPulldownViewFrame
+- (void)continueButtonClicked:(id)sender
 {
-    CGFloat width = CGRectGetWidth(self.pulldownView.frame);
-    CGFloat height = CGRectGetHeight(self.pulldownView.frame);
+    // 继续
+    self.isPause = NO;
+    [self resetButtonsPositionWithPauseStatus];
     
-    CGFloat originY = [self getContinueButtonAppearFrame].origin.y;
-    CGFloat originX = (CGRectGetWidth(self.frame) - width) / 2;
-    
-    CGRect frame = CGRectMake(originX, originY, width, height);
-    return frame;
+    [self runningContinue];
+}
+
+- (void)finishButtonClicked:(id)sender
+{
+    // 完成
+}
+
+- (void)resetButtonsPositionWithPauseStatus
+{
+    if (self.isPause)
+    {
+        self.continueButton.frame = [self getContinueButtonAppearFrame];
+        self.finishButton.frame = [self getFinishButtonAppearFrame];
+        self.pulldownView.frame = [self getPulldownViewDisappearFrame];
+    }
+    else
+    {
+        self.continueButton.frame = [self getContinueButtonDisappearFrame];
+        self.finishButton.frame = [self getFinishButtonDisappearFrame];
+        self.pulldownView.frame = [self getPulldownViewFrame];
+    }
+}
+
+
+#pragma mark - YSRunningModeStatusViewDelegate
+
+- (void)modeStatusChange
+{
+    [self.delegate changeMode];
 }
 
 

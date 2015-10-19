@@ -12,6 +12,15 @@
 #import "YSRunningModeStatusView.h"
 #import "YSPulldownView.h"
 
+@protocol YSRunningModeViewDelegate <NSObject>
+
+- (void)changeMode;
+- (void)runningPause;
+- (void)runningContinue;
+- (void)runningFinish;
+
+@end
+
 @interface YSRunningModeView : UIView
 
 @property (nonatomic, strong) YSTimeLabel *timeLabel;
@@ -24,7 +33,9 @@
 @property (nonatomic, strong) YSPulldownView *pulldownView;
 
 @property (nonatomic, assign) BOOL isPause;
+@property (nonatomic, assign) id<YSRunningModeViewDelegate> delegate;
 
 - (void)resetLayoutWithFrame:(CGRect)frame;
+- (void)resetButtonsPositionWithPauseStatus;
 
 @end

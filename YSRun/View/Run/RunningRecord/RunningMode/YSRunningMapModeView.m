@@ -20,7 +20,27 @@
 
 - (void)addBackView
 {
-    
+    if (!self.mapManager)
+    {
+        self.mapManager = [[YSMapManager alloc] init];
+        self.mapManager.mapView.frame = self.bounds;
+        
+        [self addSubview:self.mapManager.mapView];
+        [self sendSubviewToBack:self.mapManager.mapView];
+        
+        // 在地图上蒙上透明灰色
+        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
+        maskView.userInteractionEnabled = NO;
+        maskView.backgroundColor = RGBA(0, 0, 0, 0.3);
+        
+        [self insertSubview:maskView aboveSubview:self.mapManager.mapView];
+    }
+}
+
+- (void)setupLabelsAppearance
+{
+    UIImage *modeImage = [UIImage imageNamed:@"run_mode.png"];
+    [self.modeStatusView setModeIconWithImage:modeImage modeName:@"跑步模式"];
 }
 
 - (void)resetLayoutWithFrame:(CGRect)frame

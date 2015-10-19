@@ -37,6 +37,8 @@
 - (void)awakeFromNib
 {
     [self addTapGesture];
+    
+    self.modeLabel.font = [UIFont systemFontOfSize:18];
 }
 
 //- (id)initWithFrame:(CGRect)frame
@@ -90,7 +92,7 @@
 
 - (void)runningModeChange:(id)sender
 {
-    [self.delegate changeMode];
+    [self.delegate modeStatusChange];
 }
 
 - (void)setModeIconWithImage:(UIImage *)image modeName:(NSString *)name

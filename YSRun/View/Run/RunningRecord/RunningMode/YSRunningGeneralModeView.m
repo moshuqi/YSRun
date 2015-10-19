@@ -39,7 +39,21 @@
 
 - (void)addBackView
 {
-    
+    if (!self.backImageView)
+    {
+        UIImage *image = [UIImage imageNamed:@"backgound_image1"];
+        self.backImageView = [[UIImageView alloc] initWithImage:image];
+        self.backImageView.frame = self.bounds;
+        
+        [self addSubview:self.backImageView];
+        [self sendSubviewToBack:self.backImageView];
+    }
+}
+
+- (void)setupLabelsAppearance
+{
+    UIImage *modeImage = [UIImage imageNamed:@"map_mode.png"];
+    [self.modeStatusView setModeIconWithImage:modeImage modeName:@"地图模式"];
 }
 
 - (void)resetLayoutWithFrame:(CGRect)frame

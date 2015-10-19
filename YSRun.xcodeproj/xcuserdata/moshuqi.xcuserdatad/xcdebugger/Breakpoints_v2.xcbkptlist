@@ -90,12 +90,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "YSRun/View/Run/RunningRecord/YSRunningRecordViewController.m"
-            timestampString = "466936401.627384"
+            timestampString = "466938883.457107"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "-viewWillLayoutSubviews"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-changeMode"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -105,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSPulldownView.m"
-            timestampString = "466932096.945888"
+            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSRunningModeView.m"
+            timestampString = "466944591.026807"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-initSubviews"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "-resetButtonsPositionWithPauseStatus"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSRunningGeneralModeView.m"
-            timestampString = "466936401.627384"
+            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSRunningModeView.m"
+            timestampString = "466944716.904463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-setupButton:withColor:"
+            startingLineNumber = "219"
+            endingLineNumber = "219"
+            landmarkName = "-finishButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

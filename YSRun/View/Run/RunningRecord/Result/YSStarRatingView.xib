@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSStarRatingView">
+            <connections>
+                <outlet property="centerStar" destination="JjO-iu-N7t" id="tVO-ak-t5S"/>
+                <outlet property="leftStar" destination="5G1-5G-OMG" id="B7R-Si-VEn"/>
+                <outlet property="rightStar" destination="OgN-Xm-Wug" id="bJV-RH-zIq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="489" height="165"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-iu-N7t" userLabel="center">
+                    <rect key="frame" x="206.5" y="45" width="76" height="76"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="76" id="aMh-Ra-gr0"/>
+                        <constraint firstAttribute="width" constant="76" id="tmR-kc-arN"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OgN-Xm-Wug" userLabel="right">
+                    <rect key="frame" x="292.5" y="53" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="r9e-wY-hoh"/>
+                        <constraint firstAttribute="height" constant="60" id="yw3-2f-Xkr"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-5G-OMG" userLabel="left">
+                    <rect key="frame" x="136.5" y="53" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="Tb0-lk-vBc"/>
+                        <constraint firstAttribute="width" constant="60" id="zCK-rn-3vF"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5MP-8J-47H"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BiU-SN-7S3"/>
+                <constraint firstItem="5G1-5G-OMG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GyR-HK-bho"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="leading" secondItem="JjO-iu-N7t" secondAttribute="trailing" constant="10" id="QXA-7z-Evv"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aix-pb-Tyi"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="leading" secondItem="5G1-5G-OMG" secondAttribute="trailing" constant="10" id="b3a-4b-F7t"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="240.5" y="-11.5"/>
+        </view>
+    </objects>
+</document>

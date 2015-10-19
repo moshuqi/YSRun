@@ -10,7 +10,7 @@
 #import "YSRunningGeneralModeView.h"
 #import "YSRunningMapModeView.h"
 
-@interface YSRunningRecordViewController ()
+@interface YSRunningRecordViewController () <YSRunningModeViewDelegate>
 
 @property (nonatomic, strong) YSRunningGeneralModeView *runningGeneralModeView;
 @property (nonatomic, strong) YSRunningMapModeView *runningMapModeView;
@@ -24,11 +24,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    self.runningGeneralModeView = [[YSRunningGeneralModeView alloc] init];
-//    [self.view addSubview:self.runningGeneralModeView];
+    [self addModeView];
+}
+
+- (void)addModeView
+{
+    self.runningGeneralModeView = [[YSRunningGeneralModeView alloc] init];
+    self.runningGeneralModeView.delegate = self;
+    [self.view addSubview:self.runningGeneralModeView];
     
     self.runningMapModeView = [[YSRunningMapModeView alloc] init];
+    self.runningMapModeView.delegate = self;
     [self.view addSubview:self.runningMapModeView];
+    
+    self.currentModeView = self.runningGeneralModeView;
+    [self.view bringSubviewToFront:self.currentModeView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -44,6 +54,7 @@
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];
+    [self.runningGeneralModeView resetLayoutWithFrame:[self getModeViewFrame]];
     [self.runningMapModeView resetLayoutWithFrame:[self getModeViewFrame]];
 }
 
@@ -65,5 +76,38 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - YSRunningModeViewDelegate
+
+- (void)changeMode
+{
+    BOOL isPause = self.currentModeView.isPause;
+    if ([self.currentModeView isKindOfClass:[YSRunningGeneralModeView class]])
+    {
+        self.currentModeView = self.runningMapModeView;
+    }
+    else
+    {
+        self.currentModeView = self.runningGeneralModeView;
+    }
+    
+    self.currentModeView.isPause = isPause;
+    [self.currentModeView resetButtonsPositionWithPauseStatus];
+    [self.view bringSubviewToFront:self.currentModeView];
+}
+
+- (void)runningPause
+{
+    
+}
+
+- (void)runningContinue
+{
+    
+}
+
+- (void)runningFinish
+{
+    
+}
 
 @end
