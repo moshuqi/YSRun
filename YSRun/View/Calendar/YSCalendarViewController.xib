@@ -18,27 +18,39 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M0Z-zH-iRB" customClass="YSCalendarView">
-                    <rect key="frame" x="0.0" y="20" width="328" height="380"/>
+                    <rect key="frame" x="0.0" y="20" width="328" height="472"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="380" id="DrI-7a-L72"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="DrI-7a-L72"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unn-mf-1sk" customClass="YSTipView">
-                    <rect key="frame" x="0.0" y="420" width="328" height="152"/>
+                    <rect key="frame" x="0.0" y="522" width="328" height="120"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="120" id="9iW-gh-CkG"/>
                         <constraint firstAttribute="height" constant="152" id="Hw6-iQ-WvI"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="Hw6-iQ-WvI"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="M0Z-zH-iRB" secondAttribute="trailing" id="334-4v-4PI"/>
-                <constraint firstItem="unn-mf-1sk" firstAttribute="top" secondItem="M0Z-zH-iRB" secondAttribute="bottom" constant="20" id="3ZY-vg-6mU"/>
+                <constraint firstItem="unn-mf-1sk" firstAttribute="top" secondItem="M0Z-zH-iRB" secondAttribute="bottom" constant="30" id="3ZY-vg-6mU"/>
                 <constraint firstAttribute="trailing" secondItem="unn-mf-1sk" secondAttribute="trailing" id="7Av-T7-IOI"/>
                 <constraint firstItem="M0Z-zH-iRB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8FI-lf-rIe"/>
                 <constraint firstItem="M0Z-zH-iRB" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="BBF-2U-uZz"/>
+                <constraint firstAttribute="bottom" secondItem="unn-mf-1sk" secondAttribute="bottom" constant="96" id="J8G-k1-7rT"/>
                 <constraint firstItem="unn-mf-1sk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="L35-SS-EKB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
