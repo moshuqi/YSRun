@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSStarRatingView">
             <connections>
+                <outlet property="bgImageView" destination="TQe-dO-Ydf" id="nLu-Mg-OSR"/>
                 <outlet property="centerStar" destination="JjO-iu-N7t" id="tVO-ak-t5S"/>
                 <outlet property="leftStar" destination="5G1-5G-OMG" id="B7R-Si-VEn"/>
                 <outlet property="rightStar" destination="OgN-Xm-Wug" id="bJV-RH-zIq"/>
@@ -38,18 +39,28 @@
                         <constraint firstAttribute="width" constant="60" id="zCK-rn-3vF"/>
                     </constraints>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="TQe-dO-Ydf" userLabel="bg">
+                    <rect key="frame" x="0.0" y="0.0" width="489" height="165"/>
+                </imageView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="TQe-dO-Ydf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0bJ-UF-RDz"/>
+                <constraint firstAttribute="bottom" secondItem="TQe-dO-Ydf" secondAttribute="bottom" id="4m6-Q7-tYA"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5MP-8J-47H"/>
                 <constraint firstItem="OgN-Xm-Wug" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BiU-SN-7S3"/>
+                <constraint firstItem="TQe-dO-Ydf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GQo-uW-VGe"/>
                 <constraint firstItem="5G1-5G-OMG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GyR-HK-bho"/>
                 <constraint firstItem="OgN-Xm-Wug" firstAttribute="leading" secondItem="JjO-iu-N7t" secondAttribute="trailing" constant="10" id="QXA-7z-Evv"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aix-pb-Tyi"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="leading" secondItem="5G1-5G-OMG" secondAttribute="trailing" constant="10" id="b3a-4b-F7t"/>
+                <constraint firstAttribute="trailing" secondItem="TQe-dO-Ydf" secondAttribute="trailing" id="hsN-sY-Pt8"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="240.5" y="-11.5"/>
+            <point key="canvasLocation" x="196.5" y="19.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="star_bg.png" width="720" height="510"/>
+    </resources>
 </document>

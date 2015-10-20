@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UIImageView *centerStar;
 @property (nonatomic, weak) IBOutlet UIImageView *rightStar;
 
+@property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
+
 @end
 
 @implementation YSStarRatingView
@@ -29,6 +31,8 @@
         containerView.backgroundColor = [UIColor clearColor];
         
         [self addSubview:containerView];
+        
+        self.backgroundColor = [UIColor clearColor];
     }
     
     return self;
@@ -36,7 +40,14 @@
 
 - (void)awakeFromNib
 {
+    [self sendSubviewToBack:self.bgImageView];
     
+    UIImage *bigStar = [UIImage imageNamed:@"big_star.png"];
+    UIImage *smallStar = [UIImage imageNamed:@"small_star.png"];
+    
+    self.leftStar.image = smallStar;
+    self.centerStar.image = bigStar;
+    self.rightStar.image = smallStar;
 }
 
 - (void)setRattingLevel:(NSInteger)level

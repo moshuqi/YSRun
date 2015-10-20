@@ -9,6 +9,7 @@
 #import "YSRunningRecordViewController.h"
 #import "YSRunningGeneralModeView.h"
 #import "YSRunningMapModeView.h"
+#import "YSRunningResultViewController.h"
 
 @interface YSRunningRecordViewController () <YSRunningModeViewDelegate>
 
@@ -25,6 +26,8 @@
     // Do any additional setup after loading the view from its nib.
     
     [self addModeView];
+    
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)addModeView
@@ -107,7 +110,8 @@
 
 - (void)runningFinish
 {
-    
+    YSRunningResultViewController *resultViewController = [YSRunningResultViewController new];
+    [self.navigationController pushViewController:resultViewController animated:YES];
 }
 
 @end

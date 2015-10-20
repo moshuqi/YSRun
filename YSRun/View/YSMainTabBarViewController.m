@@ -53,9 +53,10 @@
     [self initRunViewController];
     [self initUserViewController];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:self.userViewController];
+    UINavigationController *runNav = [[UINavigationController alloc] initWithRootViewController:self.runViewController];
+    UINavigationController *userNav = [[UINavigationController alloc] initWithRootViewController:self.userViewController];
     
-    self.viewControllers = @[self.calendarViewController, self.runViewController, nav];
+    self.viewControllers = @[self.calendarViewController, runNav, userNav];
 }
 
 - (void)initCalendarViewController

@@ -217,6 +217,8 @@ const CGFloat kButtonWidth = 88;
 - (void)finishButtonClicked:(id)sender
 {
     // 完成
+    
+    [self.delegate runningFinish];
 }
 
 - (void)resetButtonsPositionWithPauseStatus

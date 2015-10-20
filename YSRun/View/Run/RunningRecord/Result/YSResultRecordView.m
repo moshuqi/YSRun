@@ -19,6 +19,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *effectLabel;
 @property (nonatomic, weak) IBOutlet YSTimeLabel *timeLabel;
 @property (nonatomic, weak) IBOutlet YSStarRatingView *starRattingView;
+@property (nonatomic, weak) IBOutlet UIImageView *bgImageView;
 
 @end
 
@@ -38,6 +39,11 @@
     }
     
     return self;
+}
+
+- (void)awakeFromNib
+{
+    
 }
 
 @end

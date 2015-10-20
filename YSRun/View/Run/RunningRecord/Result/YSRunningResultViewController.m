@@ -7,8 +7,18 @@
 //
 
 #import "YSRunningResultViewController.h"
+#import "YSResultRecordView.h"
+#import "YSAppMacro.h"
+#import "YSMapManager.h"
 
 @interface YSRunningResultViewController ()
+
+@property (nonatomic, weak) IBOutlet YSResultRecordView *resultRecordView;
+@property (nonatomic, weak) IBOutlet UIButton *returnButton;
+@property (nonatomic, weak) IBOutlet UIButton *shareButton;
+@property (nonatomic, weak) IBOutlet UIView *mapContentView;
+
+@property (nonatomic, strong) YSMapManager *mapManager;
 
 @end
 
@@ -17,6 +27,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self setupButtons];
+    
+    self.mapManager = [YSMapManager new];
+    [self.mapContentView addSubview:self.mapManager.mapView];
+    [self.mapContentView sendSubviewToBack:self.mapManager.mapView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,14 +40,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    
+    self.mapManager.mapView.frame = self.mapContentView.bounds;
 }
-*/
+
+- (void)setupButtons
+{
+    self.returnButton.backgroundColor = GreenBackgroundColor;
+    self.shareButton.backgroundColor = GreenBackgroundColor;
+}
+
+- (IBAction)returnButtonClicked:(id)sender
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)shareButtonClicked:(id)sender
+{
+    
+}
 
 @end

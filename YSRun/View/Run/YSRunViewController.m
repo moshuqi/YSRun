@@ -33,6 +33,7 @@
     self.methodTipView.backgroundColor = RGB(231, 231, 231);
     
     [self setupTipLabel];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,7 +61,8 @@
 - (IBAction)startRunning:(id)sender
 {
     YSRunningRecordViewController *runningRecordViewController = [YSRunningRecordViewController new];
-    [self presentViewController:runningRecordViewController animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:runningRecordViewController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

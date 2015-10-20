@@ -140,6 +140,7 @@
 		65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */; settings = {ASSET_TAGS = (); }; };
+		65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E7F72C1BD5D4E40050DA2A /* running_bg.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -357,6 +358,7 @@
 		65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮.png"; sourceTree = "<group>"; };
 		65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮按下.png"; sourceTree = "<group>"; };
 		65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页文字框.png"; sourceTree = "<group>"; };
+		65E7F72C1BD5D4E40050DA2A /* running_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running_bg.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -864,6 +866,7 @@
 		65ABA3C31BCF6CA000154E87 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				65E7F72C1BD5D4E40050DA2A /* running_bg.png */,
 				656CF7FD1BD50C3C00F2A759 /* big_half_star.png */,
 				656CF7FE1BD50C3C00F2A759 /* star_bg.png */,
 				656CF7FF1BD50C3C00F2A759 /* small_half_star.png */,
@@ -1057,6 +1060,7 @@
 				65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */,
 				656CF8061BD50C3C00F2A759 /* small_half_star.png in Resources */,
 				659619A51BD21C0A002110B9 /* login_password.png in Resources */,
+				65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */,
 				656CF8041BD50C3C00F2A759 /* big_half_star.png in Resources */,
 				65ABA3EA1BCF6CA000154E87 /* backgound_image1.png in Resources */,
 				65ABA3B41BCF528300154E87 /* YSRunViewController.xib in Resources */,
