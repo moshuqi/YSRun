@@ -54,6 +54,8 @@
 {
     UIImage *modeImage = [UIImage imageNamed:@"map_mode.png"];
     [self.modeStatusView setModeIconWithImage:modeImage modeName:@"地图模式"];
+    
+    [self.timeLabel setLabelFontSize:56];
 }
 
 - (void)resetLayoutWithFrame:(CGRect)frame

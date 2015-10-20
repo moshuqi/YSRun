@@ -13,6 +13,7 @@
 @interface YSRunningMapModeView ()
 
 @property (nonatomic, strong) YSMapManager *mapManager;
+@property (nonatomic, strong) UIButton *testButton;
 
 @end
 
@@ -35,12 +36,44 @@
         
         [self insertSubview:maskView aboveSubview:self.mapManager.mapView];
     }
+    
+    if (!self.testButton)
+    {
+        self.testButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        self.testButton.backgroundColor = GreenBackgroundColor;
+        [self.testButton setTitle:@"Duang!" forState:UIControlStateNormal];
+        [self.testButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        CGFloat w = 99;
+        CGFloat d = 20;
+        CGRect frame = CGRectMake((CGRectGetWidth(self.frame) - w - d), d, w, w);
+        
+        self.testButton.frame = frame;
+        self.testButton.layer.cornerRadius = w / 2;
+        [self addSubview:self.testButton];
+        
+        [self.testButton addTarget:self action:@selector(testFunc) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    if (![self.mapManager.OutputMessageLabel superview])
+    {
+        CGFloat height = 180;
+        CGRect frame = CGRectMake(0, (CGRectGetHeight(self.frame) - height) / 2, CGRectGetWidth(self.frame), height);
+        self.mapManager.OutputMessageLabel.frame = frame;
+        [self addSubview:self.mapManager.OutputMessageLabel];
+    }
+}
+
+- (void)testFunc
+{
+    [self.mapManager testRoute];
 }
 
 - (void)setupLabelsAppearance
 {
     UIImage *modeImage = [UIImage imageNamed:@"run_mode.png"];
     [self.modeStatusView setModeIconWithImage:modeImage modeName:@"跑步模式"];
+    
+    [self.timeLabel setLabelFontSize:30];
 }
 
 - (void)resetLayoutWithFrame:(CGRect)frame

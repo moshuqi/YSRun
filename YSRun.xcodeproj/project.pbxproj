@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		655812481BD6163E0094F07D /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 655812471BD6163E0094F07D /* app_icon.png */; settings = {ASSET_TAGS = (); }; };
+		6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6558124A1BD63B3D0094F07D /* YSTimeManager.m */; settings = {ASSET_TAGS = (); }; };
 		655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57091BCF7CEF00E9073E /* YSCalendarView.m */; settings = {ASSET_TAGS = (); }; };
 		655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C570D1BCF7DFF00E9073E /* YSCalendarTitleBarView.m */; settings = {ASSET_TAGS = (); }; };
 		655C57111BCF7E3300E9073E /* YSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57101BCF7E3300E9073E /* YSCalendarWeekdayView.m */; settings = {ASSET_TAGS = (); }; };
@@ -141,6 +143,8 @@
 		65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */; settings = {ASSET_TAGS = (); }; };
 		65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E7F72C1BD5D4E40050DA2A /* running_bg.png */; settings = {ASSET_TAGS = (); }; };
+		65E7F72F1BD5EF020050DA2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F72E1BD5EF020050DA2A /* UIKit.framework */; };
+		65E7F7311BD5EF0A0050DA2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F7301BD5EF0A0050DA2A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +165,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		655812471BD6163E0094F07D /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		655812491BD63B3D0094F07D /* YSTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTimeManager.h; sourceTree = "<group>"; };
+		6558124A1BD63B3D0094F07D /* YSTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeManager.m; sourceTree = "<group>"; };
 		655C57071BCF7B9A00E9073E /* YSAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSAppMacro.h; sourceTree = "<group>"; };
 		655C57081BCF7CEF00E9073E /* YSCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarView.h; sourceTree = "<group>"; };
 		655C57091BCF7CEF00E9073E /* YSCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarView.m; sourceTree = "<group>"; };
@@ -307,7 +314,7 @@
 		65A555CE1BD48AEA003306E7 /* YSTimeLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTimeLabel.xib; sourceTree = "<group>"; };
 		65A555D01BD49E3A003306E7 /* YSPulldownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPulldownView.h; sourceTree = "<group>"; };
 		65A555D11BD49E3A003306E7 /* YSPulldownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPulldownView.m; sourceTree = "<group>"; };
-		65ABA36B1BCF4EAC00154E87 /* YSRun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YSRun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65ABA36B1BCF4EAC00154E87 /* 易瘦跑步.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "易瘦跑步.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ABA36F1BCF4EAC00154E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65ABA3711BCF4EAC00154E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YSRun/AppDelegate.h; sourceTree = SOURCE_ROOT; };
 		65ABA3721BCF4EAC00154E87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = YSRun/AppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -359,6 +366,8 @@
 		65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮按下.png"; sourceTree = "<group>"; };
 		65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页文字框.png"; sourceTree = "<group>"; };
 		65E7F72C1BD5D4E40050DA2A /* running_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running_bg.png; sourceTree = "<group>"; };
+		65E7F72E1BD5EF020050DA2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		65E7F7301BD5EF0A0050DA2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,6 +375,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E7F7311BD5EF0A0050DA2A /* Foundation.framework in Frameworks */,
+				65E7F72F1BD5EF020050DA2A /* UIKit.framework in Frameworks */,
 				65744B4E1BD2810300A15EEE /* libsqlite3.tbd in Frameworks */,
 				65744B1C1BD27AC300A15EEE /* libc++.tbd in Frameworks */,
 				65744B1A1BD27AB400A15EEE /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -462,6 +473,8 @@
 			children = (
 				6560BF8C1BD3503F001ED125 /* YSMapManager.h */,
 				6560BF8D1BD3503F001ED125 /* YSMapManager.m */,
+				655812491BD63B3D0094F07D /* YSTimeManager.h */,
+				6558124A1BD63B3D0094F07D /* YSTimeManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -478,6 +491,8 @@
 		65744B1D1BD27B2200A15EEE /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				65E7F7301BD5EF0A0050DA2A /* Foundation.framework */,
+				65E7F72E1BD5EF020050DA2A /* UIKit.framework */,
 				65744B4D1BD2810300A15EEE /* libsqlite3.tbd */,
 				65744B1B1BD27AC300A15EEE /* libc++.tbd */,
 				65744B191BD27AB400A15EEE /* libstdc++.6.0.9.tbd */,
@@ -744,7 +759,7 @@
 		65ABA36C1BCF4EAC00154E87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65ABA36B1BCF4EAC00154E87 /* YSRun.app */,
+				65ABA36B1BCF4EAC00154E87 /* 易瘦跑步.app */,
 				65ABA3841BCF4EAC00154E87 /* YSRunTests.xctest */,
 				65ABA38F1BCF4EAC00154E87 /* YSRunUITests.xctest */,
 			);
@@ -866,6 +881,7 @@
 		65ABA3C31BCF6CA000154E87 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				655812471BD6163E0094F07D /* app_icon.png */,
 				65E7F72C1BD5D4E40050DA2A /* running_bg.png */,
 				656CF7FD1BD50C3C00F2A759 /* big_half_star.png */,
 				656CF7FE1BD50C3C00F2A759 /* star_bg.png */,
@@ -923,7 +939,7 @@
 			);
 			name = YSRun;
 			productName = YSRun;
-			productReference = 65ABA36B1BCF4EAC00154E87 /* YSRun.app */;
+			productReference = 65ABA36B1BCF4EAC00154E87 /* 易瘦跑步.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65ABA3831BCF4EAC00154E87 /* YSRunTests */ = {
@@ -974,6 +990,11 @@
 					65ABA36A1BCF4EAC00154E87 = {
 						CreatedOnToolsVersion = 7.0.1;
 						DevelopmentTeam = P58M7X6YB7;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					65ABA3831BCF4EAC00154E87 = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -1056,6 +1077,7 @@
 				65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */,
 				65744B061BD2794700A15EEE /* AMap.bundle in Resources */,
 				659619AE1BD22443002110B9 /* YSFindPasswordViewController.xib in Resources */,
+				655812481BD6163E0094F07D /* app_icon.png in Resources */,
 				65A555A71BD47CC2003306E7 /* YSRunningResultViewController.xib in Resources */,
 				65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */,
 				656CF8061BD50C3C00F2A759 /* small_half_star.png in Resources */,
@@ -1153,6 +1175,7 @@
 				65744B331BD27FF400A15EEE /* AFHTTPRequestOperation.m in Sources */,
 				657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */,
 				656CF7FA1BD508B100F2A759 /* YSStarRatingView.m in Sources */,
+				6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,
 				65A555A61BD47CC2003306E7 /* YSRunningResultViewController.m in Sources */,
 				655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */,
@@ -1293,8 +1316,10 @@
 				);
 				INFOPLIST_FILE = YSRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = msq.YSRun;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易瘦跑步";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1308,8 +1333,10 @@
 				);
 				INFOPLIST_FILE = YSRun/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = msq.YSRun;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "易瘦跑步";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

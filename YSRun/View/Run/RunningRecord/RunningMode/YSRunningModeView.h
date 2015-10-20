@@ -37,5 +37,6 @@
 
 - (void)resetLayoutWithFrame:(CGRect)frame;
 - (void)resetButtonsPositionWithPauseStatus;
+- (void)resetTimeLabelWithTime:(NSUInteger)time;
 
 @end

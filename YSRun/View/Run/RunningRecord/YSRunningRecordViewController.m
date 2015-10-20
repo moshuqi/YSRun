@@ -10,12 +10,14 @@
 #import "YSRunningGeneralModeView.h"
 #import "YSRunningMapModeView.h"
 #import "YSRunningResultViewController.h"
+#import "YSTimeManager.h"
 
-@interface YSRunningRecordViewController () <YSRunningModeViewDelegate>
+@interface YSRunningRecordViewController () <YSRunningModeViewDelegate, YSTimeManagerDelegate>
 
 @property (nonatomic, strong) YSRunningGeneralModeView *runningGeneralModeView;
 @property (nonatomic, strong) YSRunningMapModeView *runningMapModeView;
 @property (nonatomic, strong) YSRunningModeView *currentModeView;
+@property (nonatomic, strong) YSTimeManager *timeManager;
 
 @end
 
@@ -26,6 +28,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [self addModeView];
+    [self initTimeManager];
     
     self.navigationController.navigationBarHidden = YES;
 }
@@ -44,6 +47,12 @@
     [self.view bringSubviewToFront:self.currentModeView];
 }
 
+- (void)initTimeManager
+{
+    self.timeManager = [YSTimeManager new];
+    self.timeManager.delegate = self;
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -52,6 +61,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self.timeManager start];
 }
 
 - (void)viewWillLayoutSubviews
@@ -100,18 +111,26 @@
 
 - (void)runningPause
 {
-    
+    [self.timeManager pause];
 }
 
 - (void)runningContinue
 {
-    
+    [self.timeManager start];
 }
 
 - (void)runningFinish
 {
     YSRunningResultViewController *resultViewController = [YSRunningResultViewController new];
     [self.navigationController pushViewController:resultViewController animated:YES];
+}
+
+#pragma mark - YSTimeManagerDelegate
+
+- (void)tickWithAccumulatedTime:(NSUInteger)time
+{
+    [self.runningGeneralModeView resetTimeLabelWithTime:time];
+    [self.runningMapModeView resetTimeLabelWithTime:time];
 }
 
 @end

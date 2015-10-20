@@ -10,4 +10,7 @@
 
 @interface YSTimeLabel : UIView
 
+- (void)resetTimeLabelWithTotalSeconds:(NSUInteger)totalSeconds;
+- (void)setLabelFontSize:(CGFloat)fontSize;
+
 @end

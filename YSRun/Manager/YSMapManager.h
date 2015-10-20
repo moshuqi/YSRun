@@ -12,5 +12,8 @@
 @interface YSMapManager : NSObject
 
 @property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) UILabel *OutputMessageLabel;
+
+- (void)testRoute;
 
 @end

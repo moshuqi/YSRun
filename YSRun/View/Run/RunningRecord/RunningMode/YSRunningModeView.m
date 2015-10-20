@@ -197,12 +197,13 @@ const CGFloat kButtonWidth = 88;
 - (void)runningPause
 {
     // 跑步暂停
+    [self.delegate runningPause];
 }
 
 - (void)runningContinue
 {
     // 跑步继续
-    
+    [self.delegate runningContinue];
 }
 
 - (void)continueButtonClicked:(id)sender
@@ -235,6 +236,11 @@ const CGFloat kButtonWidth = 88;
         self.finishButton.frame = [self getFinishButtonDisappearFrame];
         self.pulldownView.frame = [self getPulldownViewFrame];
     }
+}
+
+- (void)resetTimeLabelWithTime:(NSUInteger)time
+{
+    [self.timeLabel resetTimeLabelWithTotalSeconds:time];
 }
 
 
