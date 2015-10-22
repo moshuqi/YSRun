@@ -142,6 +142,13 @@
 		65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */; settings = {ASSET_TAGS = (); }; };
+		65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF581BD7232600E8627C /* YSNetworkRequest.m */; settings = {ASSET_TAGS = (); }; };
+		65DFDF5F1BD79EC800E8627C /* YSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF5E1BD79EC800E8627C /* YSUserModel.m */; settings = {ASSET_TAGS = (); }; };
+		65DFDF631BD7AA5B00E8627C /* LFCGzipUtillity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */; settings = {ASSET_TAGS = (); }; };
+		65E135351BD87D51001DD824 /* YSUserRegisterInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135341BD87D51001DD824 /* YSUserRegisterInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		65E135381BD87EB7001DD824 /* YSModifyPasswordInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135371BD87EB7001DD824 /* YSModifyPasswordInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		65E1353B1BD88095001DD824 /* YSUserSetupInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1353A1BD88095001DD824 /* YSUserSetupInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		65E1353E1BD8820A001DD824 /* YSRunDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1353D1BD8820A001DD824 /* YSRunDataModel.m */; settings = {ASSET_TAGS = (); }; };
 		65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E7F72C1BD5D4E40050DA2A /* running_bg.png */; settings = {ASSET_TAGS = (); }; };
 		65E7F72F1BD5EF020050DA2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F72E1BD5EF020050DA2A /* UIKit.framework */; };
 		65E7F7311BD5EF0A0050DA2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F7301BD5EF0A0050DA2A /* Foundation.framework */; };
@@ -365,6 +372,20 @@
 		65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮.png"; sourceTree = "<group>"; };
 		65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮按下.png"; sourceTree = "<group>"; };
 		65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页文字框.png"; sourceTree = "<group>"; };
+		65DFDF571BD7232600E8627C /* YSNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNetworkRequest.h; sourceTree = "<group>"; };
+		65DFDF581BD7232600E8627C /* YSNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNetworkRequest.m; sourceTree = "<group>"; };
+		65DFDF5D1BD79EC800E8627C /* YSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserModel.h; sourceTree = "<group>"; };
+		65DFDF5E1BD79EC800E8627C /* YSUserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserModel.m; sourceTree = "<group>"; };
+		65DFDF611BD7AA5B00E8627C /* LFCGzipUtillity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFCGzipUtillity.h; sourceTree = "<group>"; };
+		65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFCGzipUtillity.m; sourceTree = "<group>"; };
+		65E135331BD87D51001DD824 /* YSUserRegisterInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserRegisterInfoModel.h; sourceTree = "<group>"; };
+		65E135341BD87D51001DD824 /* YSUserRegisterInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserRegisterInfoModel.m; sourceTree = "<group>"; };
+		65E135361BD87EB7001DD824 /* YSModifyPasswordInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModifyPasswordInfoModel.h; sourceTree = "<group>"; };
+		65E135371BD87EB7001DD824 /* YSModifyPasswordInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSModifyPasswordInfoModel.m; sourceTree = "<group>"; };
+		65E135391BD88095001DD824 /* YSUserSetupInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserSetupInfoModel.h; sourceTree = "<group>"; };
+		65E1353A1BD88095001DD824 /* YSUserSetupInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserSetupInfoModel.m; sourceTree = "<group>"; };
+		65E1353C1BD8820A001DD824 /* YSRunDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunDataModel.h; sourceTree = "<group>"; };
+		65E1353D1BD8820A001DD824 /* YSRunDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunDataModel.m; sourceTree = "<group>"; };
 		65E7F72C1BD5D4E40050DA2A /* running_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running_bg.png; sourceTree = "<group>"; };
 		65E7F72E1BD5EF020050DA2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E7F7301BD5EF0A0050DA2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -454,6 +475,16 @@
 				655C57221BCF93B100E9073E /* YSDayCellModel.m */,
 				657698D01BD0EBF10015B446 /* YSUserInfoModel.h */,
 				657698D11BD0EBF10015B446 /* YSUserInfoModel.m */,
+				65DFDF5D1BD79EC800E8627C /* YSUserModel.h */,
+				65DFDF5E1BD79EC800E8627C /* YSUserModel.m */,
+				65E135331BD87D51001DD824 /* YSUserRegisterInfoModel.h */,
+				65E135341BD87D51001DD824 /* YSUserRegisterInfoModel.m */,
+				65E135361BD87EB7001DD824 /* YSModifyPasswordInfoModel.h */,
+				65E135371BD87EB7001DD824 /* YSModifyPasswordInfoModel.m */,
+				65E135391BD88095001DD824 /* YSUserSetupInfoModel.h */,
+				65E1353A1BD88095001DD824 /* YSUserSetupInfoModel.m */,
+				65E1353C1BD8820A001DD824 /* YSRunDataModel.h */,
+				65E1353D1BD8820A001DD824 /* YSRunDataModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -482,6 +513,7 @@
 		65744AF91BD2744000A15EEE /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				65DFDF601BD7AA5B00E8627C /* Zip */,
 				65744B3C1BD280B200A15EEE /* FMDB */,
 				65744B1E1BD27FA700A15EEE /* AFNetworking */,
 			);
@@ -769,6 +801,8 @@
 		65ABA36D1BCF4EAC00154E87 /* YSRun */ = {
 			isa = PBXGroup;
 			children = (
+				65DFDF551BD722F800E8627C /* Database */,
+				65DFDF561BD722F800E8627C /* Network */,
 				65744AF91BD2744000A15EEE /* Vendors */,
 				65744AF81BD2741900A15EEE /* Manager */,
 				655C57201BCF934500E9073E /* Models */,
@@ -920,6 +954,31 @@
 				65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		65DFDF551BD722F800E8627C /* Database */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		65DFDF561BD722F800E8627C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				65DFDF571BD7232600E8627C /* YSNetworkRequest.h */,
+				65DFDF581BD7232600E8627C /* YSNetworkRequest.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		65DFDF601BD7AA5B00E8627C /* Zip */ = {
+			isa = PBXGroup;
+			children = (
+				65DFDF611BD7AA5B00E8627C /* LFCGzipUtillity.h */,
+				65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */,
+			);
+			path = Zip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1129,14 +1188,17 @@
 				655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */,
 				6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */,
 				657698AF1BD08F900015B446 /* YSCicularProgressView.m in Sources */,
+				65DFDF631BD7AA5B00E8627C /* LFCGzipUtillity.m in Sources */,
 				65744B381BD27FF400A15EEE /* AFURLConnectionOperation.m in Sources */,
 				65ABA3B81BCF529300154E87 /* YSUserViewController.m in Sources */,
+				65DFDF5F1BD79EC800E8627C /* YSUserModel.m in Sources */,
 				655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */,
 				657698CC1BD09D900015B446 /* YSTipCell.m in Sources */,
 				65A555C81BD48246003306E7 /* YSRunningModeStatusView.m in Sources */,
 				657698E31BD0F2D90015B446 /* YSUserNoLoginView.m in Sources */,
 				65744B491BD280B200A15EEE /* FMDatabaseAdditions.m in Sources */,
 				65A555A81BD47CC2003306E7 /* YSRunningRecordViewController.m in Sources */,
+				65E135351BD87D51001DD824 /* YSUserRegisterInfoModel.m in Sources */,
 				657698C61BD09C210015B446 /* YSTipView.m in Sources */,
 				65A555B61BD47E11003306E7 /* YSRunningMapModeView.m in Sources */,
 				659619951BD1E456002110B9 /* YSNavigationBarView.m in Sources */,
@@ -1149,6 +1211,7 @@
 				657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */,
 				65A555C11BD47F51003306E7 /* YSTimeLabel.m in Sources */,
 				65ABA3BD1BCF56FC00154E87 /* YSMainTabBarViewController.m in Sources */,
+				65E1353B1BD88095001DD824 /* YSUserSetupInfoModel.m in Sources */,
 				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
 				657698D21BD0EBF10015B446 /* YSUserInfoModel.m in Sources */,
@@ -1176,7 +1239,10 @@
 				657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */,
 				656CF7FA1BD508B100F2A759 /* YSStarRatingView.m in Sources */,
 				6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */,
+				65E1353E1BD8820A001DD824 /* YSRunDataModel.m in Sources */,
+				65E135381BD87EB7001DD824 /* YSModifyPasswordInfoModel.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,
+				65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */,
 				65A555A61BD47CC2003306E7 /* YSRunningResultViewController.m in Sources */,
 				655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */,
 				65744B4B1BD280B200A15EEE /* FMDatabaseQueue.m in Sources */,

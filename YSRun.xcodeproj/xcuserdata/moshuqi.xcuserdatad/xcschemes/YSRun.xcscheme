@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65ABA36A1BCF4EAC00154E87"
-               BuildableName = "YSRun.app"
+               BuildableName = "&#x6613;&#x7626;&#x8dd1;&#x6b65;.app"
                BlueprintName = "YSRun"
                ReferencedContainer = "container:YSRun.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65ABA36A1BCF4EAC00154E87"
-            BuildableName = "YSRun.app"
+            BuildableName = "&#x6613;&#x7626;&#x8dd1;&#x6b65;.app"
             BlueprintName = "YSRun"
             ReferencedContainer = "container:YSRun.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65ABA36A1BCF4EAC00154E87"
-            BuildableName = "YSRun.app"
+            BuildableName = "&#x6613;&#x7626;&#x8dd1;&#x6b65;.app"
             BlueprintName = "YSRun"
             ReferencedContainer = "container:YSRun.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65ABA36A1BCF4EAC00154E87"
-            BuildableName = "YSRun.app"
+            BuildableName = "&#x6613;&#x7626;&#x8dd1;&#x6b65;.app"
             BlueprintName = "YSRun"
             ReferencedContainer = "container:YSRun.xcodeproj">
          </BuildableReference>

@@ -67,13 +67,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YSRun/View/Run/YSRunViewController.m"
-            timestampString = "467030497.945514"
+            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSRunningModeView.m"
+            timestampString = "467030728.34817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-startRunning:"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "-resetTimeLabelWithTime:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -83,13 +83,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "YSRun/View/Run/RunningRecord/RunningMode/YSRunningModeView.m"
-            timestampString = "467030728.34817"
+            filePath = "YSRun/Network/YSNetworkRequest.m"
+            timestampString = "467178319.900469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "243"
-            endingLineNumber = "243"
-            landmarkName = "-resetTimeLabelWithTime:"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "-acquireCaptchaRequestSucessWithOperation:responseObject:delegate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YSRun/Network/YSNetworkRequest.m"
+            timestampString = "467178319.900469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-requestFailureWithError:delegate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YSRun/Network/YSNetworkRequest.m"
+            timestampString = "467178319.900469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "-checkCaptchaRequestSucessWithOperation:responseObject:delegate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "YSRun/Network/YSNetworkRequest.m"
+            timestampString = "467178319.900469"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "-userLoginRequestSucessWithOperation:responseObject:delegate:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

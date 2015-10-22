@@ -1,0 +1,45 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++3873A6E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++589CD53" : {
+
+    },
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++482+++0D3693F" : {
+
+    },
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++3873A6E" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++589CD53" : 0,
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++482+++0D3693F" : 0,
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++3873A6E" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "95FA4EDF-4D2E-4187-89DC-25B1CDB8BD63",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++589CD53" : "YSRun\/",
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++482+++0D3693F" : "",
+    "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++3873A6E" : "YSRun\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "YSRun",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "YSRun.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/115.159.5.157",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e9f9644f-e1ec-49cb-8633-c68faf9716c7++482+++0D3693F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/115.159.5.157",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++3873A6E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.oschina.net:moshuqi\/YSRun.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "e9f9644f-e1ec-49cb-8633-c68faf9716c7++6152+++589CD53"
+    }
+  ]
+}

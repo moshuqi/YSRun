@@ -128,6 +128,7 @@ const static NSString *APIKey = @"45e4efb100710051075252c2407f9402";
     // 距离为米
     CLLocationDistance distance = MAMetersBetweenMapPoints(point1,point2);
     return distance;
+    
 }
 
 - (CGFloat)getTotalRunningDistance
