@@ -60,6 +60,11 @@ static const NSString *Host = @"http://mp.yspaobu.com/Api/webserver";
     return self;
 }
 
+- (void)test
+{
+    [self acquireCaptchaWithPhoneNumber:@"13192222130" delegate:nil];
+}
+
 #pragma mark - networking request
 
 - (void)requestFailureWithError:(NSError *)error delegate:(id<YSNetworkRequestDelegate>)delegate
@@ -163,6 +168,10 @@ static const NSString *Host = @"http://mp.yspaobu.com/Api/webserver";
         
         switch (result)
         {
+            case 0:
+                [self.delegate captchaInvalid];
+                break;
+                
             case 1:
                 [delegate captchaCorrect];
                 break;

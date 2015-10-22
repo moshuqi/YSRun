@@ -9,7 +9,6 @@
 #import "YSRunViewController.h"
 #import "YSAppMacro.h"
 #import "YSRunningRecordViewController.h"
-#import "YSNetworkRequest.h"
 
 @interface YSRunViewController ()
 
@@ -61,20 +60,9 @@
 
 - (IBAction)startRunning:(id)sender
 {
-    YSNetworkRequest *networkRequest = [YSNetworkRequest shareNetworkRequest];
-//    [networkRequest acquireCaptchaWithPhoneNumber:@"13192222130" delegate:nil];
-    
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
-//        [networkRequest checkCaptcha:@"s8vtd8" phoneNumber:@"13192222130" delegate:nil];
-//    });
-    
-    
-    [networkRequest userLoginWithAccount:@"13192222130" password:@"123456qqq" delegate:nil];
-//    [networkRequest networkTest];
-    
-//    YSRunningRecordViewController *runningRecordViewController = [YSRunningRecordViewController new];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:runningRecordViewController];
-//    [self presentViewController:nav animated:YES completion:nil];
+    YSRunningRecordViewController *runningRecordViewController = [YSRunningRecordViewController new];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:runningRecordViewController];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 @end

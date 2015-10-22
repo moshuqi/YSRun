@@ -12,14 +12,18 @@
 #import "YSFindPasswordViewController.h"
 #import "YSAppMacro.h"
 #import "YSTextFieldTableView.h"
+#import "YSNetworkManager.h"
+#import "YSTipLabelHUD.h"
 
-@interface YSLoginViewController ()
+@interface YSLoginViewController () <YSNetworkManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 @property (nonatomic, weak) IBOutlet UIButton *registerButton;
 @property (nonatomic, weak) IBOutlet UIButton *forgetPasswordButton;
 @property (nonatomic, weak) IBOutlet YSTextFieldTableView *textFieldTable;
+
+@property (nonatomic, strong) YSNetworkManager *networkManager;
 
 @end
 
@@ -32,6 +36,9 @@
     [self.navigationBarView setupWithTitle:@"登 录" target:self action:@selector(loginViewBack)];
     
     [self setupButtons];
+    
+    self.networkManager = [YSNetworkManager new];
+    self.networkManager.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -79,7 +86,18 @@
 
 - (IBAction)loginButtonClicked:(id)sender
 {
+    NSString *account = [self.textFieldTable firstText];
+    NSString *password = [self.textFieldTable secondText];
     
+    if (([account length] < 1) || ([password length] < 1))
+    {
+        NSString *type = ([account length] < 1) ? @"用户名" : @"密码";
+        NSString *tip = [NSString stringWithFormat:@"请输入%@", type];
+        [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:tip];
+        return;
+    }
+    
+    [self.networkManager loginWithAccount:account password:password];
 }
 
 - (IBAction)registerButtonClicked:(id)sender
@@ -95,7 +113,17 @@
 }
 
 
+#pragma mark - YSNetworkManagerDelegate
 
+- (void)loginSuccessWithResponseUserModel:(YSUserModel *)userModel
+{
+    
+}
+
+- (void)loginFailure
+{
+    
+}
 
 
 

@@ -149,6 +149,9 @@
 		65E135381BD87EB7001DD824 /* YSModifyPasswordInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135371BD87EB7001DD824 /* YSModifyPasswordInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		65E1353B1BD88095001DD824 /* YSUserSetupInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1353A1BD88095001DD824 /* YSUserSetupInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		65E1353E1BD8820A001DD824 /* YSRunDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1353D1BD8820A001DD824 /* YSRunDataModel.m */; settings = {ASSET_TAGS = (); }; };
+		65E135411BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135401BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m */; settings = {ASSET_TAGS = (); }; };
+		65E135501BD8D249001DD824 /* YSTipLabelHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E1354F1BD8D249001DD824 /* YSTipLabelHUD.m */; settings = {ASSET_TAGS = (); }; };
+		65E135531BD8DCCC001DD824 /* YSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135521BD8DCCC001DD824 /* YSNetworkManager.m */; settings = {ASSET_TAGS = (); }; };
 		65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E7F72C1BD5D4E40050DA2A /* running_bg.png */; settings = {ASSET_TAGS = (); }; };
 		65E7F72F1BD5EF020050DA2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F72E1BD5EF020050DA2A /* UIKit.framework */; };
 		65E7F7311BD5EF0A0050DA2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F7301BD5EF0A0050DA2A /* Foundation.framework */; };
@@ -386,6 +389,12 @@
 		65E1353A1BD88095001DD824 /* YSUserSetupInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserSetupInfoModel.m; sourceTree = "<group>"; };
 		65E1353C1BD8820A001DD824 /* YSRunDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunDataModel.h; sourceTree = "<group>"; };
 		65E1353D1BD8820A001DD824 /* YSRunDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunDataModel.m; sourceTree = "<group>"; };
+		65E1353F1BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhoneTextFieldLimitDelegate.h; sourceTree = "<group>"; };
+		65E135401BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhoneTextFieldLimitDelegate.m; sourceTree = "<group>"; };
+		65E1354E1BD8D249001DD824 /* YSTipLabelHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTipLabelHUD.h; sourceTree = "<group>"; };
+		65E1354F1BD8D249001DD824 /* YSTipLabelHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTipLabelHUD.m; sourceTree = "<group>"; };
+		65E135511BD8DCCC001DD824 /* YSNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNetworkManager.h; sourceTree = "<group>"; };
+		65E135521BD8DCCC001DD824 /* YSNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNetworkManager.m; sourceTree = "<group>"; };
 		65E7F72C1BD5D4E40050DA2A /* running_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running_bg.png; sourceTree = "<group>"; };
 		65E7F72E1BD5EF020050DA2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E7F7301BD5EF0A0050DA2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -596,6 +605,8 @@
 				657698991BD08D920015B446 /* YSLoginViewController.h */,
 				6576989A1BD08D920015B446 /* YSLoginViewController.m */,
 				6576989B1BD08D920015B446 /* YSLoginViewController.xib */,
+				65E1353F1BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.h */,
+				65E135401BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -692,6 +703,7 @@
 		659619981BD1F7D6002110B9 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				65E1354D1BD8D249001DD824 /* TipLabelHUD */,
 				65A555C21BD480B9003306E7 /* SubscriptLabel */,
 				65A555BE1BD47F32003306E7 /* TimeLabel */,
 				65A555B81BD47EDC003306E7 /* TextFieldTable */,
@@ -968,6 +980,8 @@
 			children = (
 				65DFDF571BD7232600E8627C /* YSNetworkRequest.h */,
 				65DFDF581BD7232600E8627C /* YSNetworkRequest.m */,
+				65E135511BD8DCCC001DD824 /* YSNetworkManager.h */,
+				65E135521BD8DCCC001DD824 /* YSNetworkManager.m */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -979,6 +993,15 @@
 				65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */,
 			);
 			path = Zip;
+			sourceTree = "<group>";
+		};
+		65E1354D1BD8D249001DD824 /* TipLabelHUD */ = {
+			isa = PBXGroup;
+			children = (
+				65E1354E1BD8D249001DD824 /* YSTipLabelHUD.h */,
+				65E1354F1BD8D249001DD824 /* YSTipLabelHUD.m */,
+			);
+			path = TipLabelHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1188,6 +1211,7 @@
 				655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */,
 				6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */,
 				657698AF1BD08F900015B446 /* YSCicularProgressView.m in Sources */,
+				65E135501BD8D249001DD824 /* YSTipLabelHUD.m in Sources */,
 				65DFDF631BD7AA5B00E8627C /* LFCGzipUtillity.m in Sources */,
 				65744B381BD27FF400A15EEE /* AFURLConnectionOperation.m in Sources */,
 				65ABA3B81BCF529300154E87 /* YSUserViewController.m in Sources */,
@@ -1216,6 +1240,7 @@
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
 				657698D21BD0EBF10015B446 /* YSUserInfoModel.m in Sources */,
 				65744B481BD280B200A15EEE /* FMDatabase.m in Sources */,
+				65E135411BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m in Sources */,
 				65744B4A1BD280B200A15EEE /* FMDatabasePool.m in Sources */,
 				6560BF8E1BD3503F001ED125 /* YSMapManager.m in Sources */,
 				65744B371BD27FF400A15EEE /* AFSecurityPolicy.m in Sources */,
@@ -1238,6 +1263,7 @@
 				65744B331BD27FF400A15EEE /* AFHTTPRequestOperation.m in Sources */,
 				657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */,
 				656CF7FA1BD508B100F2A759 /* YSStarRatingView.m in Sources */,
+				65E135531BD8DCCC001DD824 /* YSNetworkManager.m in Sources */,
 				6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */,
 				65E1353E1BD8820A001DD824 /* YSRunDataModel.m in Sources */,
 				65E135381BD87EB7001DD824 /* YSModifyPasswordInfoModel.m in Sources */,

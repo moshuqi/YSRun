@@ -26,6 +26,7 @@
 - (void)captchaCorrect;
 - (void)captchaWrong;
 - (void)captchaOvertime;    // 验证码30分钟超时
+- (void)captchaInvalid;
 
 // 用户注册
 - (void)userRegisterSuccess;
@@ -52,6 +53,8 @@
 
 @interface YSNetworkRequest : NSObject
 
+@property (nonatomic, weak) id<YSNetworkRequestDelegate> delegate;
+
 + (instancetype)shareNetworkRequest;
 
 - (void)acquireCaptchaWithPhoneNumber:(NSString *)phoneNumber delegate:(id<YSNetworkRequestDelegate>)delegate;
@@ -64,5 +67,7 @@
 - (void)getUserInfoWithUserID:(NSInteger)uid delegate:(id<YSNetworkRequestDelegate>)delegate;
 - (void)uploadRunData:(YSRunDataModel *)runData delegate:(id<YSNetworkRequestDelegate>)delegate;
 - (void)uploadHeadImage:(UIImage *)headImage account:(NSString *)account delegate:(id<YSNetworkRequestDelegate>)delegate;
+
+- (void)test;
 
 @end

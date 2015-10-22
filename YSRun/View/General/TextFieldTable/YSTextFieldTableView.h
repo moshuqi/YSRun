@@ -8,7 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YSTextFieldTableViewDelegate <NSObject>
+
+- (void)sendCaptchaWithPhoneNumber:(NSString *)phoneNumber;
+
+@end
+
+
 @interface YSTextFieldTableView : UIView
+
+@property (nonatomic, weak) id<YSTextFieldTableViewDelegate> delegate;
 
 - (void)setupFirstTextFieldWithPlaceholder:(NSString *)placeholder
                                   leftView:(UIView *)leftView
@@ -20,5 +29,10 @@
 - (UIView *)getFirstTextFieldLeftView;
 - (UIView *)getSecondTextFieldLeftView;
 - (UIView *)getCaptchaButtonView;
+
+- (void)setFirstTextFieldDelegate:(id<UITextFieldDelegate>)delegate;
+
+- (NSString *)firstText;
+- (NSString *)secondText;
 
 @end

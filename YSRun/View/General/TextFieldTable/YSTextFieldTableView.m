@@ -135,6 +135,24 @@
 - (void)captchaButtonClicked:(id)sender
 {
     // 发送手机短信验证码
+    
+    NSString *phoneNumber = self.firstTextField.text;
+    [self.delegate sendCaptchaWithPhoneNumber:phoneNumber];
+}
+
+- (void)setFirstTextFieldDelegate:(id<UITextFieldDelegate>)delegate
+{
+    self.firstTextField.delegate = delegate;
+}
+
+- (NSString *)firstText
+{
+    return self.firstTextField.text;
+}
+
+- (NSString *)secondText
+{
+    return self.secondTextField.text;
 }
 
 @end
