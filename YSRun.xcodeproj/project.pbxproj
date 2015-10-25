@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		654F21131BDA2B86002F0A4B /* YSUserInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F21121BDA2B86002F0A4B /* YSUserInfoManager.m */; settings = {ASSET_TAGS = (); }; };
+		654F211B1BDA3B01002F0A4B /* YSUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		654F211E1BDA3D10002F0A4B /* YSRunInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F211D1BDA3D10002F0A4B /* YSRunInfoModel.m */; settings = {ASSET_TAGS = (); }; };
+		654F21211BDA44F4002F0A4B /* YSCountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F21201BDA44F4002F0A4B /* YSCountdownView.m */; settings = {ASSET_TAGS = (); }; };
 		655812481BD6163E0094F07D /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 655812471BD6163E0094F07D /* app_icon.png */; settings = {ASSET_TAGS = (); }; };
 		6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6558124A1BD63B3D0094F07D /* YSTimeManager.m */; settings = {ASSET_TAGS = (); }; };
 		655C570A1BCF7CEF00E9073E /* YSCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57091BCF7CEF00E9073E /* YSCalendarView.m */; settings = {ASSET_TAGS = (); }; };
@@ -70,7 +74,6 @@
 		657698CC1BD09D900015B446 /* YSTipCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698CA1BD09D900015B446 /* YSTipCell.m */; settings = {ASSET_TAGS = (); }; };
 		657698CD1BD09D900015B446 /* YSTipCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657698CB1BD09D900015B446 /* YSTipCell.xib */; settings = {ASSET_TAGS = (); }; };
 		657698CF1BD0D4180015B446 /* YSUserLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657698CE1BD0D4180015B446 /* YSUserLevelView.xib */; settings = {ASSET_TAGS = (); }; };
-		657698D21BD0EBF10015B446 /* YSUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698D11BD0EBF10015B446 /* YSUserInfoModel.m */; settings = {ASSET_TAGS = (); }; };
 		657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698DF1BD0F2C60015B446 /* YSUserSettingView.m */; settings = {ASSET_TAGS = (); }; };
 		657698E31BD0F2D90015B446 /* YSUserNoLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 657698E21BD0F2D90015B446 /* YSUserNoLoginView.m */; settings = {ASSET_TAGS = (); }; };
 		657698E51BD0F3690015B446 /* YSUserSettingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657698E41BD0F3690015B446 /* YSUserSettingView.xib */; settings = {ASSET_TAGS = (); }; };
@@ -142,6 +145,8 @@
 		65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */; settings = {ASSET_TAGS = (); }; };
 		65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */; settings = {ASSET_TAGS = (); }; };
+		65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */; settings = {ASSET_TAGS = (); }; };
+		65DB44711BDA07CB004932E2 /* YSDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */; settings = {ASSET_TAGS = (); }; };
 		65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF581BD7232600E8627C /* YSNetworkRequest.m */; settings = {ASSET_TAGS = (); }; };
 		65DFDF5F1BD79EC800E8627C /* YSUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF5E1BD79EC800E8627C /* YSUserModel.m */; settings = {ASSET_TAGS = (); }; };
 		65DFDF631BD7AA5B00E8627C /* LFCGzipUtillity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */; settings = {ASSET_TAGS = (); }; };
@@ -175,6 +180,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		654F21111BDA2B86002F0A4B /* YSUserInfoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoManager.h; sourceTree = "<group>"; };
+		654F21121BDA2B86002F0A4B /* YSUserInfoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoManager.m; sourceTree = "<group>"; };
+		654F21191BDA3B01002F0A4B /* YSUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoModel.h; sourceTree = "<group>"; };
+		654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoModel.m; sourceTree = "<group>"; };
+		654F211C1BDA3D10002F0A4B /* YSRunInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunInfoModel.h; sourceTree = "<group>"; };
+		654F211D1BDA3D10002F0A4B /* YSRunInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunInfoModel.m; sourceTree = "<group>"; };
+		654F211F1BDA44F4002F0A4B /* YSCountdownView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCountdownView.h; sourceTree = "<group>"; };
+		654F21201BDA44F4002F0A4B /* YSCountdownView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCountdownView.m; sourceTree = "<group>"; };
 		655812471BD6163E0094F07D /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
 		655812491BD63B3D0094F07D /* YSTimeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTimeManager.h; sourceTree = "<group>"; };
 		6558124A1BD63B3D0094F07D /* YSTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeManager.m; sourceTree = "<group>"; };
@@ -273,8 +286,6 @@
 		657698CA1BD09D900015B446 /* YSTipCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTipCell.m; sourceTree = "<group>"; };
 		657698CB1BD09D900015B446 /* YSTipCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSTipCell.xib; sourceTree = "<group>"; };
 		657698CE1BD0D4180015B446 /* YSUserLevelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSUserLevelView.xib; sourceTree = "<group>"; };
-		657698D01BD0EBF10015B446 /* YSUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoModel.h; sourceTree = "<group>"; };
-		657698D11BD0EBF10015B446 /* YSUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoModel.m; sourceTree = "<group>"; };
 		657698DE1BD0F2C60015B446 /* YSUserSettingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserSettingView.h; sourceTree = "<group>"; };
 		657698DF1BD0F2C60015B446 /* YSUserSettingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserSettingView.m; sourceTree = "<group>"; };
 		657698E11BD0F2D90015B446 /* YSUserNoLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserNoLoginView.h; sourceTree = "<group>"; };
@@ -375,6 +386,10 @@
 		65ABA3DB1BCF6CA000154E87 /* 透明按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮.png"; sourceTree = "<group>"; };
 		65ABA3DC1BCF6CA000154E87 /* 透明按钮按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "透明按钮按下.png"; sourceTree = "<group>"; };
 		65ABA3DD1BCF6CA000154E87 /* 首页文字框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页文字框.png"; sourceTree = "<group>"; };
+		65DB446C1BD9E081004932E2 /* YSDatabaseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseHandle.h; sourceTree = "<group>"; };
+		65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseHandle.m; sourceTree = "<group>"; };
+		65DB446F1BDA07CB004932E2 /* YSDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseManager.h; sourceTree = "<group>"; };
+		65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseManager.m; sourceTree = "<group>"; };
 		65DFDF571BD7232600E8627C /* YSNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNetworkRequest.h; sourceTree = "<group>"; };
 		65DFDF581BD7232600E8627C /* YSNetworkRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNetworkRequest.m; sourceTree = "<group>"; };
 		65DFDF5D1BD79EC800E8627C /* YSUserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserModel.h; sourceTree = "<group>"; };
@@ -438,6 +453,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		654F21171BDA3A3F002F0A4B /* NetworkModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkModels;
+			sourceTree = "<group>";
+		};
+		654F21181BDA3A3F002F0A4B /* UIModels */ = {
+			isa = PBXGroup;
+			children = (
+				654F21191BDA3B01002F0A4B /* YSUserInfoModel.h */,
+				654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */,
+				654F211C1BDA3D10002F0A4B /* YSRunInfoModel.h */,
+				654F211D1BDA3D10002F0A4B /* YSRunInfoModel.m */,
+			);
+			path = UIModels;
+			sourceTree = "<group>";
+		};
 		655C57051BCF7A4B00E9073E /* CalendarView */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,10 +513,10 @@
 		655C57201BCF934500E9073E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				654F21171BDA3A3F002F0A4B /* NetworkModels */,
+				654F21181BDA3A3F002F0A4B /* UIModels */,
 				655C57211BCF93B100E9073E /* YSDayCellModel.h */,
 				655C57221BCF93B100E9073E /* YSDayCellModel.m */,
-				657698D01BD0EBF10015B446 /* YSUserInfoModel.h */,
-				657698D11BD0EBF10015B446 /* YSUserInfoModel.m */,
 				65DFDF5D1BD79EC800E8627C /* YSUserModel.h */,
 				65DFDF5E1BD79EC800E8627C /* YSUserModel.m */,
 				65E135331BD87D51001DD824 /* YSUserRegisterInfoModel.h */,
@@ -515,6 +548,8 @@
 				6560BF8D1BD3503F001ED125 /* YSMapManager.m */,
 				655812491BD63B3D0094F07D /* YSTimeManager.h */,
 				6558124A1BD63B3D0094F07D /* YSTimeManager.m */,
+				654F21111BDA2B86002F0A4B /* YSUserInfoManager.h */,
+				654F21121BDA2B86002F0A4B /* YSUserInfoManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -719,6 +754,8 @@
 				65A555A21BD47CC2003306E7 /* YSRunningRecordViewController.h */,
 				65A555A31BD47CC2003306E7 /* YSRunningRecordViewController.m */,
 				65A555A41BD47CC2003306E7 /* YSRunningRecordViewController.xib */,
+				654F211F1BDA44F4002F0A4B /* YSCountdownView.h */,
+				654F21201BDA44F4002F0A4B /* YSCountdownView.m */,
 			);
 			path = RunningRecord;
 			sourceTree = "<group>";
@@ -971,6 +1008,10 @@
 		65DFDF551BD722F800E8627C /* Database */ = {
 			isa = PBXGroup;
 			children = (
+				65DB446C1BD9E081004932E2 /* YSDatabaseHandle.h */,
+				65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */,
+				65DB446F1BDA07CB004932E2 /* YSDatabaseManager.h */,
+				65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -1236,13 +1277,14 @@
 				65A555C11BD47F51003306E7 /* YSTimeLabel.m in Sources */,
 				65ABA3BD1BCF56FC00154E87 /* YSMainTabBarViewController.m in Sources */,
 				65E1353B1BD88095001DD824 /* YSUserSetupInfoModel.m in Sources */,
+				654F211B1BDA3B01002F0A4B /* YSUserInfoModel.m in Sources */,
 				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
-				657698D21BD0EBF10015B446 /* YSUserInfoModel.m in Sources */,
 				65744B481BD280B200A15EEE /* FMDatabase.m in Sources */,
 				65E135411BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m in Sources */,
 				65744B4A1BD280B200A15EEE /* FMDatabasePool.m in Sources */,
 				6560BF8E1BD3503F001ED125 /* YSMapManager.m in Sources */,
+				654F211E1BDA3D10002F0A4B /* YSRunInfoModel.m in Sources */,
 				65744B371BD27FF400A15EEE /* AFSecurityPolicy.m in Sources */,
 				65744B3B1BD27FF400A15EEE /* AFURLSessionManager.m in Sources */,
 				65A555B31BD47DF9003306E7 /* YSRunningGeneralModeView.m in Sources */,
@@ -1255,16 +1297,20 @@
 				65744B3A1BD27FF400A15EEE /* AFURLResponseSerialization.m in Sources */,
 				657698B31BD095F80015B446 /* YSUserRecordView.m in Sources */,
 				65A555C51BD480CD003306E7 /* YSSubscriptLabel.m in Sources */,
+				654F21131BDA2B86002F0A4B /* YSUserInfoManager.m in Sources */,
 				65744B351BD27FF400A15EEE /* AFHTTPSessionManager.m in Sources */,
 				65A555B01BD47DE3003306E7 /* YSRunningModeView.m in Sources */,
 				65744B361BD27FF400A15EEE /* AFNetworkReachabilityManager.m in Sources */,
 				657698EE1BD11A6A0015B446 /* YSUserSetCell.m in Sources */,
+				654F21211BDA44F4002F0A4B /* YSCountdownView.m in Sources */,
 				65A555BC1BD47EDC003306E7 /* YSTextFieldTableView.m in Sources */,
 				65744B331BD27FF400A15EEE /* AFHTTPRequestOperation.m in Sources */,
 				657698E01BD0F2C60015B446 /* YSUserSettingView.m in Sources */,
 				656CF7FA1BD508B100F2A759 /* YSStarRatingView.m in Sources */,
 				65E135531BD8DCCC001DD824 /* YSNetworkManager.m in Sources */,
 				6558124B1BD63B3D0094F07D /* YSTimeManager.m in Sources */,
+				65DB44711BDA07CB004932E2 /* YSDatabaseManager.m in Sources */,
+				65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */,
 				65E1353E1BD8820A001DD824 /* YSRunDataModel.m in Sources */,
 				65E135381BD87EB7001DD824 /* YSModifyPasswordInfoModel.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,

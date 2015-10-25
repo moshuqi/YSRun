@@ -12,10 +12,16 @@
 @interface YSMapManager () <MAMapViewDelegate>
 
 @property (nonatomic, assign) CGFloat distance; // 公里
-@property (nonatomic, assign) CGFloat speed;    // 配速
+@property (nonatomic, assign) CGFloat pace;    // 配速
 
 @property (nonatomic, strong) NSMutableArray *coordinateRecordArray;
 @property (nonatomic, copy) NSArray *updateRouteCoordArray;
+
+@property (nonatomic, assign) CGFloat hSpeed;
+@property (nonatomic, assign) CGFloat lSpeed;
+
+@property (nonatomic, assign) CGFloat lastLocatedTime;  // 上一次定位的时间
+@property (nonatomic, assign) CGFloat currentLocatedTime;   // 当前定位的时间
 
 @end
 
@@ -36,6 +42,12 @@ const static NSString *APIKey = @"45e4efb100710051075252c2407f9402";
         self.OutputMessageLabel.numberOfLines = 0;
         self.OutputMessageLabel.font = [UIFont systemFontOfSize:26];
         self.OutputMessageLabel.textAlignment = NSTextAlignmentCenter;
+        
+        // 初始化，之后通过是否大于0来判断有没有赋值
+        self.lastLocatedTime = -1;
+        self.currentLocatedTime = -1;
+        self.hSpeed = -1;
+        self.lSpeed = -1;
     }
     
     return self;
@@ -157,6 +169,47 @@ const static NSString *APIKey = @"45e4efb100710051075252c2407f9402";
     return totalDistance;
 }
 
+- (void)calculationSpeed
+{
+    // 每次位置更新都计算最近一段距离内的速度
+    NSInteger count = [self.coordinateRecordArray count];
+    if ((count < 2) || (self.lastLocatedTime < 0))
+    {
+        return;
+    }
+    
+    NSValue *coordinateValue1 = self.coordinateRecordArray[count - 1];
+    CLLocationCoordinate2D coordinate1;
+    [coordinateValue1 getValue:&coordinate1];
+    
+    NSValue *coordinateValue2 = self.coordinateRecordArray[count - 2];
+    CLLocationCoordinate2D coordinate2;
+    [coordinateValue2 getValue:&coordinate2];
+    
+    CGFloat distance = [self distanceBetweenCoordinate1:coordinate1 coordinate2:coordinate2];
+    CGFloat time = self.currentLocatedTime - self.lastLocatedTime;
+    CGFloat speed = distance / time;    // m/s
+    
+    // 第一次计算速度时未赋值。
+    if (self.hSpeed < 0 && self.lSpeed)
+    {
+        self.hSpeed = speed;
+        self.lSpeed = speed;
+    }
+    
+    // 最低速度
+    if (self.lSpeed > speed)
+    {
+        self.lSpeed = speed;
+    }
+    
+    // 最高速度
+    if (self.hSpeed < speed)
+    {
+        self.hSpeed = speed;
+    }
+}
+
 #pragma mark - MAMapViewDelegate
 
 - (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation
@@ -166,6 +219,11 @@ const static NSString *APIKey = @"45e4efb100710051075252c2407f9402";
         CLLocationCoordinate2D coordinate = userLocation.coordinate;
         [self addLocationCoordinate:coordinate];
         [self updateRoute];
+        
+        // 计算最快、最慢速度
+        self.lastLocatedTime = self.currentLocatedTime;
+        self.currentLocatedTime = CFAbsoluteTimeGetCurrent();
+        [self calculationSpeed];
         
         NSLog(@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
     }

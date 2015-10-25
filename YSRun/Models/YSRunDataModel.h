@@ -7,20 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface YSRunDataModel : NSObject
 
-@property (nonatomic, copy) NSString *uid;
-@property (nonatomic, copy) NSString *pace;
-@property (nonatomic, copy) NSString *distance;
-@property (nonatomic, copy) NSString *usetime;
-@property (nonatomic, copy) NSString *cost;
-@property (nonatomic, copy) NSString *star;
-@property (nonatomic, copy) NSString *h_speed;
-@property (nonatomic, copy) NSString *l_speed;
+@property (nonatomic, assign) NSInteger uid;
+@property (nonatomic, assign) CGFloat pace;
+@property (nonatomic, assign) CGFloat distance;
+@property (nonatomic, assign) NSInteger usetime;
+@property (nonatomic, assign) NSInteger cost;
+@property (nonatomic, assign) NSInteger star;
+@property (nonatomic, assign) NSInteger h_speed;
+@property (nonatomic, assign) NSInteger l_speed;
 @property (nonatomic, copy) NSString *date;
-@property (nonatomic, copy) NSString *bdate;
-@property (nonatomic, copy) NSString *speed;
+@property (nonatomic, assign) NSInteger bdate;
+@property (nonatomic, assign) NSInteger edate;
+@property (nonatomic, assign) NSInteger speed;
+
 @property (nonatomic, copy) NSString *detail;
 @property (nonatomic, copy) NSString *ctime;
 @property (nonatomic, copy) NSString *utime;

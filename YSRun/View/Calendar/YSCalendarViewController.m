@@ -46,9 +46,9 @@
     return date;
     
 //    NSTimeZone *zone = [NSTimeZone systemTimeZone];
-//    NSInteger interval = [zone secondsFromGMTForDate: date];
+//    NSInteger interval = [zone secondsFromGMTForDate:date];
 //    
-//    NSDate *localeDate = [date  dateByAddingTimeInterval: interval];
+//    NSDate *localeDate = [date dateByAddingTimeInterval:interval];
 //    return localeDate;
 }
 

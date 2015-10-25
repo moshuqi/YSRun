@@ -11,13 +11,19 @@
 #import "YSRunningMapModeView.h"
 #import "YSRunningResultViewController.h"
 #import "YSTimeManager.h"
+#import "YSCountdownView.h"
+#import "YSRunInfoModel.h"
+//#import "NSDate+YSDateLogic.h"
 
-@interface YSRunningRecordViewController () <YSRunningModeViewDelegate, YSTimeManagerDelegate>
+@interface YSRunningRecordViewController () <YSRunningModeViewDelegate, YSTimeManagerDelegate, YSCountdownViewDelegate>
 
 @property (nonatomic, strong) YSRunningGeneralModeView *runningGeneralModeView;
 @property (nonatomic, strong) YSRunningMapModeView *runningMapModeView;
 @property (nonatomic, strong) YSRunningModeView *currentModeView;
+@property (nonatomic, strong) YSCountdownView *countdownView;
+
 @property (nonatomic, strong) YSTimeManager *timeManager;
+@property (nonatomic, strong) YSRunInfoModel *runInfoModel;
 
 @end
 
@@ -27,10 +33,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self addModeView];
+    [self addSubviews];
     [self initTimeManager];
     
     self.navigationController.navigationBarHidden = YES;
+    
+}
+
+- (void)addSubviews
+{
+    self.countdownView = [YSCountdownView new];
+    self.countdownView.delegate = self;
+    
+    [self.view addSubview:self.countdownView];
+    
+    [self addModeView];
 }
 
 - (void)addModeView
@@ -62,7 +79,7 @@
 {
     [super viewDidAppear:animated];
     
-    [self.timeManager start];
+    [self.countdownView startCountdownWithTime:3];
 }
 
 - (void)viewWillLayoutSubviews
@@ -70,6 +87,9 @@
     [super viewWillLayoutSubviews];
     [self.runningGeneralModeView resetLayoutWithFrame:[self getModeViewFrame]];
     [self.runningMapModeView resetLayoutWithFrame:[self getModeViewFrame]];
+    
+    self.countdownView.frame = self.view.bounds;
+    [self.view bringSubviewToFront:self.countdownView];
 }
 
 - (CGRect)getModeViewFrame
@@ -88,6 +108,17 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)startRun
+{
+    [self.timeManager start];
+    
+    NSDate *date = [NSDate date];
+    
+    self.runInfoModel = [YSRunInfoModel new];
+    self.runInfoModel.startTime = [date timeIntervalSince1970];
+    self.runInfoModel.date = date;
 }
 
 #pragma mark - YSRunningModeViewDelegate
@@ -121,6 +152,11 @@
 
 - (void)runningFinish
 {
+    NSDate *date = [NSDate date];
+    
+    self.runInfoModel.endTime = [date timeIntervalSince1970];
+    self.runInfoModel.useTime = [self.timeManager getTotalTime];
+    
     YSRunningResultViewController *resultViewController = [YSRunningResultViewController new];
     [self.navigationController pushViewController:resultViewController animated:YES];
 }
@@ -131,6 +167,13 @@
 {
     [self.runningGeneralModeView resetTimeLabelWithTime:time];
     [self.runningMapModeView resetTimeLabelWithTime:time];
+}
+
+#pragma mark - YSCountdownViewDelegate
+
+- (void)countdownFinish
+{
+    [self startRun];
 }
 
 @end

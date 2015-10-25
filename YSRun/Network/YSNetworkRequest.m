@@ -408,20 +408,21 @@ static const NSString *Host = @"http://mp.yspaobu.com/Api/webserver";
 {
     // 上传单次跑步数据
     
-    NSDictionary *dict = @{@"uid" : runData.uid,
-                           @"pace" : runData.pace,
-                           @"distance" : runData.distance,
-                           @"usetime" : runData.usetime,
-                           @"cost" : runData.cost,
-                           @"star" : runData.star,
-                           @"h_speed" : runData.h_speed,
-                           @"l_speed" : runData.l_speed,
-                           @"date" : runData.date,
-                           @"bdate" : runData.bdate,
-                           @"speed" : runData.speed,
-                           @"detail" : runData.detail,
-                           @"ctime" : runData.ctime,
-                           @"utime" : runData.utime};
+//    NSDictionary *dict = @{@"uid" : runData.uid,
+//                           @"pace" : runData.pace,
+//                           @"distance" : runData.distance,
+//                           @"usetime" : runData.usetime,
+//                           @"cost" : runData.cost,
+//                           @"star" : runData.star,
+//                           @"h_speed" : runData.h_speed,
+//                           @"l_speed" : runData.l_speed,
+//                           @"date" : runData.date,
+//                           @"bdate" : runData.bdate,
+//                           @"speed" : runData.speed,
+//                           @"detail" : runData.detail,
+//                           @"ctime" : runData.ctime,
+//                           @"utime" : runData.utime};
+    NSDictionary *dict = nil;
     NSMutableURLRequest *request = [self postRequestWithURL:[self uploadRunDataUrl] dictionaryParameter:dict];
     
     AFHTTPRequestOperationManager *s_manager = [AFHTTPRequestOperationManager manager];

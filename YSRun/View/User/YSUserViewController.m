@@ -12,7 +12,7 @@
 #import "YSUserNoLoginView.h"
 #import "YSLoginViewController.h"
 
-@interface YSUserViewController () <YSUserNoLoginViewDelegate>
+@interface YSUserViewController () <YSUserNoLoginViewDelegate, YSLoginViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet YSUserLevelView *userLevelView;
 @property (nonatomic, weak) IBOutlet UIView *settingContentView;
@@ -80,8 +80,14 @@
 
 - (void)enterLoginView
 {
-    YSLoginViewController *loginViewController = [[YSLoginViewController alloc] init];
+    YSLoginViewController *loginViewController = [YSLoginViewController new];
+    loginViewController.delegate = self;
     [self.navigationController pushViewController:loginViewController animated:YES];
+}
+
+- (void)setupWithUserModel:(YSUserModel *)userModel
+{
+    
 }
 
 #pragma mark - YSUserNoLoginViewDelegate
@@ -89,6 +95,15 @@
 - (void)login
 {
     [self enterLoginView];
+}
+
+#pragma mark - YSLoginViewControllerDelegate
+
+- (void)loginViewController:(YSLoginViewController *)loginViewController loginFinishWithUserModel:(YSUserModel *)userModel
+{
+    [self setupWithUserModel:userModel];
+    
+    [loginViewController.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

@@ -22,4 +22,7 @@
 - (NSDate *)lastDayOfCurrentMonth;
 - (NSUInteger)numberOfDaysInCurrentMonth;
 
++ (NSDate *)dateFromString:(NSString *)dateString;
++ (NSString *)stringFromDate:(NSDate *)date;
+
 @end

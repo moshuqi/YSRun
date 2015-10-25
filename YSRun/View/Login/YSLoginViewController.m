@@ -117,12 +117,12 @@
 
 - (void)loginSuccessWithResponseUserModel:(YSUserModel *)userModel
 {
-    
+    [self.delegate loginViewController:self loginFinishWithUserModel:userModel];
 }
 
 - (void)loginFailure
 {
-    
+    [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:@"登录失败，请检查用户名密码是否正确"];
 }
 
 
