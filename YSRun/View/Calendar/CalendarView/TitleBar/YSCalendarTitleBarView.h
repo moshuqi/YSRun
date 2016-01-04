@@ -21,5 +21,6 @@
 @property (nonatomic, weak) id<YSCalendarTitleBarViewDelegate> delegate;
 
 - (void)setupWithDate:(NSDate *)date;
+- (void)setTitleFontSize:(CGFloat)titleFontSize weekdayFontSize:(CGFloat)weekdayFontSize;
 
 @end

@@ -13,4 +13,6 @@
 - (void)resetTimeLabelWithTotalSeconds:(NSUInteger)totalSeconds;
 - (void)setLabelFontSize:(CGFloat)fontSize;
 
+- (void)setBoldWithFontSize:(CGFloat)fontSize;
+
 @end

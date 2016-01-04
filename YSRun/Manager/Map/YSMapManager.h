@@ -1,0 +1,37 @@
+//
+//  YSMapManager.h
+//  YSRun
+//
+//  Created by moshuqi on 15/10/18.
+//  Copyright © 2015年 msq. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <MAMapKit/MAMapKit.h>
+
+@protocol YSMapManagerDelegate <NSObject>
+
+@required
+- (void)updateDistance:(CGFloat)distance;
+
+@end
+
+@interface YSMapManager : NSObject
+
+@property (nonatomic, strong) MAMapView *mapView;
+@property (nonatomic, strong) UILabel *OutputMessageLabel;
+@property (nonatomic, weak) id<YSMapManagerDelegate> delegate;
+
+- (void)testRoute;
+- (void)setupMapView;
+- (void)startLocation;
+- (void)endLocation;
+
+- (CGFloat)getHighestSpeed;
+- (CGFloat)getLowestSpeed;
+- (CGFloat)getTotalDistance;
+- (NSArray *)getCoordinateRecord;
+
+- (UIImage *)getScreenshotImage;
+
+@end

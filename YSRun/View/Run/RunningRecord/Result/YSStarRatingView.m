@@ -42,8 +42,8 @@
 {
     [self sendSubviewToBack:self.bgImageView];
     
-    UIImage *bigStar = [UIImage imageNamed:@"big_star.png"];
-    UIImage *smallStar = [UIImage imageNamed:@"small_star.png"];
+    UIImage *bigStar = [UIImage imageNamed:@"big_no_star.png"];
+    UIImage *smallStar = [UIImage imageNamed:@"small_no_star.png"];
     
     self.leftStar.image = smallStar;
     self.centerStar.image = bigStar;
@@ -52,7 +52,9 @@
 
 - (void)setRattingLevel:(NSInteger)level
 {
-    
+    self.leftStar.image = (level >= 1) ? [UIImage imageNamed:@"small_star.png"] : [UIImage imageNamed:@"small_no_star.png"];
+    self.centerStar.image = (level >= 2) ? [UIImage imageNamed:@"big_star.png"] : [UIImage imageNamed:@"big_no_star.png"];
+    self.rightStar.image = (level >= 3) ? [UIImage imageNamed:@"small_star.png"] : [UIImage imageNamed:@"small_no_star.png"];
 }
 
 @end

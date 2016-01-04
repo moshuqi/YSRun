@@ -21,5 +21,6 @@
 @property (nonatomic, weak) id<YSCalendarTitleDateViewDelegate> delegate;
 
 - (void)setLabelWithYear:(NSInteger)year month:(NSInteger)month;
+- (void)setTitleLabelFontSize:(CGFloat)fontSize;
 
 @end

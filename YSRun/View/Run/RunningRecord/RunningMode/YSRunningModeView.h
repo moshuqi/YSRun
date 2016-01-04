@@ -19,13 +19,17 @@
 - (void)runningContinue;
 - (void)runningFinish;
 
+@optional
+- (void)resetDistanceLabel:(CGFloat)distance;
+
 @end
 
 @interface YSRunningModeView : UIView
 
 @property (nonatomic, strong) YSTimeLabel *timeLabel;
 @property (nonatomic, strong) YSSubscriptLabel *distanceLabel;
-@property (nonatomic, strong) YSSubscriptLabel *speedLabel;
+@property (nonatomic, strong) YSSubscriptLabel *paceLabel;
+@property (nonatomic, strong) YSSubscriptLabel *heartRateLabel;
 @property (nonatomic, strong) YSRunningModeStatusView *modeStatusView;
 
 @property (nonatomic, strong) UIButton *continueButton;
@@ -38,5 +42,11 @@
 - (void)resetLayoutWithFrame:(CGRect)frame;
 - (void)resetButtonsPositionWithPauseStatus;
 - (void)resetTimeLabelWithTime:(NSUInteger)time;
+
+- (void)setDistance:(CGFloat)distance;
+- (void)setPace:(CGFloat)pace;
+- (void)setHeartRate:(NSInteger)heartRate;
+
+- (void)setContentFontSize:(CGFloat)contentSize subscriptFontSize:(CGFloat)subscriptSize;
 
 @end

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9060"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSUserViewController">
@@ -18,23 +19,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G2x-kS-McC" customClass="YSUserLevelView">
-                    <rect key="frame" x="0.0" y="20" width="308" height="250"/>
+                    <rect key="frame" x="0.0" y="0.0" width="308" height="178"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="250" id="plP-rU-jui"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="plP-rU-jui"/>
+                        </mask>
+                    </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cq-3q-gO8">
-                    <rect key="frame" x="0.0" y="270" width="308" height="125"/>
+                    <rect key="frame" x="0.0" y="178" width="308" height="217"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="4cq-3q-gO8" secondAttribute="bottom" id="3Lg-aC-6Rx"/>
+                <constraint firstItem="G2x-kS-McC" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.45" id="9rV-Dk-Lri"/>
                 <constraint firstItem="4cq-3q-gO8" firstAttribute="top" secondItem="G2x-kS-McC" secondAttribute="bottom" id="OQC-Bb-6KK"/>
                 <constraint firstItem="4cq-3q-gO8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Tje-zb-Zdk"/>
                 <constraint firstAttribute="trailing" secondItem="G2x-kS-McC" secondAttribute="trailing" id="X1f-Qc-4ue"/>
-                <constraint firstItem="G2x-kS-McC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="ei4-JM-Kyh"/>
+                <constraint firstItem="G2x-kS-McC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ei4-JM-Kyh"/>
                 <constraint firstAttribute="trailing" secondItem="4cq-3q-gO8" secondAttribute="trailing" id="lHq-J4-16L"/>
                 <constraint firstItem="G2x-kS-McC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tIh-If-uuZ"/>
             </constraints>

@@ -26,7 +26,8 @@
     {
         self.countdownLabel = [[UILabel alloc] initWithFrame:self.bounds];
         self.countdownLabel.textAlignment = NSTextAlignmentCenter;
-        self.countdownLabel.font = [UIFont systemFontOfSize:46];
+//        self.countdownLabel.font = [UIFont systemFontOfSize:46];
+        self.countdownLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:200];
         self.countdownLabel.textColor = [UIColor whiteColor];
         
         [self addSubview:self.countdownLabel];
@@ -40,6 +41,47 @@
 {
     [super setFrame:frame];
     self.countdownLabel.frame = self.bounds;
+}
+
+- (void)startAnimationCountdownWithTime:(NSInteger)time
+{
+    // 动画效果倒计时
+    self.countdownTime = time;
+    
+    [self animationCountdown];
+}
+
+- (void)animationCountdown
+{
+    [self resetLabelText];
+    
+    NSTimeInterval totalInterval = 1;
+    NSTimeInterval fadeOutInterval = 0.4;
+    
+    [UIView animateWithDuration:(totalInterval - fadeOutInterval) animations:^(){
+        self.countdownLabel.transform = CGAffineTransformMakeScale(0.5, 0.5);
+    }completion:^(BOOL finished){
+        
+        [UIView animateWithDuration:fadeOutInterval animations:^(){
+            [self.countdownLabel setAlpha:0.0];
+        }completion:^(BOOL finished){
+            self.countdownTime --;
+            
+            self.countdownLabel.transform = CGAffineTransformIdentity;
+            [self.countdownLabel setAlpha:1.0];
+            
+            if (self.countdownTime > 0)
+            {
+                [self animationCountdown];
+            }
+            else
+            {
+                [self countdownEnd];
+            }
+        }];
+        
+        
+    }];
 }
 
 - (void)startCountdownWithTime:(NSInteger)time
@@ -57,6 +99,10 @@
 {
     self.countdownTime -= 1;
     [self resetLabelText];
+    
+    [UIView animateWithDuration:0.5 animations:^(){
+        self.countdownLabel.transform = CGAffineTransformMakeScale(3, 3);
+    }];
     
     if (self.countdownTime < 1)
     {

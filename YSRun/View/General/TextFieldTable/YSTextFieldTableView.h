@@ -35,4 +35,10 @@
 - (NSString *)firstText;
 - (NSString *)secondText;
 
+- (UIButton *)getButton;
+- (UIView *)getPasswordTextFieldRightButtonView;
+
+- (void)setFirstTextFieldSecureTextEntry:(BOOL)secureTextEntry;
+- (void)setSecondTextFieldSecureTextEntry:(BOOL)secureTextEntry;
+
 @end

@@ -12,8 +12,12 @@
 #import "YSAppMacro.h"
 #import "YSPhoneTextFieldLimitDelegate.h"
 #import "YSTipLabelHUD.h"
+#import "YSNetworkManager.h"
+#import "YSResetPasswordViewController.h"
+#import "YSCaptchaTimer.h"
+#import "YSLoadingHUD.h"
 
-@interface YSFindPasswordViewController () <YSPhoneTextFieldLimitDelegateCallback, YSTextFieldTableViewDelegate>
+@interface YSFindPasswordViewController () <YSPhoneTextFieldLimitDelegateCallback, YSTextFieldTableViewDelegate, YSNetworkManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 @property (nonatomic, weak) IBOutlet YSTextFieldTableView *textFieldTable;
@@ -39,11 +43,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self resetCaptchaButtonState];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)setupButton
 {
     [self.nextButton setTitle:@"下一步" forState:UIControlStateNormal];
     [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
     self.nextButton.backgroundColor = GreenBackgroundColor;
+    self.nextButton.layer.cornerRadius = ButtonCornerRadius;
+    self.nextButton.clipsToBounds = YES;
 }
 
 - (void)setupTextFieldTable
@@ -68,6 +87,91 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)resetCaptchaButtonState
+{
+    // 根据单例里保存的数据来设置发送验证码按钮的状态
+    
+    YSCaptchaTimer *captchaTimer = [YSCaptchaTimer shareCaptchaTimer];
+    
+    if ([captchaTimer isCountdownState])
+    {
+        [self setCaptchaButtonDisabled];
+        
+        CallbackBlock block = [self getCaptchaTimerCallBackBlock];
+        [captchaTimer setCallbackWithBlock:block];
+    }
+}
+
+- (void)sendCaptchaSuccess
+{
+    // 发送验证码按钮置灰，倒计时完成后才能点击。
+    
+    [[YSCaptchaTimer shareCaptchaTimer] startWithBlock:[self getCaptchaTimerCallBackBlock]];
+    
+    [self setCaptchaButtonDisabled];
+}
+
+- (void)setCaptchaButtonDisabled
+{
+    UIButton *captchaButton = [self.textFieldTable getButton];
+    captchaButton.enabled = NO;
+    captchaButton.backgroundColor = RGB(215, 215, 215);
+}
+
+- (CallbackBlock)getCaptchaTimerCallBackBlock
+{
+    CallbackBlock block = ^(NSInteger remainTime, BOOL finished)
+    {
+        UIButton *captchaButton = [self.textFieldTable getButton];
+        if (finished)
+        {
+            captchaButton.enabled = YES;
+            captchaButton.backgroundColor = [UIColor whiteColor];
+        }
+        else
+        {
+            NSString *text = [NSString stringWithFormat:@"发送验证码(%@)", @(remainTime)];
+            
+            // 需同时设置，，并且保证captchaButton.titleLabel.text在setTitle:forState:之前，否则按钮的字在NSTimer调用时会闪。
+            captchaButton.titleLabel.text = text;
+            [captchaButton setTitle:text forState:UIControlStateDisabled];
+        }
+    };
+    
+    return block;
+}
+
+- (IBAction)nextButtonClicked:(id)sender
+{
+//    YSResetPasswordViewController *resetPasswordViewController = [YSResetPasswordViewController new];
+//    [self.navigationController pushViewController:resetPasswordViewController animated:YES];
+//    
+//    return;
+    
+    NSString *phoneNumber = [self.textFieldTable firstText];
+    NSString *captcha = [self.textFieldTable secondText];
+    
+    // 保证两个文本框的输入不为空。
+    if (([phoneNumber length] < 1) || ([captcha length] < 1))
+    {
+        NSString *type = ([phoneNumber length] < 1) ? @"手机号" : @"验证码";
+        NSString *tip = [NSString stringWithFormat:@"%@不能为空", type];
+        [self showTipLabelWithText:tip];
+        return;
+    }
+    
+    [[YSLoadingHUD shareLoadingHUD] show];
+    
+    YSNetworkManager *networkManager = [YSNetworkManager new];
+    networkManager.delegate = self;
+    [networkManager checkCaptcha:captcha phoneNumber:phoneNumber];
+}
+
+- (void)showTipLabelWithText:(NSString *)text
+{
+    [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:text];
+}
+
 #pragma mark - YSPhoneTextFieldLimitDelegateCallback
 
 - (void)phoneLengthMoreThanLimit
@@ -80,13 +184,20 @@
 - (void)sendCaptchaWithPhoneNumber:(NSString *)phoneNumber
 {
     BOOL isValid = [self checkPhoneNumberValid:phoneNumber];
-    NSString *tipText = @"手机号不正确";
+    
     if (isValid)
     {
-        tipText = @"验证码已发送至手机短信";
+        YSNetworkManager *networkManager = [YSNetworkManager new];
+        networkManager.delegate = self;
+        [networkManager resetPasswordCaptchaWithPhoneNumber:phoneNumber];
+        
+        [self sendCaptchaSuccess];
     }
-    
-    [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:tipText];
+    else
+    {
+        NSString *tipText = @"手机号不正确";
+        [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:tipText];
+    }
 }
 
 - (BOOL)checkPhoneNumberValid:(NSString *)phoneNumber
@@ -94,6 +205,47 @@
     NSInteger length = [phoneNumber length];
     NSInteger requireLength = 11;
     return (length == requireLength);
+}
+
+
+#pragma mark - YSNetworkManagerDelegate
+
+//- (void)showAcquireCaptchaResultTip:(NSString *)tip
+//{
+//    [self showTipLabelWithText:tip];
+//}
+//
+//- (void)acquireCaptchaSuccess
+//{
+//    [self showTipLabelWithText:@"验证码已发送至手机短信"];
+//    [self sendCaptchaSuccess];
+//}
+
+- (void)acquireResetPasswordCaptchaSuccess
+{
+    [self showTipLabelWithText:@"验证码已发送至手机短信"];
+}
+
+- (void)acquireResetPasswordCaptchaFailureWithMessage:(NSString *)message
+{
+    [self showTipLabelWithText:message];
+}
+
+- (void)checkCaptchaSuccessWithPhoneNumber:(NSString *)phoneNumber
+{
+    // 验证成功，跳转到重置密码页面
+    
+    [[YSLoadingHUD shareLoadingHUD] dismiss];
+    
+    YSResetPasswordViewController *resetPasswordViewController = [[YSResetPasswordViewController alloc] initWithPhoneNumber:phoneNumber];
+    [self.navigationController pushViewController:resetPasswordViewController animated:YES];
+}
+
+- (void)checkCaptchaFailureWithMessage:(NSString *)message
+{
+    [[YSLoadingHUD shareLoadingHUD] dismiss];
+    
+    [self showTipLabelWithText:message];
 }
 
 @end

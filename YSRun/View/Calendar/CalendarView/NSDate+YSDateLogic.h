@@ -24,5 +24,10 @@
 
 + (NSDate *)dateFromString:(NSString *)dateString;
 + (NSString *)stringFromDate:(NSDate *)date;
++ (NSDate *)dateFromYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day;
+
+- (NSInteger)hourValue;
+- (NSInteger)minuteValue;
+- (NSInteger)secondValue;
 
 @end

@@ -64,6 +64,9 @@ static YSTipLabelHUD *_instance;
     self.tipLabel.font = [UIFont systemFontOfSize:15];
     self.tipLabel.numberOfLines = 0;
     self.tipLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.tipLabel.layer.cornerRadius = 5;
+    self.tipLabel.clipsToBounds = YES;
 }
 
 - (void)resizeLabel
@@ -95,7 +98,7 @@ static YSTipLabelHUD *_instance;
     UIWindow *window = [self getWindow];
     if (window)
     {
-        // 显示在屏幕正中间
+        // 显示在屏幕
         
 //        CGFloat distance = 88;  // 标签距离屏幕底边的距离
         CGFloat windowWidth = CGRectGetWidth(window.frame);
@@ -103,7 +106,7 @@ static YSTipLabelHUD *_instance;
         
         CGFloat labelWidth = CGRectGetWidth(self.tipLabel.frame);
         CGFloat labelHeight = CGRectGetHeight(self.tipLabel.frame);
-        CGRect labelFrame = CGRectMake((windowWidth - labelWidth) / 2, (windowHeight - labelHeight) / 2, labelWidth, labelHeight);
+        CGRect labelFrame = CGRectMake((windowWidth - labelWidth) / 2, (windowHeight - labelHeight) / 3 + 52, labelWidth, labelHeight);
         
         self.tipLabel.frame = labelFrame;
         

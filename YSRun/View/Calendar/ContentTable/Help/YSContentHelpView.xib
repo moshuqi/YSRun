@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSContentHelpView">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="224"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqR-4F-Ygi">
+                    <rect key="frame" x="20" y="30" width="171" height="164"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YeA-MU-lic" userLabel="detail1" customClass="YSHelpDetailComponent">
+                            <rect key="frame" x="0.0" y="0.0" width="171" height="54.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qMc-AG-wrL" userLabel="detail2" customClass="YSHelpDetailComponent">
+                            <rect key="frame" x="0.0" y="54.5" width="171" height="55"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vKZ-iR-Nfj" userLabel="detail3" customClass="YSHelpDetailComponent">
+                            <rect key="frame" x="0.0" y="109.5" width="171" height="54.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="YeA-MU-lic" secondAttribute="trailing" id="6Md-ZZ-sLL"/>
+                        <constraint firstItem="YeA-MU-lic" firstAttribute="leading" secondItem="pqR-4F-Ygi" secondAttribute="leading" id="Gwg-Gb-XN3"/>
+                        <constraint firstItem="qMc-AG-wrL" firstAttribute="height" secondItem="YeA-MU-lic" secondAttribute="height" id="Keg-QE-a1U"/>
+                        <constraint firstAttribute="trailing" secondItem="qMc-AG-wrL" secondAttribute="trailing" id="WKl-v4-z0o"/>
+                        <constraint firstItem="YeA-MU-lic" firstAttribute="top" secondItem="pqR-4F-Ygi" secondAttribute="top" id="XV4-FS-xTj"/>
+                        <constraint firstAttribute="trailing" secondItem="vKZ-iR-Nfj" secondAttribute="trailing" id="cR3-4s-RCh"/>
+                        <constraint firstItem="vKZ-iR-Nfj" firstAttribute="leading" secondItem="pqR-4F-Ygi" secondAttribute="leading" id="fdT-M1-cDb"/>
+                        <constraint firstItem="qMc-AG-wrL" firstAttribute="top" secondItem="YeA-MU-lic" secondAttribute="bottom" id="hT0-BT-V6R"/>
+                        <constraint firstItem="vKZ-iR-Nfj" firstAttribute="height" secondItem="YeA-MU-lic" secondAttribute="height" id="lD6-X4-d8D"/>
+                        <constraint firstItem="qMc-AG-wrL" firstAttribute="width" secondItem="YeA-MU-lic" secondAttribute="width" id="mlf-vT-sTz"/>
+                        <constraint firstAttribute="bottom" secondItem="vKZ-iR-Nfj" secondAttribute="bottom" id="mvy-Jn-bRu"/>
+                        <constraint firstItem="qMc-AG-wrL" firstAttribute="leading" secondItem="pqR-4F-Ygi" secondAttribute="leading" id="olH-yv-PE9"/>
+                        <constraint firstItem="vKZ-iR-Nfj" firstAttribute="width" secondItem="YeA-MU-lic" secondAttribute="width" id="s8I-pv-gzm"/>
+                        <constraint firstItem="vKZ-iR-Nfj" firstAttribute="top" secondItem="qMc-AG-wrL" secondAttribute="bottom" id="uW1-j5-5T3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pqR-4F-Ygi" secondAttribute="trailing" constant="20" id="31B-XQ-Isy"/>
+                <constraint firstItem="pqR-4F-Ygi" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ADr-fz-Htp"/>
+                <constraint firstAttribute="bottom" secondItem="pqR-4F-Ygi" secondAttribute="bottom" constant="30" id="Z76-dZ-rCg"/>
+                <constraint firstItem="pqR-4F-Ygi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="pu9-2E-AQa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="detailComponet1" destination="YeA-MU-lic" id="bSK-Kp-WMW"/>
+                <outlet property="detailComponet2" destination="qMc-AG-wrL" id="aDO-nh-eNp"/>
+                <outlet property="detailComponet3" destination="vKZ-iR-Nfj" id="YmZ-ce-kVg"/>
+            </connections>
+            <point key="canvasLocation" x="384.5" y="-51"/>
+        </view>
+    </objects>
+</document>

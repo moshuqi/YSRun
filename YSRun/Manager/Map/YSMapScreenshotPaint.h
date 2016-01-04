@@ -1,0 +1,16 @@
+//
+//  YSMapScreenshotPaint.h
+//  YSRun
+//
+//  Created by moshuqi on 15/12/1.
+//  Copyright © 2015年 msq. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@interface YSMapScreenshotPaint : NSObject
+
+- (UIImage *)screenshotPaintWithAnnotationArray:(NSArray *)annotationArray size:(CGSize)size;
+
+@end

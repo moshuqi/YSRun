@@ -13,4 +13,10 @@
 - (void)setContentText:(NSString *)text;
 - (void)setSubscriptText:(NSString *)text;
 
+- (void)setContentFontSize:(CGFloat)size;
+- (void)setSubscriptFontSize:(CGFloat)size;
+
+- (void)setTextColor:(UIColor *)color;
+- (void)setContentBoldWithFontSize:(CGFloat)size;
+
 @end

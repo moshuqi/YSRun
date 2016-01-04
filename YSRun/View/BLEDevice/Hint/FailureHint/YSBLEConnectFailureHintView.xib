@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSBLEConnectFailureHintView">
+            <rect key="frame" x="0.0" y="0.0" width="312" height="173"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weB-83-oJ4">
+                    <rect key="frame" x="282" y="10" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="FbF-gO-zJn"/>
+                        <constraint firstAttribute="width" constant="20" id="o40-CX-HSj"/>
+                    </constraints>
+                    <connections>
+                        <action selector="close:" destination="iN0-l3-epB" eventType="touchUpInside" id="BBm-AE-bx4"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AM-4p-6Jx" userLabel="title">
+                    <rect key="frame" x="112" y="15" width="88" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="88" id="pnK-hL-DYo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heb-am-lMy" userLabel="message">
+                    <rect key="frame" x="0.0" y="45.5" width="312" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWP-mA-2zj">
+                    <rect key="frame" x="20" y="76" width="272" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lci-mF-oQ3" userLabel="reConnect">
+                            <rect key="frame" x="143" y="0.0" width="129" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="reConnect:" destination="iN0-l3-epB" eventType="touchUpInside" id="5gi-pf-G4o"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hs7-y4-6S4" userLabel="return">
+                            <rect key="frame" x="0.0" y="0.0" width="129" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="back:" destination="iN0-l3-epB" eventType="touchUpInside" id="TIw-s1-CfA"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="lci-mF-oQ3" firstAttribute="top" secondItem="YWP-mA-2zj" secondAttribute="top" id="9Rd-fl-uwe"/>
+                        <constraint firstAttribute="height" constant="30" id="AZS-gn-SQc"/>
+                        <constraint firstItem="lci-mF-oQ3" firstAttribute="leading" secondItem="hs7-y4-6S4" secondAttribute="trailing" constant="14" id="CGT-8h-eg6"/>
+                        <constraint firstItem="lci-mF-oQ3" firstAttribute="width" secondItem="hs7-y4-6S4" secondAttribute="width" id="Kwg-dz-icK"/>
+                        <constraint firstAttribute="bottom" secondItem="hs7-y4-6S4" secondAttribute="bottom" id="PrY-Fh-q0s"/>
+                        <constraint firstItem="hs7-y4-6S4" firstAttribute="top" secondItem="YWP-mA-2zj" secondAttribute="top" id="hev-aA-wEY"/>
+                        <constraint firstAttribute="trailing" secondItem="lci-mF-oQ3" secondAttribute="trailing" id="pNU-09-pFL"/>
+                        <constraint firstItem="hs7-y4-6S4" firstAttribute="leading" secondItem="YWP-mA-2zj" secondAttribute="leading" id="rGl-Ua-QFQ"/>
+                        <constraint firstAttribute="bottom" secondItem="lci-mF-oQ3" secondAttribute="bottom" id="tkK-3Q-6C3"/>
+                        <constraint firstItem="lci-mF-oQ3" firstAttribute="height" secondItem="hs7-y4-6S4" secondAttribute="height" id="yIT-FG-zAQ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="heb-am-lMy" secondAttribute="trailing" id="B2i-dE-nPp"/>
+                <constraint firstAttribute="trailing" secondItem="YWP-mA-2zj" secondAttribute="trailing" constant="20" id="Jcc-St-bMN"/>
+                <constraint firstItem="YWP-mA-2zj" firstAttribute="top" secondItem="heb-am-lMy" secondAttribute="bottom" constant="10" id="QnU-QQ-PpH"/>
+                <constraint firstItem="0AM-4p-6Jx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="USM-Xy-VLb"/>
+                <constraint firstAttribute="trailing" secondItem="weB-83-oJ4" secondAttribute="trailing" constant="10" id="a48-KP-hHt"/>
+                <constraint firstItem="YWP-mA-2zj" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="dBV-Qo-4ax"/>
+                <constraint firstItem="0AM-4p-6Jx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dkr-nY-UB4"/>
+                <constraint firstItem="heb-am-lMy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hqY-g6-FaQ"/>
+                <constraint firstItem="heb-am-lMy" firstAttribute="top" secondItem="0AM-4p-6Jx" secondAttribute="bottom" constant="10" id="q4H-ih-GkM"/>
+                <constraint firstItem="weB-83-oJ4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="vqH-Af-fcf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="closeButton" destination="weB-83-oJ4" id="aEz-Ef-ACK"/>
+                <outlet property="messageLabel" destination="heb-am-lMy" id="Au8-TL-8ZL"/>
+                <outlet property="reConnectButton" destination="lci-mF-oQ3" id="fGi-hf-J5A"/>
+                <outlet property="returnButton" destination="hs7-y4-6S4" id="w4O-fq-aPu"/>
+                <outlet property="titleLabel" destination="0AM-4p-6Jx" id="IYe-XL-CLz"/>
+            </connections>
+            <point key="canvasLocation" x="98" y="-22.5"/>
+        </view>
+    </objects>
+</document>

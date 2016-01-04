@@ -19,5 +19,6 @@
 @property (nonatomic, weak) id<YSCountdownViewDelegate> delegate;
 
 - (void)startCountdownWithTime:(NSInteger)time;
+- (void)startAnimationCountdownWithTime:(NSInteger)time;
 
 @end

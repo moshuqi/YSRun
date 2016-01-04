@@ -8,6 +8,12 @@
 
 #import "YSRunningModeView.h"
 
+@class YSMapManager;
+
 @interface YSRunningMapModeView : YSRunningModeView
+
+- (YSMapManager *)getMapManager;
+- (void)setupMap;
+- (void)mapLocation;
 
 @end

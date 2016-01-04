@@ -20,12 +20,12 @@
 
 @implementation YSTimeLabel
 
-
 - (void)awakeFromNib
 {
     [self initCount];
-    
+
     self.timeLabel.text = @"00 : 00 : 00";
+    self.timeLabel.adjustsFontSizeToFitWidth = YES;
 }
 
 - (void)initCount
@@ -74,6 +74,12 @@
     
     NSString *labelText = [NSString stringWithFormat:@"%@ : %@ : %@", hourText, minuteText, secondText];
     self.timeLabel.text = labelText;
+}
+
+- (void)setBoldWithFontSize:(CGFloat)fontSize
+{
+    // 设置粗体
+    self.timeLabel.font = [UIFont fontWithName:@"HelveticaNeue-CondensedBold" size:fontSize];
 }
 
 @end

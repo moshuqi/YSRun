@@ -13,7 +13,8 @@
 - (CGRect)getModeStatusViewFrame;
 - (CGRect)getTimeLabelFrame;
 - (CGRect)getDistanceLabelFrame;
-- (CGRect)getSpeedLabelFrame;
+- (CGRect)getPaceLabelFrame;
+- (CGRect)getHeartRateLabelFrame;
 - (CGRect)getFinishButtonAppearFrame;
 - (CGRect)getFinishButtonDisappearFrame;
 - (CGRect)getContinueButtonAppearFrame;

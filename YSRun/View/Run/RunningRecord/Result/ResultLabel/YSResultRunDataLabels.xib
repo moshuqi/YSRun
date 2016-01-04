@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSResultRunDataLabels"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSResultRunDataLabels">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="56"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FSJ-Cb-vlu">
+                    <rect key="frame" x="379" y="0.0" width="26" height="56"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="26" id="m2a-fF-eMh"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRt-k7-Hl1" userLabel="distance">
+                    <rect key="frame" x="15" y="0.0" width="121.5" height="56"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQx-Zf-VCL" userLabel="time">
+                    <rect key="frame" x="136.5" y="0.0" width="121" height="56"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ZD-Q2-pqa" userLabel="calorie">
+                    <rect key="frame" x="257.5" y="0.0" width="121.5" height="56"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="3ZD-Q2-pqa" secondAttribute="bottom" id="2ph-G8-yuz"/>
+                <constraint firstItem="DQx-Zf-VCL" firstAttribute="width" secondItem="LRt-k7-Hl1" secondAttribute="width" id="38Z-hG-idT"/>
+                <constraint firstItem="3ZD-Q2-pqa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="74P-uz-6ob"/>
+                <constraint firstAttribute="trailing" secondItem="FSJ-Cb-vlu" secondAttribute="trailing" id="79R-La-ui6"/>
+                <constraint firstItem="DQx-Zf-VCL" firstAttribute="leading" secondItem="LRt-k7-Hl1" secondAttribute="trailing" id="Bjc-zv-XJ6"/>
+                <constraint firstItem="3ZD-Q2-pqa" firstAttribute="width" secondItem="LRt-k7-Hl1" secondAttribute="width" id="LA8-4M-1fu"/>
+                <constraint firstItem="3ZD-Q2-pqa" firstAttribute="leading" secondItem="DQx-Zf-VCL" secondAttribute="trailing" id="NZ2-CS-lFC"/>
+                <constraint firstItem="LRt-k7-Hl1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Pjs-jk-iG4"/>
+                <constraint firstAttribute="bottom" secondItem="LRt-k7-Hl1" secondAttribute="bottom" id="WXa-lk-Ptc"/>
+                <constraint firstAttribute="bottom" secondItem="FSJ-Cb-vlu" secondAttribute="bottom" id="apc-Iv-vCF"/>
+                <constraint firstAttribute="bottom" secondItem="DQx-Zf-VCL" secondAttribute="bottom" id="cIK-AL-cBI"/>
+                <constraint firstItem="FSJ-Cb-vlu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lbb-jE-O4f"/>
+                <constraint firstItem="DQx-Zf-VCL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nGv-8v-Hgs"/>
+                <constraint firstItem="LRt-k7-Hl1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="nTd-Ng-k4h"/>
+                <constraint firstItem="FSJ-Cb-vlu" firstAttribute="leading" secondItem="3ZD-Q2-pqa" secondAttribute="trailing" id="rbw-Mg-4Uk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="arrow" destination="FSJ-Cb-vlu" id="Pwf-tU-TxA"/>
+                <outlet property="calorieLabel" destination="3ZD-Q2-pqa" id="XQo-pu-PNu"/>
+                <outlet property="distanceLabel" destination="LRt-k7-Hl1" id="1RJ-oy-74C"/>
+                <outlet property="timeLabel" destination="DQx-Zf-VCL" id="w24-d6-Cc3"/>
+            </connections>
+            <point key="canvasLocation" x="384.5" y="-63"/>
+        </view>
+    </objects>
+</document>

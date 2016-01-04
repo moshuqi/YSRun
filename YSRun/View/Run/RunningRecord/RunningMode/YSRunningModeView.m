@@ -8,9 +8,11 @@
 
 #import "YSRunningModeView.h"
 #import "YSRunningModeView+GetMethod.h"
+#import "YSStatisticsDefine.h"
+#import "YSAppMacro.h"
 
-const CGFloat kPulldownViewRadius = 44;
-const CGFloat kButtonWidth = 88;
+static const CGFloat kPulldownViewRadius = 44;      // 中间下拉按钮的半径
+static const CGFloat kButtonWidth = 88;             // “继续”、“完成”按钮的尺寸
 
 @interface YSRunningModeView () <YSRunningModeStatusViewDelegate>
 
@@ -47,17 +49,23 @@ const CGFloat kButtonWidth = 88;
     [self.distanceLabel setSubscriptText:@"公里"];
     [self addSubview:self.distanceLabel];
     
-    self.speedLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
-    self.speedLabel.userInteractionEnabled = NO;
-    [self.speedLabel setSubscriptText:@"配速"];
-    [self addSubview:self.speedLabel];
+    self.paceLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.paceLabel.userInteractionEnabled = NO;
+    [self.paceLabel setSubscriptText:@"配速(分/公里)"];
+    [self addSubview:self.paceLabel];
+    
+    self.heartRateLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    [self.heartRateLabel setContentText:@"-"];
+    self.heartRateLabel.userInteractionEnabled = NO;
+    [self.heartRateLabel setSubscriptText:@"心率"];
+    [self addSubview:self.heartRateLabel];
     
     self.modeStatusView = [[[UINib nibWithNibName:@"YSRunningModeStatusView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.modeStatusView.delegate = self;
     [self addSubview:self.modeStatusView];
     
     self.finishButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.finishButton.frame = CGRectMake(0, 0, kButtonWidth, kButtonWidth);
+    self.finishButton.frame = CGRectMake(0, 0, kButtonWidth , kButtonWidth);
     [self.finishButton setTitle:@"完成" forState:UIControlStateNormal];
     [self.finishButton addTarget:self action:@selector(finishButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.finishButton];
@@ -88,6 +96,21 @@ const CGFloat kButtonWidth = 88;
     // 设置标签字号大小和颜色，子类重载
 }
 
+- (void)setContentFontSize:(CGFloat)contentSize subscriptFontSize:(CGFloat)subscriptSize
+{
+//    [self.distanceLabel setContentFontSize:contentSize];
+//    [self.paceLabel setContentFontSize:contentSize];
+//    [self.heartRateLabel setContentFontSize:contentSize];
+    
+    [self.distanceLabel setContentBoldWithFontSize:contentSize];
+    [self.paceLabel setContentBoldWithFontSize:contentSize];
+    [self.heartRateLabel setContentBoldWithFontSize:contentSize];
+    
+    [self.distanceLabel setSubscriptFontSize:subscriptSize];
+    [self.paceLabel setSubscriptFontSize:subscriptSize];
+    [self.heartRateLabel setSubscriptFontSize:subscriptSize];
+}
+
 - (void)resetLayoutWithFrame:(CGRect)frame
 {
     self.frame = frame;
@@ -95,7 +118,8 @@ const CGFloat kButtonWidth = 88;
     self.modeStatusView.frame = [self getModeStatusViewFrame];
     self.timeLabel.frame = [self getTimeLabelFrame];
     self.distanceLabel.frame = [self getDistanceLabelFrame];
-    self.speedLabel.frame = [self getSpeedLabelFrame];
+    self.paceLabel.frame = [self getPaceLabelFrame];
+    self.heartRateLabel.frame = [self getHeartRateLabelFrame];
     
     [self resetButtonsPositionWithPauseStatus];
     [self setupButtonsAppearance];
@@ -120,7 +144,6 @@ const CGFloat kButtonWidth = 88;
     }
     else if (panGesture.state == UIGestureRecognizerStateChanged)
     {
-        
         if (point.y >= originPoint.y)
         {
             CGRect frame = CGRectMake(self.pulldownView.frame.origin.x,
@@ -128,7 +151,7 @@ const CGFloat kButtonWidth = 88;
                                       self.pulldownView.frame.size.width,
                                       self.pulldownView.frame.size.height);
             self.pulldownView.frame = frame;
-            
+
             [self updateButtonsPositionByDeltaY:dy];
         }
     }
@@ -243,6 +266,49 @@ const CGFloat kButtonWidth = 88;
     [self.timeLabel resetTimeLabelWithTotalSeconds:time];
 }
 
+- (void)setDistance:(CGFloat)distance
+{
+    // 单位公里
+    [self.distanceLabel setContentText:[NSString stringWithFormat:@"%.2f", distance]];
+}
+
+- (void)setPace:(CGFloat)pace
+{
+    // 配速（分/公里）
+    [self.paceLabel setContentText:[NSString stringWithFormat:@"%.2f", pace]];
+}
+
+- (void)setHeartRate:(NSInteger)heartRate
+{
+    dispatch_async(dispatch_get_main_queue(), ^(){
+        NSString *text = (heartRate > 0) ? [NSString stringWithFormat:@"%@", @(heartRate)] : @"-";
+        [self.heartRateLabel setContentText:text];
+        
+        [self setHeartRateLabelColorWithHeartRate:heartRate];
+    });
+}
+
+- (void)setHeartRateLabelColorWithHeartRate:(NSInteger)heartRate
+{
+    // 根据心率值设置心率标签的颜色
+    UIColor *heartRateTextColor = nil;
+    if (heartRate < YSGraphDataMiddleSectionMin)
+    {
+        // 未达到高效燃脂心率
+        heartRateTextColor = RGB(245, 245, 245);
+    }
+    else if (heartRate > YSGraphDataMiddleSectionMax)
+    {
+        // 超过高效燃脂心率范围
+        heartRateTextColor = RGB(254, 209, 206);
+    }
+    else
+    {
+        // 在高效燃脂心率范围内
+        heartRateTextColor = RGB(4, 181, 108);
+    }
+    [self.heartRateLabel setTextColor:heartRateTextColor];
+}
 
 #pragma mark - YSRunningModeStatusViewDelegate
 

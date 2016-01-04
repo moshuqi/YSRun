@@ -8,6 +8,10 @@
 
 #import "YSRunningModeView+GetMethod.h"
 
+static const CGFloat kDistanceFromButtonToBottomEdges = 86; // 按钮下边缘距底边的距离
+static const CGFloat kDistanceFromButtonToSideEdge = 20;    // 按钮与屏幕左右边缘的间距
+static const CGFloat kButtonDisappearDistance = 30;         // 按钮消失离开屏幕可视范围时，上边缘距离底边的距离
+
 @implementation YSRunningModeView (GetMethod)
 
 - (CGRect)getModeStatusViewFrame
@@ -28,7 +32,13 @@
     return CGRectZero;
 }
 
-- (CGRect)getSpeedLabelFrame
+- (CGRect)getPaceLabelFrame
+{
+    // 子类重载
+    return CGRectZero;
+}
+
+- (CGRect)getHeartRateLabelFrame
 {
     // 子类重载
     return CGRectZero;
@@ -36,20 +46,17 @@
 
 - (CGRect)getFinishButtonAppearFrame
 {
-    CGFloat distance = 106;  // 与底边的间距
-    CGFloat d = 40;    // 与边缘的间距
     CGSize buttonSize = [self getButtonSize];
     
-    CGFloat originY = CGRectGetHeight(self.frame) - distance - buttonSize.height;
-    CGRect frame = CGRectMake(d, originY, buttonSize.width, buttonSize.height);
+    CGFloat originY = CGRectGetHeight(self.frame) - kDistanceFromButtonToBottomEdges - buttonSize.height;
+    CGRect frame = CGRectMake(kDistanceFromButtonToSideEdge, originY, buttonSize.width, buttonSize.height);
     return frame;
 }
 
 - (CGRect)getFinishButtonDisappearFrame
 {
     CGRect appearFrame = [self getFinishButtonAppearFrame];
-    CGFloat d = 30;
-    CGFloat originY = CGRectGetHeight(self.frame) + d + [self getButtonSize].height;
+    CGFloat originY = CGRectGetHeight(self.frame) + kButtonDisappearDistance + [self getButtonSize].height;
     
     CGRect frame = CGRectMake(appearFrame.origin.x, originY, appearFrame.size.width, appearFrame.size.height);
     return frame;
@@ -57,12 +64,10 @@
 
 - (CGRect)getContinueButtonAppearFrame
 {
-    CGFloat distance = 106;  // 与底边的间距
-    CGFloat d = 40;    // 与边缘的间距
     CGSize buttonSize = [self getButtonSize];
     
-    CGFloat originX = CGRectGetWidth(self.frame) - buttonSize.width - d;
-    CGFloat originY = CGRectGetHeight(self.frame) - distance - buttonSize.height;
+    CGFloat originX = CGRectGetWidth(self.frame) - buttonSize.width - kDistanceFromButtonToSideEdge;
+    CGFloat originY = CGRectGetHeight(self.frame) - kDistanceFromButtonToBottomEdges - buttonSize.height;
     
     CGRect frame = CGRectMake(originX, originY, buttonSize.width, buttonSize.height);
     return frame;
@@ -71,8 +76,7 @@
 - (CGRect)getContinueButtonDisappearFrame
 {
     CGRect appearFrame = [self getContinueButtonAppearFrame];
-    CGFloat d = 30;
-    CGFloat originY = CGRectGetHeight(self.frame) + d + [self getButtonSize].height;
+    CGFloat originY = CGRectGetHeight(self.frame) + kButtonDisappearDistance + [self getButtonSize].height;
     
     CGRect frame = CGRectMake(appearFrame.origin.x, originY, appearFrame.size.width, appearFrame.size.height);
     return frame;
@@ -100,8 +104,7 @@
 - (CGRect)getPulldownViewDisappearFrame
 {
     CGRect appearFrame = [self getPulldownViewFrame];
-    CGFloat d = 30;
-    CGFloat originY = CGRectGetHeight(self.frame) + d + [self getPulldownViewFrame].size.height;
+    CGFloat originY = CGRectGetHeight(self.frame) + kButtonDisappearDistance + [self getPulldownViewFrame].size.height;
     
     CGRect frame = CGRectMake(appearFrame.origin.x, originY, appearFrame.size.width, appearFrame.size.height);
     return frame;
@@ -145,7 +148,5 @@
     CGFloat distance = disappearFrame.origin.y - appearFrame.origin.y;
     return distance;
 }
-
-
 
 @end

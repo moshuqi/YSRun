@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YSUserViewControllerDelegate <NSObject>
+
+@required
+- (void)userViewUserStateChanged;   // 用户登录或者注销
+
+@end
+
 @interface YSUserViewController : UIViewController
+
+@property (nonatomic, weak) id<YSUserViewControllerDelegate> delegate;
 
 @end

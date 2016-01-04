@@ -13,6 +13,9 @@
 #import "YSPhoneTextFieldLimitDelegate.h"
 #import "YSTipLabelHUD.h"
 #import "YSNetworkManager.h"
+#import "YSCaptchaTimer.h"
+#import "YSRegisterUserInfoViewController.h"
+#import "YSLoadingHUD.h"
 
 @interface YSRegisterViewController () <YSPhoneTextFieldLimitDelegateCallback, YSTextFieldTableViewDelegate, YSNetworkManagerDelegate>
 
@@ -22,6 +25,8 @@
 
 @property (nonatomic, strong) YSPhoneTextFieldLimitDelegate *phoneTextFieldDelegate;
 @property (nonatomic, strong) YSNetworkManager *networkManager;
+
+@property (nonatomic, copy) NSString *account;  // 注册手机
 
 @end
 
@@ -45,11 +50,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self resetCaptchaButtonState];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)setupButton
 {
     [self.nextButton setTitle:@"下一步" forState:UIControlStateNormal];
     [self.nextButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.nextButton.backgroundColor = GreenBackgroundColor;
+    
+    self.nextButton.layer.cornerRadius = ButtonCornerRadius;
+    self.nextButton.clipsToBounds = YES;
 }
 
 - (void)setupTextFieldTable
@@ -89,12 +109,68 @@
         return;
     }
     
+    [[YSLoadingHUD shareLoadingHUD] show];
+    
     [self.networkManager checkCaptcha:captcha phoneNumber:phoneNumber];
 }
 
 - (void)showTipLabelWithText:(NSString *)text
 {
     [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:text];
+}
+
+- (void)resetCaptchaButtonState
+{
+    // 根据单例里保存的数据来设置发送验证码按钮的状态
+    
+    YSCaptchaTimer *captchaTimer = [YSCaptchaTimer shareCaptchaTimer];
+    
+    if ([captchaTimer isCountdownState])
+    {
+        [self setCaptchaButtonDisabled];
+        
+        CallbackBlock block = [self getCaptchaTimerCallBackBlock];
+        [captchaTimer setCallbackWithBlock:block];
+    }
+}
+
+- (void)sendCaptchaSuccess
+{
+    // 发送验证码按钮置灰，倒计时完成后才能点击。
+    
+    [[YSCaptchaTimer shareCaptchaTimer] startWithBlock:[self getCaptchaTimerCallBackBlock]];
+    
+    [self setCaptchaButtonDisabled];
+}
+
+- (void)setCaptchaButtonDisabled
+{
+    UIButton *captchaButton = [self.textFieldTable getButton];
+    captchaButton.enabled = NO;
+    captchaButton.backgroundColor = RGB(215, 215, 215);
+}
+
+- (CallbackBlock)getCaptchaTimerCallBackBlock
+{
+    CallbackBlock block = ^(NSInteger remainTime, BOOL finished)
+    {
+        UIButton *captchaButton = [self.textFieldTable getButton];
+        if (finished)
+        {
+            captchaButton.enabled = YES;
+            captchaButton.backgroundColor = [UIColor whiteColor];
+        }
+        else
+        {
+            NSString *text = [NSString stringWithFormat:@"发送验证码(%@)", @(remainTime)];
+            
+            // 需同时设置，，并且保证captchaButton.titleLabel.text在setTitle:forState:之前，否则按钮的字在NSTimer调用时会闪。
+            captchaButton.titleLabel.text = text;
+            [captchaButton setTitle:text forState:UIControlStateDisabled];
+        }
+    };
+    
+    return block;
 }
 
 #pragma mark - YSPhoneTextFieldLimitDelegateCallback
@@ -112,6 +188,8 @@
     if (isValid)
     {
         [self.networkManager acquireCaptchaWithPhoneNumber:phoneNumber];
+        
+        [self sendCaptchaSuccess];
     }
     else
     {
@@ -138,13 +216,25 @@
     [self showTipLabelWithText:tip];
 }
 
-- (void)checkCaptchaSuccess
+- (void)acquireCaptchaSuccess
+{
+    [self showTipLabelWithText:@"验证码已发送至手机短信"];
+}
+
+- (void)checkCaptchaSuccessWithPhoneNumber:(NSString *)phoneNumber
 {
     // 验证成功，页面跳转
+    
+    [[YSLoadingHUD shareLoadingHUD] dismiss];
+    
+    YSRegisterUserInfoViewController *registerUserInfoViewController = [[YSRegisterUserInfoViewController alloc] initWithAccount:phoneNumber];
+    [self.navigationController pushViewController:registerUserInfoViewController animated:YES];
 }
 
 - (void)checkCaptchaFailureWithMessage:(NSString *)message
 {
+    [[YSLoadingHUD shareLoadingHUD] dismiss];
+    
     [self showTipLabelWithText:message];
 }
 

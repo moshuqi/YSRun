@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSUserLevelView">
             <connections>
                 <outlet property="encourageLabel" destination="dj7-Jb-4GC" id="Pst-Zg-nOA"/>
+                <outlet property="levelLabel" destination="b2F-a7-hSP" id="yc7-gO-AYn"/>
+                <outlet property="progressBottomToEncourageLabelConstraint" destination="yZe-4b-ylB" id="wnr-us-VQO"/>
                 <outlet property="progressContentView" destination="T55-fb-eRT" id="bS1-bX-YYm"/>
+                <outlet property="progressTopToSuperViewConstraint" destination="J5l-cZ-JkD" id="Y2Y-QP-irf"/>
                 <outlet property="setButton" destination="tcU-gM-pyb" id="7xA-Pe-Shu"/>
                 <outlet property="userName" destination="dWI-Gk-DpC" id="Gm4-4i-6mb"/>
                 <outlet property="userPhoto" destination="D7C-7w-vU8" id="nBU-jY-LB2"/>
@@ -20,15 +23,15 @@
             <rect key="frame" x="0.0" y="0.0" width="354" height="289"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="D7C-7w-vU8">
-                    <rect key="frame" x="13" y="11" width="34" height="34"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user_default_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="D7C-7w-vU8">
+                    <rect key="frame" x="10" y="25" width="34" height="34"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="34" id="nay-3S-HwC"/>
                         <constraint firstAttribute="height" constant="34" id="rpj-OE-WXX"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWI-Gk-DpC">
-                    <rect key="frame" x="55" y="11" width="88" height="26"/>
+                    <rect key="frame" x="52" y="25" width="88" height="26"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="26" id="cHz-Up-YTk"/>
                         <constraint firstAttribute="width" constant="88" id="qee-Sj-HtM"/>
@@ -37,13 +40,14 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-gM-pyb">
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-gM-pyb">
                     <rect key="frame" x="312" y="13" width="29" height="29"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="29" id="eQ5-ON-Ww4"/>
                         <constraint firstAttribute="width" constant="29" id="mSH-5U-zsY"/>
                     </constraints>
-                    <state key="normal" title="Button" image="set_button.png"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                    <state key="normal" title=" "/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="坚持一定会有收获" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj7-Jb-4GC">
                     <rect key="frame" x="0.0" y="257" width="354" height="32"/>
@@ -59,7 +63,7 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-a7-hSP">
                             <rect key="frame" x="25" y="25" width="142" height="142"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -77,15 +81,15 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="tcU-gM-pyb" secondAttribute="trailing" constant="13" id="2Ju-Kp-Cfv"/>
                 <constraint firstItem="T55-fb-eRT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="J5l-cZ-JkD"/>
-                <constraint firstItem="D7C-7w-vU8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="JDt-22-hf6"/>
+                <constraint firstItem="D7C-7w-vU8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="JDt-22-hf6"/>
                 <constraint firstItem="dWI-Gk-DpC" firstAttribute="leading" secondItem="D7C-7w-vU8" secondAttribute="trailing" constant="8" id="OP0-Vi-xvI"/>
                 <constraint firstAttribute="trailing" secondItem="dj7-Jb-4GC" secondAttribute="trailing" id="Si1-wz-MeQ"/>
                 <constraint firstItem="tcU-gM-pyb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="aku-0f-9rl"/>
-                <constraint firstItem="D7C-7w-vU8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="13" id="cEs-lm-8Qc"/>
+                <constraint firstItem="D7C-7w-vU8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cEs-lm-8Qc"/>
                 <constraint firstAttribute="bottom" secondItem="dj7-Jb-4GC" secondAttribute="bottom" id="hnt-eY-yoD"/>
-                <constraint firstItem="dWI-Gk-DpC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="jZw-rV-bZ1"/>
                 <constraint firstItem="dj7-Jb-4GC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mJy-xj-Vqb"/>
                 <constraint firstItem="T55-fb-eRT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oV8-DZ-Ojh"/>
+                <constraint firstItem="dWI-Gk-DpC" firstAttribute="top" secondItem="D7C-7w-vU8" secondAttribute="top" id="sEY-3t-Dqh"/>
                 <constraint firstItem="dj7-Jb-4GC" firstAttribute="top" secondItem="T55-fb-eRT" secondAttribute="bottom" constant="20" id="yZe-4b-ylB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -93,7 +97,6 @@
         </view>
     </objects>
     <resources>
-        <image name="set_button.png" width="58" height="58"/>
         <image name="user_default_photo.png" width="68" height="68"/>
     </resources>
 </document>

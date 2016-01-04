@@ -7,8 +7,8 @@
 //
 
 #import "YSUserNoLoginView.h"
-#import "YSUserSetCell.h"
 #import "YSAppMacro.h"
+#import "YSDevice.h"
 
 #define UserNoLoginTableViewReuseIdentifier @"UserNoLoginTableViewReuseIdentifier"
 
@@ -17,6 +17,11 @@
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
 @property (nonatomic, weak) IBOutlet UILabel *loginTipLabel;
+
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *loginButtonHeightConstraint;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
+
+@property (nonatomic, strong) NSArray *cellTypeArray;
 
 @end
 
@@ -33,6 +38,16 @@
     self.loginTipLabel.backgroundColor = [UIColor clearColor];
     
     self.loginButton.backgroundColor = GreenBackgroundColor;
+    self.loginButton.layer.cornerRadius = ButtonCornerRadius;
+    self.loginButton.clipsToBounds = YES;
+    
+    if ([YSDevice isPhone6Plus])
+    {
+        self.loginButtonHeightConstraint.constant = 52;
+        self.tableViewHeightConstraint.constant = 60;
+    }
+    
+    [self setupCellTypeArray];
 }
 
 - (IBAction)loginButtonClicked:(id)sender
@@ -40,16 +55,25 @@
     [self.delegate login];
 }
 
+- (void)setupCellTypeArray
+{
+    // 未登录时，暂时只显示“设置”
+    self.cellTypeArray = @[[NSNumber numberWithInteger:YSSettingsTypeSet]];
+}
+
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    YSSettingsType cellType = (YSSettingsType)[self.cellTypeArray[indexPath.row] integerValue];
+    [self.delegate userNoLoginViewDidSelectedType:cellType];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGRectGetHeight(self.tableView.frame);
+    return CGRectGetHeight(self.tableView.frame) / [self.cellTypeArray count];
 }
 
 
@@ -57,14 +81,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.cellTypeArray count];
 }
 
 - (YSUserSetCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     YSUserSetCell *cell = [tableView dequeueReusableCellWithIdentifier:UserNoLoginTableViewReuseIdentifier forIndexPath:indexPath];
+    YSSettingsType type = (YSSettingsType)[self.cellTypeArray[indexPath.row] integerValue];
     
-    [cell setupWithType:YSUserSetCellTypeMeasure];
+    switch (type)
+    {
+        case YSSettingsTypeSet:
+            [cell setupCellWithLeftText:@"设置"
+                             centerText:nil
+                              rightText:nil
+                          textFieldText:nil
+                          switchVisible:NO];
+            break;
+            
+        default:
+            break;
+    }
+    
     
     return cell;
 }

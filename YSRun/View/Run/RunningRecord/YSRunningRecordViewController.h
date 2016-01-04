@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol YSRunningRecordViewControllerDelegate <NSObject>
+
+@required
+- (void)runningRecordFinish;
+
+@end
+
 @interface YSRunningRecordViewController : UIViewController
+
+@property (nonatomic, weak) id<YSRunningRecordViewControllerDelegate> delegate;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface YSCalendarViewController : UIViewController
 
+- (void)resetCalendar;
+
 @end

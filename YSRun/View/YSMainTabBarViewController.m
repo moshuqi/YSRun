@@ -11,7 +11,9 @@
 #import "YSRunViewController.h"
 #import "YSUserViewController.h"
 
-@interface YSMainTabBarViewController ()
+#import "YSDatabaseManager.h"
+
+@interface YSMainTabBarViewController () <YSRunViewControllerDelegate, YSUserViewControllerDelegate>
 
 @property (nonatomic, strong) YSCalendarViewController *calendarViewController;
 @property (nonatomic, strong) YSRunViewController *runViewController;
@@ -63,13 +65,15 @@
 {
     self.calendarViewController = [[YSCalendarViewController alloc] init];
     
-    CGSize size = CGSizeMake(56, 56);
+//    CGSize size = CGSizeMake(56, 56);
     
     NSString *imageName = @"calendar.png";
-    self.calendarViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+//    self.calendarViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+    self.calendarViewController.tabBarItem.image = [UIImage imageNamed:imageName];
     
-    NSString *selectedImageName = @"calendar_highlight.png";
-    self.calendarViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    NSString *selectedImageName = @"calendar_highlight";
+//    self.calendarViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    self.calendarViewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     self.calendarViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 }
@@ -77,14 +81,17 @@
 - (void)initRunViewController
 {
     self.runViewController = [[YSRunViewController alloc] init];
+    self.runViewController.delegate = self;
     
-    CGSize size = CGSizeMake(46, 46);
+//    CGSize size = CGSizeMake(46, 46);
     
-    NSString *imageName = @"run.png";
-    self.runViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+    NSString *imageName = @"run";
+//    self.runViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+    self.runViewController.tabBarItem.image = [UIImage imageNamed:imageName];
     
-    NSString *selectedImageName = @"run_highlight.png";
-    self.runViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    NSString *selectedImageName = @"run_highlight";
+//    self.runViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    self.runViewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     self.runViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 }
@@ -92,14 +99,17 @@
 - (void)initUserViewController
 {
     self.userViewController = [[YSUserViewController alloc] init];
+    self.userViewController.delegate = self;
     
-    CGSize size = CGSizeMake(56, 56);
+//    CGSize size = CGSizeMake(56, 56);
     
-    NSString *imageName = @"user.png";
-    self.userViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+    NSString *imageName = @"user";
+//    self.userViewController.tabBarItem.image = [self getImageWithName:imageName size:size];
+    self.userViewController.tabBarItem.image = [UIImage imageNamed:imageName];
     
-    NSString *selectedImageName = @"user_highlight.png";
-    self.userViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    NSString *selectedImageName = @"user_highlight";
+//    self.userViewController.tabBarItem.selectedImage = [self getImageWithName:selectedImageName size:size];
+    self.userViewController.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImageName] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     self.userViewController.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
 }
@@ -120,6 +130,26 @@
     newImage = [newImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
     return newImage;
+}
+
+#pragma mark - YSRunViewControllerDelegate
+
+- (void)runViewUserStateChanged
+{
+    [self.calendarViewController resetCalendar];
+}
+
+- (void)runningFinish
+{
+    // 每完成一次跑步也刷新一次数据
+    [self.calendarViewController resetCalendar];
+}
+
+#pragma mark - YSUserViewControllerDelegate
+
+- (void)userViewUserStateChanged
+{
+    [self.calendarViewController resetCalendar];
 }
 
 @end

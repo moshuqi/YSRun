@@ -10,7 +10,10 @@
 
 @interface YSCicularProgressView : UIView
 
+- (id)initWithFrame:(CGRect)frame lineWidth:(CGFloat)lineWidth;
+
 - (void)animationToProgress:(CGFloat)progress;
 - (CGPoint)getGapPoint;
+
 
 @end

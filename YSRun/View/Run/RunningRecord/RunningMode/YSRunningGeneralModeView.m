@@ -8,6 +8,7 @@
 
 #import "YSRunningGeneralModeView.h"
 #import "YSAppMacro.h"
+#import "YSAppUIDefine.h"
 
 @interface YSRunningGeneralModeView ()
 
@@ -15,6 +16,8 @@
 @property (nonatomic, strong) UIImageView *backImageView;
 
 @end
+
+static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左边缘的间距
 
 @implementation YSRunningGeneralModeView
 
@@ -31,7 +34,7 @@
 
 - (void)addClockIcon
 {
-    UIImage *image = [UIImage imageNamed:@"clock.png"];
+    UIImage *image = [UIImage imageNamed:@"clock"];
     self.clockIcon = [[UIImageView alloc] initWithImage:image];
     
     [self addSubview:self.clockIcon];
@@ -41,7 +44,7 @@
 {
     if (!self.backImageView)
     {
-        UIImage *image = [UIImage imageNamed:@"backgound_image1"];
+        UIImage *image = [UIImage imageNamed:@"background_image1"];
         self.backImageView = [[UIImageView alloc] initWithImage:image];
         self.backImageView.frame = self.bounds;
         
@@ -55,7 +58,9 @@
     UIImage *modeImage = [UIImage imageNamed:@"map_mode.png"];
     [self.modeStatusView setModeIconWithImage:modeImage modeName:@"地图模式"];
     
-    [self.timeLabel setLabelFontSize:56];
+    [self.timeLabel setBoldWithFontSize:[self timeLabelFontSize]];
+    
+    [self setContentFontSize:36 subscriptFontSize:10];
 }
 
 - (void)resetLayoutWithFrame:(CGRect)frame
@@ -68,10 +73,10 @@
 
 - (CGRect)getModeStatusViewFrame
 {
-    CGFloat originX = 13;
-    CGFloat originY = 11;
+    CGFloat originX = 15;
+    CGFloat originY = 25;
     CGFloat width = 120;
-    CGFloat height = 34;
+    CGFloat height = 36;
     
     CGRect frame = CGRectMake(originX, originY, width, height);
     return frame;
@@ -79,9 +84,9 @@
 
 - (CGRect)getTimeLabelFrame
 {
-    CGFloat distance = 56;  // 与模式图标的垂直间距
+    CGFloat distance = [self distanceFromModeStatusViewToTimeLabel];  // 与模式图标的垂直间距
     CGFloat width = CGRectGetWidth(self.frame);
-    CGFloat height = 96;
+    CGFloat height = [self timeLabelHeight];
     
     CGRect modeStatusViewFrame = [self getModeStatusViewFrame];
     CGFloat originY = modeStatusViewFrame.origin.y + modeStatusViewFrame.size.height + distance;
@@ -92,9 +97,9 @@
 
 - (CGRect)getClockIconFrame
 {
-    CGFloat distance = 25;  // 与显示时间标签的间距
-    CGFloat iconWidth = 36;
-    CGFloat iconHeight = iconWidth;
+    CGFloat distance = [self distanceFromTimeLabelToClockIcon];  // 与显示时间标签的间距
+    CGFloat iconWidth = 23;
+    CGFloat iconHeight = 27;
     
     CGFloat originX = (CGRectGetWidth(self.frame) - iconWidth) / 2;
     CGRect timeLabelFrame = [self getTimeLabelFrame];
@@ -106,25 +111,38 @@
 
 - (CGRect)getDistanceLabelFrame
 {
-    CGFloat distance = 46;  // 与时钟图标的间距
-    CGFloat d = 40;    // 与边缘的间距
+    CGFloat distance = [self distanceFromClockIconToLabel];  // 与时钟图标的间距
+//    CGFloat d = 40;    // 与边缘的间距
     CGSize labelSize = [self getLabelSize];
     
     CGRect iconFrame = [self getClockIconFrame];
     CGFloat originY = iconFrame.origin.y + iconFrame.size.height + distance;
+    CGFloat originX = kDistanceLabelMargin;
     
-    CGRect frame = CGRectMake(d, originY, labelSize.width, labelSize.height);
+    CGRect frame = CGRectMake(originX, originY, labelSize.width, labelSize.height);
     return frame;
 }
 
-- (CGRect)getSpeedLabelFrame
+- (CGRect)getPaceLabelFrame
 {
-    CGFloat distance = 46;  // 与时钟图标的间距
-    CGFloat d = 40;    // 与边缘的间距
+    CGFloat distance = [self distanceFromClockIconToLabel];  // 与时钟图标的间距
     CGSize labelSize = [self getLabelSize];
     
     CGRect iconFrame = [self getClockIconFrame];
-    CGFloat originX = CGRectGetWidth(self.frame) - d - labelSize.width;
+    CGFloat originX = (CGRectGetWidth(self.frame) - labelSize.width) / 2;
+    CGFloat originY = iconFrame.origin.y + iconFrame.size.height + distance;
+    
+    CGRect frame = CGRectMake(originX, originY, labelSize.width, labelSize.height);
+    return frame;
+}
+
+- (CGRect)getHeartRateLabelFrame
+{
+    CGFloat distance = [self distanceFromClockIconToLabel];  // 与时钟图标的间距
+    CGSize labelSize = [self getLabelSize];
+    
+    CGRect iconFrame = [self getClockIconFrame];
+    CGFloat originX = CGRectGetWidth(self.frame) - labelSize.width - kDistanceLabelMargin;
     CGFloat originY = iconFrame.origin.y + iconFrame.size.height + distance;
     
     CGRect frame = CGRectMake(originX, originY, labelSize.width, labelSize.height);
@@ -134,7 +152,7 @@
 - (CGSize)getLabelSize
 {
     // 公里、配速标签的size
-    CGSize size = CGSizeMake(88, 56);
+    CGSize size = CGSizeMake(82, 56);
     return size;
 }
 
@@ -161,6 +179,49 @@
     button.backgroundColor = [UIColor clearColor];
     
     [button setTitleColor:color forState:UIControlStateNormal];
+}
+
+#pragma mark - 获取控件之间的间距、尺寸方法
+
+// 暂时的处理是按照5的尺寸，等比例适用到6和6p
+
+- (CGFloat)timeLabelFontSize
+{
+    // 在5上为60，按比例放大到6
+    CGFloat fontSize = 60.f * (ScreenPtheight / iPhone5ScreenPtHeight);
+    return fontSize;
+}
+
+- (CGFloat)timeLabelHeight
+{
+    return [self actualValue:55];
+}
+
+- (CGFloat)distanceFromClockIconToLabel
+{
+    // 标签与时钟图标的间距
+    return [self actualValue:53];
+}
+
+- (CGFloat)distanceFromModeStatusViewToTimeLabel
+{
+    // 模式图标与时间标签的间距
+    return [self actualValue:42];
+}
+
+- (CGFloat)distanceFromTimeLabelToClockIcon
+{
+    // 时间标签与时钟图片的间距
+    return [self actualValue:20];
+}
+
+- (CGFloat)actualValue:(CGFloat)value
+{
+    // 按比例转换成实际屏幕上的值
+    CGFloat scale = value / iPhone5ScreenPtHeight;
+    CGFloat actual = ScreenPtheight * scale;
+    
+    return actual;
 }
 
 @end

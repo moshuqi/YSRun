@@ -89,7 +89,7 @@
 	
 	deflateEnd(&zlibStreamStruct);
 	[compressedData setLength:zlibStreamStruct.total_out];
-	NSLog(@"%s: Compressed file from %d B to %d B", __func__, [pUncompressedData length], [compressedData length]);
+//	NSLog(@"%s: Compressed file from %d B to %d B", __func__, [pUncompressedData length], [compressedData length]);
 	return compressedData;
 }
 

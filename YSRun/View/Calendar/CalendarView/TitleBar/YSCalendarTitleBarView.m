@@ -9,10 +9,12 @@
 #import "YSCalendarTitleBarView.h"
 #import "YSCalendarTitleDateView.h"
 #import "NSDate+YSDateLogic.h"
+#import "YSCalendarWeekdayView.h"
 
 @interface YSCalendarTitleBarView () <YSCalendarTitleDateViewDelegate>
 
 @property (nonatomic, weak) IBOutlet YSCalendarTitleDateView *titleDateView;
+@property (nonatomic, weak) IBOutlet YSCalendarWeekdayView *weekdayView;
 
 @end
 
@@ -43,6 +45,12 @@
     NSInteger month = [date monthValue];
     
     [self.titleDateView setLabelWithYear:year month:month];
+}
+
+- (void)setTitleFontSize:(CGFloat)titleFontSize weekdayFontSize:(CGFloat)weekdayFontSize
+{
+    [self.titleDateView setTitleLabelFontSize:titleFontSize];
+    [self.weekdayView setLabelsFontSize:weekdayFontSize];
 }
 
 #pragma mark - YSCalendarTitleDateViewDelegate

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YSUserSetCell.h"
 
 @protocol YSUserNoLoginViewDelegate <NSObject>
 
+@required
 - (void)login;
+- (void)userNoLoginViewDidSelectedType:(YSSettingsType)type;
 
 @end
 

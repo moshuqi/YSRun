@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class YSRunInfoModel;
+
 @interface YSRunningResultViewController : UIViewController
+
+- (id)initWithRunData:(YSRunInfoModel *)runInfoModel;
 
 @end

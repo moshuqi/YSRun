@@ -17,6 +17,11 @@
 
 @implementation YSCalendarTitleDateView
 
+- (void)awakeFromNib
+{
+    self.label.adjustsFontSizeToFitWidth = YES;
+}
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if (self = [super initWithCoder:aDecoder])
@@ -37,6 +42,11 @@
 {
     NSString *text = [NSString stringWithFormat:@"%@年%@月", @(year), @(month)];
     self.label.text = text;
+}
+
+- (void)setTitleLabelFontSize:(CGFloat)fontSize
+{
+    self.label.font = [UIFont systemFontOfSize:fontSize];
 }
 
 - (IBAction)leftButtonClicked:(id)sender

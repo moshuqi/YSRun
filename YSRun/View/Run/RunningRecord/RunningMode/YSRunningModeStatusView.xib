@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -19,8 +19,8 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7E-NU-AGQ">
-                    <rect key="frame" x="55" y="0.0" width="261" height="45"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="50" y="0.0" width="266" height="45"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -33,7 +33,7 @@
                 <constraint firstAttribute="bottom" secondItem="t4K-VQ-0Cd" secondAttribute="bottom" id="dHC-cL-fAa"/>
                 <constraint firstItem="t4K-VQ-0Cd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="fmI-Ha-CXk"/>
                 <constraint firstAttribute="bottom" secondItem="O7E-NU-AGQ" secondAttribute="bottom" id="pjd-S2-Zdg"/>
-                <constraint firstItem="O7E-NU-AGQ" firstAttribute="leading" secondItem="t4K-VQ-0Cd" secondAttribute="trailing" constant="10" id="qE1-4A-KCs"/>
+                <constraint firstItem="O7E-NU-AGQ" firstAttribute="leading" secondItem="t4K-VQ-0Cd" secondAttribute="trailing" constant="5" id="qE1-4A-KCs"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>

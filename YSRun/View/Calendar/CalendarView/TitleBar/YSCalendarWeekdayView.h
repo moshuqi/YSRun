@@ -10,4 +10,6 @@
 
 @interface YSCalendarWeekdayView : UIView
 
+- (void)setLabelsFontSize:(CGFloat)fontSize;
+
 @end

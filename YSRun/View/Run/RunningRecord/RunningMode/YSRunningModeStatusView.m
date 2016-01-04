@@ -37,8 +37,6 @@
 - (void)awakeFromNib
 {
     [self addTapGesture];
-    
-    self.modeLabel.font = [UIFont systemFontOfSize:18];
 }
 
 //- (id)initWithFrame:(CGRect)frame

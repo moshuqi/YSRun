@@ -8,10 +8,26 @@
 
 #import <UIKit/UIKit.h>
 
-@class YSUserInfoModel;
+@protocol YSUserLevelViewDelegate <NSObject>
+
+@required
+- (void)headPhotoChange;
+- (void)toLogin;
+- (BOOL)loginState;
+
+@end
 
 @interface YSUserLevelView : UIView
 
-- (void)setupWithUserInfo:(YSUserInfoModel *)userInfoModel;
+@property (nonatomic, weak) id<YSUserLevelViewDelegate> delegate;
+
+- (void)setUserName:(NSString *)userName
+          headPhoto:(UIImage *)headPhoto
+              grade:(NSInteger)grade
+       achieveTitle:(NSString *)achieveTitle
+           progress:(CGFloat)progress
+upgradeRequireTimes:(NSInteger)upgradeRequireTimes;
+
+- (void)setHeadPhoto:(UIImage *)photo;
 
 @end

@@ -8,6 +8,11 @@
 
 #import "AppDelegate.h"
 #import "YSMainTabBarViewController.h"
+#import "UMFeedback.h"
+#import "MobClick.h"
+#import "YSShareFunc.h"
+
+#define UMAppKey        @"561cbb08e0f55a33f0004c54"
 
 @interface AppDelegate ()
 
@@ -26,6 +31,12 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    [self SDKConfig];
+    
+//    // bundle ID
+//    NSString *bundleID = [[NSBundle mainBundle] bundleIdentifier];
+//    NSLog(@"%@", bundleID);
     
     return YES;
 }
@@ -50,6 +61,25 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)SDKConfig
+{
+    // 第三方库的设置
+    [self UMConfig];
+    
+    // 分享
+    [YSShareFunc shareConfig];
+}
+
+- (void)UMConfig
+{
+    // 友盟用户反馈，数据统计
+    
+    [UMFeedback setAppkey:UMAppKey];
+    
+    [MobClick startWithAppkey:UMAppKey reportPolicy:BATCH channelId:nil];
+    [MobClick setLogEnabled:YES];
 }
 
 @end

@@ -17,4 +17,8 @@
 #define GreenBackgroundColor   RGB(4,181,108)
 #define LightgrayBackgroundColor RGB(245, 245, 245)
 
+#define ButtonCornerRadius 5
+
+const static NSString *MapAPIKey = @"e8be3a280e6fc3c2651ebef77e7a0fa5";
+
 #endif /* AppMacro_h */

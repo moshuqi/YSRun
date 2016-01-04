@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSLoginViewController">
@@ -12,6 +12,7 @@
                 <outlet property="navigationBarView" destination="6yW-GS-W1V" id="2Ki-2y-5Mj"/>
                 <outlet property="registerButton" destination="jUo-P2-3ze" id="cse-Q5-Uek"/>
                 <outlet property="textFieldTable" destination="4gI-Gl-5w1" id="bdd-ke-3x1"/>
+                <outlet property="thirdPartLogin" destination="KuC-xd-Mhb" id="p4t-VS-a0g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,34 +46,44 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fvO-K3-BZX">
-                    <rect key="frame" x="0.0" y="325" width="348" height="36"/>
+                    <rect key="frame" x="0.0" y="325" width="348" height="30"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUo-P2-3ze" userLabel="register">
-                            <rect key="frame" x="0.0" y="0.0" width="154" height="36"/>
+                            <rect key="frame" x="0.0" y="0.0" width="116" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="registerButtonClicked:" destination="-1" eventType="touchUpInside" id="pyj-gL-L67"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-41-DY6" userLabel="findPsw">
-                            <rect key="frame" x="194" y="0.0" width="154" height="36"/>
+                            <rect key="frame" x="232" y="0.0" width="116" height="30"/>
                             <state key="normal" title="Button"/>
                             <connections>
                                 <action selector="forgetPasswordButtonClicked:" destination="-1" eventType="touchUpInside" id="zoe-ZA-GGt"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuC-xd-Mhb" userLabel="login">
+                            <rect key="frame" x="116" y="0.0" width="116" height="30"/>
+                            <state key="normal" title="Button"/>
+                            <connections>
+                                <action selector="thirdPartLoginButtonClicked:" destination="-1" eventType="touchUpInside" id="ue6-2K-I34"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="jUo-P2-3ze" firstAttribute="leading" secondItem="fvO-K3-BZX" secondAttribute="leading" id="5KU-p4-Q7e"/>
-                        <constraint firstAttribute="bottom" secondItem="8Xs-41-DY6" secondAttribute="bottom" id="6y8-Fh-90p"/>
-                        <constraint firstAttribute="trailing" secondItem="8Xs-41-DY6" secondAttribute="trailing" id="8uB-Oh-sPO"/>
-                        <constraint firstAttribute="bottom" secondItem="jUo-P2-3ze" secondAttribute="bottom" id="BL1-eD-iDo"/>
-                        <constraint firstItem="8Xs-41-DY6" firstAttribute="leading" secondItem="jUo-P2-3ze" secondAttribute="trailing" constant="40" id="P65-dQ-OBV"/>
-                        <constraint firstItem="jUo-P2-3ze" firstAttribute="top" secondItem="fvO-K3-BZX" secondAttribute="top" id="b4B-eM-mic"/>
-                        <constraint firstItem="8Xs-41-DY6" firstAttribute="top" secondItem="fvO-K3-BZX" secondAttribute="top" id="f9u-fk-40F"/>
-                        <constraint firstAttribute="height" constant="36" id="hRm-wI-F5V"/>
-                        <constraint firstItem="8Xs-41-DY6" firstAttribute="width" secondItem="jUo-P2-3ze" secondAttribute="width" id="wTt-HO-bfe"/>
+                        <constraint firstAttribute="bottom" secondItem="KuC-xd-Mhb" secondAttribute="bottom" id="0Gj-ld-nTW"/>
+                        <constraint firstItem="jUo-P2-3ze" firstAttribute="top" secondItem="fvO-K3-BZX" secondAttribute="top" id="5A9-fg-1yQ"/>
+                        <constraint firstItem="jUo-P2-3ze" firstAttribute="leading" secondItem="fvO-K3-BZX" secondAttribute="leading" id="6Vv-Kx-CMD"/>
+                        <constraint firstAttribute="bottom" secondItem="8Xs-41-DY6" secondAttribute="bottom" id="G6w-2p-87n"/>
+                        <constraint firstItem="8Xs-41-DY6" firstAttribute="leading" secondItem="KuC-xd-Mhb" secondAttribute="trailing" id="JbB-SQ-HhN"/>
+                        <constraint firstItem="8Xs-41-DY6" firstAttribute="top" secondItem="fvO-K3-BZX" secondAttribute="top" id="Wx7-LE-Beb"/>
+                        <constraint firstItem="KuC-xd-Mhb" firstAttribute="top" secondItem="fvO-K3-BZX" secondAttribute="top" id="Zbl-de-1hK"/>
+                        <constraint firstItem="8Xs-41-DY6" firstAttribute="width" secondItem="jUo-P2-3ze" secondAttribute="width" id="Zma-k5-zYC"/>
+                        <constraint firstAttribute="trailing" secondItem="8Xs-41-DY6" secondAttribute="trailing" id="alb-wI-yT8"/>
+                        <constraint firstItem="KuC-xd-Mhb" firstAttribute="leading" secondItem="jUo-P2-3ze" secondAttribute="trailing" id="bbD-tY-WtL"/>
+                        <constraint firstAttribute="bottom" secondItem="jUo-P2-3ze" secondAttribute="bottom" id="hLT-kh-bX2"/>
+                        <constraint firstItem="KuC-xd-Mhb" firstAttribute="width" secondItem="jUo-P2-3ze" secondAttribute="width" id="uib-3O-5dw"/>
                     </constraints>
                 </view>
             </subviews>

@@ -7,19 +7,19 @@
 //
 
 #import "YSUserSettingView.h"
-#import "YSUserSetCell.h"
 #import "YSAppMacro.h"
+#import "YSDataManager.h"
+#import "YSDevice.h"
 
 #define UserSetTableViewReuseIdentifier @"UserSetTableViewReuseIdentifier"
 
-@interface YSUserSettingView () <UITableViewDelegate, UITableViewDataSource>
+@interface YSUserSettingView () <UITableViewDelegate, UITableViewDataSource, YSUserSetCellDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
 
 @end
 
-const CGFloat kHeightForRow = 46;
 const CGFloat kHeightForHeader = 10;
 
 @implementation YSUserSettingView
@@ -36,12 +36,13 @@ const CGFloat kHeightForHeader = 10;
 
 - (void)initTableViewDataArray
 {
-    NSArray *array1 = @[[NSNumber numberWithInteger:YSUserSetCellTypeNickname]];
-    NSArray *array2 = @[[NSNumber numberWithInteger:YSUserSetCellTypeModifyPassword], [NSNumber numberWithInteger:YSUserSetCellTypeMeasure]];
-    NSArray *array3 = @[[NSNumber numberWithInteger:YSUserSetCellTypeLogout]];
+    // 1、我的昵称；2、设置
+    NSArray *array1 = @[[NSNumber numberWithInteger:YSSettingsTypeNickname]];
+    NSArray *array2 = @[[NSNumber numberWithInteger:YSSettingsTypeSet]];
     
-    self.dataArray = @[array1, array2, array3];
+    self.dataArray = @[array1, array2];
 }
+
 
 //- (id)initWithCoder:(NSCoder *)aDecoder
 //{
@@ -59,16 +60,47 @@ const CGFloat kHeightForHeader = 10;
 //    return self;
 //}
 
+- (void)reloadTableView
+{
+    [self.tableView reloadData];
+}
+
 #pragma mark - UITableViewDelegate
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSArray *array = self.dataArray[indexPath.section];
+    YSSettingsType cellType = (YSSettingsType)[array[indexPath.row] integerValue];
+    
+    // 单位和心率cell点击时没有反应
+    if (cellType == YSSettingsTypeMeasure ||
+        cellType == YSSettingsTypeHeartRatePanel ||
+        cellType == YSSettingsTypeNickname)
+    {
+        return NO;
+    }
+    return YES;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSArray *array = self.dataArray[indexPath.section];
+    YSSettingsType cellType = (YSSettingsType)[array[indexPath.row] integerValue];
+    
+    [self.delegate userSettingViewDidSelectedType:cellType];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return kHeightForRow;
+    CGFloat heightForRow = 44;
+    if ([YSDevice isPhone6Plus])
+    {
+        heightForRow = 60;
+    }
+    
+    return heightForRow;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -85,7 +117,6 @@ const CGFloat kHeightForHeader = 10;
 {
     UIView *view = [UIView new];
     view.backgroundColor = LightgrayBackgroundColor;
-//    view.backgroundColor = [UIColor yellowColor];
     
     return view;
 }
@@ -94,26 +125,53 @@ const CGFloat kHeightForHeader = 10;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // 1.我的昵称，修改密码；2.单位；3.退出登录
     NSArray *array = self.dataArray[section];
     return [array count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // 1.我的昵称，修改密码；2.单位；3.退出登录
     return [self.dataArray count];;
 }
 
 - (YSUserSetCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     YSUserSetCell *cell = [tableView dequeueReusableCellWithIdentifier:UserSetTableViewReuseIdentifier forIndexPath:indexPath];
+    cell.delegate = self;
     
     NSArray *array = self.dataArray[indexPath.section];
-    YSUserSetCellType type = [array[indexPath.row] integerValue];
-    [cell setupWithType:type];
+    YSSettingsType type = [array[indexPath.row] integerValue];
+    
+    switch (type)
+    {
+        case YSSettingsTypeNickname:
+            [cell setupCellWithLeftText:@"我的昵称"
+                             centerText:nil
+                              rightText:nil
+                          textFieldText:[[YSDataManager shareDataManager] getUserName]
+                          switchVisible:NO];
+            break;
+            
+        case YSSettingsTypeSet:
+            [cell setupCellWithLeftText:@"设置"
+                             centerText:nil
+                              rightText:nil
+                          textFieldText:nil
+                          switchVisible:NO];
+            break;
+            
+        default:
+            break;
+    }
     
     return cell;
+}
+
+#pragma mark - YSUserSetCellDelegate
+
+- (void)textFieldTextChange:(NSString *)text
+{
+    [self.delegate modifyNickame:text];
 }
 
 @end

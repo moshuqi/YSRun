@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSBurningMarkView">
+            <connections>
+                <outlet property="burningLabel" destination="Mqe-2z-abb" id="pzh-6A-lIf"/>
+                <outlet property="heartRateMaxLabel" destination="Rze-qb-PbS" id="tAu-5n-CB3"/>
+                <outlet property="heartRateMinLabel" destination="p6r-aX-TQK" id="cII-fv-Kel"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="165" height="153"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mqe-2z-abb">
+                    <rect key="frame" x="0.0" y="0.0" width="165" height="76.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6r-aX-TQK">
+                    <rect key="frame" x="5" y="76.5" width="77.5" height="76.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rze-qb-PbS">
+                    <rect key="frame" x="82.5" y="76.5" width="77.5" height="76.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Mqe-2z-abb" secondAttribute="trailing" id="C3N-Ug-kRN"/>
+                <constraint firstAttribute="bottom" secondItem="p6r-aX-TQK" secondAttribute="bottom" id="HbD-z7-7US"/>
+                <constraint firstAttribute="bottom" secondItem="Rze-qb-PbS" secondAttribute="bottom" id="Jyq-bD-1QV"/>
+                <constraint firstItem="p6r-aX-TQK" firstAttribute="top" secondItem="Mqe-2z-abb" secondAttribute="bottom" id="LsK-Rh-8aJ"/>
+                <constraint firstItem="Rze-qb-PbS" firstAttribute="top" secondItem="Mqe-2z-abb" secondAttribute="bottom" id="NCg-cQ-iam"/>
+                <constraint firstAttribute="trailing" secondItem="Rze-qb-PbS" secondAttribute="trailing" constant="5" id="O8o-kl-QPr"/>
+                <constraint firstItem="Mqe-2z-abb" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="VJW-fm-G5P"/>
+                <constraint firstItem="Mqe-2z-abb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WdH-js-Mt8"/>
+                <constraint firstItem="Mqe-2z-abb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="g3W-NJ-3zY"/>
+                <constraint firstItem="Rze-qb-PbS" firstAttribute="width" secondItem="p6r-aX-TQK" secondAttribute="width" id="hlU-1C-JIw"/>
+                <constraint firstItem="Rze-qb-PbS" firstAttribute="leading" secondItem="p6r-aX-TQK" secondAttribute="trailing" id="jSg-Ni-bfd"/>
+                <constraint firstItem="p6r-aX-TQK" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="pI8-JA-yDf"/>
+                <constraint firstItem="Rze-qb-PbS" firstAttribute="height" secondItem="p6r-aX-TQK" secondAttribute="height" id="q5i-uH-ro7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-372.5" y="-486.5"/>
+        </view>
+    </objects>
+</document>

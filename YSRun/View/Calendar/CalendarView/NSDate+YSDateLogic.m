@@ -47,6 +47,33 @@
     return weekday;
 }
 
+- (NSInteger)hourValue
+{
+    NSCalendar *calendar = [self getCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:self];
+    
+    NSInteger hour = components.hour;
+    return hour;
+}
+
+- (NSInteger)minuteValue
+{
+    NSCalendar *calendar = [self getCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:self];
+    
+    NSInteger min = components.minute;
+    return min;
+}
+
+- (NSInteger)secondValue
+{
+    NSCalendar *calendar = [self getCalendar];
+    NSDateComponents *components = [calendar components:(NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:self];
+    
+    NSInteger sec = components.second;
+    return sec;
+}
+
 - (NSDate *)beforeDays:(NSInteger)days
 {
     // 前几天
@@ -99,6 +126,10 @@
 {
     // 将string转换成date
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    
+    NSTimeZone *zone = [NSTimeZone systemTimeZone];
+    [dateFormatter setTimeZone:zone];
+    
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     
     NSDate *destDate = [dateFormatter dateFromString:dateString];
@@ -113,6 +144,15 @@
     
     NSString *destString = [dateFormatter stringFromDate:date];
     return destString;
+}
+
++ (NSDate *)dateFromYear:(NSInteger)year month:(NSInteger)month day:(NSInteger)day
+{
+    NSString *monthStr = (month >= 10) ? [NSString stringWithFormat:@"%@", @(month)] : [NSString stringWithFormat:@"0%@", @(month)];
+    NSString *dayStr = (day >= 10) ? [NSString stringWithFormat:@"%@", @(day)] : [NSString stringWithFormat:@"0%@", @(day)];
+    NSString *dateStr = [NSString stringWithFormat:@"%@-%@-%@", @(year), monthStr, dayStr];
+    
+    return [NSDate dateFromString:dateStr];
 }
 
 @end

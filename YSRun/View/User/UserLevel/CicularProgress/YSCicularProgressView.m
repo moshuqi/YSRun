@@ -28,12 +28,12 @@ const NSInteger kRedrawTimes = 30;          // 进度条动画过程中重绘的
 
 @implementation YSCicularProgressView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame lineWidth:(CGFloat)lineWidth
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        self.lineWidth = 15;
+        self.lineWidth = lineWidth;
         self.backColor = RGBA(77, 77, 77, 0.6);
         self.progressColor = [UIColor whiteColor];
     }
@@ -59,6 +59,11 @@ const NSInteger kRedrawTimes = 30;          // 进度条动画过程中重绘的
     if (self.progress)
     {
         //draw progress circle
+        if (self.progress > 1.0)
+        {
+            self.progress = 1.0;
+        }
+        
         CGFloat totalAngle = 2 * M_PI - angleDistance;
         CGFloat currentAngle = totalAngle * self.progress;
         CGFloat start = startAngle - currentAngle;
@@ -89,6 +94,8 @@ const NSInteger kRedrawTimes = 30;          // 进度条动画过程中重绘的
 {
     if (self.progress >= self.newProgerss)
     {
+        // 重绘一次
+        [self setNeedsDisplay];
         [self.timer invalidate];
         return;
     }

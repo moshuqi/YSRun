@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class YSLoginViewController;
-@class YSUserModel;
+@class YSUserInfoResponseModel;
+@class YSUserDatabaseModel;
 
 @protocol YSLoginViewControllerDelegate <NSObject>
 
-- (void)loginViewController:(YSLoginViewController *)loginViewController loginFinishWithUserModel:(YSUserModel *)userModel;
+@required
+- (void)loginViewController:(YSLoginViewController *)loginViewController loginFinishWithUserInfoResponseModel:(YSUserInfoResponseModel *)userInfoResponseModel;
+- (void)loginViewController:(YSLoginViewController *)loginViewController registerFinishWithResponseUserInfo:(YSUserDatabaseModel *)userInfo;
 
 @end
 

@@ -9,6 +9,18 @@
 #import "YSCalendarWeekdayView.h"
 #import "YSAppMacro.h"
 
+@interface YSCalendarWeekdayView ()
+
+@property (nonatomic, weak) IBOutlet UILabel *sunLabel;
+@property (nonatomic, weak) IBOutlet UILabel *monLabel;
+@property (nonatomic, weak) IBOutlet UILabel *wedLabel;
+@property (nonatomic, weak) IBOutlet UILabel *thuLabel;
+@property (nonatomic, weak) IBOutlet UILabel *friLabel;
+@property (nonatomic, weak) IBOutlet UILabel *satLabel;
+@property (nonatomic, weak) IBOutlet UILabel *tueLabel;
+
+@end
+
 @implementation YSCalendarWeekdayView
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -25,6 +37,17 @@
     }
     
     return self;
+}
+
+- (void)setLabelsFontSize:(CGFloat)fontSize
+{
+    self.sunLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.monLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.wedLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.thuLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.friLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.satLabel.font = [UIFont systemFontOfSize:fontSize];
+    self.tueLabel.font = [UIFont systemFontOfSize:fontSize];
 }
 
 @end
