@@ -12,4 +12,6 @@
 
 - (void)setupWithTitle:(NSString *)title target:(id)target action:(SEL)action;
 
+- (void)setupWithTitle:(NSString *)title barBackgroundColor:(UIColor *)color target:(id)target action:(SEL)action;
+
 @end

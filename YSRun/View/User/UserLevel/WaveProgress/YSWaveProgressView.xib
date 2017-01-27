@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSWaveProgressView">
+            <connections>
+                <outlet property="achievementView" destination="DgH-cR-ED0" id="4gR-aI-1jG"/>
+                <outlet property="waterWaveView" destination="xYN-xN-bbN" id="N6j-qX-0A6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="172" height="164"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wave_circle" translatesAutoresizingMaskIntoConstraints="NO" id="auQ-61-XF8" userLabel="outer">
+                    <rect key="frame" x="0.0" y="0.0" width="172" height="164"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xYN-xN-bbN" customClass="YSWaterWaveView">
+                    <rect key="frame" x="14" y="14" width="144" height="136"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgH-cR-ED0" customClass="YSAchievementView">
+                    <rect key="frame" x="20" y="49" width="132" height="66"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="66" id="a2f-5T-1fd"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="xYN-xN-bbN" secondAttribute="bottom" constant="14" id="85l-yb-TgU"/>
+                <constraint firstItem="auQ-61-XF8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="A7E-qr-EmQ"/>
+                <constraint firstItem="xYN-xN-bbN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="14" id="CZh-aR-1Eg"/>
+                <constraint firstItem="auQ-61-XF8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QkI-HD-MLP"/>
+                <constraint firstAttribute="trailing" secondItem="DgH-cR-ED0" secondAttribute="trailing" constant="20" id="S1V-T3-Yai"/>
+                <constraint firstAttribute="bottom" secondItem="auQ-61-XF8" secondAttribute="bottom" id="bDx-Qt-Qlj"/>
+                <constraint firstItem="DgH-cR-ED0" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dao-q2-sTZ"/>
+                <constraint firstAttribute="trailing" secondItem="xYN-xN-bbN" secondAttribute="trailing" constant="14" id="nB8-oe-3T5"/>
+                <constraint firstItem="xYN-xN-bbN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="yW3-nk-UMc"/>
+                <constraint firstItem="DgH-cR-ED0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="yzA-f0-ma1"/>
+                <constraint firstAttribute="trailing" secondItem="auQ-61-XF8" secondAttribute="trailing" id="zyb-vI-8UA"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-1" y="-21"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="wave_circle" width="68" height="68"/>
+    </resources>
+</document>

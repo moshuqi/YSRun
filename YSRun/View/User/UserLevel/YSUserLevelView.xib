@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSUserLevelView">
             <connections>
                 <outlet property="encourageLabel" destination="dj7-Jb-4GC" id="Pst-Zg-nOA"/>
-                <outlet property="levelLabel" destination="b2F-a7-hSP" id="yc7-gO-AYn"/>
+                <outlet property="medalView" destination="xbA-4p-6JG" id="nQS-sw-XkP"/>
                 <outlet property="progressBottomToEncourageLabelConstraint" destination="yZe-4b-ylB" id="wnr-us-VQO"/>
                 <outlet property="progressContentView" destination="T55-fb-eRT" id="bS1-bX-YYm"/>
                 <outlet property="progressTopToSuperViewConstraint" destination="J5l-cZ-JkD" id="Y2Y-QP-irf"/>
-                <outlet property="setButton" destination="tcU-gM-pyb" id="7xA-Pe-Shu"/>
                 <outlet property="userName" destination="dWI-Gk-DpC" id="Gm4-4i-6mb"/>
                 <outlet property="userPhoto" destination="D7C-7w-vU8" id="nBU-jY-LB2"/>
+                <outlet property="waveProgressView" destination="j4Q-3B-gpE" id="sVB-Mj-4zP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -40,15 +40,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcU-gM-pyb">
-                    <rect key="frame" x="312" y="13" width="29" height="29"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="29" id="eQ5-ON-Ww4"/>
-                        <constraint firstAttribute="width" constant="29" id="mSH-5U-zsY"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                    <state key="normal" title=" "/>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="坚持一定会有收获" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dj7-Jb-4GC">
                     <rect key="frame" x="0.0" y="257" width="354" height="32"/>
                     <constraints>
@@ -61,30 +52,36 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T55-fb-eRT">
                     <rect key="frame" x="81" y="45" width="192" height="192"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="17" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2F-a7-hSP">
-                            <rect key="frame" x="25" y="25" width="142" height="142"/>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="46"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j4Q-3B-gpE" customClass="YSWaveProgressView">
+                            <rect key="frame" x="10" y="10" width="172" height="172"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="b2F-a7-hSP" secondAttribute="trailing" constant="25" id="ARi-iX-AIr"/>
+                        <constraint firstItem="j4Q-3B-gpE" firstAttribute="top" secondItem="T55-fb-eRT" secondAttribute="top" constant="10" id="QxY-Os-aSt"/>
+                        <constraint firstItem="j4Q-3B-gpE" firstAttribute="leading" secondItem="T55-fb-eRT" secondAttribute="leading" constant="10" id="VYa-45-mhz"/>
+                        <constraint firstAttribute="bottom" secondItem="j4Q-3B-gpE" secondAttribute="bottom" constant="10" id="cOC-Ag-DBW"/>
                         <constraint firstAttribute="width" secondItem="T55-fb-eRT" secondAttribute="height" multiplier="80:80" id="dM6-Ah-KUS"/>
-                        <constraint firstItem="b2F-a7-hSP" firstAttribute="leading" secondItem="T55-fb-eRT" secondAttribute="leading" constant="25" id="gLk-bB-53g"/>
-                        <constraint firstAttribute="bottom" secondItem="b2F-a7-hSP" secondAttribute="bottom" constant="25" id="tEI-Bp-N15"/>
-                        <constraint firstItem="b2F-a7-hSP" firstAttribute="top" secondItem="T55-fb-eRT" secondAttribute="top" constant="25" id="uZo-4D-Ipd"/>
+                        <constraint firstAttribute="trailing" secondItem="j4Q-3B-gpE" secondAttribute="trailing" constant="10" id="pki-Gg-cgB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbA-4p-6JG" customClass="YSMedalView">
+                    <rect key="frame" x="278" y="25" width="66" height="28"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="YOa-z9-jzr"/>
+                        <constraint firstAttribute="height" constant="28" id="rY0-e5-W5I"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="tcU-gM-pyb" secondAttribute="trailing" constant="13" id="2Ju-Kp-Cfv"/>
+                <constraint firstItem="xbA-4p-6JG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="EgX-AB-s9x"/>
                 <constraint firstItem="T55-fb-eRT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="45" id="J5l-cZ-JkD"/>
                 <constraint firstItem="D7C-7w-vU8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="JDt-22-hf6"/>
                 <constraint firstItem="dWI-Gk-DpC" firstAttribute="leading" secondItem="D7C-7w-vU8" secondAttribute="trailing" constant="8" id="OP0-Vi-xvI"/>
                 <constraint firstAttribute="trailing" secondItem="dj7-Jb-4GC" secondAttribute="trailing" id="Si1-wz-MeQ"/>
-                <constraint firstItem="tcU-gM-pyb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="aku-0f-9rl"/>
+                <constraint firstAttribute="trailing" secondItem="xbA-4p-6JG" secondAttribute="trailing" constant="10" id="Zce-tM-jrI"/>
                 <constraint firstItem="D7C-7w-vU8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cEs-lm-8Qc"/>
                 <constraint firstAttribute="bottom" secondItem="dj7-Jb-4GC" secondAttribute="bottom" id="hnt-eY-yoD"/>
                 <constraint firstItem="dj7-Jb-4GC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mJy-xj-Vqb"/>

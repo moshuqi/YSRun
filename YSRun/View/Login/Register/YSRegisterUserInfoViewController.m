@@ -19,11 +19,15 @@
 #import "YSDatabaseManager.h"
 #import "YSLoginViewController.h"
 #import "YSLoadingHUD.h"
+#import "YSTextFieldComponentCreator.h"
+#import "YSDevice.h"
 
-@interface YSRegisterUserInfoViewController () <YSPhotoPickerDelegate, YSNetworkManagerDelegate>
+#import "YSTextFieldDelegateObj.h"
+#import "YSContentCheckIconChange.h"
+
+@interface YSRegisterUserInfoViewController () <YSPhotoPickerDelegate, YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
-@property (nonatomic, weak) IBOutlet YSTextFieldTableView *textFieldTable;
 @property (nonatomic, weak) IBOutlet UIButton *photoButton;
 @property (nonatomic, weak) IBOutlet UIButton *registerButton;
 
@@ -31,6 +35,14 @@
 @property (nonatomic, copy) NSString *account;
 
 @property (nonatomic, strong) YSPhotoPicker *photoPicker;
+
+@property (nonatomic, weak) IBOutlet UITextField *nicknameTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *textFieldHeightConstraint;
+
+@property (nonatomic, strong) YSTextFieldDelegateObj *nicknameTextFieldDelegateObj;
+@property (nonatomic, strong) YSTextFieldDelegateObj *passwordTextFieldDelegateObj;
 
 @end
 
@@ -40,10 +52,17 @@
 {
     [super viewDidLoad];
     
-    [self.navigationBarView setupWithTitle:@"注 册" target:self action:@selector(registerViewBack)];
+    [self.navigationBarView setupWithTitle:@"注 册" barBackgroundColor:[UIColor clearColor] target:self action:@selector(registerViewBack)];
+    
+    if ([YSDevice isPhone6Plus])
+    {
+        self.textFieldHeightConstraint.constant = 52;
+    }
     
     [self setupButtons];
-    [self setupTextFieldTable];
+//    [self setupTextFieldTable];
+    [self setupTextFields];
+    [self setupBackgroundImage];
 }
 
 - (id)initWithAccount:(NSString *)account
@@ -64,11 +83,13 @@
 
 - (void)setupButtons
 {
-    [self.registerButton setTitle:@"注 册" forState:UIControlStateNormal];
+    [self.registerButton setTitle:@"注册" forState:UIControlStateNormal];
     [self.registerButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    self.registerButton.backgroundColor = GreenBackgroundColor;
+//    CGFloat btnHeight = self.textFieldHeightConstraint.constant;
     self.registerButton.layer.cornerRadius = ButtonCornerRadius;
+    
+    self.registerButton.backgroundColor = GreenBackgroundColor;
     self.registerButton.clipsToBounds = YES;
     
     CGFloat width = CGRectGetWidth(self.photoButton.frame);
@@ -76,18 +97,76 @@
     self.photoButton.clipsToBounds = YES;
 }
 
-- (void)setupTextFieldTable
+- (void)setupBackgroundImage
 {
-    UIView *firstLeftView = [self.textFieldTable getFirstTextFieldLeftView];
-    NSString *firstPlaceholder = @"请输入昵称";
-    [self.textFieldTable setupFirstTextFieldWithPlaceholder:firstPlaceholder leftView:firstLeftView rightView:nil];
+    // 设置背景图片
+    UIImage *image = [UIImage imageNamed:@"login_background"];
+    self.view.layer.contents = (id)image.CGImage;
+}
+
+- (void)setupTextFields
+{
+    CGFloat textFieldHeight = self.textFieldHeightConstraint.constant;
     
-    UIView *secondLeftView = [self.textFieldTable getSecondTextFieldLeftView];
-    UIView *secondRightView = [self.textFieldTable getPasswordTextFieldRightButtonView];
-    NSString *secondPlaceholder = @"请输入密码";
+    [YSTextFieldComponentCreator setupTextField:self.nicknameTextField height:textFieldHeight];
+    [YSTextFieldComponentCreator setupTextField:self.passwordTextField height:textFieldHeight];
     
-    [self.textFieldTable setupSecondTextFieldWithPlaceholder:secondPlaceholder leftView:secondLeftView rightView:secondRightView];
-    [self.textFieldTable setSecondTextFieldSecureTextEntry:YES];
+    // 设置文本框左边图标
+    UIImage *accountImage = [YSTextFieldComponentCreator getAccountIconWithContentEmptyState:YES];
+    UIImage *passwordImage = [YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:YES];
+    
+    self.nicknameTextField.leftView = [YSTextFieldComponentCreator getViewWithImage:accountImage textFieldHeight:textFieldHeight];
+    self.nicknameTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    self.passwordTextField.leftView = [YSTextFieldComponentCreator getViewWithImage:passwordImage textFieldHeight:textFieldHeight];
+    self.passwordTextField.leftViewMode = UITextFieldViewModeAlways;
+    
+    // 占位符
+    [YSTextFieldComponentCreator setupTextField:self.nicknameTextField withPlaceholder:@"请输入昵称"];
+    [YSTextFieldComponentCreator setupTextField:self.passwordTextField withPlaceholder:@"请输入密码"];
+    
+    self.passwordTextField.secureTextEntry = YES;
+    UIButton *secureTextButton = [self getSecureTextButton];
+    self.passwordTextField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:secureTextButton buttonWidth:56 textFieldHeight:textFieldHeight];
+    self.passwordTextField.rightViewMode = UITextFieldViewModeAlways;
+    
+    [self setupTextFieldDelegate];
+}
+
+- (void)setupTextFieldDelegate
+{
+    // 给文本框设置代理，有输入字符时文本框左边图标改变
+    
+    YSContentCheckIconChange *contentCheck1 = [[YSContentCheckIconChange alloc] initWithDelegate:self];
+    NSArray *contentCheckArray1 = @[contentCheck1];
+    
+    self.nicknameTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray1];
+    self.nicknameTextField.delegate = self.nicknameTextFieldDelegateObj;
+    
+    YSContentCheckIconChange *contentCheck2 = [[YSContentCheckIconChange alloc] initWithDelegate:self];
+    NSArray *contentCheckArray2 = @[contentCheck2];
+    
+    self.passwordTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray2];
+    self.passwordTextField.delegate = self.passwordTextFieldDelegateObj;
+}
+
+- (UIButton *)getSecureTextButton
+{
+    UIButton *secureTextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [secureTextButton addTarget:self action:@selector(secureTextButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *image = [UIImage imageNamed:@"password_eye_close"];
+    [secureTextButton setImage:image forState:UIControlStateNormal];
+    
+    return secureTextButton;
+}
+
+- (void)secureTextButtonClicked:(UIButton *)button
+{
+    self.passwordTextField.secureTextEntry = !self.passwordTextField.secureTextEntry;
+    
+    UIImage *image = self.passwordTextField.secureTextEntry ? [UIImage imageNamed:@"password_eye_close"] : [UIImage imageNamed:@"password_eye_open"];
+    [button setImage:image forState:UIControlStateNormal];
 }
 
 - (void)registerViewBack
@@ -109,8 +188,8 @@
 
 - (void)userRegister
 {
-    NSString *nickName = [self.textFieldTable firstText];
-    NSString *password = [self.textFieldTable secondText];
+    NSString *nickName = self.nicknameTextField.text;
+    NSString *password = self.passwordTextField.text;
     
     // 检查输入不允许为空
     if (([nickName length] < 1) || ([password length] < 1))
@@ -207,6 +286,25 @@
     [[YSLoadingHUD shareLoadingHUD] dismiss];
     
     [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:message];
+}
+
+#pragma mark - YSContentCheckIconChangeDelegate
+
+- (void)needChangeTextField:(UITextField *)textField textEmpty:(BOOL)isEmpty
+{
+    CGFloat textFieldHeight = CGRectGetHeight(textField.frame);
+    UIImage *image = nil;
+    
+    if (textField == self.nicknameTextField)
+    {
+        image = [YSTextFieldComponentCreator getAccountIconWithContentEmptyState:isEmpty];
+    }
+    else if (textField == self.passwordTextField)
+    {
+        image = [YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:isEmpty];
+    }
+    
+    textField.leftView = [YSTextFieldComponentCreator getViewWithImage:image textFieldHeight:textFieldHeight];
 }
 
 @end

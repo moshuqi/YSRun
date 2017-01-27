@@ -104,7 +104,21 @@
     [super viewWillAppear:animated];
 
     // 每次显示时从数据库取一次数据。后续优化
-    [self setupUserRecord];
+//    [self setupUserRecord];
+    
+    // setupUserRecord的第一次初始化会导致阻塞主线程，放子线程里执行。  2016-01-13
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
+        YSUserInfoModel *userInfo = [[YSDataManager shareDataManager] getUserInfo];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            [self.userRecordView setUserName:userInfo.nickname
+                                   headPhoto:userInfo.headImage
+                               totalDistance:userInfo.totalDistance
+                               totalRunTimes:userInfo.totalRunTimes
+                                   totalTime:userInfo.totalUseTime];
+        });
+        
+    });
 }
 
 - (void)viewDidLayoutSubviews

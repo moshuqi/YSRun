@@ -15,6 +15,7 @@
 		651778381BF6152A00CD6940 /* calendar_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778371BF6152A00CD6940 /* calendar_highlight@2x.png */; };
 		6517783A1BF6181F00CD6940 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778391BF6181F00CD6940 /* calendar@2x.png */; };
 		652A93F81BFB037A0015E461 /* YSGraphData.m in Sources */ = {isa = PBXBuildFile; fileRef = 652A93F71BFB037A0015E461 /* YSGraphData.m */; };
+		653022BE1C44F84D00101C4C /* navigation_back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */; };
 		654288091BDCC53800ADBE32 /* YSDayCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288081BDCC53800ADBE32 /* YSDayCellModel.m */; };
 		6542880E1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6542880D1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m */; };
 		654288111BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288101BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m */; };
@@ -45,6 +46,17 @@
 		655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */; };
 		656087771C05913A00F2BCCC /* YSMarkLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 656087761C05913A00F2BCCC /* YSMarkLabelsView.m */; };
 		656087791C05915200F2BCCC /* YSMarkLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656087781C05915200F2BCCC /* YSMarkLabelsView.xib */; };
+		6563AE9E1C43426900E7084A /* YSWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AE9D1C43426900E7084A /* YSWaterWaveView.m */; };
+		6563AEA11C4342AA00E7084A /* YSWaveProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AEA01C4342AA00E7084A /* YSWaveProgressView.m */; };
+		6563AEA31C43430C00E7084A /* YSWaveProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEA21C43430C00E7084A /* YSWaveProgressView.xib */; };
+		6563AEA61C43452F00E7084A /* YSAchievementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AEA51C43452F00E7084A /* YSAchievementView.m */; };
+		6563AEA81C43459900E7084A /* YSAchievementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEA71C43459900E7084A /* YSAchievementView.xib */; };
+		6563AEB01C43AE0500E7084A /* YSMedalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AEAF1C43AE0500E7084A /* YSMedalView.m */; };
+		6563AEB21C43AE9300E7084A /* YSMedalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEB11C43AE9300E7084A /* YSMedalView.xib */; };
+		6563AEB41C43B03600E7084A /* medal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEB31C43B03600E7084A /* medal@2x.png */; };
+		6563AEB61C43BD5700E7084A /* wave_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEB51C43BD5700E7084A /* wave_circle@2x.png */; };
+		6563AEB91C43BE8900E7084A /* inner_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEB71C43BE8900E7084A /* inner_circle@2x.png */; };
+		6563AEBA1C43BE8900E7084A /* outer_circle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6563AEB81C43BE8900E7084A /* outer_circle@2x.png */; };
 		6566F69B1C0FD4A8003362CD /* UMFeedbackLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6566F6721C0FD4A8003362CD /* UMFeedbackLocalizable.strings */; };
 		6566F69C1C0FD4A8003362CD /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6566F6741C0FD4A8003362CD /* libUMFeedback.a */; };
 		6566F69D1C0FD4A8003362CD /* bubble_min@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6566F6761C0FD4A8003362CD /* bubble_min@2x.png */; };
@@ -207,8 +219,6 @@
 		65807E221C031ECE007FB336 /* detail_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65807E211C031ECE007FB336 /* detail_arrow@2x.png */; };
 		6580D4B71BE30DE400C5FB95 /* YSResetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580D4B51BE30DE400C5FB95 /* YSResetPasswordViewController.m */; };
 		6580D4B81BE30DE400C5FB95 /* YSResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6580D4B61BE30DE400C5FB95 /* YSResetPasswordViewController.xib */; };
-		6580D4BC1BE3412D00C5FB95 /* YSModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580D4BA1BE3412D00C5FB95 /* YSModifyPasswordViewController.m */; };
-		6580D4BD1BE3412D00C5FB95 /* YSModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6580D4BB1BE3412D00C5FB95 /* YSModifyPasswordViewController.xib */; };
 		6580D4C21BE3569800C5FB95 /* YSPhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580D4C11BE3569800C5FB95 /* YSPhotoPicker.m */; };
 		658257D81C0D90DC00C9FBA4 /* YSHeartRateDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 658257D71C0D90DC00C9FBA4 /* YSHeartRateDataManager.m */; };
 		658257DE1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m in Sources */ = {isa = PBXBuildFile; fileRef = 658257DD1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m */; };
@@ -259,12 +269,16 @@
 		659619AE1BD22443002110B9 /* YSFindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659619AC1BD22443002110B9 /* YSFindPasswordViewController.xib */; };
 		659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 659619B11BD224AA002110B9 /* YSFindPasswordViewController.m */; };
 		659619B41BD224D7002110B9 /* YSRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659619B31BD224D7002110B9 /* YSRegisterViewController.xib */; };
+		659BAFA91C3CAA8B00C73CF2 /* YSLaunchAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 659BAFA81C3CAA8B00C73CF2 /* YSLaunchAnimation.m */; };
+		659BAFAB1C3CBB1200C73CF2 /* launch_logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659BAFAA1C3CBB1200C73CF2 /* launch_logo@2x.png */; };
 		659D79391BF5829C00563687 /* YSDataRecordLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 659D79381BF5829C00563687 /* YSDataRecordLabelsView.m */; };
 		659D793B1BF582AF00563687 /* YSDataRecordLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 659D793A1BF582AF00563687 /* YSDataRecordLabelsView.xib */; };
 		659D79431BF6054D00563687 /* user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 659D79421BF6054D00563687 /* user@2x.png */; };
 		65A067361BF6E98900E0BC59 /* login_user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A067331BF6E98900E0BC59 /* login_user@2x.png */; };
 		65A067371BF6E98900E0BC59 /* run@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A067341BF6E98900E0BC59 /* run@2x.png */; };
 		65A067381BF6E98900E0BC59 /* tips@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65A067351BF6E98900E0BC59 /* tips@2x.png */; };
+		65A3AE2F1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A3AE2D1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m */; };
+		65A3AE301C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65A3AE2E1C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib */; };
 		65A4310D1BE0D3BF004D7024 /* YSModelReformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A4310C1BE0D3BF004D7024 /* YSModelReformer.m */; };
 		65A555A51BD47CC2003306E7 /* YSResultRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A5559E1BD47CC2003306E7 /* YSResultRecordView.m */; };
 		65A555A61BD47CC2003306E7 /* YSRunningResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65A555A01BD47CC2003306E7 /* YSRunningResultViewController.m */; };
@@ -359,6 +373,8 @@
 		65CD48A31C1A7F10002D873A /* YSCalorieCalculateFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD48A21C1A7F10002D873A /* YSCalorieCalculateFunc.m */; };
 		65D568BD1C17DFF50068B165 /* YSGraphCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D568BC1C17DFF50068B165 /* YSGraphCanvas.m */; };
 		65D568C41C18345A0068B165 /* YSIconActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D568C31C18345A0068B165 /* YSIconActionSheet.m */; };
+		65D891311C3A503C00650B56 /* login_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D891301C3A503C00650B56 /* login_background@2x.png */; };
+		65D891341C3A654200650B56 /* YSTextFieldComponentCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */; };
 		65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */; };
 		65DB44711BDA07CB004932E2 /* YSDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */; };
 		65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF581BD7232600E8627C /* YSNetworkRequest.m */; };
@@ -368,6 +384,11 @@
 		65E135531BD8DCCC001DD824 /* YSNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E135521BD8DCCC001DD824 /* YSNetworkManager.m */; };
 		65E5DC551BE1ADEB00462E91 /* YSRegisterUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E5DC541BE1ADEB00462E91 /* YSRegisterUserInfoViewController.m */; };
 		65E5DC571BE1AE2F00462E91 /* YSRegisterUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65E5DC561BE1AE2E00462E91 /* YSRegisterUserInfoViewController.xib */; };
+		65E62CA71C3BA76F002473B0 /* register_head@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E62CA61C3BA76F002473B0 /* register_head@2x.png */; };
+		65E62CAA1C3BBEEC002473B0 /* YSThirdPartLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65E62CA91C3BBEEC002473B0 /* YSThirdPartLoginView.m */; };
+		65E62CB41C3BC330002473B0 /* qq_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E62CB11C3BC330002473B0 /* qq_login@2x.png */; };
+		65E62CB51C3BC330002473B0 /* wechat_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E62CB21C3BC330002473B0 /* wechat_login@2x.png */; };
+		65E62CB61C3BC330002473B0 /* weibo_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E62CB31C3BC330002473B0 /* weibo_login@2x.png */; };
 		65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 65E7F72C1BD5D4E40050DA2A /* running_bg.png */; };
 		65E7F72F1BD5EF020050DA2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F72E1BD5EF020050DA2A /* UIKit.framework */; };
 		65E7F7311BD5EF0A0050DA2A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65E7F7301BD5EF0A0050DA2A /* Foundation.framework */; };
@@ -394,6 +415,14 @@
 		65F1BD821BE9F144008C3632 /* dropdown_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F1BD7E1BE9F144008C3632 /* dropdown_4.png */; };
 		65F409F21C132BD60059CAAD /* YSShareFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F409F11C132BD60059CAAD /* YSShareFunc.m */; };
 		65F409F51C132C060059CAAD /* YSShareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F409F41C132C060059CAAD /* YSShareInfo.m */; };
+		65F6A2AB1C45ED410054082C /* YSEditingCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2A61C45ED410054082C /* YSEditingCheck.m */; };
+		65F6A2AC1C45ED410054082C /* YSEditingCheckLengthLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2A81C45ED410054082C /* YSEditingCheckLengthLimit.m */; };
+		65F6A2AD1C45ED410054082C /* YSEditingCheckPhoneNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2AA1C45ED410054082C /* YSEditingCheckPhoneNumber.m */; };
+		65F6A2B61C45F4F90054082C /* YSTextFieldDelegateObj.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2B51C45F4F90054082C /* YSTextFieldDelegateObj.m */; };
+		65F6A2BA1C46256D0054082C /* YSContentCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2B91C46256D0054082C /* YSContentCheck.m */; };
+		65F6A2BD1C4625FE0054082C /* YSContentCheckIconChange.m in Sources */ = {isa = PBXBuildFile; fileRef = 65F6A2BC1C4625FE0054082C /* YSContentCheckIconChange.m */; };
+		65F6A2C01C462CED0054082C /* login_password_has_content@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F6A2BE1C462CED0054082C /* login_password_has_content@2x.png */; };
+		65F6A2C11C462CED0054082C /* login_user_has_content@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65F6A2BF1C462CED0054082C /* login_user_has_content@2x.png */; };
 		65FD75F91C30D9FC008FB5F6 /* YSDatabaseUpdateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65FD75F81C30D9FC008FB5F6 /* YSDatabaseUpdateManager.m */; };
 /* End PBXBuildFile section */
 
@@ -424,6 +453,7 @@
 		651778391BF6181F00CD6940 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
 		652A93F61BFB037A0015E461 /* YSGraphData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGraphData.h; sourceTree = "<group>"; };
 		652A93F71BFB037A0015E461 /* YSGraphData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGraphData.m; sourceTree = "<group>"; };
+		653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back_arrow@2x.png"; sourceTree = "<group>"; };
 		654288071BDCC53800ADBE32 /* YSDayCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDayCellModel.h; sourceTree = "<group>"; };
 		654288081BDCC53800ADBE32 /* YSDayCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDayCellModel.m; sourceTree = "<group>"; };
 		6542880C1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRegisterInfoRequestModel.h; sourceTree = "<group>"; };
@@ -472,6 +502,21 @@
 		656087751C05913A00F2BCCC /* YSMarkLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMarkLabelsView.h; sourceTree = "<group>"; };
 		656087761C05913A00F2BCCC /* YSMarkLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMarkLabelsView.m; sourceTree = "<group>"; };
 		656087781C05915200F2BCCC /* YSMarkLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMarkLabelsView.xib; sourceTree = "<group>"; };
+		6563AE9C1C43426900E7084A /* YSWaterWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSWaterWaveView.h; sourceTree = "<group>"; };
+		6563AE9D1C43426900E7084A /* YSWaterWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSWaterWaveView.m; sourceTree = "<group>"; };
+		6563AE9F1C4342AA00E7084A /* YSWaveProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSWaveProgressView.h; sourceTree = "<group>"; };
+		6563AEA01C4342AA00E7084A /* YSWaveProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSWaveProgressView.m; sourceTree = "<group>"; };
+		6563AEA21C43430C00E7084A /* YSWaveProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSWaveProgressView.xib; sourceTree = "<group>"; };
+		6563AEA41C43452F00E7084A /* YSAchievementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSAchievementView.h; sourceTree = "<group>"; };
+		6563AEA51C43452F00E7084A /* YSAchievementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSAchievementView.m; sourceTree = "<group>"; };
+		6563AEA71C43459900E7084A /* YSAchievementView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSAchievementView.xib; sourceTree = "<group>"; };
+		6563AEAE1C43AE0500E7084A /* YSMedalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMedalView.h; sourceTree = "<group>"; };
+		6563AEAF1C43AE0500E7084A /* YSMedalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMedalView.m; sourceTree = "<group>"; };
+		6563AEB11C43AE9300E7084A /* YSMedalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMedalView.xib; sourceTree = "<group>"; };
+		6563AEB31C43B03600E7084A /* medal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "medal@2x.png"; sourceTree = "<group>"; };
+		6563AEB51C43BD5700E7084A /* wave_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wave_circle@2x.png"; sourceTree = "<group>"; };
+		6563AEB71C43BE8900E7084A /* inner_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inner_circle@2x.png"; sourceTree = "<group>"; };
+		6563AEB81C43BE8900E7084A /* outer_circle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "outer_circle@2x.png"; sourceTree = "<group>"; };
 		6566F6731C0FD4A8003362CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/UMFeedbackLocalizable.strings; sourceTree = "<group>"; };
 		6566F6741C0FD4A8003362CD /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMFeedback.a; sourceTree = "<group>"; };
 		6566F6761C0FD4A8003362CD /* bubble_min@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble_min@2x.png"; sourceTree = "<group>"; };
@@ -687,9 +732,6 @@
 		6580D4B41BE30DE400C5FB95 /* YSResetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSResetPasswordViewController.h; sourceTree = "<group>"; };
 		6580D4B51BE30DE400C5FB95 /* YSResetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSResetPasswordViewController.m; sourceTree = "<group>"; };
 		6580D4B61BE30DE400C5FB95 /* YSResetPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSResetPasswordViewController.xib; sourceTree = "<group>"; };
-		6580D4B91BE3412D00C5FB95 /* YSModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModifyPasswordViewController.h; sourceTree = "<group>"; };
-		6580D4BA1BE3412D00C5FB95 /* YSModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSModifyPasswordViewController.m; sourceTree = "<group>"; };
-		6580D4BB1BE3412D00C5FB95 /* YSModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		6580D4C01BE3569800C5FB95 /* YSPhotoPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPhotoPicker.h; sourceTree = "<group>"; };
 		6580D4C11BE3569800C5FB95 /* YSPhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoPicker.m; sourceTree = "<group>"; };
 		658257D61C0D90DC00C9FBA4 /* YSHeartRateDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHeartRateDataManager.h; sourceTree = "<group>"; };
@@ -774,6 +816,9 @@
 		659619B01BD224AA002110B9 /* YSFindPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSFindPasswordViewController.h; sourceTree = "<group>"; };
 		659619B11BD224AA002110B9 /* YSFindPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSFindPasswordViewController.m; sourceTree = "<group>"; };
 		659619B31BD224D7002110B9 /* YSRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRegisterViewController.xib; sourceTree = "<group>"; };
+		659BAFA71C3CAA8B00C73CF2 /* YSLaunchAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLaunchAnimation.h; sourceTree = "<group>"; };
+		659BAFA81C3CAA8B00C73CF2 /* YSLaunchAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLaunchAnimation.m; sourceTree = "<group>"; };
+		659BAFAA1C3CBB1200C73CF2 /* launch_logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "launch_logo@2x.png"; sourceTree = "<group>"; };
 		659D79371BF5829C00563687 /* YSDataRecordLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDataRecordLabelsView.h; sourceTree = "<group>"; };
 		659D79381BF5829C00563687 /* YSDataRecordLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDataRecordLabelsView.m; sourceTree = "<group>"; };
 		659D793A1BF582AF00563687 /* YSDataRecordLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSDataRecordLabelsView.xib; sourceTree = "<group>"; };
@@ -781,6 +826,9 @@
 		65A067331BF6E98900E0BC59 /* login_user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user@2x.png"; sourceTree = "<group>"; };
 		65A067341BF6E98900E0BC59 /* run@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "run@2x.png"; sourceTree = "<group>"; };
 		65A067351BF6E98900E0BC59 /* tips@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tips@2x.png"; sourceTree = "<group>"; };
+		65A3AE2C1C3A4C9800B6BF85 /* YSModifyPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModifyPasswordViewController.h; sourceTree = "<group>"; };
+		65A3AE2D1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSModifyPasswordViewController.m; sourceTree = "<group>"; };
+		65A3AE2E1C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSModifyPasswordViewController.xib; sourceTree = "<group>"; };
 		65A4310B1BE0D3BF004D7024 /* YSModelReformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModelReformer.h; sourceTree = "<group>"; };
 		65A4310C1BE0D3BF004D7024 /* YSModelReformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSModelReformer.m; sourceTree = "<group>"; };
 		65A5559D1BD47CC2003306E7 /* YSResultRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSResultRecordView.h; sourceTree = "<group>"; };
@@ -935,6 +983,9 @@
 		65D568BC1C17DFF50068B165 /* YSGraphCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGraphCanvas.m; sourceTree = "<group>"; };
 		65D568C21C18345A0068B165 /* YSIconActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSIconActionSheet.h; sourceTree = "<group>"; };
 		65D568C31C18345A0068B165 /* YSIconActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSIconActionSheet.m; sourceTree = "<group>"; };
+		65D891301C3A503C00650B56 /* login_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_background@2x.png"; sourceTree = "<group>"; };
+		65D891321C3A654200650B56 /* YSTextFieldComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTextFieldComponentCreator.h; sourceTree = "<group>"; };
+		65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTextFieldComponentCreator.m; sourceTree = "<group>"; };
 		65DB446C1BD9E081004932E2 /* YSDatabaseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseHandle.h; sourceTree = "<group>"; };
 		65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseHandle.m; sourceTree = "<group>"; };
 		65DB446F1BDA07CB004932E2 /* YSDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseManager.h; sourceTree = "<group>"; };
@@ -952,6 +1003,12 @@
 		65E5DC531BE1ADEB00462E91 /* YSRegisterUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRegisterUserInfoViewController.h; sourceTree = "<group>"; };
 		65E5DC541BE1ADEB00462E91 /* YSRegisterUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRegisterUserInfoViewController.m; sourceTree = "<group>"; };
 		65E5DC561BE1AE2E00462E91 /* YSRegisterUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRegisterUserInfoViewController.xib; sourceTree = "<group>"; };
+		65E62CA61C3BA76F002473B0 /* register_head@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "register_head@2x.png"; sourceTree = "<group>"; };
+		65E62CA81C3BBEEC002473B0 /* YSThirdPartLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSThirdPartLoginView.h; sourceTree = "<group>"; };
+		65E62CA91C3BBEEC002473B0 /* YSThirdPartLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSThirdPartLoginView.m; sourceTree = "<group>"; };
+		65E62CB11C3BC330002473B0 /* qq_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "qq_login@2x.png"; sourceTree = "<group>"; };
+		65E62CB21C3BC330002473B0 /* wechat_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wechat_login@2x.png"; sourceTree = "<group>"; };
+		65E62CB31C3BC330002473B0 /* weibo_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo_login@2x.png"; sourceTree = "<group>"; };
 		65E7F72C1BD5D4E40050DA2A /* running_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = running_bg.png; sourceTree = "<group>"; };
 		65E7F72E1BD5EF020050DA2A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		65E7F7301BD5EF0A0050DA2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -987,6 +1044,20 @@
 		65F409F11C132BD60059CAAD /* YSShareFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSShareFunc.m; sourceTree = "<group>"; };
 		65F409F31C132C060059CAAD /* YSShareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSShareInfo.h; sourceTree = "<group>"; };
 		65F409F41C132C060059CAAD /* YSShareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSShareInfo.m; sourceTree = "<group>"; };
+		65F6A2A51C45ED410054082C /* YSEditingCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEditingCheck.h; sourceTree = "<group>"; };
+		65F6A2A61C45ED410054082C /* YSEditingCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEditingCheck.m; sourceTree = "<group>"; };
+		65F6A2A71C45ED410054082C /* YSEditingCheckLengthLimit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEditingCheckLengthLimit.h; sourceTree = "<group>"; };
+		65F6A2A81C45ED410054082C /* YSEditingCheckLengthLimit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEditingCheckLengthLimit.m; sourceTree = "<group>"; };
+		65F6A2A91C45ED410054082C /* YSEditingCheckPhoneNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSEditingCheckPhoneNumber.h; sourceTree = "<group>"; };
+		65F6A2AA1C45ED410054082C /* YSEditingCheckPhoneNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSEditingCheckPhoneNumber.m; sourceTree = "<group>"; };
+		65F6A2B41C45F4F90054082C /* YSTextFieldDelegateObj.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTextFieldDelegateObj.h; sourceTree = "<group>"; };
+		65F6A2B51C45F4F90054082C /* YSTextFieldDelegateObj.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTextFieldDelegateObj.m; sourceTree = "<group>"; };
+		65F6A2B81C46256D0054082C /* YSContentCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSContentCheck.h; sourceTree = "<group>"; };
+		65F6A2B91C46256D0054082C /* YSContentCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSContentCheck.m; sourceTree = "<group>"; };
+		65F6A2BB1C4625FE0054082C /* YSContentCheckIconChange.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSContentCheckIconChange.h; sourceTree = "<group>"; };
+		65F6A2BC1C4625FE0054082C /* YSContentCheckIconChange.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSContentCheckIconChange.m; sourceTree = "<group>"; };
+		65F6A2BE1C462CED0054082C /* login_password_has_content@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_password_has_content@2x.png"; sourceTree = "<group>"; };
+		65F6A2BF1C462CED0054082C /* login_user_has_content@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_user_has_content@2x.png"; sourceTree = "<group>"; };
 		65FD75F71C30D9FC008FB5F6 /* YSDatabaseUpdateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseUpdateManager.h; sourceTree = "<group>"; };
 		65FD75F81C30D9FC008FB5F6 /* YSDatabaseUpdateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseUpdateManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1101,6 +1172,9 @@
 		6559FB411C19206600B6ACE3 /* SDKUI */ = {
 			isa = PBXGroup;
 			children = (
+				65E62CB11C3BC330002473B0 /* qq_login@2x.png */,
+				65E62CB21C3BC330002473B0 /* wechat_login@2x.png */,
+				65E62CB31C3BC330002473B0 /* weibo_login@2x.png */,
 				6559FB421C19206600B6ACE3 /* qq_icon@2x.png */,
 				6559FB431C19206600B6ACE3 /* wechat_icon@2x.png */,
 				6559FB441C19206600B6ACE3 /* weibo_icon@2x.png */,
@@ -1191,6 +1265,31 @@
 				656087781C05915200F2BCCC /* YSMarkLabelsView.xib */,
 			);
 			path = LabelsView;
+			sourceTree = "<group>";
+		};
+		6563AE9B1C4341E400E7084A /* WaveProgress */ = {
+			isa = PBXGroup;
+			children = (
+				6563AE9C1C43426900E7084A /* YSWaterWaveView.h */,
+				6563AE9D1C43426900E7084A /* YSWaterWaveView.m */,
+				6563AE9F1C4342AA00E7084A /* YSWaveProgressView.h */,
+				6563AEA01C4342AA00E7084A /* YSWaveProgressView.m */,
+				6563AEA21C43430C00E7084A /* YSWaveProgressView.xib */,
+				6563AEA41C43452F00E7084A /* YSAchievementView.h */,
+				6563AEA51C43452F00E7084A /* YSAchievementView.m */,
+				6563AEA71C43459900E7084A /* YSAchievementView.xib */,
+			);
+			path = WaveProgress;
+			sourceTree = "<group>";
+		};
+		6563AEAD1C43ADD100E7084A /* Medal */ = {
+			isa = PBXGroup;
+			children = (
+				6563AEAE1C43AE0500E7084A /* YSMedalView.h */,
+				6563AEAF1C43AE0500E7084A /* YSMedalView.m */,
+				6563AEB11C43AE9300E7084A /* YSMedalView.xib */,
+			);
+			path = Medal;
 			sourceTree = "<group>";
 		};
 		6566F6711C0FD4A8003362CD /* UMengFeedback_SDK */ = {
@@ -1417,6 +1516,8 @@
 		657698971BD08C8B0015B446 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				65F6A2991C45E0620054082C /* Check */,
+				65A3AE2B1C3A4C9800B6BF85 /* ModifyPassword */,
 				659619911BD1E30C002110B9 /* FindPassword */,
 				6596198B1BD1E2EA002110B9 /* Register */,
 				657698991BD08D920015B446 /* YSLoginViewController.h */,
@@ -1424,6 +1525,10 @@
 				6576989B1BD08D920015B446 /* YSLoginViewController.xib */,
 				65E1353F1BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.h */,
 				65E135401BD8B24F001DD824 /* YSPhoneTextFieldLimitDelegate.m */,
+				65D891321C3A654200650B56 /* YSTextFieldComponentCreator.h */,
+				65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */,
+				65E62CA81C3BBEEC002473B0 /* YSThirdPartLoginView.h */,
+				65E62CA91C3BBEEC002473B0 /* YSThirdPartLoginView.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -1431,6 +1536,8 @@
 		657698A81BD08EDE0015B446 /* UserLevel */ = {
 			isa = PBXGroup;
 			children = (
+				6563AEAD1C43ADD100E7084A /* Medal */,
+				6563AE9B1C4341E400E7084A /* WaveProgress */,
 				657698AC1BD08F6F0015B446 /* CicularProgress */,
 				657698A91BD08F000015B446 /* YSUserLevelView.h */,
 				657698AA1BD08F000015B446 /* YSUserLevelView.m */,
@@ -1794,6 +1901,25 @@
 			path = General;
 			sourceTree = "<group>";
 		};
+		659BAFA61C3CAA0400C73CF2 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				659BAFA71C3CAA8B00C73CF2 /* YSLaunchAnimation.h */,
+				659BAFA81C3CAA8B00C73CF2 /* YSLaunchAnimation.m */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		65A3AE2B1C3A4C9800B6BF85 /* ModifyPassword */ = {
+			isa = PBXGroup;
+			children = (
+				65A3AE2C1C3A4C9800B6BF85 /* YSModifyPasswordViewController.h */,
+				65A3AE2D1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m */,
+				65A3AE2E1C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib */,
+			);
+			path = ModifyPassword;
+			sourceTree = "<group>";
+		};
 		65A5559B1BD47CC2003306E7 /* RunningRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -2016,6 +2142,7 @@
 		65ABA3A21BCF4F3100154E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				659BAFA61C3CAA0400C73CF2 /* Launch */,
 				6592337E1C15639A0046B481 /* Settings */,
 				658258011C0DC10B00C9FBA4 /* DataRecord */,
 				65AECE1D1BFD5D71002267E1 /* BLEDevice */,
@@ -2063,9 +2190,6 @@
 				65ABA3B51BCF529300154E87 /* YSUserViewController.h */,
 				65ABA3B61BCF529300154E87 /* YSUserViewController.m */,
 				65ABA3B71BCF529300154E87 /* YSUserViewController.xib */,
-				6580D4B91BE3412D00C5FB95 /* YSModifyPasswordViewController.h */,
-				6580D4BA1BE3412D00C5FB95 /* YSModifyPasswordViewController.m */,
-				6580D4BB1BE3412D00C5FB95 /* YSModifyPasswordViewController.xib */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -2082,6 +2206,16 @@
 		65ABA3C31BCF6CA000154E87 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				65F6A2BE1C462CED0054082C /* login_password_has_content@2x.png */,
+				65F6A2BF1C462CED0054082C /* login_user_has_content@2x.png */,
+				653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */,
+				6563AEB71C43BE8900E7084A /* inner_circle@2x.png */,
+				6563AEB81C43BE8900E7084A /* outer_circle@2x.png */,
+				6563AEB51C43BD5700E7084A /* wave_circle@2x.png */,
+				6563AEB31C43B03600E7084A /* medal@2x.png */,
+				659BAFAA1C3CBB1200C73CF2 /* launch_logo@2x.png */,
+				65E62CA61C3BA76F002473B0 /* register_head@2x.png */,
+				65D891301C3A503C00650B56 /* login_background@2x.png */,
 				657010711C2139FC00B02116 /* clock@2x.png */,
 				65840B721C1FB90000835A41 /* graph_background_image@2x.png */,
 				6559FB4E1C19753000B6ACE3 /* running_end_icon@2x.png */,
@@ -2466,6 +2600,41 @@
 			path = Share;
 			sourceTree = "<group>";
 		};
+		65F6A2991C45E0620054082C /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				65F6A2B71C46254F0054082C /* ContentCheck */,
+				65F6A2A41C45ED410054082C /* EditingCheck */,
+				65F6A2B41C45F4F90054082C /* YSTextFieldDelegateObj.h */,
+				65F6A2B51C45F4F90054082C /* YSTextFieldDelegateObj.m */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
+		65F6A2A41C45ED410054082C /* EditingCheck */ = {
+			isa = PBXGroup;
+			children = (
+				65F6A2A51C45ED410054082C /* YSEditingCheck.h */,
+				65F6A2A61C45ED410054082C /* YSEditingCheck.m */,
+				65F6A2A71C45ED410054082C /* YSEditingCheckLengthLimit.h */,
+				65F6A2A81C45ED410054082C /* YSEditingCheckLengthLimit.m */,
+				65F6A2A91C45ED410054082C /* YSEditingCheckPhoneNumber.h */,
+				65F6A2AA1C45ED410054082C /* YSEditingCheckPhoneNumber.m */,
+			);
+			path = EditingCheck;
+			sourceTree = "<group>";
+		};
+		65F6A2B71C46254F0054082C /* ContentCheck */ = {
+			isa = PBXGroup;
+			children = (
+				65F6A2B81C46256D0054082C /* YSContentCheck.h */,
+				65F6A2B91C46256D0054082C /* YSContentCheck.m */,
+				65F6A2BB1C4625FE0054082C /* YSContentCheckIconChange.h */,
+				65F6A2BC1C4625FE0054082C /* YSContentCheckIconChange.m */,
+			);
+			path = ContentCheck;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2622,6 +2791,7 @@
 				656CF8051BD50C3C00F2A759 /* star_bg.png in Resources */,
 				657E61D21C0ECE1700DDCE5D /* man_8km.mp3 in Resources */,
 				657E620A1C0EDC3700DDCE5D /* girl_14km.mp3 in Resources */,
+				65A3AE301C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib in Resources */,
 				657E61971C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 in Resources */,
 				659233961C157A270046B481 /* YSUserSetCell.xib in Resources */,
 				657E62051C0EDC3700DDCE5D /* girl_9km.mp3 in Resources */,
@@ -2640,6 +2810,7 @@
 				6582581C1C0DC10B00C9FBA4 /* YSTimeShaftView.xib in Resources */,
 				657E61E21C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 in Resources */,
 				656F57101C03FA9B00060361 /* YSContentTable.xib in Resources */,
+				6563AEB41C43B03600E7084A /* medal@2x.png in Resources */,
 				657E61DD1C0ECE1700DDCE5D /* man_19km.mp3 in Resources */,
 				65ABA3E41BCF6CA000154E87 /* tips.png in Resources */,
 				656CF8091BD50C3C00F2A759 /* big_star.png in Resources */,
@@ -2660,6 +2831,8 @@
 				65F1BD801BE9F144008C3632 /* dropdown_2.png in Resources */,
 				656CF80A1BD50C3C00F2A759 /* big_no_star.png in Resources */,
 				65EF11F81BFEF86500D3DE85 /* loading_dot_0@2x.png in Resources */,
+				65E62CB41C3BC330002473B0 /* qq_login@2x.png in Resources */,
+				6563AEB21C43AE9300E7084A /* YSMedalView.xib in Resources */,
 				65F1BD811BE9F144008C3632 /* dropdown_3.png in Resources */,
 				656F57211C04030D00060361 /* YSTipCell.xib in Resources */,
 				657E61E41C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 in Resources */,
@@ -2676,15 +2849,18 @@
 				65EF11D41BFEBFF000D3DE85 /* YSBLEDeviceConnectView.xib in Resources */,
 				657E61D31C0ECE1700DDCE5D /* man_9km.mp3 in Resources */,
 				655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */,
+				6563AEB61C43BD5700E7084A /* wave_circle@2x.png in Resources */,
 				65A067381BF6E98900E0BC59 /* tips@2x.png in Resources */,
 				651778381BF6152A00CD6940 /* calendar_highlight@2x.png in Resources */,
 				6580D4B81BE30DE400C5FB95 /* YSResetPasswordViewController.xib in Resources */,
 				65ABA3EF1BCF6CA000154E87 /* clock.png in Resources */,
 				657E61E01C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 in Resources */,
+				6563AEA81C43459900E7084A /* YSAchievementView.xib in Resources */,
 				657E61DA1C0ECE1700DDCE5D /* man_16km.mp3 in Resources */,
 				657E61FE1C0EDC3700DDCE5D /* girl_2km.mp3 in Resources */,
 				657E61CD1C0ECE1700DDCE5D /* man_3km.mp3 in Resources */,
 				65ABA3EE1BCF6CA000154E87 /* 更多---Assistor.png in Resources */,
+				6563AEA31C43430C00E7084A /* YSWaveProgressView.xib in Resources */,
 				65ABA3F11BCF6CA000154E87 /* set_button.png in Resources */,
 				657E61D41C0ECE1700DDCE5D /* man_10km.mp3 in Resources */,
 				6566F6A61C0FD4A8003362CD /* umeng_fb_audio_dialog_cancel@2x.png in Resources */,
@@ -2702,11 +2878,14 @@
 				6559FB501C19753000B6ACE3 /* running_end_icon@2x.png in Resources */,
 				657E61981C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 in Resources */,
 				657E62111C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 in Resources */,
+				65E62CB61C3BC330002473B0 /* weibo_login@2x.png in Resources */,
 				657E61E11C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 in Resources */,
 				6559FB461C19206600B6ACE3 /* wechat_icon@2x.png in Resources */,
+				6563AEB91C43BE8900E7084A /* inner_circle@2x.png in Resources */,
 				657E62021C0EDC3700DDCE5D /* girl_6km.mp3 in Resources */,
 				657E62041C0EDC3700DDCE5D /* girl_8km.mp3 in Resources */,
 				657E61061C0E811600DDCE5D /* YSRunDataRecordViewController.xib in Resources */,
+				653022BE1C44F84D00101C4C /* navigation_back_arrow@2x.png in Resources */,
 				657E61FD1C0EDC3700DDCE5D /* girl_1km.mp3 in Resources */,
 				651778361BF60C0B00CD6940 /* user_highlight@2x.png in Resources */,
 				656F57301C04485100060361 /* YSMarkLabel.xib in Resources */,
@@ -2714,14 +2893,15 @@
 				65744B061BD2794700A15EEE /* AMap.bundle in Resources */,
 				656F57251C04395D00060361 /* right_arrow@2x.png in Resources */,
 				65807E0E1C02B4ED007FB336 /* close@2x.png in Resources */,
-				6580D4BD1BE3412D00C5FB95 /* YSModifyPasswordViewController.xib in Resources */,
 				659619AE1BD22443002110B9 /* YSFindPasswordViewController.xib in Resources */,
 				6566F6A91C0FD4A8003362CD /* umeng_fb_audio_play_02@2x.png in Resources */,
 				655812481BD6163E0094F07D /* app_icon.png in Resources */,
 				65840B731C1FB90000835A41 /* graph_background_image@2x.png in Resources */,
 				65A555A71BD47CC2003306E7 /* YSRunningResultViewController.xib in Resources */,
+				6563AEBA1C43BE8900E7084A /* outer_circle@2x.png in Resources */,
 				656087791C05915200F2BCCC /* YSMarkLabelsView.xib in Resources */,
 				6566F6A31C0FD4A8003362CD /* ToolViewInputVoice@2x.png in Resources */,
+				65F6A2C01C462CED0054082C /* login_password_has_content@2x.png in Resources */,
 				65EF11FA1BFEF86500D3DE85 /* loading_dot_2@2x.png in Resources */,
 				657D0D161BF493EB00A18274 /* background_image2@2x.png in Resources */,
 				65ABA3F01BCF6CA000154E87 /* 红底.png in Resources */,
@@ -2760,6 +2940,7 @@
 				656CF7FC1BD508BD00F2A759 /* YSStarRatingView.xib in Resources */,
 				6566F6A71C0FD4A8003362CD /* umeng_fb_audio_dialog_content@2x.png in Resources */,
 				6559FB4D1C1954B500B6ACE3 /* YSHeartRateScopeTipView.xib in Resources */,
+				65E62CA71C3BA76F002473B0 /* register_head@2x.png in Resources */,
 				657E61CF1C0ECE1700DDCE5D /* man_5km.mp3 in Resources */,
 				656CF7F71BD5058100F2A759 /* YSResultRecordView.xib in Resources */,
 				65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */,
@@ -2768,6 +2949,7 @@
 				65A067361BF6E98900E0BC59 /* login_user@2x.png in Resources */,
 				657E61CB1C0ECE1700DDCE5D /* man_1km.mp3 in Resources */,
 				65ABA3B91BCF529300154E87 /* YSUserViewController.xib in Resources */,
+				659BAFAB1C3CBB1200C73CF2 /* launch_logo@2x.png in Resources */,
 				65A555CF1BD48AEA003306E7 /* YSTimeLabel.xib in Resources */,
 				657E620E1C0EDC3700DDCE5D /* girl_18km.mp3 in Resources */,
 				657E61CC1C0ECE1700DDCE5D /* man_2km.mp3 in Resources */,
@@ -2781,7 +2963,10 @@
 				651778311BF609DA00CD6940 /* password_eye_close@2x.png in Resources */,
 				65BAFF021C1E522C0012235F /* ProgressHUD.bundle in Resources */,
 				65ABA3E81BCF6CA000154E87 /* map_mode.png in Resources */,
+				65E62CB51C3BC330002473B0 /* wechat_login@2x.png in Resources */,
+				65F6A2C11C462CED0054082C /* login_user_has_content@2x.png in Resources */,
 				6566F6A11C0FD4A8003362CD /* ToolViewInputText@2x.png in Resources */,
+				65D891311C3A503C00650B56 /* login_background@2x.png in Resources */,
 				65A555A91BD47CC2003306E7 /* YSRunningRecordViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2808,6 +2993,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65807E111C02B5B3007FB336 /* YSBLEHint.m in Sources */,
+				65F6A2AD1C45ED410054082C /* YSEditingCheckPhoneNumber.m in Sources */,
 				6566F6AE1C0FD4A8003362CD /* UMChatTableViewCell.m in Sources */,
 				658257D81C0D90DC00C9FBA4 /* YSHeartRateDataManager.m in Sources */,
 				65ABA3B31BCF528300154E87 /* YSRunViewController.m in Sources */,
@@ -2825,10 +3011,13 @@
 				65F1BD7A1BE9EC6D008C3632 /* YSPulldownAnimation.m in Sources */,
 				65744B381BD27FF400A15EEE /* AFURLConnectionOperation.m in Sources */,
 				65F409F51C132C060059CAAD /* YSShareInfo.m in Sources */,
+				65F6A2BD1C4625FE0054082C /* YSContentCheckIconChange.m in Sources */,
 				65AAA3531BFC7A8A00C4F84C /* YSRunDataHandler.m in Sources */,
+				6563AEA11C4342AA00E7084A /* YSWaveProgressView.m in Sources */,
 				65B435C31C05D0C10097CC62 /* YSDataRecordModel.m in Sources */,
 				65EF11ED1BFEF40900D3DE85 /* YSBurningMarkView.m in Sources */,
 				654288171BDCC9B200ADBE32 /* YSUploadRunDataRequestModel.m in Sources */,
+				65F6A2AB1C45ED410054082C /* YSEditingCheck.m in Sources */,
 				65B2ACE41BF9DFDA00ECB2DB /* YSBarChart.m in Sources */,
 				65B2ACDE1BF9DFCC00ECB2DB /* YSChart.m in Sources */,
 				65D568C41C18345A0068B165 /* YSIconActionSheet.m in Sources */,
@@ -2836,19 +3025,21 @@
 				65ABA3B81BCF529300154E87 /* YSUserViewController.m in Sources */,
 				65914ECB1C228EE40011CAE4 /* YSDevice.m in Sources */,
 				65AAA34B1BFC777D00C4F84C /* YSMapManager.m in Sources */,
+				65F6A2AC1C45ED410054082C /* YSEditingCheckLengthLimit.m in Sources */,
 				65B2ACEA1BF9DFE200ECB2DB /* YSGraphPoint.m in Sources */,
 				655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */,
 				657E61051C0E811600DDCE5D /* YSRunDataRecordViewController.m in Sources */,
 				65EF11D51BFEBFF000D3DE85 /* YSBLEHeartRateCountingView.m in Sources */,
-				6580D4BC1BE3412D00C5FB95 /* YSModifyPasswordViewController.m in Sources */,
 				657E610A1C0E9F2700DDCE5D /* YSVoicePrompt.m in Sources */,
 				659D79391BF5829C00563687 /* YSDataRecordLabelsView.m in Sources */,
+				659BAFA91C3CAA8B00C73CF2 /* YSLaunchAnimation.m in Sources */,
 				65A555C81BD48246003306E7 /* YSRunningModeStatusView.m in Sources */,
 				657698E31BD0F2D90015B446 /* YSUserNoLoginView.m in Sources */,
 				656F57341C0461EA00060361 /* YSContentHelpView.m in Sources */,
 				65807E061C02A4DD007FB336 /* YSBLEConnectFailureHintView.m in Sources */,
 				65744B491BD280B200A15EEE /* FMDatabaseAdditions.m in Sources */,
 				65AAA34C1BFC777D00C4F84C /* YSTimeManager.m in Sources */,
+				65F6A2BA1C46256D0054082C /* YSContentCheck.m in Sources */,
 				6566F6B11C0FD4A8003362CD /* UMPostTableViewCell.m in Sources */,
 				65BAFF071C1E57EA0012235F /* YSLoadingHUD.m in Sources */,
 				65BC233C1BE75AB300265FA8 /* YSCalendarDayItem.m in Sources */,
@@ -2872,14 +3063,17 @@
 				65CD489C1C1A7978002D873A /* YSResultHeartRateDataLabels.m in Sources */,
 				6580D4B71BE30DE400C5FB95 /* YSResetPasswordViewController.m in Sources */,
 				655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */,
+				6563AEA61C43452F00E7084A /* YSAchievementView.m in Sources */,
 				657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */,
 				65A555C11BD47F51003306E7 /* YSTimeLabel.m in Sources */,
+				6563AEB01C43AE0500E7084A /* YSMedalView.m in Sources */,
 				65AAA3481BFC777D00C4F84C /* YSCaptchaTimer.m in Sources */,
 				65FD75F91C30D9FC008FB5F6 /* YSDatabaseUpdateManager.m in Sources */,
 				65ABA3BD1BCF56FC00154E87 /* YSMainTabBarViewController.m in Sources */,
 				654F211B1BDA3B01002F0A4B /* YSUserInfoModel.m in Sources */,
 				65807E0B1C02A4E8007FB336 /* YSBLEConnectHintView.m in Sources */,
 				656F57391C0462CB00060361 /* YSHelpDetailComponent.m in Sources */,
+				65F6A2B61C45F4F90054082C /* YSTextFieldDelegateObj.m in Sources */,
 				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
 				6566F6B21C0FD4A8003362CD /* UMRadialView.m in Sources */,
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
@@ -2891,6 +3085,7 @@
 				65A4310D1BE0D3BF004D7024 /* YSModelReformer.m in Sources */,
 				65E5DC551BE1ADEB00462E91 /* YSRegisterUserInfoViewController.m in Sources */,
 				6582581F1C0DC10B00C9FBA4 /* YSDataRecordBar.m in Sources */,
+				65E62CAA1C3BBEEC002473B0 /* YSThirdPartLoginView.m in Sources */,
 				654F211E1BDA3D10002F0A4B /* YSRunInfoModel.m in Sources */,
 				6586EB521BDDC645008108A0 /* YSRunDatabaseModel.m in Sources */,
 				65B9F8E21C326FA200724485 /* YSDatabaseTableCreator.m in Sources */,
@@ -2908,6 +3103,7 @@
 				65B2ACDD1BF9DFCC00ECB2DB /* YSChartElement.m in Sources */,
 				65A555A51BD47CC2003306E7 /* YSResultRecordView.m in Sources */,
 				65CD489E1C1A7978002D873A /* YSResultRunDataLabels.m in Sources */,
+				65D891341C3A654200650B56 /* YSTextFieldComponentCreator.m in Sources */,
 				656F573E1C046AAA00060361 /* YSContentHelp.m in Sources */,
 				65744B4C1BD280B200A15EEE /* FMResultSet.m in Sources */,
 				65B435BA1C05AFA80097CC62 /* YSTimeFunc.m in Sources */,
@@ -2940,6 +3136,7 @@
 				6566F6B01C0FD4A8003362CD /* UMFullScreenPhotoView.m in Sources */,
 				658258171C0DC10B00C9FBA4 /* YSCommentElement.m in Sources */,
 				65BAFF031C1E522C0012235F /* ProgressHUD.m in Sources */,
+				6563AE9E1C43426900E7084A /* YSWaterWaveView.m in Sources */,
 				65C16C4A1C084B9F00168722 /* YSHeartRateDataTransformModel.m in Sources */,
 				6582581D1C0DC10B00C9FBA4 /* YSHeartRateGraphView.m in Sources */,
 				65C16C471C084B8900168722 /* YSDataTransformModel.m in Sources */,
@@ -2953,6 +3150,7 @@
 				65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,
 				65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */,
+				65A3AE2F1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m in Sources */,
 				65A555A61BD47CC2003306E7 /* YSRunningResultViewController.m in Sources */,
 				65C16C4D1C084BC700168722 /* YSLocationDataTransformModel.m in Sources */,
 				655C570A1BCF7CEF00E9073E /* YSCalendarRecordView.m in Sources */,

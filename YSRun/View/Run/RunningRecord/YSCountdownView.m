@@ -100,10 +100,6 @@
     self.countdownTime -= 1;
     [self resetLabelText];
     
-    [UIView animateWithDuration:0.5 animations:^(){
-        self.countdownLabel.transform = CGAffineTransformMakeScale(3, 3);
-    }];
-    
     if (self.countdownTime < 1)
     {
         [self countdownEnd];

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSMedalView">
+            <connections>
+                <outlet property="centerImageView" destination="AfE-gT-N5W" id="fQZ-iW-FiT"/>
+                <outlet property="leftImageView" destination="cJf-Jj-u3N" id="LhG-Ur-sh6"/>
+                <outlet property="rightImageView" destination="HLl-hI-rkS" id="sWb-dj-f90"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="230" height="73"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal" translatesAutoresizingMaskIntoConstraints="NO" id="cJf-Jj-u3N" userLabel="left">
+                    <rect key="frame" x="0.0" y="0.0" width="73.5" height="73"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal" translatesAutoresizingMaskIntoConstraints="NO" id="AfE-gT-N5W" userLabel="center">
+                    <rect key="frame" x="78.5" y="0.0" width="73" height="73"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="medal" translatesAutoresizingMaskIntoConstraints="NO" id="HLl-hI-rkS" userLabel="right">
+                    <rect key="frame" x="156.5" y="0.0" width="73.5" height="73"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="HLl-hI-rkS" secondAttribute="trailing" id="136-1b-JXI"/>
+                <constraint firstItem="HLl-hI-rkS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4eg-oI-Lk1"/>
+                <constraint firstItem="AfE-gT-N5W" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9P5-GR-reb"/>
+                <constraint firstItem="HLl-hI-rkS" firstAttribute="leading" secondItem="AfE-gT-N5W" secondAttribute="trailing" constant="5" id="IMM-xh-cRm"/>
+                <constraint firstItem="cJf-Jj-u3N" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jj5-OB-Dan"/>
+                <constraint firstAttribute="bottom" secondItem="AfE-gT-N5W" secondAttribute="bottom" id="Mjy-5o-SO7"/>
+                <constraint firstItem="cJf-Jj-u3N" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="W5W-sq-ADS"/>
+                <constraint firstAttribute="bottom" secondItem="cJf-Jj-u3N" secondAttribute="bottom" id="Ykp-dC-gJK"/>
+                <constraint firstItem="AfE-gT-N5W" firstAttribute="leading" secondItem="cJf-Jj-u3N" secondAttribute="trailing" constant="5" id="amy-DA-7YJ"/>
+                <constraint firstAttribute="bottom" secondItem="HLl-hI-rkS" secondAttribute="bottom" id="hul-tq-Fd4"/>
+                <constraint firstItem="AfE-gT-N5W" firstAttribute="width" secondItem="cJf-Jj-u3N" secondAttribute="width" id="ke8-hZ-RQ1"/>
+                <constraint firstItem="HLl-hI-rkS" firstAttribute="width" secondItem="cJf-Jj-u3N" secondAttribute="width" id="pVQ-UJ-Nhm"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="91" y="-66.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="medal" width="68" height="68"/>
+    </resources>
+</document>

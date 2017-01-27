@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSRegisterUserInfoViewController">
             <connections>
                 <outlet property="navigationBarView" destination="cpv-KY-mcl" id="ROk-8f-qM9"/>
+                <outlet property="nicknameTextField" destination="Ylb-Qa-kNg" id="y63-dN-q9D"/>
+                <outlet property="passwordTextField" destination="EMP-g0-I61" id="Al9-Rj-67O"/>
                 <outlet property="photoButton" destination="IKf-jB-NLE" id="H9q-Sg-oeu"/>
                 <outlet property="registerButton" destination="m7R-oU-Dnb" id="0Jq-Vw-hN1"/>
-                <outlet property="textFieldTable" destination="6K3-zr-fyG" id="GMr-uN-aeL"/>
+                <outlet property="textFieldHeightConstraint" destination="hVh-0k-Grb" id="CIC-LR-mkm"/>
                 <outlet property="view" destination="iN0-l3-epB" id="G2t-Qm-Dbo"/>
             </connections>
         </placeholder>
@@ -32,48 +34,56 @@
                         <constraint firstAttribute="width" constant="88" id="7F0-xC-em2"/>
                         <constraint firstAttribute="height" constant="88" id="WyZ-IL-SdR"/>
                     </constraints>
-                    <state key="normal" title="Button" image="register_head.png"/>
+                    <state key="normal" image="register_head"/>
                     <connections>
                         <action selector="photoButtonClicked:" destination="-1" eventType="touchUpInside" id="hX9-M1-VkH"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6K3-zr-fyG" customClass="YSTextFieldTableView">
-                    <rect key="frame" x="30" y="192" width="234" height="88"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="88" id="vLx-rQ-fe9"/>
-                    </constraints>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m7R-oU-Dnb" userLabel="register">
-                    <rect key="frame" x="30" y="310" width="234" height="44"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="6iM-Nx-B5j"/>
-                    </constraints>
+                    <rect key="frame" x="30" y="290" width="234" height="44"/>
                     <state key="normal" title="Button"/>
                     <connections>
                         <action selector="registerButtonClicked:" destination="-1" eventType="touchUpInside" id="qvU-tF-eAv"/>
                     </connections>
                 </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ylb-Qa-kNg">
+                    <rect key="frame" x="30" y="192" width="234" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="hVh-0k-Grb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EMP-g0-I61">
+                    <rect key="frame" x="30" y="241" width="234" height="44"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="6K3-zr-fyG" secondAttribute="trailing" constant="30" id="0za-Jo-M22"/>
                 <constraint firstItem="cpv-KY-mcl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9KV-62-MqV"/>
-                <constraint firstItem="6K3-zr-fyG" firstAttribute="top" secondItem="IKf-jB-NLE" secondAttribute="bottom" constant="20" id="9Wd-oI-bVU"/>
-                <constraint firstItem="m7R-oU-Dnb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="NCY-lu-Aq2"/>
+                <constraint firstItem="EMP-g0-I61" firstAttribute="leading" secondItem="Ylb-Qa-kNg" secondAttribute="leading" id="Ecm-rQ-Off"/>
+                <constraint firstItem="Ylb-Qa-kNg" firstAttribute="top" secondItem="IKf-jB-NLE" secondAttribute="bottom" constant="20" id="Ipl-E6-ZAb"/>
                 <constraint firstAttribute="trailing" secondItem="cpv-KY-mcl" secondAttribute="trailing" id="Y6V-iB-FaB"/>
+                <constraint firstItem="m7R-oU-Dnb" firstAttribute="width" secondItem="Ylb-Qa-kNg" secondAttribute="width" id="Yv0-DY-xkh"/>
+                <constraint firstItem="m7R-oU-Dnb" firstAttribute="leading" secondItem="Ylb-Qa-kNg" secondAttribute="leading" id="YzX-vB-I5P"/>
+                <constraint firstItem="EMP-g0-I61" firstAttribute="top" secondItem="Ylb-Qa-kNg" secondAttribute="bottom" constant="5" id="cOe-BS-bCW"/>
                 <constraint firstItem="IKf-jB-NLE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cam-1y-Uem"/>
-                <constraint firstAttribute="trailing" secondItem="m7R-oU-Dnb" secondAttribute="trailing" constant="30" id="fAB-Yw-whA"/>
+                <constraint firstItem="m7R-oU-Dnb" firstAttribute="height" secondItem="Ylb-Qa-kNg" secondAttribute="height" id="eDd-ax-RTT"/>
+                <constraint firstItem="Ylb-Qa-kNg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="eSx-FT-NCI"/>
+                <constraint firstItem="EMP-g0-I61" firstAttribute="height" secondItem="Ylb-Qa-kNg" secondAttribute="height" id="h3x-6p-c7u"/>
+                <constraint firstAttribute="trailing" secondItem="Ylb-Qa-kNg" secondAttribute="trailing" constant="30" id="hfz-Gd-1zg"/>
                 <constraint firstItem="cpv-KY-mcl" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="iFv-pl-G73"/>
                 <constraint firstItem="IKf-jB-NLE" firstAttribute="top" secondItem="cpv-KY-mcl" secondAttribute="bottom" constant="20" id="jBa-FD-cTr"/>
-                <constraint firstItem="6K3-zr-fyG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="30" id="lkf-a2-E30"/>
-                <constraint firstItem="m7R-oU-Dnb" firstAttribute="top" secondItem="6K3-zr-fyG" secondAttribute="bottom" constant="30" id="mtO-iK-rrI"/>
+                <constraint firstItem="m7R-oU-Dnb" firstAttribute="top" secondItem="EMP-g0-I61" secondAttribute="bottom" constant="5" id="qmM-Qb-PFk"/>
+                <constraint firstItem="EMP-g0-I61" firstAttribute="width" secondItem="Ylb-Qa-kNg" secondAttribute="width" id="rw7-ey-9bO"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="85" y="70"/>
         </view>
     </objects>
     <resources>
-        <image name="register_head.png" width="144" height="144"/>
+        <image name="register_head" width="144" height="144"/>
     </resources>
 </document>

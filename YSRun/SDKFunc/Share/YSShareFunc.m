@@ -234,6 +234,12 @@
                         NSDictionary *rawDataOfCredential = user.credential.rawData;
                         NSString *openid = [rawDataOfCredential valueForKey:@"openid"];
                         
+                        // 新浪微博rawData里没有openid，只有uid字段
+                        if (!openid)
+                        {
+                            openid = [rawDataOfCredential valueForKey:@"uid"];
+                        }
+                        
                         model.idstr = openid;
                         model.screenName = user.nickname;
                         model.profileImageUrl = user.icon;

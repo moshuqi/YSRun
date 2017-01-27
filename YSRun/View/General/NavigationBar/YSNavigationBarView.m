@@ -14,6 +14,8 @@
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UIButton *returnButton;
 
+@property (nonatomic, strong) UIView *containerView;
+
 @end
 
 @implementation YSNavigationBarView
@@ -30,6 +32,7 @@
         containerView.backgroundColor = GreenBackgroundColor;
         
         [self addSubview:containerView];
+        self.containerView = containerView;
     }
     
     return self;
@@ -39,6 +42,14 @@
 {
     self.titleLabel.text = title;
     [self.returnButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setupWithTitle:(NSString *)title barBackgroundColor:(UIColor *)color target:(id)target action:(SEL)action
+{
+    [self setupWithTitle:title target:target action:action];
+    
+    self.backgroundColor = color;
+    self.containerView.backgroundColor = color;
 }
 
 @end

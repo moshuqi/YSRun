@@ -11,6 +11,8 @@
 #import "YSAppMacro.h"
 #import "YSUserInfoModel.h"
 #import "YSDevice.h"
+#import "YSWaveProgressView.h"
+#import "YSMedalView.h"
 
 @interface YSUserLevelView ()
 
@@ -20,15 +22,18 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *encourageLabel;
 @property (nonatomic, weak) IBOutlet UIView *progressContentView;
-@property (nonatomic, weak) IBOutlet UILabel *levelLabel;
+//@property (nonatomic, weak) IBOutlet UILabel *levelLabel;
+
+@property (nonatomic, weak) IBOutlet YSWaveProgressView *waveProgressView;
+@property (nonatomic, weak) IBOutlet YSMedalView *medalView;
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *progressTopToSuperViewConstraint;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *progressBottomToEncourageLabelConstraint;
 
-@property (nonatomic, strong) UILabel *achieveLabel;
+//@property (nonatomic, strong) UILabel *achieveLabel;
 
 @property (nonatomic, strong) UIImageView *backgroundImageView;
-@property (nonatomic, strong) YSCicularProgressView *cicularProgress;
+//@property (nonatomic, strong) YSCicularProgressView *cicularProgress;
 @property (nonatomic, assign) CGFloat progress;
 
 @end
@@ -39,7 +44,7 @@
 {
     [self setupSubviewsBackgroundColor];
     [self addGesture];
-    [self addAchieveLabel];
+//    [self addAchieveLabel];
     
     // 头像设置成圆形
     CGFloat cornerRadius = CGRectGetWidth(self.userPhoto.frame) / 2;
@@ -52,8 +57,11 @@
 - (void)layoutSubviews
 {
     [self addBackgroundView];
-    [self addProgress];
-    [self resetAchieveLabelFrame];
+//    [self addProgress];
+//    [self resetAchieveLabelFrame];
+    
+    [self.waveProgressView resetWaterWaveView];
+    [self.waveProgressView resetProgress:self.progress];
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -84,8 +92,8 @@
     
     self.userName.backgroundColor = [UIColor clearColor];
     self.progressContentView.backgroundColor = [UIColor clearColor];
-    self.cicularProgress.backgroundColor = [UIColor clearColor];
-    self.levelLabel.backgroundColor = [UIColor clearColor];
+//    self.cicularProgress.backgroundColor = [UIColor clearColor];
+//    self.levelLabel.backgroundColor = [UIColor clearColor];
     self.encourageLabel.backgroundColor = RGBA(4, 181, 108, 0.7);
 }
 
@@ -104,20 +112,20 @@
     UIImage *image = [UIImage imageNamed:@"background_image2.png"];
     
     // 重绘图片，确保图片能至上而下显示。
-    CGSize size = frame.size;
-    UIGraphicsBeginImageContext(size);
-    
-    CGFloat originWidth = image.size.width;
-    CGFloat originHeight = image.size.height;
-    CGFloat scale = size.width / originWidth;
-    
-    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
-    image = UIGraphicsGetImageFromCurrentImageContext();
+//    CGSize size = frame.size;
+//    UIGraphicsBeginImageContext(size);
+//    
+//    CGFloat originWidth = image.size.width;
+//    CGFloat originHeight = image.size.height;
+//    CGFloat scale = size.width / originWidth;
+//    
+//    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
+//    image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
     self.backgroundImageView.image = image;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageView.contentMode = UIViewContentModeTop;
     self.backgroundImageView.clipsToBounds = YES;
     
     [self addSubview:self.backgroundImageView];
@@ -157,6 +165,7 @@
     }
 }
 
+/*
 - (void)addProgress
 {
     if ([self.cicularProgress superview])
@@ -210,6 +219,7 @@
     
     self.achieveLabel.center = point;
 }
+ */
 
 - (void)setUserName:(NSString *)userName
           headPhoto:(UIImage *)headPhoto
@@ -220,15 +230,19 @@ upgradeRequireTimes:(NSInteger)upgradeRequireTimes
 {
     self.userName.text = userName;
     self.userPhoto.image = headPhoto;
-    self.levelLabel.text = [NSString stringWithFormat:@"%@", @(grade)];
+//    self.levelLabel.text = [NSString stringWithFormat:@"%@", @(grade)];
     
     NSString *encourageText = [NSString stringWithFormat:@"%@坚持一定会有收获", (upgradeRequireTimes > 0) ? [NSString stringWithFormat:@"还需%@次跑步记录即可升级，", @(upgradeRequireTimes)] : @""];
     self.encourageLabel.text = encourageText;
     
-    self.achieveLabel.text = achieveTitle;
+//    self.achieveLabel.text = achieveTitle;
+//
+//    [self.cicularProgress animationToProgress:self.progress];
     
     self.progress = progress;
-    [self.cicularProgress animationToProgress:self.progress];
+    [self.waveProgressView setupWithLevel:grade title:achieveTitle grogressPercent:self.progress];
+    
+    [self.medalView setMedalLevel:2];
 }
 
 - (void)setHeadPhoto:(UIImage *)photo

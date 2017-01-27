@@ -11,6 +11,7 @@
 #import "UMFeedback.h"
 #import "MobClick.h"
 #import "YSShareFunc.h"
+#import "YSLaunchAnimation.h"
 
 #define UMAppKey        @"561cbb08e0f55a33f0004c54"
 
@@ -31,6 +32,9 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    YSLaunchAnimation *launchAnimation = [YSLaunchAnimation new];
+    [launchAnimation launch];
     
     [self SDKConfig];
     

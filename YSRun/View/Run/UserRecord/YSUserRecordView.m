@@ -134,20 +134,20 @@
     UIImage *image = [UIImage imageNamed:@"background_image2.png"];
     
     // 重绘图片，确保图片能至上而下显示。
-    CGSize size = frame.size;
-    UIGraphicsBeginImageContext(size);
-    
-    CGFloat originWidth = image.size.width;
-    CGFloat originHeight = image.size.height;
-    CGFloat scale = size.width / originWidth;
-    
-    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
-    image = UIGraphicsGetImageFromCurrentImageContext();
+//    CGSize size = frame.size;
+//    UIGraphicsBeginImageContext(size);
+//    
+//    CGFloat originWidth = image.size.width;
+//    CGFloat originHeight = image.size.height;
+//    CGFloat scale = size.width / originWidth;
+//    
+//    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
+//    image = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     
     self.backgroundImageView.image = image;
-    self.backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+    self.backgroundImageView.contentMode = UIViewContentModeTop;
     self.backgroundImageView.clipsToBounds = YES;
     
     [self addSubview:self.backgroundImageView];

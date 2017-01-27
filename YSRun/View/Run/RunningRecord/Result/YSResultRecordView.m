@@ -89,21 +89,21 @@
 
 - (void)addBackgroundPhoto
 {
-    CGRect frame = self.bgImageView.frame;
-    
-    CGSize size = frame.size;
-    UIGraphicsBeginImageContext(size);
-    
     UIImage *image = [UIImage imageNamed:@"background_image2.png"];
-
-    CGFloat originWidth = image.size.width;
-    CGFloat originHeight = image.size.height;
-    CGFloat scale = size.width / originWidth;
     
-    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
-    image = UIGraphicsGetImageFromCurrentImageContext();
-    
-    UIGraphicsEndImageContext();
+//    CGRect frame = self.bgImageView.frame;
+//    
+//    CGSize size = frame.size;
+//    UIGraphicsBeginImageContext(size);
+//
+//    CGFloat originWidth = image.size.width;
+//    CGFloat originHeight = image.size.height;
+//    CGFloat scale = size.width / originWidth;
+//    
+//    [image drawInRect:CGRectMake(0, 0, originWidth * scale, originHeight * scale)];
+//    image = UIGraphicsGetImageFromCurrentImageContext();
+//    
+//    UIGraphicsEndImageContext();
     
     self.bgImageView.image = image;
 }

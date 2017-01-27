@@ -14,14 +14,24 @@
 #import "YSLoginViewController.h"
 #import "YSUtilsMacro.h"
 #import "YSLoadingHUD.h"
+#import "YSDevice.h"
+#import "YSTextFieldComponentCreator.h"
 
-@interface YSResetPasswordViewController () <YSNetworkManagerDelegate>
+#import "YSTextFieldDelegateObj.h"
+#import "YSContentCheckIconChange.h"
+
+@interface YSResetPasswordViewController () <YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
-@property (nonatomic, weak) IBOutlet UITextField *textFiled;
+@property (nonatomic, weak) IBOutlet UITextField *textField;
 @property (nonatomic, weak) IBOutlet UIButton *sumbitButton;
 
 @property (nonatomic, strong) NSString *phoneNumber;
+
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *textFieldHeightConstraint;
+@property (nonatomic, strong) IBOutlet NSLayoutConstraint *textFieldTopToBarViewBottomConstraint;
+
+@property (nonatomic, strong) YSTextFieldDelegateObj *textFieldDelegateObj;
 
 @end
 
@@ -42,10 +52,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.navigationBarView setupWithTitle:@"找回密码" target:self action:@selector(resetPasswordViewBack)];
+    [self.navigationBarView setupWithTitle:@"重置密码" barBackgroundColor:[UIColor clearColor] target:self action:@selector(resetPasswordViewBack)];
+    
+    // 在此处改变constant并不会导致对应控件的高度立即变化，所以setup方法中需要控件高度的地方直接取constant的值
+    self.textFieldTopToBarViewBottomConstraint.constant = [self constraintConstant];
+    if ([YSDevice isPhone6Plus])
+    {
+        self.textFieldHeightConstraint.constant = 52;
+    }
     
     [self setupButton];
     [self setupTextField];
+    [self setupBackgroundImage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,101 +81,88 @@
     [self.sumbitButton setTitle:@"提  交" forState:UIControlStateNormal];
     [self.sumbitButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    self.sumbitButton.backgroundColor = GreenBackgroundColor;
+//    CGFloat btnHeight = self.textFieldHeightConstraint.constant;
     self.sumbitButton.layer.cornerRadius = ButtonCornerRadius;
+    
+    self.sumbitButton.backgroundColor = GreenBackgroundColor;
     self.sumbitButton.clipsToBounds = YES;
+}
+
+- (void)setupBackgroundImage
+{
+    // 设置背景图片
+    UIImage *image = [UIImage imageNamed:@"login_background"];
+    self.view.layer.contents = (id)image.CGImage;
 }
 
 - (void)setupTextField
 {
-    UIColor *lineColor = RGB(215, 215, 215);
+    CGFloat textFieldHeight = CGRectGetHeight(self.textField.frame);
+    [YSTextFieldComponentCreator setupTextField:self.textField height:textFieldHeight];
     
-    self.textFiled.layer.borderWidth = 1;
-    self.textFiled.layer.borderColor = lineColor.CGColor;
-    self.textFiled.layer.cornerRadius = 5;
-
-    UIImage *image = [UIImage imageNamed:@"login_password"];
-    UIView *leftView = [self getTextFieldLeftViewWithImage:image];
-    UIView *rightView = [self getPasswordTextFieldRightButtonView];
+    UIImage *image = [YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:YES];
+    self.textField.leftView = [YSTextFieldComponentCreator getViewWithImage:image textFieldHeight:textFieldHeight];
+    self.textField.leftViewMode = UITextFieldViewModeAlways;
     
-    NSString *placeholder = [NSString stringWithFormat:@"请设置新密码"];
-    [self.textFiled setPlaceholder:placeholder];
-    self.textFiled.secureTextEntry = YES;
+    [YSTextFieldComponentCreator setupTextField:self.textField withPlaceholder:@"请设置新密码"];
     
-    self.textFiled.leftView = leftView;
-    self.textFiled.leftViewMode = UITextFieldViewModeAlways;
+    self.textField.secureTextEntry = YES;
     
-    self.textFiled.rightView = rightView;
-    self.textFiled.rightViewMode = UITextFieldViewModeAlways;
+    UIButton *secureTextButton = [self getSecureTextButton];
+    self.textField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:secureTextButton buttonWidth:56 textFieldHeight:textFieldHeight];
+    self.textField.rightViewMode = UITextFieldViewModeAlways;
+    
+    [self setupTextFieldDelegate];
 }
 
-- (UIView *)getTextFieldLeftViewWithImage:(UIImage *)image
+- (void)setupTextFieldDelegate
 {
-    CGFloat d = 10; // 图片和边缘的间距
-    CGFloat textFieldHeight = CGRectGetHeight(self.textFiled.frame);
+    // 给文本框设置代理，有输入字符时文本框左边图标改变
     
-    CGFloat imageHeight = textFieldHeight - 2 * d;
-    CGFloat imageWidth = imageHeight;
+    YSContentCheckIconChange *contentCheck = [[YSContentCheckIconChange alloc] initWithDelegate:self];
+    NSArray *contentCheckArray = @[contentCheck];
     
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, imageWidth + 2 * d, textFieldHeight)]; // 用来放UIImageView，以显示间距
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
-    CGRect frame = CGRectMake(d, d, imageWidth, imageHeight);
-    imageView.frame = frame;
-    
-    [contentView addSubview:imageView];
-    return contentView;
+    self.textFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray];
+    self.textField.delegate = self.textFieldDelegateObj;
 }
 
-- (UIView *)getPasswordTextFieldRightButtonView
+- (UIButton *)getSecureTextButton
 {
+    UIButton *secureTextButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [secureTextButton addTarget:self action:@selector(secureTextButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
     UIImage *image = [UIImage imageNamed:@"password_eye_close"];
+    [secureTextButton setImage:image forState:UIControlStateNormal];
     
-    CGFloat d = 0;
-    CGFloat textFieldHeight = CGRectGetHeight(self.textFiled.frame);
-    
-    CGFloat buttonHeight = textFieldHeight - 2 * d;
-    CGFloat buttonWidth = 56;
-    CGRect buttonFrame = CGRectMake(d, d, buttonWidth, buttonHeight);
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button addTarget:self action:@selector(passwordRightButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    button.frame = buttonFrame;
-    [button setImage:image forState:UIControlStateNormal];
-    
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, buttonWidth + 2 * d, textFieldHeight)];
-    [contentView addSubview:button];
-    
-    return contentView;
+    return secureTextButton;
 }
 
-- (void)passwordRightButtonClicked:(UIButton *)button
+- (void)secureTextButtonClicked:(UIButton *)button
 {
-    BOOL secureTextEntry = self.textFiled.secureTextEntry;
-    UIImage *image = secureTextEntry ? [UIImage imageNamed:@"password_eye_open"] : [UIImage imageNamed:@"password_eye_close"];
+    self.textField.secureTextEntry = !self.textField.secureTextEntry;
+    
+    UIImage *image = self.textField.secureTextEntry ? [UIImage imageNamed:@"password_eye_close"] : [UIImage imageNamed:@"password_eye_open"];
     [button setImage:image forState:UIControlStateNormal];
-    
-    self.textFiled.secureTextEntry = !secureTextEntry;
 }
 
-- (UITextField *)getTextFieldWithRightButton:(UIButton *)button
+- (CGFloat)constraintConstant
 {
-    // 获取button所在的textfield
+    // 根据实际情况计算的constant值，既第一个文本框与导航栏的距离
     
-    // button先加在一个view上，该view为textField的rightView，通过这种方法获得textField
-    id object = [[button superview] superview];
-    if ([object isKindOfClass:[UITextField class]])
-    {
-        return object;
-    }
+    CGFloat distance = 5;   // 控件间的间距
+    CGFloat height = self.textFieldHeightConstraint.constant;   // 控件的高度，文本框和按钮的高度相同
+    CGFloat barViewHeight = CGRectGetHeight(self.navigationBarView.frame);
     
-    return nil;
+    CGFloat screenHeight = [UIApplication sharedApplication].keyWindow.frame.size.height;
+    // 按钮距底边的间距为第一个文本框距导航栏的间距的2倍
+    CGFloat constant = (screenHeight - barViewHeight - height * 2 - distance) / 3;
+    
+    return constant;
 }
-
 
 - (IBAction)submitButtonClicked:(id)sender
 {
-    NSString *newPassword = self.textFiled.text;
+    NSString *newPassword = self.textField.text;
     
     if ([newPassword length] < 1)
     {
@@ -214,6 +219,12 @@
     [[YSLoadingHUD shareLoadingHUD] dismiss];
     
     [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:message];
+}
+
+- (void)needChangeTextField:(UITextField *)textField textEmpty:(BOOL)isEmpty
+{
+    CGFloat textFieldHeight = CGRectGetHeight(textField.frame);
+    textField.leftView = [YSTextFieldComponentCreator getViewWithImage:[YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:isEmpty] textFieldHeight:textFieldHeight];
 }
 
 @end
