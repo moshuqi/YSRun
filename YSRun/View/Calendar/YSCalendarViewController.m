@@ -19,6 +19,8 @@
 #import "YSDataRecordModel.h"
 #import "YSDevice.h"
 
+#import "YSSportRecordViewController.h"
+
 @interface YSCalendarViewController () <YSContentTableDelegate, YSCalendarRecordViewDelegate>
 
 @property (nonatomic, weak) IBOutlet YSCalendarRecordView *calendarView;
@@ -153,6 +155,8 @@
     {
         recordViewController = [[YSRunDataRecordViewController alloc] initWithDataRecordModel:dataModel];
     }
+    
+    recordViewController = [[YSSportRecordViewController alloc] initWithDataRecordModel:dataModel];
     
     [self presentViewController:recordViewController animated:YES completion:nil];
 }

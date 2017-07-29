@@ -37,14 +37,14 @@ static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左�
     UIImage *image = [UIImage imageNamed:@"clock"];
     self.clockIcon = [[UIImageView alloc] initWithImage:image];
     
-    [self addSubview:self.clockIcon];
+//    [self addSubview:self.clockIcon];
 }
 
 - (void)addBackView
 {
     if (!self.backImageView)
     {
-        UIImage *image = [UIImage imageNamed:@"background_image1"];
+        UIImage *image = [UIImage imageNamed:@"runningBackroundImage"];
         self.backImageView = [[UIImageView alloc] initWithImage:image];
         self.backImageView.frame = self.bounds;
         
@@ -55,10 +55,12 @@ static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左�
 
 - (void)setupLabelsAppearance
 {
+    [super setupLabelsAppearance];
+    
     UIImage *modeImage = [UIImage imageNamed:@"map_mode.png"];
     [self.modeStatusView setModeIconWithImage:modeImage modeName:@"地图模式"];
     
-    [self.timeLabel setBoldWithFontSize:[self timeLabelFontSize]];
+//    [self.timeLabel setBoldWithFontSize:[self timeLabelFontSize]];
     
     [self setContentFontSize:36 subscriptFontSize:10];
 }
@@ -82,18 +84,18 @@ static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左�
     return frame;
 }
 
-- (CGRect)getTimeLabelFrame
-{
-    CGFloat distance = [self distanceFromModeStatusViewToTimeLabel];  // 与模式图标的垂直间距
-    CGFloat width = CGRectGetWidth(self.frame);
-    CGFloat height = [self timeLabelHeight];
-    
-    CGRect modeStatusViewFrame = [self getModeStatusViewFrame];
-    CGFloat originY = modeStatusViewFrame.origin.y + modeStatusViewFrame.size.height + distance;
-    
-    CGRect frame = CGRectMake(0, originY, width, height);
-    return frame;
-}
+//- (CGRect)getTimeLabelFrame
+//{
+//    CGFloat distance = [self distanceFromModeStatusViewToTimeLabel];  // 与模式图标的垂直间距
+//    CGFloat width = CGRectGetWidth(self.frame);
+//    CGFloat height = [self timeLabelHeight];
+//    
+//    CGRect modeStatusViewFrame = [self getModeStatusViewFrame];
+//    CGFloat originY = modeStatusViewFrame.origin.y + modeStatusViewFrame.size.height + distance;
+//    
+//    CGRect frame = CGRectMake(0, originY, width, height);
+//    return frame;
+//}
 
 - (CGRect)getClockIconFrame
 {
@@ -102,7 +104,7 @@ static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左�
     CGFloat iconHeight = 27;
     
     CGFloat originX = (CGRectGetWidth(self.frame) - iconWidth) / 2;
-    CGRect timeLabelFrame = [self getTimeLabelFrame];
+    CGRect timeLabelFrame = [self timeLabelFrame];
     CGFloat originY = timeLabelFrame.origin.y + timeLabelFrame.size.height + distance;
     
     CGRect frame = CGRectMake(originX, originY, iconWidth, iconHeight);
@@ -158,28 +160,30 @@ static const CGFloat kDistanceLabelMargin = 25; // 公里标签距离屏幕左�
 
 - (void)setupButtonsAppearance
 {
+    [super setupButtonsAppearance];
+    
     [self.pulldownView setAppearanceWithType:YSPulldownTypeGeneralMode];
     
-    UIColor *orangeColor = RGB(251, 105, 94);
-    [self setupButton:self.finishButton withColor:orangeColor];
-    
-    UIColor *blueColor = RGB(38, 205, 235);
-    [self setupButton:self.continueButton withColor:blueColor];
+//    UIColor *orangeColor = RGB(251, 105, 94);
+//    [self setupButton:self.finishButton withColor:orangeColor];
+//    
+//    UIColor *blueColor = RGB(38, 205, 235);
+//    [self setupButton:self.continueButton withColor:blueColor];
 }
 
-- (void)setupButton:(UIButton *)button withColor:(UIColor *)color
-{
-    CGFloat borderWidth = 3;
-    button.layer.borderWidth = borderWidth;
-    
-    CGFloat continueBtnRadius = CGRectGetWidth(button.frame) / 2;
-    button.layer.cornerRadius = continueBtnRadius;
-    
-    button.layer.borderColor = color.CGColor;
-    button.backgroundColor = [UIColor clearColor];
-    
-    [button setTitleColor:color forState:UIControlStateNormal];
-}
+//- (void)setupButton:(UIButton *)button withColor:(UIColor *)color
+//{
+//    CGFloat borderWidth = 3;
+//    button.layer.borderWidth = borderWidth;
+//    
+//    CGFloat continueBtnRadius = CGRectGetWidth(button.frame) / 2;
+//    button.layer.cornerRadius = continueBtnRadius;
+//    
+//    button.layer.borderColor = color.CGColor;
+//    button.backgroundColor = [UIColor clearColor];
+//    
+//    [button setTitleColor:color forState:UIControlStateNormal];
+//}
 
 #pragma mark - 获取控件之间的间距、尺寸方法
 

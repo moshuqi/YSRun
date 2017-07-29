@@ -15,6 +15,7 @@
 - (CGRect)getDistanceLabelFrame;
 - (CGRect)getPaceLabelFrame;
 - (CGRect)getHeartRateLabelFrame;
+- (CGRect)getDataViewFrame;
 - (CGRect)getFinishButtonAppearFrame;
 - (CGRect)getFinishButtonDisappearFrame;
 - (CGRect)getContinueButtonAppearFrame;

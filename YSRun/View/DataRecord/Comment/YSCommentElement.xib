@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -18,7 +18,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXg-eh-b4o">
-                    <rect key="frame" x="10" y="10" width="64" height="64"/>
+                    <rect key="frame" x="6" y="6" width="72" height="72"/>
                     <color key="backgroundColor" red="0.17938417740000001" green="1" blue="0.98790583840000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TXg-eh-b4o" secondAttribute="height" multiplier="8:8" id="7Ee-gu-AUK"/>
@@ -35,11 +35,11 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="ilE-lS-UQj" secondAttribute="trailing" id="1pu-qn-axF"/>
                 <constraint firstItem="ilE-lS-UQj" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CYn-l1-ea6"/>
-                <constraint firstItem="TXg-eh-b4o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="Hc4-N2-ZM4"/>
-                <constraint firstItem="TXg-eh-b4o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="OEE-QM-691"/>
+                <constraint firstItem="TXg-eh-b4o" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="Hc4-N2-ZM4"/>
+                <constraint firstItem="TXg-eh-b4o" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="6" id="OEE-QM-691"/>
                 <constraint firstAttribute="bottom" secondItem="ilE-lS-UQj" secondAttribute="bottom" id="a6j-F9-1fk"/>
-                <constraint firstItem="ilE-lS-UQj" firstAttribute="leading" secondItem="TXg-eh-b4o" secondAttribute="trailing" constant="10" id="iTE-fJ-sTI"/>
-                <constraint firstAttribute="bottom" secondItem="TXg-eh-b4o" secondAttribute="bottom" constant="10" id="vkI-Ro-J8C"/>
+                <constraint firstItem="ilE-lS-UQj" firstAttribute="leading" secondItem="TXg-eh-b4o" secondAttribute="trailing" constant="6" id="iTE-fJ-sTI"/>
+                <constraint firstAttribute="bottom" secondItem="TXg-eh-b4o" secondAttribute="bottom" constant="6" id="vkI-Ro-J8C"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="356.5" y="-8"/>

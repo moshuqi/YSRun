@@ -18,14 +18,16 @@
 #import "YSDataRecordModel.h"
 #import "YSTimeFunc.h"
 #import "NSDate+YSDateLogic.h"
-#import "YSMapScreenshotPaint.h"
+#import "YSMapPaintFunc.h"
 #import "YSDevice.h"
+#import <MAMapKit/MAMapKit.h>
 
 @interface YSHeartRateRecordViewController () <YSDataRecordBarDelegate>
 
 @property (nonatomic, weak) IBOutlet YSDataRecordBar *bar;
-@property (nonatomic, weak) IBOutlet UIImageView *mapImageView;     // 地图路径截图
+//@property (nonatomic, weak) IBOutlet UIImageView *mapImageView;     // 地图路径截图
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;            // 地图左下角日期标签
+@property (nonatomic, weak) IBOutlet MAMapView *mapView;
 
 @property (nonatomic, weak) IBOutlet YSMarkLabelsView *dataMarkLabels;
 @property (nonatomic, weak) IBOutlet YSMarkLabelsView *heartRateMarkLabels;
@@ -42,7 +44,7 @@
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *heartRateLabelsBottomToBarChartConstraint;
 
 @property (nonatomic, strong) YSDataRecordModel *dataRecordModel;
-@property (nonatomic, strong) YSMapScreenshotPaint *screenshotPaint;
+@property (nonatomic, strong) YSMapPaintFunc *mapPaintFunc;
 
 @end
 
@@ -71,6 +73,7 @@
     if (self)
     {
         self.dataRecordModel = dataRecordModel;
+        self.mapPaintFunc = [YSMapPaintFunc new];
     }
     
     return self;
@@ -79,6 +82,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self resetWithDataModel:self.dataRecordModel];
 }
 
 - (void)viewDidLayoutSubviews
@@ -238,7 +243,10 @@
 - (void)resetWithDataModel:(YSDataRecordModel *)dataModel
 {
     // 地图图片，时间标签
-    [self setMapScreenshotWithLocationArray:dataModel.locationArray];
+//    [self setMapScreenshotWithLocationArray:dataModel.locationArray];
+    
+    [self.mapPaintFunc drawPathWithAnnotationArray:dataModel.locationArray inMapView:self.mapView];
+    
     self.dateLabel.text = [YSTimeFunc dateStrFromTimestamp:dataModel.endTime];
     
     [self setupMarkLabelsWith:dataModel];
@@ -260,26 +268,26 @@
     }
 }
 
-- (void)setMapScreenshotWithLocationArray:(NSArray *)locationArray
-{
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
-//        CGSize size = self.mapImageView.bounds.size;
-//        self.screenshotPaint = [YSMapScreenshotPaint new];
-//        
-//        UIImage *image = [self.screenshotPaint screenshotPaintWithAnnotationArray:locationArray size:size];
-//        dispatch_async(dispatch_get_main_queue(), ^(){
-//            self.mapImageView.image = image;
-//        });
-//        
-//    });
-    
-    // 会卡，后续优化。
-    CGSize size = self.mapImageView.bounds.size;
-    self.screenshotPaint = [YSMapScreenshotPaint new];
-    
-    UIImage *image = [self.screenshotPaint screenshotPaintWithAnnotationArray:locationArray size:size];
-    self.mapImageView.image = image;
-}
+//- (void)setMapScreenshotWithLocationArray:(NSArray *)locationArray
+//{
+////    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
+////        CGSize size = self.mapImageView.bounds.size;
+////        self.screenshotPaint = [YSMapPaintFunc new];
+////        
+////        UIImage *image = [self.screenshotPaint screenshotWithAnnotationArray:locationArray size:size];
+////        dispatch_async(dispatch_get_main_queue(), ^(){
+////            self.mapImageView.image = image;
+////        });
+////        
+////    });
+//    
+//    // 会卡，后续优化。
+//    CGSize size = self.mapImageView.bounds.size;
+//    self.screenshotPaint = [YSMapPaintFunc new];
+//    
+//    UIImage *image = [self.screenshotPaint screenshotWithAnnotationArray:locationArray size:size];
+//    self.mapImageView.image = image;
+//}
 
 - (void)setupMarkLabelsWith:(YSDataRecordModel *)dataModel
 {

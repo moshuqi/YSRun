@@ -71,6 +71,15 @@
 
 - (CGRect)getElementLabelFrameAtIndex:(NSInteger)index
 {
+    CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat percent = [self.chartData getElementPercentAtIndex:index];
+    
+    // 小于一定值就不让标签显示了。
+    if (width * percent < 30)
+    {
+        return CGRectZero;
+    }
+    
     CGFloat totalPercent = 0;
     for (NSInteger i = 0; i < index; i++)
     {
@@ -79,7 +88,7 @@
     
     CGFloat labelHeight = CGRectGetHeight(self.frame);
     CGFloat labelWidth = labelHeight * 1.2;
-    CGFloat width = CGRectGetWidth(self.frame);
+    
     
     CGFloat x = width * totalPercent;
     CGFloat d = 5;  // 间距

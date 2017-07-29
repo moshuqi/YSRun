@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSNavigationBarView">
             <connections>
                 <outlet property="returnButton" destination="pxA-us-nuB" id="08k-PA-aJk"/>
+                <outlet property="rightButton" destination="rRD-QY-IOQ" id="AUy-fL-7dG"/>
                 <outlet property="titleLabel" destination="J3T-gb-RZw" id="CvY-lY-mnk"/>
             </connections>
         </placeholder>
@@ -34,13 +35,25 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRD-QY-IOQ">
+                    <rect key="frame" x="387" y="20" width="56" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="56" id="FAs-FE-cwl"/>
+                    </constraints>
+                    <state key="normal">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="J3T-gb-RZw" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5R2-yP-AdG"/>
                 <constraint firstItem="pxA-us-nuB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="7i3-RA-sor"/>
                 <constraint firstItem="J3T-gb-RZw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="E4x-ta-0lZ"/>
+                <constraint firstAttribute="bottom" secondItem="rRD-QY-IOQ" secondAttribute="bottom" id="GKj-IM-6xv"/>
+                <constraint firstItem="rRD-QY-IOQ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Myk-Dn-VlQ"/>
                 <constraint firstItem="pxA-us-nuB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="SP6-pG-W81"/>
+                <constraint firstAttribute="trailing" secondItem="rRD-QY-IOQ" secondAttribute="trailing" id="kCo-5G-Xce"/>
                 <constraint firstAttribute="bottom" secondItem="pxA-us-nuB" secondAttribute="bottom" id="uYv-8i-5NX"/>
                 <constraint firstAttribute="bottom" secondItem="J3T-gb-RZw" secondAttribute="bottom" id="wQ2-s3-6rd"/>
             </constraints>

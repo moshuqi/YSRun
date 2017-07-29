@@ -25,8 +25,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     // 设置控件参数
     
     UIImage *closeImage = [UIImage imageNamed:@"close"];

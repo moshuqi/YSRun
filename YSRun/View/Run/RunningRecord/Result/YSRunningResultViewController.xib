@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSRunningResultViewController">
             <connections>
                 <outlet property="mapContentView" destination="ymj-N8-6At" id="OMr-qI-IWe"/>
+                <outlet property="mapView" destination="Y7b-D3-tSb" id="qzT-1B-Xzt"/>
                 <outlet property="resultRecordView" destination="Xpj-rV-rVO" id="eZM-HZ-7mu"/>
-                <outlet property="returnButton" destination="Gsx-kZ-afg" id="MiG-ea-c68"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xpj-rV-rVO" customClass="YSResultRecordView">
-                    <rect key="frame" x="0.0" y="0.0" width="282" height="329"/>
+                    <rect key="frame" x="0.0" y="0.0" width="282" height="277"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="360" id="Ise-CI-pXt"/>
@@ -32,26 +32,32 @@
                     </variation>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymj-N8-6At" userLabel="mapContentView">
-                    <rect key="frame" x="0.0" y="329" width="282" height="193"/>
+                    <rect key="frame" x="0.0" y="277" width="282" height="245"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gsx-kZ-afg">
-                            <rect key="frame" x="30" y="119" width="222" height="44"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7b-D3-tSb" customClass="MAMapView">
+                            <rect key="frame" x="0.0" y="0.0" width="282" height="245"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hGJ-Rf-K4B">
+                            <rect key="frame" x="196" y="10" width="76" height="36"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="1D4-nc-i57"/>
+                                <constraint firstAttribute="width" constant="76" id="MKr-hr-oQD"/>
+                                <constraint firstAttribute="height" constant="36" id="av5-MK-5o0"/>
                             </constraints>
-                            <state key="normal" title="返回">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
+                            <state key="normal" title="Button" image="runResultDetailImage"/>
                             <connections>
-                                <action selector="returnButtonClicked:" destination="-1" eventType="touchUpInside" id="zZb-Oc-rAI"/>
+                                <action selector="showDetail:" destination="-1" eventType="touchUpInside" id="Zzf-6o-R0i"/>
                             </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="Gsx-kZ-afg" secondAttribute="bottom" constant="30" id="7LO-V8-tdV"/>
-                        <constraint firstItem="Gsx-kZ-afg" firstAttribute="leading" secondItem="ymj-N8-6At" secondAttribute="leading" constant="30" id="Gfu-JA-EDL"/>
-                        <constraint firstAttribute="trailing" secondItem="Gsx-kZ-afg" secondAttribute="trailing" constant="30" id="OWJ-Dn-lgc"/>
+                        <constraint firstItem="Y7b-D3-tSb" firstAttribute="top" secondItem="ymj-N8-6At" secondAttribute="top" id="Gjo-cm-Qe1"/>
+                        <constraint firstAttribute="trailing" secondItem="hGJ-Rf-K4B" secondAttribute="trailing" constant="10" id="SVN-l9-EjD"/>
+                        <constraint firstAttribute="trailing" secondItem="Y7b-D3-tSb" secondAttribute="trailing" id="eFc-tR-REt"/>
+                        <constraint firstItem="hGJ-Rf-K4B" firstAttribute="top" secondItem="ymj-N8-6At" secondAttribute="top" constant="10" id="ewV-iA-FVq"/>
+                        <constraint firstAttribute="bottom" secondItem="Y7b-D3-tSb" secondAttribute="bottom" id="geW-Pv-nHp"/>
+                        <constraint firstItem="Y7b-D3-tSb" firstAttribute="leading" secondItem="ymj-N8-6At" secondAttribute="leading" id="lvU-KD-hNo"/>
                     </constraints>
                 </view>
             </subviews>
@@ -64,10 +70,13 @@
                 <constraint firstItem="Xpj-rV-rVO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="N2F-Qo-k4g"/>
                 <constraint firstAttribute="bottom" secondItem="ymj-N8-6At" secondAttribute="bottom" id="XBH-M4-GFT"/>
                 <constraint firstAttribute="trailing" secondItem="Xpj-rV-rVO" secondAttribute="trailing" id="hbB-j0-i96"/>
-                <constraint firstItem="Xpj-rV-rVO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.63" id="uuv-Ji-M67"/>
+                <constraint firstItem="Xpj-rV-rVO" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.53" id="uuv-Ji-M67"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="219" y="158"/>
         </view>
     </objects>
+    <resources>
+        <image name="runResultDetailImage" width="114" height="53"/>
+    </resources>
 </document>

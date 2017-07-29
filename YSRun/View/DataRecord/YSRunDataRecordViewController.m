@@ -11,24 +11,25 @@
 #import "YSDataRecordModel.h"
 #import "YSMarkLabelsView.h"
 #import "YSAppMacro.h"
-#import "YSMapScreenshotPaint.h"
+#import "YSMapPaintFunc.h"
 #import "YSTimeFunc.h"
 #import "YSHeartRateScopeTipView.h"
 #import "YSDevice.h"
+#import <MAMapKit/MAMapKit.h>
 
 @interface YSRunDataRecordViewController () <YSDataRecordBarDelegate>
 
-@property (nonatomic, weak) IBOutlet YSDataRecordBar *bar;
-@property (nonatomic, weak) IBOutlet UIImageView *mapImageView;
+@property (nonatomic, weak) IBOutlet YSDataRecordBar *bar;;
 @property (nonatomic, weak) IBOutlet UILabel *dateLabel;
 @property (nonatomic, weak) IBOutlet YSMarkLabelsView *markLabelsView;
 @property (nonatomic, weak) IBOutlet YSHeartRateScopeTipView *heartRateScopeTipView;
+@property (nonatomic, weak) IBOutlet MAMapView *mapView;
 
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *labelsViewHeightConstraint;
 @property (nonatomic, strong) IBOutlet NSLayoutConstraint *labelsViewBottomToTipViewConstraint;
 
 @property (nonatomic, strong) YSDataRecordModel *dataRecordModel;
-@property (nonatomic, strong) YSMapScreenshotPaint *screenshotPaint;
+@property (nonatomic, strong) YSMapPaintFunc *mapPaintFunc;
 
 @end
 
@@ -40,6 +41,7 @@
     if (self)
     {
         self.dataRecordModel = dataRecordModel;
+        self.mapPaintFunc = [YSMapPaintFunc new];
     }
     
     return self;
@@ -57,6 +59,13 @@
     
     [self setupMarkLabels];
     [self setupDateLabel];
+    
+    [self resetWithDataModel:self.dataRecordModel];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
     
     [self resetWithDataModel:self.dataRecordModel];
 }
@@ -120,20 +129,24 @@
 - (void)resetWithDataModel:(YSDataRecordModel *)dataModel
 {
     // 地图图片，时间标签
-    [self setMapScreenshotWithLocationArray:dataModel.locationArray];
+//    [self setMapScreenshotWithLocationArray:dataModel.locationArray];
+    
+//    UIImage *image = [self.mapPaintFunc screenshotWithAnnotationArray:dataModel.locationArray size:self.mapView.bounds.size];
+    
+    [self.mapPaintFunc drawPathWithAnnotationArray:dataModel.locationArray inMapView:self.mapView];
     self.dateLabel.text = [YSTimeFunc dateStrFromTimestamp:dataModel.endTime];
     
     [self setupMarkLabelsWith:dataModel];
 }
 
-- (void)setMapScreenshotWithLocationArray:(NSArray *)locationArray
-{
-    CGSize size = self.mapImageView.bounds.size;
-    self.screenshotPaint = [YSMapScreenshotPaint new];
-    
-    UIImage *image = [self.screenshotPaint screenshotPaintWithAnnotationArray:locationArray size:size];
-    self.mapImageView.image = image;
-}
+//- (void)setMapScreenshotWithLocationArray:(NSArray *)locationArray
+//{
+//    CGSize size = self.mapImageView.bounds.size;
+//    self.screenshotPaint = [YSMapPaintFunc new];
+//    
+//    UIImage *image = [self.screenshotPaint screenshotWithAnnotationArray:locationArray size:size];
+//    self.mapImageView.image = image;
+//}
 
 - (void)setupMarkLabelsWith:(YSDataRecordModel *)dataModel
 {

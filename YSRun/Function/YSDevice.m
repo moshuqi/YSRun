@@ -13,7 +13,8 @@
 
 + (BOOL)isPhone6Plus
 {
-    if ([UIScreen mainScreen].scale > 2.1) {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    if (scale > 2.1) {
         return YES;
     }
     else

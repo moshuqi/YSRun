@@ -19,5 +19,8 @@
 
 - (void)setContentTextColor:(UIColor *)color;
 - (void)setMarkTextColor:(UIColor *)color;
+- (void)setTextColor:(UIColor *)color;
+
+- (void)setContentAttributedText:(NSAttributedString *)attributedText;
 
 @end

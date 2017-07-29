@@ -164,5 +164,13 @@
     [self setRightLabelMarkTextColor:color];
 }
 
+- (void)setContentAttributedTextWithLeftStr:(NSAttributedString *)leftStr
+                                  centerStr:(NSAttributedString *)centerStr
+                                   rightStr:(NSAttributedString *)rightStr
+{
+    [self.leftLabel setContentAttributedText:leftStr];
+    [self.centerLabel setContentAttributedText:centerStr];
+    [self.rightLabel setContentAttributedText:rightStr];
+}
 
 @end

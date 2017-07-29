@@ -23,6 +23,8 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *graphImageView;
 
+@property (nonatomic, weak) IBOutlet UIImageView *helpIcon;
+
 @end
 
 @implementation YSHeartRateGraphView
@@ -45,11 +47,13 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     self.titleLabel.text = @"心率图表：";
     self.titleLabel.font = [UIFont systemFontOfSize:12];
     self.titleLabel.textColor = RGB(136, 136, 136);
+    
+    // 问号图标带有点击手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.helpIcon addGestureRecognizer:tap];
 }
 
 - (void)setupWithStartTime:(NSInteger)startTime endTime:(NSInteger)endTime dictDataArray:(NSArray *)dictDataArray
@@ -77,6 +81,15 @@
             self.graphImageView.image = graphImage;
         });
     });
+}
+
+- (void)tap:(UITapGestureRecognizer *)gesture
+{
+    if ([self.delegate respondsToSelector:@selector(tapHelpFromPoint:)])
+    {
+        CGPoint point = CGPointMake(self.helpIcon.center.x, self.helpIcon.center.y);
+        [self.delegate tapHelpFromPoint:point];
+    }
 }
 
 

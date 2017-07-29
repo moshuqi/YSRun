@@ -42,19 +42,40 @@
 {
     [self sendSubviewToBack:self.bgImageView];
     
-    UIImage *bigStar = [UIImage imageNamed:@"big_no_star.png"];
-    UIImage *smallStar = [UIImage imageNamed:@"small_no_star.png"];
-    
-    self.leftStar.image = smallStar;
-    self.centerStar.image = bigStar;
-    self.rightStar.image = smallStar;
+    // 先设为透明，然后有个淡入的动画效果
+    self.leftStar.alpha = 0;
+    self.centerStar.alpha = 0;
+    self.rightStar.alpha = 0;
 }
 
 - (void)setRattingLevel:(NSInteger)level
 {
-    self.leftStar.image = (level >= 1) ? [UIImage imageNamed:@"small_star.png"] : [UIImage imageNamed:@"small_no_star.png"];
-    self.centerStar.image = (level >= 2) ? [UIImage imageNamed:@"big_star.png"] : [UIImage imageNamed:@"big_no_star.png"];
-    self.rightStar.image = (level >= 3) ? [UIImage imageNamed:@"small_star.png"] : [UIImage imageNamed:@"small_no_star.png"];
+    if (level < 1)
+    {
+        return;
+    }
+    
+    CGFloat leftAlpha = (level >= 1) ? 1 : 0;
+    CGFloat centerAlpha = (level >= 2) ? 1 : 0;
+    CGFloat rightAlpha = (level >= 3) ? 1 : 0;
+    
+    // 延迟，保证界面弹出完成后才进行动画
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        NSTimeInterval duration = 0.5;
+        [UIView animateWithDuration:duration animations:^(){
+            self.leftStar.alpha = leftAlpha;
+        }completion:^(BOOL finished){
+            [UIView animateWithDuration:duration animations:^(){
+                self.centerStar.alpha = centerAlpha;
+            }completion:^(BOOL finished){
+                [UIView animateWithDuration:duration animations:^(){
+                    self.rightStar.alpha = rightAlpha;
+                }completion:^(BOOL finished){
+                    
+                }];
+            }];
+        }];
+    });
 }
 
 @end

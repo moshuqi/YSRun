@@ -20,7 +20,7 @@
 #import "YSTextFieldDelegateObj.h"
 #import "YSContentCheckIconChange.h"
 
-@interface YSResetPasswordViewController () <YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate>
+@interface YSResetPasswordViewController () <YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate, YSTextFieldDelegateObjCallBack>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 @property (nonatomic, weak) IBOutlet UITextField *textField;
@@ -64,6 +64,7 @@
     [self setupButton];
     [self setupTextField];
     [self setupBackgroundImage];
+    [self addBackgroundTapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,6 +96,18 @@
     self.view.layer.contents = (id)image.CGImage;
 }
 
+- (void)addBackgroundTapGesture
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)tapBackground:(id)tapGesture
+{
+    // 点击背景处时收起键盘。
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+}
+
 - (void)setupTextField
 {
     CGFloat textFieldHeight = CGRectGetHeight(self.textField.frame);
@@ -112,6 +125,9 @@
     self.textField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:secureTextButton buttonWidth:56 textFieldHeight:textFieldHeight];
     self.textField.rightViewMode = UITextFieldViewModeAlways;
     
+    self.textField.returnKeyType = UIReturnKeyDone;
+    self.textField.enablesReturnKeyAutomatically = YES;
+    
     [self setupTextFieldDelegate];
 }
 
@@ -124,6 +140,8 @@
     
     self.textFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray];
     self.textField.delegate = self.textFieldDelegateObj;
+    
+    self.textFieldDelegateObj.delegate = self;
 }
 
 - (UIButton *)getSecureTextButton
@@ -161,6 +179,11 @@
 }
 
 - (IBAction)submitButtonClicked:(id)sender
+{
+    [self resetPassword];
+}
+
+- (void)resetPassword
 {
     NSString *newPassword = self.textField.text;
     
@@ -225,6 +248,16 @@
 {
     CGFloat textFieldHeight = CGRectGetHeight(textField.frame);
     textField.leftView = [YSTextFieldComponentCreator getViewWithImage:[YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:isEmpty] textFieldHeight:textFieldHeight];
+}
+
+#pragma mark - YSTextFieldDelegateObjCallBack
+
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    if (textField == self.textField)
+    {
+        [self resetPassword];
+    }
 }
 
 @end

@@ -126,14 +126,19 @@
 
 - (void)setupUserLevel
 {
-    YSUserInfoModel *userInfo = [[YSDataManager shareDataManager] getUserInfo];
-    
-    [self.userLevelView setUserName:userInfo.nickname
-                          headPhoto:userInfo.headImage
-                              grade:userInfo.grade
-                       achieveTitle:userInfo.achieveTitle
-                           progress:userInfo.progress
-                upgradeRequireTimes:userInfo.upgradeRequireTimes];
+    // 放子线程执行了，否则开启APP时有可能会在这卡死。 2016.01.29
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
+        YSUserInfoModel *userInfo = [[YSDataManager shareDataManager] getUserInfo];
+        
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            [self.userLevelView setUserName:userInfo.nickname
+                                  headPhoto:userInfo.headImage
+                                      grade:userInfo.grade
+                               achieveTitle:userInfo.achieveTitle
+                                   progress:userInfo.progress
+                        upgradeRequireTimes:userInfo.upgradeRequireTimes];
+        });
+    });
 }
 
 - (BOOL)hasLogin

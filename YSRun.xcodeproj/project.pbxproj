@@ -2681,7 +2681,7 @@
 				TargetAttributes = {
 					65ABA36A1BCF4EAC00154E87 = {
 						CreatedOnToolsVersion = 7.0.1;
-						DevelopmentTeam = YBJ453WCFS;
+						DevelopmentTeam = P58M7X6YB7;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -3276,6 +3276,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = P58M7X6YB7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSRun/Vendors/MAMap",
@@ -3307,6 +3308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = P58M7X6YB7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/YSRun/Vendors/MAMap",

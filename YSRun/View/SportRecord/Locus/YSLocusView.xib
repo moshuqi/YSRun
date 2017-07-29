@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSLocusView">
+            <rect key="frame" x="0.0" y="0.0" width="288" height="376"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-nQ-hGr" userLabel="mapView" customClass="MAMapView">
+                    <rect key="frame" x="0.0" y="0.0" width="288" height="376"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiB-cN-p2a" userLabel="buttonsView">
+                    <rect key="frame" x="231" y="127" width="42" height="106"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jg-Pg-hG1" userLabel="privacy">
+                            <rect key="frame" x="0.0" y="0.0" width="42" height="43"/>
+                            <state key="normal" image="mapCloseImage"/>
+                            <connections>
+                                <action selector="clickPrivacyButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="Onv-ad-tKl"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YvX-ra-rQG" userLabel="location">
+                            <rect key="frame" x="0.0" y="63" width="42" height="43"/>
+                            <state key="normal" image="mapLocationImage"/>
+                            <connections>
+                                <action selector="clickLocationButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="FbI-KW-vbJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="9jg-Pg-hG1" firstAttribute="top" secondItem="jiB-cN-p2a" secondAttribute="top" id="6Pb-om-8N4"/>
+                        <constraint firstItem="YvX-ra-rQG" firstAttribute="height" secondItem="9jg-Pg-hG1" secondAttribute="height" id="K3i-Uj-rIc"/>
+                        <constraint firstAttribute="trailing" secondItem="YvX-ra-rQG" secondAttribute="trailing" id="Lvj-9G-8kN"/>
+                        <constraint firstItem="9jg-Pg-hG1" firstAttribute="leading" secondItem="jiB-cN-p2a" secondAttribute="leading" id="Oz9-an-7J0"/>
+                        <constraint firstAttribute="bottom" secondItem="YvX-ra-rQG" secondAttribute="bottom" id="PPA-CC-PBs"/>
+                        <constraint firstAttribute="trailing" secondItem="9jg-Pg-hG1" secondAttribute="trailing" id="Th4-Bp-s3S"/>
+                        <constraint firstItem="YvX-ra-rQG" firstAttribute="leading" secondItem="jiB-cN-p2a" secondAttribute="leading" id="Y2y-e7-pSl"/>
+                        <constraint firstItem="YvX-ra-rQG" firstAttribute="top" secondItem="9jg-Pg-hG1" secondAttribute="bottom" constant="20" id="mBV-4a-k7T"/>
+                        <constraint firstAttribute="height" constant="106" id="ogY-d8-1AI"/>
+                        <constraint firstAttribute="width" constant="42" id="xQJ-TR-WIf"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="df1-cO-hVw" customClass="YSLocusTimeLabelView">
+                    <rect key="frame" x="5" y="10" width="152" height="32"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="152" id="qcN-UM-dVi"/>
+                        <constraint firstAttribute="height" constant="32" id="wtq-pE-KzW"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiZ-G6-fbr" customClass="YSLocusDataLabelView">
+                    <rect key="frame" x="0.0" y="321" width="288" height="55"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="2Aa-lW-49v"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3rl-nQ-hGr" secondAttribute="trailing" id="9wy-8s-gmd"/>
+                <constraint firstAttribute="trailing" secondItem="jiB-cN-p2a" secondAttribute="trailing" constant="15" id="AYD-gy-n9Q"/>
+                <constraint firstAttribute="trailing" secondItem="RiZ-G6-fbr" secondAttribute="trailing" id="QA4-ad-sV4"/>
+                <constraint firstAttribute="bottom" secondItem="3rl-nQ-hGr" secondAttribute="bottom" id="RAE-kF-h1G"/>
+                <constraint firstItem="3rl-nQ-hGr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="X4W-P1-QfU"/>
+                <constraint firstItem="df1-cO-hVw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="5" id="fUJ-MM-jey"/>
+                <constraint firstItem="RiZ-G6-fbr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="i7F-sB-BHR"/>
+                <constraint firstItem="df1-cO-hVw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="rDF-pR-tcw"/>
+                <constraint firstItem="RiZ-G6-fbr" firstAttribute="top" secondItem="jiB-cN-p2a" secondAttribute="bottom" constant="88" id="rbn-Zr-zSk"/>
+                <constraint firstItem="3rl-nQ-hGr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ubo-h5-2iw"/>
+                <constraint firstAttribute="bottom" secondItem="RiZ-G6-fbr" secondAttribute="bottom" id="znt-8T-RB0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="dataLabel" destination="RiZ-G6-fbr" id="8WJ-GX-PWm"/>
+                <outlet property="locationButton" destination="YvX-ra-rQG" id="23Q-IN-SFm"/>
+                <outlet property="mapView" destination="3rl-nQ-hGr" id="MwG-wQ-3N9"/>
+                <outlet property="privacyButton" destination="9jg-Pg-hG1" id="CrV-CQ-knu"/>
+                <outlet property="timeLabel" destination="df1-cO-hVw" id="b1r-aL-OFg"/>
+            </connections>
+            <point key="canvasLocation" x="81" y="88"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mapCloseImage" width="61" height="61"/>
+        <image name="mapLocationImage" width="61" height="61"/>
+    </resources>
+</document>

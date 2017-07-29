@@ -37,8 +37,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     // 设置字体字号颜色
     UIFont *font = [UIFont systemFontOfSize:11];
     UIColor *textColor = RGB(170, 201, 178);

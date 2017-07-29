@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -13,7 +13,7 @@
                 <outlet property="heartRateScopeTipView" destination="yFw-d2-B4b" id="IHn-sz-wNF"/>
                 <outlet property="labelsViewBottomToTipViewConstraint" destination="vhK-Sz-q7m" id="hAl-fF-qHO"/>
                 <outlet property="labelsViewHeightConstraint" destination="Ev3-ok-bdZ" id="0tY-c3-e6e"/>
-                <outlet property="mapImageView" destination="cXn-0y-nIp" id="YMG-aJ-U35"/>
+                <outlet property="mapView" destination="6fV-Dx-00A" id="mNV-VT-bqk"/>
                 <outlet property="markLabelsView" destination="Uoa-nX-ttJ" id="Npy-lL-vyf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,9 +33,10 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-Gw-73v">
                     <rect key="frame" x="0.0" y="64" width="275" height="335"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cXn-0y-nIp">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6fV-Dx-00A" customClass="MAMapView">
                             <rect key="frame" x="0.0" y="0.0" width="275" height="335"/>
-                        </imageView>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajh-bR-YTt">
                             <rect key="frame" x="165" y="307" width="90" height="18"/>
                             <constraints>
@@ -50,11 +51,11 @@
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="ajh-bR-YTt" secondAttribute="bottom" constant="10" id="6J5-uJ-1ef"/>
                         <constraint firstAttribute="height" constant="320" id="C7O-dR-Pci"/>
-                        <constraint firstAttribute="bottom" secondItem="cXn-0y-nIp" secondAttribute="bottom" id="HkO-hV-NMO"/>
+                        <constraint firstAttribute="trailing" secondItem="6fV-Dx-00A" secondAttribute="trailing" id="D5S-li-Rfh"/>
+                        <constraint firstItem="6fV-Dx-00A" firstAttribute="leading" secondItem="TkH-Gw-73v" secondAttribute="leading" id="JNd-FZ-4bx"/>
                         <constraint firstAttribute="trailing" secondItem="ajh-bR-YTt" secondAttribute="trailing" constant="20" id="VGD-gc-mjZ"/>
-                        <constraint firstItem="cXn-0y-nIp" firstAttribute="top" secondItem="TkH-Gw-73v" secondAttribute="top" id="Xvq-NQ-SOF"/>
-                        <constraint firstAttribute="trailing" secondItem="cXn-0y-nIp" secondAttribute="trailing" id="dG1-Rm-hgF"/>
-                        <constraint firstItem="cXn-0y-nIp" firstAttribute="leading" secondItem="TkH-Gw-73v" secondAttribute="leading" id="jOD-nG-sEo"/>
+                        <constraint firstAttribute="bottom" secondItem="6fV-Dx-00A" secondAttribute="bottom" id="WP8-oq-P24"/>
+                        <constraint firstItem="6fV-Dx-00A" firstAttribute="top" secondItem="TkH-Gw-73v" secondAttribute="top" id="yqt-NS-JeN"/>
                     </constraints>
                     <variation key="default">
                         <mask key="constraints">

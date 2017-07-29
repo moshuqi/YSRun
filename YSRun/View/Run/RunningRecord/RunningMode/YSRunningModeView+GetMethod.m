@@ -7,10 +7,11 @@
 //
 
 #import "YSRunningModeView+GetMethod.h"
+#import "YSDevice.h"
 
-static const CGFloat kDistanceFromButtonToBottomEdges = 86; // 按钮下边缘距底边的距离
 static const CGFloat kDistanceFromButtonToSideEdge = 20;    // 按钮与屏幕左右边缘的间距
 static const CGFloat kButtonDisappearDistance = 30;         // 按钮消失离开屏幕可视范围时，上边缘距离底边的距离
+static const CGFloat kDistanceFromModeStatusViewToTimeLabel = 42;   // 时间标签与模式切换按钮的间距
 
 @implementation YSRunningModeView (GetMethod)
 
@@ -22,14 +23,39 @@ static const CGFloat kButtonDisappearDistance = 30;         // 按钮消失离�
 
 - (CGRect)getTimeLabelFrame
 {
-    // 子类重载
-    return CGRectZero;
+    CGFloat width = CGRectGetWidth(self.frame);
+    CGFloat height = 56;
+    if ([YSDevice isPhone6Plus])
+    {
+        height = 72;
+    }
+    
+    CGRect frame = CGRectMake(self.modeStatusView.frame.origin.x,
+                              self.modeStatusView.frame.origin.y + CGRectGetHeight(self.modeStatusView.frame) + kDistanceFromModeStatusViewToTimeLabel,
+                              width, height);
+    return frame;
 }
 
 - (CGRect)getDistanceLabelFrame
 {
     // 子类重载
     return CGRectZero;
+}
+
+- (CGRect)getDataViewFrame
+{
+    CGFloat width = CGRectGetWidth(self.frame) / 3 * 2; //  dataView视图宽度为其父视图三分之二
+    CGFloat height = 116;
+    if ([YSDevice isPhone6Plus])
+    {
+        height = 146;
+    }
+    
+    CGFloat distance = 32;  // 与时间标签的间距
+    CGRect frame = CGRectMake(self.timeLabel.frame.origin.x,
+                              self.timeLabel.frame.origin.y + CGRectGetHeight(self.timeLabel.frame) + distance,
+                              width, height);
+    return frame;
 }
 
 - (CGRect)getPaceLabelFrame
@@ -48,7 +74,7 @@ static const CGFloat kButtonDisappearDistance = 30;         // 按钮消失离�
 {
     CGSize buttonSize = [self getButtonSize];
     
-    CGFloat originY = CGRectGetHeight(self.frame) - kDistanceFromButtonToBottomEdges - buttonSize.height;
+    CGFloat originY = CGRectGetHeight(self.frame) - [self getDistanceFormButtonToBottomEdge] - buttonSize.height;
     CGRect frame = CGRectMake(kDistanceFromButtonToSideEdge, originY, buttonSize.width, buttonSize.height);
     return frame;
 }
@@ -67,10 +93,17 @@ static const CGFloat kButtonDisappearDistance = 30;         // 按钮消失离�
     CGSize buttonSize = [self getButtonSize];
     
     CGFloat originX = CGRectGetWidth(self.frame) - buttonSize.width - kDistanceFromButtonToSideEdge;
-    CGFloat originY = CGRectGetHeight(self.frame) - kDistanceFromButtonToBottomEdges - buttonSize.height;
+    CGFloat originY = CGRectGetHeight(self.frame) - [self getDistanceFormButtonToBottomEdge] - buttonSize.height;
     
     CGRect frame = CGRectMake(originX, originY, buttonSize.width, buttonSize.height);
     return frame;
+}
+
+- (CGFloat)getDistanceFormButtonToBottomEdge
+{
+    // 按钮下边缘距底边的距离
+    CGFloat d = [YSDevice isPhone6Plus] ? 152 : 86;
+    return d;
 }
 
 - (CGRect)getContinueButtonDisappearFrame

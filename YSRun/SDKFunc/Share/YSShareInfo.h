@@ -16,5 +16,6 @@
 @property (nonatomic, copy) NSString *title;
 
 + (instancetype)defaultShareInfoWithImages:(NSArray *)images;
++ (instancetype)defaultShareInfoWithImages:(NSArray *)images contentText:(NSString *)contentText;
 
 @end

@@ -67,5 +67,14 @@
     return YES;
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ([self.delegate respondsToSelector:@selector(textFieldDidReturn:)])
+    {
+        [self.delegate textFieldDidReturn:textField];
+    }
+    
+    return YES;
+}
 
 @end

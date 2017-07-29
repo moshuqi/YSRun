@@ -42,9 +42,8 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     self.arrow.image = [UIImage imageNamed:@"detail_arrow"];
+    
     [self addGesture];
 }
 

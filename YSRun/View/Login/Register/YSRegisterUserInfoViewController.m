@@ -25,7 +25,7 @@
 #import "YSTextFieldDelegateObj.h"
 #import "YSContentCheckIconChange.h"
 
-@interface YSRegisterUserInfoViewController () <YSPhotoPickerDelegate, YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate>
+@interface YSRegisterUserInfoViewController () <YSPhotoPickerDelegate, YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate, YSTextFieldDelegateObjCallBack>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 @property (nonatomic, weak) IBOutlet UIButton *photoButton;
@@ -63,6 +63,7 @@
 //    [self setupTextFieldTable];
     [self setupTextFields];
     [self setupBackgroundImage];
+    [self addBackgroundTapGesture];
 }
 
 - (id)initWithAccount:(NSString *)account
@@ -104,6 +105,18 @@
     self.view.layer.contents = (id)image.CGImage;
 }
 
+- (void)addBackgroundTapGesture
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)tapBackground:(id)tapGesture
+{
+    // 点击背景处时收起键盘。
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
+}
+
 - (void)setupTextFields
 {
     CGFloat textFieldHeight = self.textFieldHeightConstraint.constant;
@@ -130,6 +143,12 @@
     self.passwordTextField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:secureTextButton buttonWidth:56 textFieldHeight:textFieldHeight];
     self.passwordTextField.rightViewMode = UITextFieldViewModeAlways;
     
+    self.nicknameTextField.returnKeyType = UIReturnKeyNext;
+    self.passwordTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.nicknameTextField.enablesReturnKeyAutomatically = YES;
+    self.passwordTextField.enablesReturnKeyAutomatically = YES;
+    
     [self setupTextFieldDelegate];
 }
 
@@ -148,6 +167,9 @@
     
     self.passwordTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray2];
     self.passwordTextField.delegate = self.passwordTextFieldDelegateObj;
+    
+    self.nicknameTextFieldDelegateObj.delegate = self;
+    self.passwordTextFieldDelegateObj.delegate = self;
 }
 
 - (UIButton *)getSecureTextButton
@@ -183,10 +205,10 @@
 
 - (IBAction)registerButtonClicked:(id)sender
 {
-    [self userRegister];
+    [self registerUserInfo];
 }
 
-- (void)userRegister
+- (void)registerUserInfo
 {
     NSString *nickName = self.nicknameTextField.text;
     NSString *password = self.passwordTextField.text;
@@ -305,6 +327,20 @@
     }
     
     textField.leftView = [YSTextFieldComponentCreator getViewWithImage:image textFieldHeight:textFieldHeight];
+}
+
+#pragma mark - YSTextFieldDelegateObjCallBack
+
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    if (textField == self.nicknameTextField)
+    {
+        [self.passwordTextField becomeFirstResponder];
+    }
+    else if (textField == self.passwordTextField)
+    {
+        [self registerUserInfo];
+    }
 }
 
 @end

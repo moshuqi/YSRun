@@ -43,4 +43,10 @@
     [self.detailComponet3 setDetailWithText:detailStr3 color:AnaerobicExerciseColor];
 }
 
+- (void)setColor:(UIColor *)color
+{
+    // 设置背景颜色
+    self.backgroundColor = color;
+}
+
 @end

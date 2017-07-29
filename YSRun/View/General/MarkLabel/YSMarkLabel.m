@@ -30,6 +30,7 @@
         self.contentLabel.adjustsFontSizeToFitWidth = YES;
         
         [self addSubview:containerView];
+        self.backgroundColor = [UIColor clearColor];
     }
     
     return self;
@@ -70,5 +71,15 @@
     self.markLabel.textColor = color;
 }
 
+- (void)setContentAttributedText:(NSAttributedString *)attributedText
+{
+    self.contentLabel.attributedText = attributedText;
+}
+
+- (void)setTextColor:(UIColor *)color
+{
+    [self setContentTextColor:color];
+    [self setMarkTextColor:color];
+}
 
 @end

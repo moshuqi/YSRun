@@ -11,6 +11,7 @@
 #import "YSSubscriptLabel.h"
 #import "YSRunningModeStatusView.h"
 #import "YSPulldownView.h"
+#import "YSRunningModeDataView.h"
 
 @protocol YSRunningModeViewDelegate <NSObject>
 
@@ -39,6 +40,8 @@
 @property (nonatomic, assign) BOOL isPause;
 @property (nonatomic, assign) id<YSRunningModeViewDelegate> delegate;
 
+@property (nonatomic, strong) YSRunningModeDataView *dataView;
+
 - (void)resetLayoutWithFrame:(CGRect)frame;
 - (void)resetButtonsPositionWithPauseStatus;
 - (void)resetTimeLabelWithTime:(NSUInteger)time;
@@ -48,5 +51,9 @@
 - (void)setHeartRate:(NSInteger)heartRate;
 
 - (void)setContentFontSize:(CGFloat)contentSize subscriptFontSize:(CGFloat)subscriptSize;
+- (CGRect)timeLabelFrame;
+
+- (void)setupLabelsAppearance;
+- (void)setupButtonsAppearance;
 
 @end

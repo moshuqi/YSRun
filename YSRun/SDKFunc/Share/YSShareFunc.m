@@ -175,6 +175,71 @@
     [sheet.directSharePlatforms addObject:@(SSDKPlatformTypeWechat)];
 }
 
++ (void)shareInfo:(YSShareInfo *)shareInfo
+       byPlatform:(SSDKPlatformType)platform
+    callbackBlock:(ShareFuncCallbackBlock)callbackBlock
+{
+    if ([shareInfo.imageArray count] < 1)
+    {
+        YSLog(@"分享的照片为空");
+        return;
+    }
+    
+    NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
+    [shareParams SSDKSetupShareParamsByText:shareInfo.contentText
+                                     images:shareInfo.imageArray
+                                        url:shareInfo.url
+                                      title:shareInfo.title
+                                       type:SSDKContentTypeAuto];
+    
+    // 通过客户端打开分享
+    [shareParams SSDKEnableUseClientShare];
+    
+    //进行分享
+    [ShareSDK share:platform
+         parameters:shareParams
+     onStateChanged:^(SSDKResponseState state, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error) {
+         
+         switch (state) {
+             case SSDKResponseStateSuccess:
+             {
+                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享成功"
+                                                                     message:nil
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"确定"
+                                                           otherButtonTitles:nil];
+                 [alertView show];
+                 
+                 callbackBlock(YSShareFuncResponseStateSuccess);
+                 
+                 break;
+             }
+             case SSDKResponseStateFail:
+             {
+                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享失败"
+                                                                     message:[NSString stringWithFormat:@"%@", error]
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"确定"
+                                                           otherButtonTitles:nil];
+                 [alertView show];
+                 break;
+             }
+             case SSDKResponseStateCancel:
+             {
+                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"分享已取消"
+                                                                     message:nil
+                                                                    delegate:nil
+                                                           cancelButtonTitle:@"确定"
+                                                           otherButtonTitles:nil];
+                 [alertView show];
+                 break;
+             }
+             default:
+                 break;
+         }
+     }];
+}
+
 + (void)showLoginActionSheetFromViewController:(UIViewController *)viewController
                                  callbackBlock:(ThirdPartLoginCallbackBlock)callbackBlock
 {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9531"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KalmanTestViewController">
+            <connections>
+                <outlet property="mapView" destination="p2P-CQ-fE7" id="Vxl-fu-4Lc"/>
+                <outlet property="navigationBar" destination="Hks-Hr-DSg" id="Se6-QR-Z53"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="250" height="256"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hks-Hr-DSg" customClass="YSNavigationBarView">
+                    <rect key="frame" x="0.0" y="0.0" width="250" height="64"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="iMC-89-Cy4"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2P-CQ-fE7" customClass="MAMapView">
+                    <rect key="frame" x="0.0" y="64" width="250" height="192"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Hks-Hr-DSg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7DR-He-leE"/>
+                <constraint firstAttribute="trailing" secondItem="Hks-Hr-DSg" secondAttribute="trailing" id="IB3-g5-6cD"/>
+                <constraint firstItem="Hks-Hr-DSg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Pkg-r7-SVi"/>
+                <constraint firstItem="p2P-CQ-fE7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PsX-Cg-XSe"/>
+                <constraint firstItem="p2P-CQ-fE7" firstAttribute="top" secondItem="Hks-Hr-DSg" secondAttribute="bottom" id="Sxl-bU-DN3"/>
+                <constraint firstAttribute="bottom" secondItem="p2P-CQ-fE7" secondAttribute="bottom" id="Yci-gC-n2n"/>
+                <constraint firstAttribute="trailing" secondItem="p2P-CQ-fE7" secondAttribute="trailing" id="fRA-OB-HeJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="23" y="90"/>
+        </view>
+    </objects>
+</document>

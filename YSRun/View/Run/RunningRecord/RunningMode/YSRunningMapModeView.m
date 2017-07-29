@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) YSMapManager *mapManager;
 @property (nonatomic, strong) UIButton *testButton;
+@property (nonatomic, strong) UILabel *testLabel;
 
 @end
 
@@ -33,12 +34,14 @@ static const CGFloat kDistanceLabelMargin = 10; // 公里标签距离屏幕左�
         [self addSubview:self.mapManager.mapView];
         [self sendSubviewToBack:self.mapManager.mapView];
         
-        // 在地图上蒙上透明灰色
-        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
-        maskView.userInteractionEnabled = NO;
-        maskView.backgroundColor = RGBA(0, 0, 0, 0.3);
+//        // 在地图上蒙上透明灰色
+//        UIView *maskView = [[UIView alloc] initWithFrame:self.bounds];
+//        maskView.userInteractionEnabled = NO;
+//        maskView.backgroundColor = RGBA(0, 0, 0, 0.3);
+//        
+//        [self insertSubview:maskView aboveSubview:self.mapManager.mapView];
         
-        [self insertSubview:maskView aboveSubview:self.mapManager.mapView];
+        [self addMaskView];
     }
     
     if (!self.testButton)
@@ -58,13 +61,40 @@ static const CGFloat kDistanceLabelMargin = 10; // 公里标签距离屏幕左�
         [self.testButton addTarget:self action:@selector(testFunc) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    if (![self.mapManager.OutputMessageLabel superview])
-    {
-        CGFloat height = 180;
-        CGRect frame = CGRectMake(0, (CGRectGetHeight(self.frame) - height) / 2, CGRectGetWidth(self.frame), height);
-        self.mapManager.OutputMessageLabel.frame = frame;
-//        [self addSubview:self.mapManager.OutputMessageLabel];
-    }
+//    if (!self.testLabel)
+//    {
+//        self.testLabel = self.mapManager.testLabel;
+//        CGFloat height = 320;
+//        CGRect frame = CGRectMake(0, (CGRectGetHeight(self.frame) - height) / 2, CGRectGetWidth(self.frame), height);
+//        self.mapManager.testLabel.frame = frame;
+//        
+//        [self addSubview:self.testLabel];
+//        [self bringSubviewToFront:self.testLabel];
+//    }
+}
+
+- (void)addMaskView
+{
+    // 添加带渐变色的半透明视图
+    
+    CGRect frame = self.bounds;
+    UIView *maskView = [[UIView alloc] initWithFrame:frame];
+    maskView.userInteractionEnabled = NO;
+//    maskView.backgroundColor = RGBA(0, 0, 0, 0.3);
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = frame;
+    
+    UIColor *color0 = [UIColor colorWithRed:4 / 255.0 green:181 / 255.0 blue:108 / 255.0 alpha:0.75];
+    UIColor *color1 = RGBA(0, 0, 0, 0.2);
+    
+    NSArray *colors = @[(__bridge id)color0.CGColor, (__bridge id)color1.CGColor];
+    gradient.colors = colors;
+    gradient.locations = @[@(0.1f), @(1.f)];
+    
+    [maskView.layer insertSublayer:gradient atIndex:0];
+    
+    [self insertSubview:maskView aboveSubview:self.mapManager.mapView];
 }
 
 - (void)testFunc
@@ -89,10 +119,12 @@ static const CGFloat kDistanceLabelMargin = 10; // 公里标签距离屏幕左�
 
 - (void)setupLabelsAppearance
 {
+    [super setupLabelsAppearance];
+    
     UIImage *modeImage = [UIImage imageNamed:@"run_mode.png"];
     [self.modeStatusView setModeIconWithImage:modeImage modeName:@"跑步模式"];
     
-    [self.timeLabel setBoldWithFontSize:[self timeLabelFontSize]];
+//    [self.timeLabel setBoldWithFontSize:[self timeLabelFontSize]];
     
     [self setContentFontSize:28 subscriptFontSize:10];
 }
@@ -114,26 +146,26 @@ static const CGFloat kDistanceLabelMargin = 10; // 公里标签距离屏幕左�
     return frame;
 }
 
-- (CGRect)getTimeLabelFrame
-{
-    CGFloat distance = [self distanceFromModeStatusViewToTimeLabel];  // 与模式图标的垂直间距
-    CGFloat width = CGRectGetWidth(self.frame) / 3 * 2;
-    CGFloat height = [self timeLabelHeight];
-    
-    CGRect modeStatusViewFrame = [self getModeStatusViewFrame];
-    CGFloat originX = modeStatusViewFrame.origin.x;
-    CGFloat originY = modeStatusViewFrame.origin.y + modeStatusViewFrame.size.height + distance;
-    
-    CGRect frame = CGRectMake(originX, originY, width, height);
-    return frame;
-}
+//- (CGRect)getTimeLabelFrame
+//{
+//    CGFloat distance = [self distanceFromModeStatusViewToTimeLabel];  // 与模式图标的垂直间距
+//    CGFloat width = CGRectGetWidth(self.frame) / 3 * 2;
+//    CGFloat height = [self timeLabelHeight];
+//    
+//    CGRect modeStatusViewFrame = [self getModeStatusViewFrame];
+//    CGFloat originX = modeStatusViewFrame.origin.x;
+//    CGFloat originY = modeStatusViewFrame.origin.y + modeStatusViewFrame.size.height + distance;
+//    
+//    CGRect frame = CGRectMake(originX, originY, width, height);
+//    return frame;
+//}
 
 - (CGRect)getDistanceLabelFrame
 {
     CGFloat distance = [self distanceFromTimeLabelToLabel];  // 与时间标签的垂直间距
     CGSize labelSize = [self getLabelSize];
     
-    CGRect timeLabelFrame = [self getTimeLabelFrame];
+    CGRect timeLabelFrame = [self timeLabelFrame];
     CGFloat originX = kDistanceLabelMargin;
     CGFloat originY = timeLabelFrame.origin.y + timeLabelFrame.size.height + distance;
     
@@ -176,23 +208,25 @@ static const CGFloat kDistanceLabelMargin = 10; // 公里标签距离屏幕左�
 
 - (void)setupButtonsAppearance
 {
+    [super setupButtonsAppearance];
+    
     [self.pulldownView setAppearanceWithType:YSPulldownTypeGeneralMode];
     
-    UIColor *orangeColor = RGBA(238, 78, 66, 0.75);
-    [self setupButton:self.finishButton withColor:orangeColor];
-    
-    UIColor *blueColor = RGBA(0, 202, 238, 0.75);
-    [self setupButton:self.continueButton withColor:blueColor];
+//    UIColor *orangeColor = RGBA(238, 78, 66, 0.75);
+//    [self setupButton:self.finishButton withColor:orangeColor];
+//    
+//    UIColor *blueColor = RGBA(0, 202, 238, 0.75);
+//    [self setupButton:self.continueButton withColor:blueColor];
 }
 
-- (void)setupButton:(UIButton *)button withColor:(UIColor *)color
-{
-    CGFloat continueBtnRadius = CGRectGetWidth(button.frame) / 2;
-    button.layer.cornerRadius = continueBtnRadius;
-    button.backgroundColor = color;
-    
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-}
+//- (void)setupButton:(UIButton *)button withColor:(UIColor *)color
+//{
+//    CGFloat continueBtnRadius = CGRectGetWidth(button.frame) / 2;
+//    button.layer.cornerRadius = continueBtnRadius;
+//    button.backgroundColor = color;
+//    
+//    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//}
 
 #pragma mark - YSMapManagerDelegate
 

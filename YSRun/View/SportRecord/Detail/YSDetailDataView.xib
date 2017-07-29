@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9532"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSDetailDataView">
+            <rect key="frame" x="0.0" y="0.0" width="245" height="381"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gw6-e2-SKB" userLabel="detail1" customClass="YSDetailLabelView">
+                    <rect key="frame" x="0.0" y="36" width="245" height="72"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="72" id="Z2i-I2-Azu"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2V-8f-BrR" userLabel="detail2" customClass="YSDetailLabelView">
+                    <rect key="frame" x="0.0" y="128" width="245" height="72"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAa-bV-n9X" userLabel="line">
+                    <rect key="frame" x="20" y="220" width="205" height="1"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Lny-MP-1ov"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CHh-OE-97H" userLabel="detail3" customClass="YSDetailLabelView">
+                    <rect key="frame" x="0.0" y="241" width="245" height="72"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="p2V-8f-BrR" firstAttribute="top" secondItem="gw6-e2-SKB" secondAttribute="bottom" constant="20" id="3KW-EJ-fU6"/>
+                <constraint firstItem="CHh-OE-97H" firstAttribute="height" secondItem="gw6-e2-SKB" secondAttribute="height" id="CNk-Ud-hdd"/>
+                <constraint firstAttribute="trailing" secondItem="CHh-OE-97H" secondAttribute="trailing" id="IQs-Qn-1S7"/>
+                <constraint firstItem="CHh-OE-97H" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eu8-Hg-d8z"/>
+                <constraint firstAttribute="trailing" secondItem="fAa-bV-n9X" secondAttribute="trailing" constant="20" id="g3S-kh-wMR"/>
+                <constraint firstItem="gw6-e2-SKB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="gjQ-cI-HQJ"/>
+                <constraint firstItem="gw6-e2-SKB" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hwv-qT-bl0"/>
+                <constraint firstItem="p2V-8f-BrR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mut-Gq-fD9"/>
+                <constraint firstItem="p2V-8f-BrR" firstAttribute="height" secondItem="gw6-e2-SKB" secondAttribute="height" id="n3o-cC-liG"/>
+                <constraint firstItem="CHh-OE-97H" firstAttribute="top" secondItem="fAa-bV-n9X" secondAttribute="bottom" constant="20" id="py5-KT-nJ2"/>
+                <constraint firstItem="fAa-bV-n9X" firstAttribute="top" secondItem="p2V-8f-BrR" secondAttribute="bottom" constant="20" id="rFh-sB-MuO"/>
+                <constraint firstItem="fAa-bV-n9X" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="sOS-81-WDz"/>
+                <constraint firstAttribute="trailing" secondItem="p2V-8f-BrR" secondAttribute="trailing" id="uTD-1K-7y3"/>
+                <constraint firstItem="CHh-OE-97H" firstAttribute="top" secondItem="fAa-bV-n9X" secondAttribute="bottom" constant="20" id="xbY-Cj-xeW"/>
+                <constraint firstAttribute="trailing" secondItem="gw6-e2-SKB" secondAttribute="trailing" id="zdH-ji-hIn"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="detailLabel1" destination="gw6-e2-SKB" id="51s-3L-7Uk"/>
+                <outlet property="detailLabel2" destination="p2V-8f-BrR" id="B3t-Q7-spa"/>
+                <outlet property="detailLabel3" destination="CHh-OE-97H" id="9Jh-Xc-DyE"/>
+                <outlet property="labelHeightConstraint" destination="Z2i-I2-Azu" id="Gqu-hY-JMW"/>
+                <outlet property="line" destination="fAa-bV-n9X" id="GzW-Qo-YRk"/>
+            </connections>
+            <point key="canvasLocation" x="59.5" y="90.5"/>
+        </view>
+    </objects>
+</document>

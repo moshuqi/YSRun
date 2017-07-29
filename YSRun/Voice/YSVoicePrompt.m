@@ -47,9 +47,9 @@ typedef NS_ENUM(NSInteger, YSTimestampAccumulateType)
 @property (nonatomic, assign) NSInteger lastHeartRate;
 
 // 用来记录各个心率区间内的持续时间，当心率所在区间改变时，所有时间从新计算。
-@property (nonatomic, assign) NSInteger joggingTimestamp;                   // 慢跑累计时间
-@property (nonatomic, assign) NSInteger efficientReduceFatTimestamp;        // 高效减脂
-@property (nonatomic, assign) NSInteger anaerobicExerciseTimestamp;         // 无氧运动
+@property (nonatomic, assign) double joggingTimestamp;                   // 慢跑累计时间
+@property (nonatomic, assign) double efficientReduceFatTimestamp;        // 高效减脂
+@property (nonatomic, assign) double anaerobicExerciseTimestamp;         // 无氧运动
 
 @property (nonatomic, assign) YSTimestampAccumulateType timestampAccumlateType;
 
@@ -164,7 +164,7 @@ const NSInteger kMaxKilometerPrompt = 20;   // 最大支持的公里提示
     }
 }
 
-- (NSInteger)getTimestampAccumlateWithType:(YSTimestampAccumulateType)type
+- (double)getTimestampAccumlateWithType:(YSTimestampAccumulateType)type
 {
     if (type == YSTimestampAccumulateTypeJogging)
     {
@@ -225,9 +225,9 @@ const NSInteger kMaxKilometerPrompt = 20;   // 最大支持的公里提示
 
 - (void)promptStrategy
 {
-    NSInteger timestampAccumlate = [self getTimestampAccumlateWithType:self.timestampAccumlateType];
-    NSInteger totalTime = CFAbsoluteTimeGetCurrent() - timestampAccumlate;
-    NSInteger min = totalTime / 60;
+    double timestampAccumlate = [self getTimestampAccumlateWithType:self.timestampAccumlateType];
+    double totalTime = CFAbsoluteTimeGetCurrent() - timestampAccumlate;
+    double min = totalTime / 60;
     
     if (self.timestampAccumlateType == YSTimestampAccumulateTypeAnaerobicExercise)
     {
@@ -476,7 +476,12 @@ const NSInteger kMaxKilometerPrompt = 20;   // 最大支持的公里提示
 {
     NSString *prefix = [self versionFileNamePrefix];
     NSString *fileName = [NSString stringWithFormat:@"%@%@", prefix, name];
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"mp3"];
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"mp3"];
+    
+    NSString *bundlePath = [[NSBundle mainBundle].resourcePath stringByAppendingPathComponent:@"Audio.bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    
+    NSString *filePath = [bundle pathForResource:fileName ofType:@"mp3"];
     
     return filePath;
 }

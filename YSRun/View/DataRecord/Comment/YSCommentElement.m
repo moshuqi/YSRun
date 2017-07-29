@@ -35,9 +35,10 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
     self.commentLabel.adjustsFontSizeToFitWidth = YES;
 //    self.commentLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.commentLabel.textColor = [UIColor colorWithRed:81 / 255.0 green:81 / 255.0 blue:81 / 255.0 alpha:1.0];
 }
 
 - (void)setCommentColor:(UIColor *)color

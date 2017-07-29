@@ -26,4 +26,9 @@
     _coordinate = newCoordinate;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"latitude = %f, longitude = %f", _coordinate.latitude, _coordinate.longitude];
+}
+
 @end

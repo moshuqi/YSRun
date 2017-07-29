@@ -11,5 +11,6 @@
 @interface YSContentHelpView : UIView
 
 - (void)setupComponents;
+- (void)setColor:(UIColor *)color;
 
 @end

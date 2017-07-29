@@ -54,8 +54,6 @@ static const CGFloat kTipCellHeight = 52;       // 提示cell的高度
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"YSTipCell" bundle:nil] forCellReuseIdentifier:YSContentTableTipIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"YSRunDataRecordCell" bundle:nil] forCellReuseIdentifier:YSContentTableRecordIdentifier];
     

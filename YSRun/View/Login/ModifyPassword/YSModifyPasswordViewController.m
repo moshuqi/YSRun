@@ -19,7 +19,7 @@
 #import "YSTextFieldDelegateObj.h"
 #import "YSContentCheckIconChange.h"
 
-@interface YSModifyPasswordViewController () <YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate>
+@interface YSModifyPasswordViewController () <YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate, YSTextFieldDelegateObjCallBack>
 
 @property (nonatomic, copy) NSString *phoneNumber;
 
@@ -71,6 +71,7 @@
     [self setupButton];
     [self setupTextFields];
     [self setupBackgroundImage];
+    [self addBackgroundTapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -81,6 +82,18 @@
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
+}
+
+- (void)addBackgroundTapGesture
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)tapBackground:(id)tapGesture
+{
+    // 点击背景处时收起键盘。
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
 - (void)setupButton
@@ -127,6 +140,12 @@
     self.modifyPasswordTextField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:self.modifyPswTextFieldSecureTextBtn buttonWidth:56 textFieldHeight:textFieldHeight];
     self.modifyPasswordTextField.rightViewMode = UITextFieldViewModeAlways;
     
+    self.oldPasswordTextField.returnKeyType = UIReturnKeyNext;
+    self.modifyPasswordTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.oldPasswordTextField.enablesReturnKeyAutomatically = YES;
+    self.modifyPasswordTextField.enablesReturnKeyAutomatically = YES;
+    
     [self setupTextFieldDelegate];
 }
 
@@ -145,6 +164,9 @@
     
     self.modifyPasswordTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray2];
     self.modifyPasswordTextField.delegate = self.modifyPasswordTextFieldDelegateObj;
+    
+    self.oldPasswordTextFieldDelegateObj.delegate = self;
+    self.modifyPasswordTextFieldDelegateObj.delegate = self;
 }
 
 - (UIButton *)getSecureTextButton
@@ -204,6 +226,11 @@
 }
 
 - (IBAction)submit:(id)sender
+{
+    [self modifyPassword];
+}
+
+- (void)modifyPassword
 {
     NSString *oldPassword = self.oldPasswordTextField.text;
     NSString *newPassword = self.modifyPasswordTextField.text;
@@ -267,6 +294,20 @@
 {
     CGFloat textFieldHeight = CGRectGetHeight(textField.frame);
     textField.leftView = [YSTextFieldComponentCreator getViewWithImage:[YSTextFieldComponentCreator getPasswordIconWithContentEmptyState:isEmpty] textFieldHeight:textFieldHeight];
+}
+
+#pragma mark - YSTextFieldDelegateObjCallBack
+
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    if (textField == self.oldPasswordTextField)
+    {
+        [self.modifyPasswordTextField becomeFirstResponder];
+    }
+    else if (textField == self.modifyPasswordTextField)
+    {
+        [self modifyPassword];
+    }
 }
 
 @end

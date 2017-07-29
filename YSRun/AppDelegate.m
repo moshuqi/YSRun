@@ -12,6 +12,8 @@
 #import "MobClick.h"
 #import "YSShareFunc.h"
 #import "YSLaunchAnimation.h"
+#import <MAMapKit/MAMapKit.h>
+#import "YSAppMacro.h"
 
 #define UMAppKey        @"561cbb08e0f55a33f0004c54"
 
@@ -33,8 +35,8 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    YSLaunchAnimation *launchAnimation = [YSLaunchAnimation new];
-    [launchAnimation launch];
+//    YSLaunchAnimation *launchAnimation = [YSLaunchAnimation new];
+//    [launchAnimation launch];
     
     [self SDKConfig];
     
@@ -74,6 +76,9 @@
     
     // 分享
     [YSShareFunc shareConfig];
+    
+    // 高德地图SDK
+    [MAMapServices sharedServices].apiKey = (NSString *)MapAPIKey;
 }
 
 - (void)UMConfig

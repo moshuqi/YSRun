@@ -48,4 +48,9 @@
 - (void)setContentTextColor:(UIColor *)color;
 - (void)setMarkTextColor:(UIColor *)color;
 
+// 设置attributedText
+- (void)setContentAttributedTextWithLeftStr:(NSAttributedString *)leftStr
+                                  centerStr:(NSAttributedString *)centerStr
+                                   rightStr:(NSAttributedString *)rightStr;
+
 @end

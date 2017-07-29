@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) IBOutlet UILabel *titleLabel;
 @property (nonatomic, weak) IBOutlet UIButton *returnButton;
+@property (nonatomic, weak) IBOutlet UIButton *rightButton;
 
 @property (nonatomic, strong) UIView *containerView;
 
@@ -33,6 +34,8 @@
         
         [self addSubview:containerView];
         self.containerView = containerView;
+        
+        self.rightButton.hidden = YES;  // 默认设置为不可见
     }
     
     return self;
@@ -50,6 +53,20 @@
     
     self.backgroundColor = color;
     self.containerView.backgroundColor = color;
+}
+
+- (void)setRightButtonWithTitle:(NSString *)title target:(id)target action:(SEL)action
+{
+    self.rightButton.hidden = NO;   // 默认隐藏，需要设置时设为显示
+    [self.rightButton setTitle:title forState:UIControlStateNormal];
+    [self.rightButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)setRightButtonWithImage:(UIImage *)image target:(id)target action:(SEL)action
+{
+    self.rightButton.hidden = NO;   // 默认隐藏，需要设置时设为显示
+    [self.rightButton setImage:image forState:UIControlStateNormal];
+    [self.rightButton addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
 }
 
 @end

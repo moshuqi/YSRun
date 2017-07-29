@@ -12,23 +12,26 @@
 #import "YSMapManager.h"
 #import "YSRunInfoModel.h"
 #import "YSShareFunc.h"
-#import "YSMapScreenshotPaint.h"
+#import "YSMapPaintFunc.h"
 #import "YSDataRecordModel.h"
 #import "YSHeartRateRecordViewController.h"
 #import "YSRunDataRecordViewController.h"
 #import "YSModelReformer.h"
+#import <MAMapKit/MAMapKit.h>
+#import "YSSportRecordViewController.h"
 
 @interface YSRunningResultViewController () <YSResultRecordViewDelegate>
 
 @property (nonatomic, weak) IBOutlet YSResultRecordView *resultRecordView;
-@property (nonatomic, weak) IBOutlet UIButton *returnButton;
+//@property (nonatomic, weak) IBOutlet UIButton *returnButton;
 //@property (nonatomic, weak) IBOutlet UIButton *shareButton;
 @property (nonatomic, weak) IBOutlet UIView *mapContentView;
+@property (nonatomic, weak) IBOutlet MAMapView *mapView;
 
 @property (nonatomic, strong) YSMapManager *mapManager;
 @property (nonatomic, strong) YSRunInfoModel *runInfoModel;
 
-@property (nonatomic, strong) YSMapScreenshotPaint *paint;
+@property (nonatomic, strong) YSMapPaintFunc *mapPaintFunc;
 @property (nonatomic, strong) UIImage *screenshotImage;
 
 @end
@@ -41,6 +44,7 @@
     if (self)
     {
         self.runInfoModel = runInfoModel;
+        self.mapPaintFunc = [YSMapPaintFunc new];
     }
     
     return self;
@@ -54,6 +58,8 @@
     
     [self.resultRecordView setupRecordWith:self.runInfoModel];
     self.resultRecordView.delegate = self;
+    
+    [self.mapPaintFunc drawPathWithAnnotationArray:self.runInfoModel.locationArray inMapView:self.mapView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,7 +71,8 @@
 {
     [super viewDidAppear:animated];
     
-    [self addMapBackgroundImageView];
+    [self.mapPaintFunc drawPathWithAnnotationArray:self.runInfoModel.locationArray inMapView:self.mapView];
+//    [self addMapBackgroundImageView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -85,28 +92,28 @@
 
 - (void)setupButtons
 {
-    self.returnButton.backgroundColor = GreenBackgroundColor;
-    self.returnButton.layer.cornerRadius = ButtonCornerRadius;
-    self.returnButton.clipsToBounds = YES;
+//    self.returnButton.backgroundColor = GreenBackgroundColor;
+//    self.returnButton.layer.cornerRadius = ButtonCornerRadius;
+//    self.returnButton.clipsToBounds = YES;
     
 //    self.shareButton.backgroundColor = GreenBackgroundColor;
 //    self.shareButton.layer.cornerRadius = ButtonCornerRadius;
 //    self.shareButton.clipsToBounds = YES;
 }
 
-- (void)addMapBackgroundImageView
-{
-    CGSize size = self.mapContentView.bounds.size;
-    
-    self.paint = [YSMapScreenshotPaint new];
-    self.screenshotImage = [self.paint screenshotPaintWithAnnotationArray:self.runInfoModel.locationArray size:size];
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.screenshotImage];
-    imageView.frame = self.mapContentView.bounds;
-    
-    [self.mapContentView addSubview:imageView];
-    [self.mapContentView sendSubviewToBack:imageView];
-}
+//- (void)addMapBackgroundImageView
+//{
+//    CGSize size = self.mapContentView.bounds.size;
+//    
+//    self.paint = [YSMapPaintFunc new];
+//    self.screenshotImage = [self.paint screenshotWithAnnotationArray:self.runInfoModel.locationArray size:size];
+//    
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:self.screenshotImage];
+//    imageView.frame = self.mapContentView.bounds;
+//    
+//    [self.mapContentView addSubview:imageView];
+//    [self.mapContentView sendSubviewToBack:imageView];
+//}
 
 - (IBAction)returnButtonClicked:(id)sender
 {
@@ -129,6 +136,12 @@
     [YSShareFunc shareInfo:shareInfo fromView:self.view callbackBlock:callbackBlock];
 }
 
+- (IBAction)showDetail:(id)sender
+{
+    YSSportRecordViewController *sportRecordViewController = [[YSSportRecordViewController alloc] initWithDataRecordModel:[self getRecordModel]];
+    [self.navigationController pushViewController:sportRecordViewController animated:YES];
+}
+
 - (YSDataRecordModel *)getRecordModel
 {
     YSDataRecordModel *recordModel = [YSModelReformer dataRecordModelFromRunInfoModel:self.runInfoModel];
@@ -147,6 +160,11 @@
 {
     YSHeartRateRecordViewController *viewController = [[YSHeartRateRecordViewController alloc] initWithDataRecordModel:[self getRecordModel]];
     [self.navigationController pushViewController:viewController animated:YES];
+}
+
+- (void)resultRecordViewBack
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

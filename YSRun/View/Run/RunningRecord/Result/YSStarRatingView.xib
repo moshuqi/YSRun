@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YSStarRatingView">
@@ -18,22 +18,31 @@
             <rect key="frame" x="0.0" y="0.0" width="489" height="165"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-iu-N7t" userLabel="center">
-                    <rect key="frame" x="206.5" y="45" width="76" height="76"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_no_star" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-U7-aeY" userLabel="leftBg">
+                    <rect key="frame" x="136" y="53" width="60" height="60"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big_no_star" translatesAutoresizingMaskIntoConstraints="NO" id="Ufk-GA-RCL" userLabel="centerBg">
+                    <rect key="frame" x="206" y="45" width="76" height="76"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_no_star" translatesAutoresizingMaskIntoConstraints="NO" id="1zt-Uj-D40" userLabel="rightBg">
+                    <rect key="frame" x="292" y="53" width="60" height="60"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big_star" translatesAutoresizingMaskIntoConstraints="NO" id="JjO-iu-N7t" userLabel="center">
+                    <rect key="frame" x="206" y="45" width="76" height="76"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="76" id="aMh-Ra-gr0"/>
                         <constraint firstAttribute="width" constant="76" id="tmR-kc-arN"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OgN-Xm-Wug" userLabel="right">
-                    <rect key="frame" x="292.5" y="53" width="60" height="60"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_star" translatesAutoresizingMaskIntoConstraints="NO" id="OgN-Xm-Wug" userLabel="right">
+                    <rect key="frame" x="292" y="53" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="r9e-wY-hoh"/>
                         <constraint firstAttribute="height" constant="60" id="yw3-2f-Xkr"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-5G-OMG" userLabel="left">
-                    <rect key="frame" x="136.5" y="53" width="60" height="60"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="small_star" translatesAutoresizingMaskIntoConstraints="NO" id="5G1-5G-OMG" userLabel="left">
+                    <rect key="frame" x="136" y="53" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Tb0-lk-vBc"/>
                         <constraint firstAttribute="width" constant="60" id="zCK-rn-3vF"/>
@@ -49,18 +58,34 @@
                 <constraint firstAttribute="bottom" secondItem="TQe-dO-Ydf" secondAttribute="bottom" id="4m6-Q7-tYA"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5MP-8J-47H"/>
                 <constraint firstItem="OgN-Xm-Wug" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="BiU-SN-7S3"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="width" secondItem="Ufk-GA-RCL" secondAttribute="width" id="EcO-tU-OTq"/>
                 <constraint firstItem="TQe-dO-Ydf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="GQo-uW-VGe"/>
                 <constraint firstItem="5G1-5G-OMG" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="GyR-HK-bho"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="height" secondItem="Ufk-GA-RCL" secondAttribute="height" id="MGo-cU-91T"/>
                 <constraint firstItem="OgN-Xm-Wug" firstAttribute="leading" secondItem="JjO-iu-N7t" secondAttribute="trailing" constant="10" id="QXA-7z-Evv"/>
+                <constraint firstItem="5G1-5G-OMG" firstAttribute="centerY" secondItem="cuB-U7-aeY" secondAttribute="centerY" id="UTU-6l-9bu"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="centerY" secondItem="1zt-Uj-D40" secondAttribute="centerY" id="UVW-Cp-zeU"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="aix-pb-Tyi"/>
                 <constraint firstItem="JjO-iu-N7t" firstAttribute="leading" secondItem="5G1-5G-OMG" secondAttribute="trailing" constant="10" id="b3a-4b-F7t"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="centerX" secondItem="Ufk-GA-RCL" secondAttribute="centerX" id="fMe-jz-Q4M"/>
                 <constraint firstAttribute="trailing" secondItem="TQe-dO-Ydf" secondAttribute="trailing" id="hsN-sY-Pt8"/>
+                <constraint firstItem="5G1-5G-OMG" firstAttribute="height" secondItem="cuB-U7-aeY" secondAttribute="height" id="kDp-PW-d2o"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="centerX" secondItem="1zt-Uj-D40" secondAttribute="centerX" id="ldI-FZ-uRa"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="width" secondItem="1zt-Uj-D40" secondAttribute="width" id="n2a-KN-mju"/>
+                <constraint firstItem="JjO-iu-N7t" firstAttribute="centerY" secondItem="Ufk-GA-RCL" secondAttribute="centerY" id="nDr-cZ-iWG"/>
+                <constraint firstItem="5G1-5G-OMG" firstAttribute="width" secondItem="cuB-U7-aeY" secondAttribute="width" id="rsh-GJ-6UZ"/>
+                <constraint firstItem="5G1-5G-OMG" firstAttribute="centerX" secondItem="cuB-U7-aeY" secondAttribute="centerX" id="sqa-ak-2lX"/>
+                <constraint firstItem="OgN-Xm-Wug" firstAttribute="height" secondItem="1zt-Uj-D40" secondAttribute="height" id="yWC-qk-CSG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="196.5" y="19.5"/>
         </view>
     </objects>
     <resources>
+        <image name="big_no_star" width="720" height="510"/>
+        <image name="big_star" width="720" height="510"/>
+        <image name="small_no_star" width="720" height="510"/>
+        <image name="small_star" width="720" height="510"/>
         <image name="star_bg.png" width="720" height="510"/>
     </resources>
 </document>

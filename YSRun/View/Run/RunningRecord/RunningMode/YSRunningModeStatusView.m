@@ -36,7 +36,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
     [self addTapGesture];
 }
 

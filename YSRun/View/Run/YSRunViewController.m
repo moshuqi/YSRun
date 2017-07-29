@@ -203,10 +203,7 @@
 }
 
 - (IBAction)startRunning:(id)sender
-{
-//    [self test];
-//    return;
-    
+{    
     if ([self needShowConnectPrompt])
     {
         [self.hint showConnectHint];
@@ -215,16 +212,6 @@
     {
         [self run];
     }
-}
-
-- (void)test
-{
-    
-}
-
-- (void)fuck
-{
-    NSLog(@"");
 }
 
 - (void)run
@@ -348,7 +335,7 @@
 {
     // 用户登录成功
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^(){
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
         [self.runDataHandler loginSuccessWithUserInfoResponseModel:userInfoResponseModel];
     });
     

@@ -12,13 +12,18 @@
 
 + (instancetype)defaultShareInfoWithImages:(NSArray *)images
 {
+    return [YSShareInfo defaultShareInfoWithImages:images contentText:nil];
+}
+
++ (instancetype)defaultShareInfoWithImages:(NSArray *)images contentText:(NSString *)contentText
+{
     YSShareInfo *shareInfo = [YSShareInfo new];
     shareInfo.imageArray = images;
-    shareInfo.contentText = @"分享内容";
+    shareInfo.contentText = contentText;
     
     // 其他参数为默认值
-    shareInfo.url = [NSURL URLWithString:@"http://mob.com"];
-    shareInfo.title = @"分享标题";
+    shareInfo.url = [NSURL URLWithString:@"http://www.yspaobu.com"];
+    shareInfo.title = @"易瘦跑步";
     
     return shareInfo;
 }

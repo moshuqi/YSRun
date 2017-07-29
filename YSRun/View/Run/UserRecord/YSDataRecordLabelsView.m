@@ -39,8 +39,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     [self setLabelColor:[UIColor whiteColor]];
     [self setSubscriptLabelFontSize:10];
     [self setLabelFontSize:32];

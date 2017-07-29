@@ -24,7 +24,7 @@
 #import "YSTextFieldDelegateObj.h"
 #import "YSContentCheckIconChange.h"
 
-@interface YSLoginViewController () <YSNetworkManagerDelegate, YSThirdPartLoginViewDelegate, YSContentCheckIconChangeDelegate>
+@interface YSLoginViewController () <YSNetworkManagerDelegate, YSThirdPartLoginViewDelegate, YSContentCheckIconChangeDelegate, YSTextFieldDelegateObjCallBack>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 @property (nonatomic, weak) IBOutlet UIButton *loginButton;
@@ -77,11 +77,19 @@
     self.thirdPartLoginView.delegate = self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [self.thirdPartLoginView setupSubViews];
+}
+
 - (void)viewDidLayoutSubviews
 {
     [super viewDidLayoutSubviews];
     
-    [self.thirdPartLoginView setupSubViews];
+    // 在viewDidLayoutSubviews里添加视图会导致函数被无限调用，放到viewDidAppear里执行 --2016.2.21
+//    [self.thirdPartLoginView setupSubViews];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,6 +177,13 @@
     self.passwordTextField.rightView = [YSTextFieldComponentCreator getViewWithPasswordSecureButton:secureTextButton buttonWidth:56 textFieldHeight:textFieldHeight];
     self.passwordTextField.rightViewMode = UITextFieldViewModeAlways;
     
+    // 设置软键盘return键
+    self.accountTextField.returnKeyType = UIReturnKeyNext;
+    self.passwordTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.accountTextField.enablesReturnKeyAutomatically = YES;
+    self.passwordTextField.enablesReturnKeyAutomatically = YES;
+    
     [self setupTextFieldDelegate];
 }
 
@@ -187,6 +202,9 @@
     
     self.passwordTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray2];
     self.passwordTextField.delegate = self.passwordTextFieldDelegateObj;
+    
+    self.accountTextFieldDelegateObj.delegate = self;
+    self.passwordTextFieldDelegateObj.delegate = self;
 }
 
 
@@ -238,8 +256,13 @@
 
 - (IBAction)loginButtonClicked:(id)sender
 {
-//    // 临时代码
-//    [self.networkManager loginWithAccount:@"13417790407" password:@"a123456"];
+    [self login];
+}
+
+- (void)login
+{
+    // 临时代码
+//    [self.networkManager loginWithAccount:@"13790714674" password:@"chelsea123"];
 //    [[YSLoadingHUD shareLoadingHUD] show];
 //    return;
     
@@ -329,6 +352,20 @@
     }
     
     textField.leftView = [YSTextFieldComponentCreator getViewWithImage:image textFieldHeight:textFieldHeight];
+}
+
+#pragma mark - YSTextFieldDelegateObjCallBack
+
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    if (textField == self.accountTextField)
+    {
+        [self.passwordTextField becomeFirstResponder];
+    }
+    else if (textField == self.passwordTextField)
+    {
+        [self login];
+    }
 }
 
 @end

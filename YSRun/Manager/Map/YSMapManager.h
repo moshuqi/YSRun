@@ -19,8 +19,9 @@
 @interface YSMapManager : NSObject
 
 @property (nonatomic, strong) MAMapView *mapView;
-@property (nonatomic, strong) UILabel *OutputMessageLabel;
 @property (nonatomic, weak) id<YSMapManagerDelegate> delegate;
+
+@property (nonatomic, strong) UILabel *testLabel;   // 显示数据的标签
 
 - (void)testRoute;
 - (void)setupMapView;
@@ -31,7 +32,5 @@
 - (CGFloat)getLowestSpeed;
 - (CGFloat)getTotalDistance;
 - (NSArray *)getCoordinateRecord;
-
-- (UIImage *)getScreenshotImage;
 
 @end

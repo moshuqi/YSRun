@@ -15,6 +15,7 @@
 @required
 - (void)showRunDataDetail;
 - (void)showHeartRateDataDetail;
+- (void)resultRecordViewBack;
 
 @end
 

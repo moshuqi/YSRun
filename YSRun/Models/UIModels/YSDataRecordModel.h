@@ -20,4 +20,7 @@
 @property (nonatomic, strong) NSArray *heartRateArray;
 @property (nonatomic, strong) NSArray *locationArray;
 
+- (CGFloat)getPace;
+- (CGFloat)getSpeed;
+
 @end

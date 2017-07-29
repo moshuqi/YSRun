@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSHeartRateDataView">
+            <rect key="frame" x="0.0" y="0.0" width="317" height="485"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pfi-vx-ELL" userLabel="contentView">
+                    <rect key="frame" x="0.0" y="0.0" width="317" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZAO-y6-tQU" customClass="YSMarkLabelsView">
+                            <rect key="frame" x="0.0" y="10" width="317" height="40"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="7MM-Wj-ahA"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="ZAO-y6-tQU" firstAttribute="leading" secondItem="pfi-vx-ELL" secondAttribute="leading" id="BfV-AB-F5s"/>
+                        <constraint firstAttribute="trailing" secondItem="ZAO-y6-tQU" secondAttribute="trailing" id="Uht-eo-wU5"/>
+                        <constraint firstItem="ZAO-y6-tQU" firstAttribute="centerY" secondItem="pfi-vx-ELL" secondAttribute="centerY" id="VqX-gw-MTE"/>
+                        <constraint firstAttribute="height" constant="60" id="rYq-FG-mvn"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGv-Fg-VhY">
+                    <rect key="frame" x="20" y="80" width="277" height="96"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSQ-I8-DT7">
+                            <rect key="frame" x="0.0" y="0.0" width="277" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="4jJ-fG-AjQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ax-zS-hUm" customClass="YSBarChart">
+                            <rect key="frame" x="0.0" y="35" width="277" height="22"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="22" id="knE-F5-my8"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4q-Bn-IoK" customClass="YSHeartRateRecordCommentView">
+                            <rect key="frame" x="0.0" y="65" width="277" height="25"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="8Es-qa-tnX"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="rSQ-I8-DT7" firstAttribute="top" secondItem="IGv-Fg-VhY" secondAttribute="top" id="00H-c3-cZg"/>
+                        <constraint firstAttribute="trailing" secondItem="rSQ-I8-DT7" secondAttribute="trailing" id="4aK-Ph-any"/>
+                        <constraint firstItem="a4q-Bn-IoK" firstAttribute="top" secondItem="4ax-zS-hUm" secondAttribute="bottom" constant="8" id="9qV-Zr-PLl"/>
+                        <constraint firstItem="4ax-zS-hUm" firstAttribute="top" secondItem="rSQ-I8-DT7" secondAttribute="bottom" constant="10" id="Eaj-ye-Waz"/>
+                        <constraint firstAttribute="trailing" secondItem="4ax-zS-hUm" secondAttribute="trailing" id="JRo-0s-uR4"/>
+                        <constraint firstItem="rSQ-I8-DT7" firstAttribute="leading" secondItem="IGv-Fg-VhY" secondAttribute="leading" id="Rqh-5u-OW5"/>
+                        <constraint firstItem="4ax-zS-hUm" firstAttribute="leading" secondItem="IGv-Fg-VhY" secondAttribute="leading" id="Tp4-mo-od0"/>
+                        <constraint firstItem="a4q-Bn-IoK" firstAttribute="leading" secondItem="IGv-Fg-VhY" secondAttribute="leading" id="hVd-Tb-bah"/>
+                        <constraint firstAttribute="trailing" secondItem="a4q-Bn-IoK" secondAttribute="trailing" id="lvN-vP-KFS"/>
+                        <constraint firstAttribute="height" constant="96" id="rpH-vi-kbF"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U7z-Ug-jzt" userLabel="line">
+                    <rect key="frame" x="20" y="206" width="277" height="1"/>
+                    <color key="backgroundColor" red="0.61907248790000002" green="1" blue="0.31609339120000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="cJO-pq-99a"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EJ4-W1-Div" customClass="YSHeartRateGraphView">
+                    <rect key="frame" x="20" y="237" width="277" height="208"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="208" id="kge-tG-FVy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IGv-Fg-VhY" firstAttribute="top" secondItem="pfi-vx-ELL" secondAttribute="bottom" constant="20" id="1N4-i0-lrc"/>
+                <constraint firstItem="pfi-vx-ELL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Nqx-CX-Wbe"/>
+                <constraint firstAttribute="trailing" secondItem="U7z-Ug-jzt" secondAttribute="trailing" constant="20" id="V10-PM-3XV"/>
+                <constraint firstItem="U7z-Ug-jzt" firstAttribute="top" secondItem="IGv-Fg-VhY" secondAttribute="bottom" constant="30" id="VVX-KH-ExN"/>
+                <constraint firstAttribute="trailing" secondItem="IGv-Fg-VhY" secondAttribute="trailing" constant="20" id="YIh-0Y-RQC"/>
+                <constraint firstAttribute="trailing" secondItem="EJ4-W1-Div" secondAttribute="trailing" constant="20" id="aNR-zi-36Y"/>
+                <constraint firstItem="pfi-vx-ELL" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="cWV-9U-csm"/>
+                <constraint firstItem="U7z-Ug-jzt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="fqK-g2-PwL"/>
+                <constraint firstItem="EJ4-W1-Div" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="han-xm-69N"/>
+                <constraint firstAttribute="trailing" secondItem="pfi-vx-ELL" secondAttribute="trailing" id="i3k-iC-BRN"/>
+                <constraint firstItem="EJ4-W1-Div" firstAttribute="top" secondItem="U7z-Ug-jzt" secondAttribute="bottom" constant="30" id="j9L-lj-qWW"/>
+                <constraint firstItem="IGv-Fg-VhY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="sGx-Wc-y0E"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="barChart" destination="4ax-zS-hUm" id="7SQ-Ad-hBm"/>
+                <outlet property="commentView" destination="a4q-Bn-IoK" id="jBg-eU-ZNR"/>
+                <outlet property="contentView" destination="pfi-vx-ELL" id="1Ef-98-91G"/>
+                <outlet property="graphView" destination="EJ4-W1-Div" id="ZkB-4f-GXj"/>
+                <outlet property="label" destination="rSQ-I8-DT7" id="nCZ-WU-Vrk"/>
+                <outlet property="labelsView" destination="ZAO-y6-tQU" id="LOR-Y9-u6q"/>
+                <outlet property="line" destination="U7z-Ug-jzt" id="WHz-Le-2EX"/>
+            </connections>
+            <point key="canvasLocation" x="95.5" y="142.5"/>
+        </view>
+    </objects>
+</document>

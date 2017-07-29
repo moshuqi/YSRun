@@ -31,6 +31,9 @@ typedef void(^ThirdPartLoginCallbackBlock)(YSShareFuncResponseState, YSThirdPart
 + (void)shareInfo:(YSShareInfo *)shareInfo
          fromView:(UIView *)view
     callbackBlock:(ShareFuncCallbackBlock)callbackBlock;
++ (void)shareInfo:(YSShareInfo *)shareInfo
+       byPlatform:(SSDKPlatformType)platform
+    callbackBlock:(ShareFuncCallbackBlock)callbackBlock;
 
 + (void)showLoginActionSheetFromViewController:(UIViewController *)viewController
                                  callbackBlock:(ThirdPartLoginCallbackBlock)callbackBlock;

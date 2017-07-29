@@ -9,25 +9,36 @@
 #import "YSMapManager.h"
 #import "YSAppMacro.h"
 #import "YSMapAnnotation.h"
+#import "YSMapCalculateFunc.h"
+#import "YSCoordinateProcesser.h"
 
 @interface YSMapManager () <MAMapViewDelegate>
 
-@property (nonatomic, assign) CGFloat distance; // 公里
-
-//@property (nonatomic, copy) NSArray *updateRouteCoordArray;
 @property (nonatomic, strong) NSMutableArray *annotationRecordArray;
 
 @property (nonatomic, assign) CGFloat hSpeed;
 @property (nonatomic, assign) CGFloat lSpeed;
+@property (nonatomic, assign) CGFloat currentSpeed;
 
-@property (nonatomic, assign) CGFloat lastLocatedTime;  // 上一次定位的时间
-@property (nonatomic, assign) CGFloat currentLocatedTime;   // 当前定位的时间
+@property (nonatomic, assign) double lastLocatedTime;  // 上一次定位的时间
+@property (nonatomic, assign) double currentLocatedTime;   // 当前定位的时间
+
+@property (nonatomic, assign) NSInteger updateuLocationTimes;   // 系统回调更新定位数据的次数
+@property (nonatomic, strong) YSCoordinateProcesser *processer;
+
+// 用来记录测试数据
+@property (nonatomic, assign) CGFloat calculationDistance;
+@property (nonatomic, assign) CGFloat actualCalcutationSpeed;
+
+// 记录上次和当前的定位未处理过的点，用来计算当前速度
+@property (nonatomic, assign) CLLocationCoordinate2D lastLocationCoordinate;
+@property (nonatomic, assign) CLLocationCoordinate2D currentLocationCoordinate;
 
 @end
 
 @implementation YSMapManager
 
-static const double kMapDistanceFilter = 10;
+static const double kMapDistanceFilter = 3.0;
 
 - (id)init
 {
@@ -37,17 +48,18 @@ static const double kMapDistanceFilter = 10;
         self.annotationRecordArray = [NSMutableArray array];
         [self initMap];
         
-        self.OutputMessageLabel = [[UILabel alloc] init];
-        self.OutputMessageLabel.textColor = [UIColor blueColor];
-        self.OutputMessageLabel.numberOfLines = 0;
-        self.OutputMessageLabel.font = [UIFont systemFontOfSize:26];
-        self.OutputMessageLabel.textAlignment = NSTextAlignmentCenter;
-        
         // 初始化，之后通过是否大于0来判断有没有赋值
         self.lastLocatedTime = -1;
         self.currentLocatedTime = -1;
+        
         self.hSpeed = -1;
         self.lSpeed = -1;
+        self.currentSpeed = 0;
+        
+        self.updateuLocationTimes = 0;
+        self.processer = [YSCoordinateProcesser new];
+        
+        [self setupTestLabel];
     }
     
     return self;
@@ -55,26 +67,18 @@ static const double kMapDistanceFilter = 10;
 
 - (void)initMap
 {
-    [MAMapServices sharedServices].apiKey = (NSString *)MapAPIKey;
+//    [MAMapServices sharedServices].apiKey = (NSString *)MapAPIKey;
     
     self.mapView = [[MAMapView alloc] init];
     self.mapView.delegate = self;
     
     self.mapView.distanceFilter = kMapDistanceFilter;
-    
-//    self.mapView.showsUserLocation = YES;
-//    self.mapView.userTrackingMode = MAUserTrackingModeFollow;
-//    self.mapView.pausesLocationUpdatesAutomatically = NO;
-//    self.mapView.allowsBackgroundLocationUpdates = YES;
-//    self.mapView.zoomLevel = 1;
 }
 
 - (void)setupMapView
 {
     // 在viewDidAppear时设定相应的值，提前设置有可能无效。
     self.mapView.zoomLevel = 15.5;
-    //    self.mapManager.mapView.userTrackingMode = MAUserTrackingModeFollow;
-    //    [self.mapManager.mapView setUserTrackingMode:MAUserTrackingModeFollow animated:YES];
     
     self.mapView.pausesLocationUpdatesAutomatically = NO;
     self.mapView.allowsBackgroundLocationUpdates = YES;
@@ -95,83 +99,42 @@ static const double kMapDistanceFilter = 10;
 
 - (void)addUpdateRoute
 {
-    // 通过最近记录的两点添加新的路线
-//    NSInteger numberOfCoords = [self.updateRouteCoordArray count];
-//    CLLocationCoordinate2D commonPolylineCoords[numberOfCoords];
-//    
-//    for (NSInteger i = 0; i < numberOfCoords; i++)
-//    {
-//        YSMapAnnotation *annotation = self.updateRouteCoordArray[i];
-//        CLLocationCoordinate2D coordinate = annotation.coordinate;
-//        
-//        commonPolylineCoords[i].latitude = coordinate.latitude;
-//        commonPolylineCoords[i].longitude = coordinate.longitude;
-//        
-////        [self.mapView setCenterCoordinate:commonPolylineCoords[i]];
-//    }
-//    
-//    MAPolyline *commonPolyline = [MAPolyline polylineWithCoordinates:commonPolylineCoords count:numberOfCoords];
-//    
-//    [self.mapView addOverlay:commonPolyline];
-//    
-//    // 将定位在屏幕正中间显示。
-//    [self.mapView setCenterCoordinate:commonPolylineCoords[numberOfCoords - 1] animated:YES];
-
+    // 先移除之前绘制的路径
+    [YSMapCalculateFunc addAnnotationArray:self.annotationRecordArray toMapView:self.mapView];
+    [self removePreviousRoute];
     
-    // 新的路径
-    NSInteger newCount = [self.annotationRecordArray count];
-    CLLocationCoordinate2D newPolylineCoords[newCount];
-    for (NSInteger i = 0; i < newCount; i++)
-    {
-        YSMapAnnotation *annotation = self.annotationRecordArray[i];
-        CLLocationCoordinate2D coordinate = annotation.coordinate;
-        
-        newPolylineCoords[i].latitude = coordinate.latitude;
-        newPolylineCoords[i].longitude = coordinate.longitude;
-    }
-    
-    // 旧的路径
-    NSInteger oldCount = [self.annotationRecordArray count] - 1;
-    CLLocationCoordinate2D oldPolylineCoords[oldCount];
-    for (NSInteger i = 0; i < oldCount; i++)
-    {
-        YSMapAnnotation *annotation = self.annotationRecordArray[i];
-        CLLocationCoordinate2D coordinate = annotation.coordinate;
-        
-        oldPolylineCoords[i].latitude = coordinate.latitude;
-        oldPolylineCoords[i].longitude = coordinate.longitude;
-    }
-    
-    MAPolyline *newPolyline = [MAPolyline polylineWithCoordinates:newPolylineCoords count:newCount];
-    MAPolyline *oldPolyline = [MAPolyline polylineWithCoordinates:oldPolylineCoords count:oldCount];
-    
-    [self.mapView removeOverlay:oldPolyline];
-    [self.mapView addOverlay:newPolyline];
-    
-    [self.mapView setCenterCoordinate:newPolylineCoords[newCount - 1] animated:YES];
+    // 绘制最新的路径
+    YSMapAnnotation *annotation = [self.annotationRecordArray lastObject];
+    [self.mapView setCenterCoordinate:annotation.coordinate animated:YES];
 }
 
+- (void)removePreviousRoute
+{
+    NSArray *overlays = self.mapView.overlays;
+    NSInteger count = [overlays count];
+    
+    NSInteger requireNumber = 1;    // 只需要1条路径来展示线路。
+    if (count > requireNumber)
+    {
+        NSRange range = {0, count - requireNumber};
+        NSArray *subOverlays = [overlays subarrayWithRange:range];
+        [self.mapView removeOverlays:subOverlays];
+    }
+}
 
 - (void)testRoute
 {
-    // 测试代码。随机定位一个坐标
-    int latitude = arc4random() % 10;
-    int longitude = arc4random() % 10;
+//    // 测试代码。随机定位一个坐标
+//    int latitude = arc4random() % 10;
+//    int longitude = arc4random() % 10;
+//    
+//    CLLocationCoordinate2D coordinate = {22.2 + latitude / 1000.0, 113.5 + longitude / 1000.0};
+//    [self addLocationCoordinate:coordinate];
+//    [self updateRoute];
     
-    CLLocationCoordinate2D coordinate = {22.2 + latitude / 1000.0, 113.5 + longitude / 1000.0};
-    [self addLocationCoordinate:coordinate];
-    [self updateRoute];
-    
-    CGFloat totalDistace = [self getTotalRunningDistance];
-    NSString *text = [NSString stringWithFormat:@"totalDistance = %@", @(totalDistace)];
-    self.OutputMessageLabel.text = text;
-    
-    int r = arc4random() % 255;
-    int g = arc4random() % 255;
-    int b = arc4random() % 255;
-    
-    UIColor *color = RGB(r, g, b);
-    self.OutputMessageLabel.textColor = color;
+    // 测试代码，移除所有路径
+    NSArray *overlays = self.mapView.overlays;
+    [self.mapView removeOverlays:overlays];
 }
 
 - (CGFloat)getHighestSpeed
@@ -186,7 +149,7 @@ static const double kMapDistanceFilter = 10;
 
 - (CGFloat)getTotalDistance
 {
-    return [self getTotalRunningDistance];
+    return [YSMapCalculateFunc totalDistance:self.annotationRecordArray];
 }
 
 - (void)addLocationCoordinate:(CLLocationCoordinate2D)coordinate
@@ -207,62 +170,16 @@ static const double kMapDistanceFilter = 10;
         return;
     }
     
-//    self.updateRouteCoordArray = @[self.annotationRecordArray[numberOfCoords - 2], self.annotationRecordArray[numberOfCoords - 1]];
     [self addUpdateRoute];
 }
 
-- (CGFloat)distanceBetweenCoordinate1:(CLLocationCoordinate2D)coordinate1 coordinate2:(CLLocationCoordinate2D)coordinate2
+- (void)updateSpeed:(CGFloat)speed
 {
-    // 两个坐标间的距离
-    MAMapPoint point1 = MAMapPointForCoordinate(coordinate1);
-    MAMapPoint point2 = MAMapPointForCoordinate(coordinate2);
-    
-    // 距离为米
-    CLLocationDistance distance = MAMetersBetweenMapPoints(point1,point2);
-    return distance;
-    
-}
-
-- (CGFloat)getTotalRunningDistance
-{
-    // 总距离
-    CGFloat totalDistance = 0.0;
-    
-    NSInteger numberOfCoords = [self.annotationRecordArray count];
-    if (numberOfCoords > 1)
-    {
-        for (NSInteger i = 0; i < numberOfCoords - 1; i++)
-        {
-            YSMapAnnotation *annotation1 = self.annotationRecordArray[i];
-            YSMapAnnotation *annotation2 = self.annotationRecordArray[i + 1];
-            
-            CGFloat distance = [self distanceBetweenCoordinate1:annotation1.coordinate coordinate2:annotation2.coordinate];
-            totalDistance += distance;
-        }
-    }
-    
-    return totalDistance;
-}
-
-- (void)calculationSpeed
-{
-    // 每次位置更新都计算最近一段距离内的速度
-    NSInteger count = [self.annotationRecordArray count];
-    if ((count < 2) || (self.lastLocatedTime < 0))
+    // 防止把最低速度赋值为0
+    if (speed <= 0.01)
     {
         return;
     }
-    
-    YSMapAnnotation *annotation1 = self.annotationRecordArray[count - 1];
-    YSMapAnnotation *annotation2 = self.annotationRecordArray[count - 2];
-    
-    CGFloat distance = [self distanceBetweenCoordinate1:annotation1.coordinate coordinate2:annotation2.coordinate];
-    CGFloat time = self.currentLocatedTime - self.lastLocatedTime;
-    if (time <= 0)
-    {
-        return;
-    }
-    CGFloat speed = distance / time;    // m/s
     
     // 第一次计算速度时未赋值。
     if (self.hSpeed < 0 && self.lSpeed < 0)
@@ -291,37 +208,47 @@ static const double kMapDistanceFilter = 10;
     [self.delegate updateDistance:distance];
 }
 
-- (void)showAllCoordinate
-{
-    [self.mapView showAnnotations:self.annotationRecordArray animated:YES];
-}
-
 - (NSArray *)getCoordinateRecord
 {
     return self.annotationRecordArray;
 }
 
-- (UIImage *)getScreenshotImage
+- (void)updateSpeedWithNewCoordinate:(CLLocationCoordinate2D)newCoordinate
 {
-    // 先将所以路径显示在可视范围内
-    [self showAllCoordinate];
+    // 每次定位更新时调用，更新时间和位置，计算当前速度
     
-    // 缩小一定比例，最后只截取中间一部分图。
-    CGFloat zoomLevel = self.mapView.zoomLevel;
-    zoomLevel *= 0.9;   // 经验值.
-    self.mapView.zoomLevel = zoomLevel;
+    // 上次定位和本次定位的时间
+    self.lastLocatedTime = self.currentLocatedTime;
+    self.currentLocatedTime = CFAbsoluteTimeGetCurrent();
     
-    // 路径图在中间显示，高度大概为可视全范围30%。
-    CGFloat scale = 0.3;
-    CGRect rect = self.mapView.bounds;
+    // 上次定位和本次定位的坐标
+    self.lastLocationCoordinate = self.currentLocationCoordinate;
+    self.currentLocationCoordinate = newCoordinate;
     
-    CGFloat height = rect.size.height;
-    CGFloat imageHeight = height * scale;
+    double timeInterval = (self.currentLocatedTime - self.lastLocatedTime);
+    if (timeInterval <= 0.01)
+    {
+        return;
+    }
     
-    rect = CGRectMake(0, (height - imageHeight) / 2 , rect.size.width, imageHeight);
-    UIImage *screenshotImage = [self.mapView takeSnapshotInRect:rect];
+    CGFloat distance = [YSMapCalculateFunc distanceBetweenCoordinate1:self.lastLocationCoordinate coordinate2:self.currentLocationCoordinate];
+    self.calculationDistance = distance;
+    if (distance > 3000)
+    {
+        // 距离大于一定距离可当做定位出错，或者self.lastLocationCoordinate未赋值
+        return;
+    }
     
-    return screenshotImage;
+    self.currentSpeed = distance / timeInterval;    // m/s
+    self.actualCalcutationSpeed = self.currentSpeed;
+    
+    // 防止因为定位漂移产生的速度过大，当速度大于一定值时做特殊处理
+    if (self.currentSpeed > 50)
+    {
+        self.currentSpeed = 5;
+    }
+    
+    [self updateSpeed:self.currentSpeed];
 }
 
 #pragma mark - MAMapViewDelegate
@@ -330,34 +257,37 @@ static const double kMapDistanceFilter = 10;
 {
     if(updatingLocation)
     {
+        // 定位刚开始的几个点比较飘，忽略掉
+        self.updateuLocationTimes++;
+        NSInteger ignoreTimes = 5;
+        if (self.updateuLocationTimes <= ignoreTimes)
+        {
+            return;
+        }
+        
+        // 滤波在处理慢速运行时，会出现路径端点与定位点连接不上的情况，所以在绘制路径时，将未处理过的当前点添加到数组的末尾，每次有新位置进行计算时，先将上一次数组末尾的点移除。
+        if ([self.annotationRecordArray count] > 0)
+        {
+            [self.annotationRecordArray removeLastObject];
+        }
+        
+        // 本次定位坐标
         CLLocationCoordinate2D coordinate = userLocation.coordinate;
+        
+        // 计算当前速度，最快、最慢速度。
+        [self updateSpeedWithNewCoordinate:coordinate];
+        
+        // 滤波算法处理后的坐标
+        CLLocationCoordinate2D filteredCoordinate = [self.processer processWithCoordinate:coordinate speed:self.currentSpeed timestamp:self.currentLocatedTime];
+        
+        [self addLocationCoordinate:filteredCoordinate];
         [self addLocationCoordinate:coordinate];
         [self updateRoute];
         
-        // 计算最快、最慢速度
-        self.lastLocatedTime = self.currentLocatedTime;
-        self.currentLocatedTime = CFAbsoluteTimeGetCurrent();
-        [self calculationSpeed];
-        
-//        [self showAllCoordinate];
-        
         [self updataRunningRecordViewData];
         
-        NSString *message = [NSString stringWithFormat:@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude];
-        NSLog(@"%@", message);
-        
-//        NSString *message = [NSString stringWithFormat:@"latitude : %f,longitude: %f",userLocation.coordinate.latitude,userLocation.coordinate.longitude];
-//        self.OutputMessageLabel.text = message;
-//        
-//        int r = arc4random() % 255;
-//        int g = arc4random() % 255;
-//        int b = arc4random() % 255;
-//        
-//        UIColor *color = RGB(r, g, b);
-//        self.OutputMessageLabel.textColor = color;
-
+//        [self testMessageWithSpeed:self.currentSpeed];
     }
-    
 }
 
 - (MAOverlayView *)mapView:(MAMapView *)mapView viewForOverlay:(id <MAOverlay>)overlay
@@ -374,6 +304,53 @@ static const double kMapDistanceFilter = 10;
         return polylineView;
     }
     return nil;
+}
+
+#pragma mark - test code
+
+- (void)testMessageWithSpeed:(CGFloat)speed;
+{
+//    YSMapAnnotation *annotation = [self.annotationRecordArray lastObject];
+//    CLLocationCoordinate2D coordinate = annotation.coordinate;
+    
+//    NSString *locationStr = [NSString stringWithFormat:@"latitude : %f,longitude: %f",
+//                             coordinate.latitude, coordinate.longitude];
+    
+    NSString *speedStr = [NSString stringWithFormat:@"最快速度: %.3f, 最慢速度: %.3f", self.hSpeed, self.lSpeed];
+    
+//    NSString *timeStr = [NSString stringWithFormat:@"上次定位时间: %f\n本次定位时间: %f", self.lastLocatedTime, self.currentLocatedTime];
+    
+    NSString *timeIntervalStr = [NSString stringWithFormat:@"定位时间间隔: %f", (self.currentLocatedTime - self.lastLocatedTime)];
+    
+    NSString *currentSpeedStr = [NSString stringWithFormat:@"当前速度: %.3f", speed];
+    
+    NSString *distanceStr = [NSString stringWithFormat:@"计算的距离: %.4f", self.calculationDistance];
+    NSString *actualSpeedStr = [NSString stringWithFormat:@"计算的速度: %f", self.actualCalcutationSpeed];
+    
+    NSString *accuracyStr = [NSString stringWithFormat:@"定位精度: %f", self.mapView.desiredAccuracy];
+    
+    NSString *outputMessage = [NSString stringWithFormat:@"%@\n\n%@\n%@\n\n%@\n%@\n\n%@", speedStr, timeIntervalStr, distanceStr, currentSpeedStr,actualSpeedStr, accuracyStr];
+    NSLog(@"%@", outputMessage);
+    
+    if ([self.testLabel superview])
+    {
+//        int r = arc4random() % 255;
+//        int g = arc4random() % 255;
+//        int b = arc4random() % 255;
+//        UIColor *color = RGB(r, g, b);
+        
+        self.testLabel.text = outputMessage;
+        self.testLabel.textColor = [UIColor redColor];
+    }
+}
+
+- (void)setupTestLabel
+{
+    self.testLabel = [[UILabel alloc] init];
+    self.testLabel.font = [UIFont systemFontOfSize:18];
+    self.testLabel.textAlignment = NSTextAlignmentCenter;
+    self.testLabel.adjustsFontSizeToFitWidth = YES;
+    self.testLabel.numberOfLines = 0;
 }
 
 @end

@@ -258,6 +258,12 @@ typedef NS_ENUM(NSInteger, RunningState) {
         }
     }
     
+    // 改为最小为1了,加上处理。 --2016.2.24
+    if (star == 0)
+    {
+        star = 1;
+    }
+    
     return star;
 }
 
@@ -335,7 +341,6 @@ typedef NS_ENUM(NSInteger, RunningState) {
     
     YSMapManager *mapManager = [self.runningMapModeView getMapManager];
     [mapManager endLocation];
-//    UIImage *image = [mapManager getScreenshotImage];
     
     [self recordRunData];
     

@@ -43,7 +43,7 @@ static const CGFloat kChartHeight = 20;
 
 - (void)awakeFromNib {
     // Initialization code
-    [super awakeFromNib];
+    
     [self setupLabels];
 }
 

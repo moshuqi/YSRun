@@ -10,6 +10,7 @@
 #import "YSRunningModeView+GetMethod.h"
 #import "YSStatisticsDefine.h"
 #import "YSAppMacro.h"
+#import "YSDevice.h"
 
 static const CGFloat kPulldownViewRadius = 44;      // 中间下拉按钮的半径
 static const CGFloat kButtonWidth = 88;             // “继续”、“完成”按钮的尺寸
@@ -47,18 +48,23 @@ static const CGFloat kButtonWidth = 88;             // “继续”、“完成�
     self.distanceLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.distanceLabel.userInteractionEnabled = NO;
     [self.distanceLabel setSubscriptText:@"公里"];
-    [self addSubview:self.distanceLabel];
+//    [self addSubview:self.distanceLabel];
     
     self.paceLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.paceLabel.userInteractionEnabled = NO;
     [self.paceLabel setSubscriptText:@"配速(分/公里)"];
-    [self addSubview:self.paceLabel];
+//    [self addSubview:self.paceLabel];
     
     self.heartRateLabel = [[[UINib nibWithNibName:@"YSSubscriptLabel" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     [self.heartRateLabel setContentText:@"-"];
     self.heartRateLabel.userInteractionEnabled = NO;
     [self.heartRateLabel setSubscriptText:@"心率"];
-    [self addSubview:self.heartRateLabel];
+//    [self addSubview:self.heartRateLabel];
+    
+    // 新的展示公里、配速、心率数据的标签界面，先前的标签暂时先不加到父视图上      --2016.2.21
+    self.dataView = [[[UINib nibWithNibName:@"YSRunningModeDataView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
+    self.dataView.userInteractionEnabled = NO;
+    [self addSubview:self.dataView];
     
     self.modeStatusView = [[[UINib nibWithNibName:@"YSRunningModeStatusView" bundle:nil] instantiateWithOwner:self options:nil] firstObject];
     self.modeStatusView.delegate = self;
@@ -94,6 +100,13 @@ static const CGFloat kButtonWidth = 88;             // “继续”、“完成�
 - (void)setupLabelsAppearance
 {
     // 设置标签字号大小和颜色，子类重载
+    
+    CGFloat fontSize = 52;
+    if ([YSDevice isPhone6Plus])
+    {
+        fontSize = 66;
+    }
+    [self.timeLabel setBoldWithFontSize:fontSize];
 }
 
 - (void)setContentFontSize:(CGFloat)contentSize subscriptFontSize:(CGFloat)subscriptSize
@@ -121,6 +134,8 @@ static const CGFloat kButtonWidth = 88;             // “继续”、“完成�
     self.paceLabel.frame = [self getPaceLabelFrame];
     self.heartRateLabel.frame = [self getHeartRateLabelFrame];
     
+    self.dataView.frame = [self getDataViewFrame];
+    
     [self resetButtonsPositionWithPauseStatus];
     [self setupButtonsAppearance];
     
@@ -130,6 +145,23 @@ static const CGFloat kButtonWidth = 88;             // “继续”、“完成�
 - (void)setupButtonsAppearance
 {
     // 子类重载，按钮的样式在两种模式下不一致
+    
+    [self setupButton:self.finishButton];
+    [self setupButton:self.continueButton];
+}
+
+- (void)setupButton:(UIButton *)button
+{
+    CGFloat continueBtnRadius = CGRectGetWidth(button.frame) / 2;
+    button.layer.cornerRadius = continueBtnRadius;
+    button.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+    
+    [button setTitleColor:GreenBackgroundColor forState:UIControlStateNormal];
+}
+
+- (CGRect)timeLabelFrame
+{
+    return [self getTimeLabelFrame];
 }
 
 - (void)pulldown:(UIPanGestureRecognizer *)panGesture
@@ -269,23 +301,29 @@ static const CGFloat kButtonWidth = 88;             // “继续”、“完成�
 - (void)setDistance:(CGFloat)distance
 {
     // 单位公里
-    [self.distanceLabel setContentText:[NSString stringWithFormat:@"%.2f", distance]];
+//    [self.distanceLabel setContentText:[NSString stringWithFormat:@"%.2f", distance]];
+    
+    [self.dataView setDistance:distance];
 }
 
 - (void)setPace:(CGFloat)pace
 {
     // 配速（分/公里）
-    [self.paceLabel setContentText:[NSString stringWithFormat:@"%.2f", pace]];
+//    [self.paceLabel setContentText:[NSString stringWithFormat:@"%.2f", pace]];
+    
+    [self.dataView setPace:pace];
 }
 
 - (void)setHeartRate:(NSInteger)heartRate
 {
-    dispatch_async(dispatch_get_main_queue(), ^(){
-        NSString *text = (heartRate > 0) ? [NSString stringWithFormat:@"%@", @(heartRate)] : @"-";
-        [self.heartRateLabel setContentText:text];
-        
-        [self setHeartRateLabelColorWithHeartRate:heartRate];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^(){
+//        NSString *text = (heartRate > 0) ? [NSString stringWithFormat:@"%@", @(heartRate)] : @"-";
+//        [self.heartRateLabel setContentText:text];
+//        
+//        [self setHeartRateLabelColorWithHeartRate:heartRate];
+//    });
+    
+    [self.dataView setHeartRate:heartRate];
 }
 
 - (void)setHeartRateLabelColorWithHeartRate:(NSInteger)heartRate

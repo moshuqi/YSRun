@@ -24,7 +24,7 @@
 #import "YSEditingCheckLengthLimit.h"
 #import "YSEditingCheckPhoneNumber.h"
 
-@interface YSFindPasswordViewController () <YSPhoneTextFieldLimitDelegateCallback, YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate, YSEditingCheckLengthLimitDelegate>
+@interface YSFindPasswordViewController () <YSPhoneTextFieldLimitDelegateCallback, YSNetworkManagerDelegate, YSContentCheckIconChangeDelegate, YSEditingCheckLengthLimitDelegate, YSTextFieldDelegateObjCallBack>
 
 @property (nonatomic, weak) IBOutlet YSNavigationBarView *navigationBarView;
 //@property (nonatomic, weak) IBOutlet YSTextFieldTableView *textFieldTable;
@@ -62,6 +62,7 @@
     [self setupButton];
     [self setupTextFields];
     [self setupBackgroundImage];
+    [self addBackgroundTapGesture];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -129,6 +130,12 @@
 //    self.phoneTextFieldDelegate.delegate = self;
 //    self.accountTextField.delegate = self.phoneTextFieldDelegate;
     
+    self.accountTextField.returnKeyType = UIReturnKeyNext;
+    self.captchaTextField.returnKeyType = UIReturnKeyDone;
+    
+    self.accountTextField.enablesReturnKeyAutomatically = YES;
+    self.captchaTextField.enablesReturnKeyAutomatically = YES;
+    
     [self setupTextFieldDelegate];
 }
 
@@ -153,6 +160,9 @@
     
     self.captchaTextFieldDelegateObj = [[YSTextFieldDelegateObj alloc] initWithEditingCheckArray:nil contentCheckArray:contentCheckArray2];
     self.captchaTextField.delegate = self.captchaTextFieldDelegateObj;
+    
+    self.accountTextFieldDelegateObj.delegate = self;
+    self.captchaTextFieldDelegateObj.delegate = self;
 }
 
 - (void)setupBackgroundImage
@@ -160,6 +170,18 @@
     // 设置背景图片
     UIImage *image = [UIImage imageNamed:@"login_background"];
     self.view.layer.contents = (id)image.CGImage;
+}
+
+- (void)addBackgroundTapGesture
+{
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBackground:)];
+    [self.view addGestureRecognizer:tap];
+}
+
+- (void)tapBackground:(id)tapGesture
+{
+    // 点击背景处时收起键盘。
+    [[UIApplication sharedApplication].keyWindow endEditing:YES];
 }
 
 - (CGFloat)constraintConstant
@@ -290,6 +312,11 @@
 //    
 //    return;
     
+    [self findPassword];
+}
+
+- (void)findPassword
+{
     NSString *phoneNumber = self.accountTextField.text;
     NSString *captcha = self.captchaTextField.text;
     
@@ -413,6 +440,20 @@
 - (void)beyondMaxLimit
 {
     [[YSTipLabelHUD shareTipLabelHUD] showTipWithText:@"长度超过限制"];
+}
+
+#pragma mark - YSTextFieldDelegateObjCallBack
+
+- (void)textFieldDidReturn:(UITextField *)textField
+{
+    if (textField == self.accountTextField)
+    {
+        [self.captchaTextField becomeFirstResponder];
+    }
+    else if (textField == self.captchaTextField)
+    {
+        [self findPassword];
+    }
 }
 
 @end

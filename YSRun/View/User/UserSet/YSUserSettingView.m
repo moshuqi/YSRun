@@ -26,9 +26,8 @@ const CGFloat kHeightForHeader = 10;
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     [self initTableViewDataArray];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"YSUserSetCell" bundle:nil] forCellReuseIdentifier:UserSetTableViewReuseIdentifier];
     
     self.tableView.backgroundColor = LightgrayBackgroundColor;

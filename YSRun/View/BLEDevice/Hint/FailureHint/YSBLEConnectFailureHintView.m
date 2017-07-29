@@ -24,7 +24,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
     // 设置控件
     
     // 标签

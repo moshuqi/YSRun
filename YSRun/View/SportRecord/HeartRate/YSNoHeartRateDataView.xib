@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YSNoHeartRateDataView">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="315"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="noHeartRateIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CSb-jK-M0p">
+                    <rect key="frame" x="37" y="66" width="196" height="168"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Q4-IY-C4U">
+                    <rect key="frame" x="10" y="264" width="250" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Q4-IY-C4U" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="CE9-jI-B2s"/>
+                <constraint firstItem="CSb-jK-M0p" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="66" id="Oxe-03-cfC"/>
+                <constraint firstItem="1Q4-IY-C4U" firstAttribute="top" secondItem="CSb-jK-M0p" secondAttribute="bottom" constant="30" id="PPB-wo-I8H"/>
+                <constraint firstItem="CSb-jK-M0p" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c3N-zb-Yly"/>
+                <constraint firstAttribute="trailing" secondItem="1Q4-IY-C4U" secondAttribute="trailing" constant="10" id="sDq-TE-4Xb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="label" destination="1Q4-IY-C4U" id="Mo3-If-uUb"/>
+                <outlet property="topConstraint" destination="Oxe-03-cfC" id="f58-Zs-B6P"/>
+            </connections>
+            <point key="canvasLocation" x="93" y="32.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="noHeartRateIcon" width="196" height="168"/>
+    </resources>
+</document>

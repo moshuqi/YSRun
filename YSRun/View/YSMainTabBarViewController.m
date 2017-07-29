@@ -10,8 +10,7 @@
 #import "YSCalendarViewController.h"
 #import "YSRunViewController.h"
 #import "YSUserViewController.h"
-
-#import "YSDatabaseManager.h"
+#import "YSDataManager.h"
 
 @interface YSMainTabBarViewController () <YSRunViewControllerDelegate, YSUserViewControllerDelegate>
 

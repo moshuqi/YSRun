@@ -29,8 +29,6 @@
 
 - (void)awakeFromNib
 {
-    [super awakeFromNib];
-    
     [self.tableView registerNib:[UINib nibWithNibName:@"YSUserSetCell" bundle:nil] forCellReuseIdentifier:UserNoLoginTableViewReuseIdentifier];
     self.tableView.scrollEnabled = NO;
     
