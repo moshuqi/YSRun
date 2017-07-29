@@ -366,7 +366,6 @@
 		65D6AFD81C7C3F1C00C7B97B /* YSResultDataLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D6AFD71C7C3F1C00C7B97B /* YSResultDataLabelsView.xib */; };
 		65D891311C3A503C00650B56 /* login_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D891301C3A503C00650B56 /* login_background@2x.png */; };
 		65D891341C3A654200650B56 /* YSTextFieldComponentCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */; };
-		65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */; };
 		65DB44711BDA07CB004932E2 /* YSDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */; };
 		65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF581BD7232600E8627C /* YSNetworkRequest.m */; };
 		65DFDF631BD7AA5B00E8627C /* LFCGzipUtillity.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DFDF621BD7AA5B00E8627C /* LFCGzipUtillity.m */; };
@@ -997,8 +996,6 @@
 		65D891301C3A503C00650B56 /* login_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_background@2x.png"; sourceTree = "<group>"; };
 		65D891321C3A654200650B56 /* YSTextFieldComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTextFieldComponentCreator.h; sourceTree = "<group>"; };
 		65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTextFieldComponentCreator.m; sourceTree = "<group>"; };
-		65DB446C1BD9E081004932E2 /* YSDatabaseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseHandle.h; sourceTree = "<group>"; };
-		65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseHandle.m; sourceTree = "<group>"; };
 		65DB446F1BDA07CB004932E2 /* YSDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDatabaseManager.h; sourceTree = "<group>"; };
 		65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDatabaseManager.m; sourceTree = "<group>"; };
 		65DFDF571BD7232600E8627C /* YSNetworkRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNetworkRequest.h; sourceTree = "<group>"; };
@@ -2566,8 +2563,6 @@
 		65DFDF551BD722F800E8627C /* Database */ = {
 			isa = PBXGroup;
 			children = (
-				65DB446C1BD9E081004932E2 /* YSDatabaseHandle.h */,
-				65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */,
 				65DB446F1BDA07CB004932E2 /* YSDatabaseManager.h */,
 				65DB44701BDA07CB004932E2 /* YSDatabaseManager.m */,
 				6586EB541BDDCFF0008108A0 /* YSDatabaseTableKey.h */,
@@ -3240,7 +3235,6 @@
 				65E135531BD8DCCC001DD824 /* YSNetworkManager.m in Sources */,
 				65B2ACE91BF9DFE200ECB2DB /* YSGraph.m in Sources */,
 				65DB44711BDA07CB004932E2 /* YSDatabaseManager.m in Sources */,
-				65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */,
 				659619B21BD224AA002110B9 /* YSFindPasswordViewController.m in Sources */,
 				65DFDF591BD7232600E8627C /* YSNetworkRequest.m in Sources */,
 				65A3AE2F1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m in Sources */,

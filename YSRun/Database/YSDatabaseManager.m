@@ -7,7 +7,6 @@
 //
 
 #import "YSDatabaseManager.h"
-#import "YSDatabaseHandle.h"
 #import "YSUtilsMacro.h"
 
 #import "YSRunInfoModel.h"
@@ -20,7 +19,6 @@
 
 // 将所有的数据操作放到队列里执行以进行多线程操作。2015.12.31
 
-//@property (nonatomic, strong) YSDatabaseHandle *databaseHandle;
 @property (nonatomic, strong) YSDatabaseQueue *dbQueue;
 
 @end
@@ -39,7 +37,6 @@ const NSString *kNotLoginUid = nil;
     self = [super init];
     if (self)
     {
-//        self.databaseHandle = [YSDatabaseHandle shareDatabaseHandle];
         self.dbQueue = [YSDatabaseQueue shareDatabaseQueue];
     }
     
