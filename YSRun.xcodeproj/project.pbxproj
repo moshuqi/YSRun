@@ -16,7 +16,6 @@
 		6517783A1BF6181F00CD6940 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778391BF6181F00CD6940 /* calendar@2x.png */; };
 		652A93F81BFB037A0015E461 /* YSGraphData.m in Sources */ = {isa = PBXBuildFile; fileRef = 652A93F71BFB037A0015E461 /* YSGraphData.m */; };
 		653022BE1C44F84D00101C4C /* navigation_back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */; };
-		654288091BDCC53800ADBE32 /* YSDayCellModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288081BDCC53800ADBE32 /* YSDayCellModel.m */; };
 		6542880E1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6542880D1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m */; };
 		654288111BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288101BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m */; };
 		654288141BDCC90C00ADBE32 /* YSSetUserRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288131BDCC90C00ADBE32 /* YSSetUserRequestModel.m */; };
@@ -42,8 +41,6 @@
 		655C571A1BCF7F5800E9073E /* YSCalendarTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57191BCF7F5800E9073E /* YSCalendarTitleBarView.xib */; };
 		655C571C1BCF845400E9073E /* YSCalendarRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C571B1BCF845400E9073E /* YSCalendarRecordView.xib */; };
 		655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */; };
-		655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57261BCF978300E9073E /* YSCalendarDayCell.m */; };
-		655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */; };
 		656087771C05913A00F2BCCC /* YSMarkLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 656087761C05913A00F2BCCC /* YSMarkLabelsView.m */; };
 		656087791C05915200F2BCCC /* YSMarkLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656087781C05915200F2BCCC /* YSMarkLabelsView.xib */; };
 		6563AE9E1C43426900E7084A /* YSWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AE9D1C43426900E7084A /* YSWaterWaveView.m */; };
@@ -454,8 +451,6 @@
 		652A93F61BFB037A0015E461 /* YSGraphData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGraphData.h; sourceTree = "<group>"; };
 		652A93F71BFB037A0015E461 /* YSGraphData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGraphData.m; sourceTree = "<group>"; };
 		653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back_arrow@2x.png"; sourceTree = "<group>"; };
-		654288071BDCC53800ADBE32 /* YSDayCellModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDayCellModel.h; sourceTree = "<group>"; };
-		654288081BDCC53800ADBE32 /* YSDayCellModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDayCellModel.m; sourceTree = "<group>"; };
 		6542880C1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRegisterInfoRequestModel.h; sourceTree = "<group>"; };
 		6542880D1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRegisterInfoRequestModel.m; sourceTree = "<group>"; };
 		6542880F1BDCC80100ADBE32 /* YSModifyPasswordRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModifyPasswordRequestModel.h; sourceTree = "<group>"; };
@@ -496,9 +491,6 @@
 		655C571B1BCF845400E9073E /* YSCalendarRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarRecordView.xib; sourceTree = "<group>"; };
 		655C571D1BCF865A00E9073E /* NSDate+YSDateLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YSDateLogic.h"; sourceTree = "<group>"; };
 		655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YSDateLogic.m"; sourceTree = "<group>"; };
-		655C57251BCF978300E9073E /* YSCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarDayCell.h; sourceTree = "<group>"; };
-		655C57261BCF978300E9073E /* YSCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarDayCell.m; sourceTree = "<group>"; };
-		655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarDayCell.xib; sourceTree = "<group>"; };
 		656087751C05913A00F2BCCC /* YSMarkLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMarkLabelsView.h; sourceTree = "<group>"; };
 		656087761C05913A00F2BCCC /* YSMarkLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMarkLabelsView.m; sourceTree = "<group>"; };
 		656087781C05915200F2BCCC /* YSMarkLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMarkLabelsView.xib; sourceTree = "<group>"; };
@@ -1155,8 +1147,6 @@
 		654F21181BDA3A3F002F0A4B /* UIModels */ = {
 			isa = PBXGroup;
 			children = (
-				654288071BDCC53800ADBE32 /* YSDayCellModel.h */,
-				654288081BDCC53800ADBE32 /* YSDayCellModel.m */,
 				654F21191BDA3B01002F0A4B /* YSUserInfoModel.h */,
 				654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */,
 				654F211C1BDA3D10002F0A4B /* YSRunInfoModel.h */,
@@ -1196,7 +1186,6 @@
 			isa = PBXGroup;
 			children = (
 				65BC23361BE759EF00265FA8 /* Calendar */,
-				655C57241BCF971000E9073E /* DayCell */,
 				655C570B1BCF7DCD00E9073E /* TitleBar */,
 				655C57081BCF7CEF00E9073E /* YSCalendarRecordView.h */,
 				655C57091BCF7CEF00E9073E /* YSCalendarRecordView.m */,
@@ -1245,16 +1234,6 @@
 				65A4310C1BE0D3BF004D7024 /* YSModelReformer.m */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		655C57241BCF971000E9073E /* DayCell */ = {
-			isa = PBXGroup;
-			children = (
-				655C57251BCF978300E9073E /* YSCalendarDayCell.h */,
-				655C57261BCF978300E9073E /* YSCalendarDayCell.m */,
-				655C57281BCF97A500E9073E /* YSCalendarDayCell.xib */,
-			);
-			path = DayCell;
 			sourceTree = "<group>";
 		};
 		656087741C05912300F2BCCC /* LabelsView */ = {
@@ -2848,7 +2827,6 @@
 				65EF11F91BFEF86500D3DE85 /* loading_dot_1@2x.png in Resources */,
 				65EF11D41BFEBFF000D3DE85 /* YSBLEDeviceConnectView.xib in Resources */,
 				657E61D31C0ECE1700DDCE5D /* man_9km.mp3 in Resources */,
-				655C57291BCF97A500E9073E /* YSCalendarDayCell.xib in Resources */,
 				6563AEB61C43BD5700E7084A /* wave_circle@2x.png in Resources */,
 				65A067381BF6E98900E0BC59 /* tips@2x.png in Resources */,
 				651778381BF6152A00CD6940 /* calendar_highlight@2x.png in Resources */,
@@ -3027,7 +3005,6 @@
 				65AAA34B1BFC777D00C4F84C /* YSMapManager.m in Sources */,
 				65F6A2AC1C45ED410054082C /* YSEditingCheckLengthLimit.m in Sources */,
 				65B2ACEA1BF9DFE200ECB2DB /* YSGraphPoint.m in Sources */,
-				655C57271BCF978300E9073E /* YSCalendarDayCell.m in Sources */,
 				657E61051C0E811600DDCE5D /* YSRunDataRecordViewController.m in Sources */,
 				65EF11D51BFEBFF000D3DE85 /* YSBLEHeartRateCountingView.m in Sources */,
 				657E610A1C0E9F2700DDCE5D /* YSVoicePrompt.m in Sources */,
@@ -3052,7 +3029,6 @@
 				65A555B61BD47E11003306E7 /* YSRunningMapModeView.m in Sources */,
 				659233821C1563C80046B481 /* YSSettingsViewController.m in Sources */,
 				65BC233F1BE7616D00265FA8 /* YSDayItemModel.m in Sources */,
-				654288091BDCC53800ADBE32 /* YSDayCellModel.m in Sources */,
 				659233951C157A270046B481 /* YSUserSetCell.m in Sources */,
 				65C5C3151BF07CCE00FA1432 /* YSBluetoothConnect.m in Sources */,
 				656F57201C04030D00060361 /* YSTipCell.m in Sources */,
