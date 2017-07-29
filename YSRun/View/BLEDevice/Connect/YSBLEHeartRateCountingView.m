@@ -28,6 +28,8 @@ const CGFloat kHeartRateMaxValue = 220;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.currentHeartRate = 0;
     
     UIImage *heartImage = [UIImage imageNamed:@"heart_icon"];

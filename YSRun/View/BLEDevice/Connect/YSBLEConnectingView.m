@@ -21,6 +21,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.label.text = @"正在连接";
     self.label.font = [UIFont systemFontOfSize:11];
     self.label.textColor = RGB(255, 255, 255);

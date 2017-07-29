@@ -19,6 +19,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.contentLabel.adjustsFontSizeToFitWidth = YES;
     self.subscriptNameLabel.adjustsFontSizeToFitWidth = YES;
 }

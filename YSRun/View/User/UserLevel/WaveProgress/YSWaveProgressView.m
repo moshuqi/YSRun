@@ -40,6 +40,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self bringSubviewToFront:self.achievementView];
 }
 

@@ -19,6 +19,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     UIFont *font = [UIFont systemFontOfSize:11];
     UIColor *textColor = RGB(201, 233, 220);
     

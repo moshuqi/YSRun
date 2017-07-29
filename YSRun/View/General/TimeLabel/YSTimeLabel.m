@@ -22,6 +22,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [self initCount];
 
     self.timeLabel.text = @"00 : 00 : 00";

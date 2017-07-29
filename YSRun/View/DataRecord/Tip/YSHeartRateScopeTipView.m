@@ -38,6 +38,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     // 设置不同的背景颜色
     UIColor *topColor = RGB(238, 238, 238);
     UIColor *middleColor = RGB(221, 221, 221);

@@ -36,6 +36,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.titleLabel.textColor = [UIColor whiteColor];
     
     // 这一版先屏蔽掉分享

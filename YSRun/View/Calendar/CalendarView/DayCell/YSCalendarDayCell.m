@@ -22,6 +22,7 @@ const CGFloat kStarViewHeight = 20;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initStarView];
 }
 

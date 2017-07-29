@@ -37,6 +37,7 @@ const CGFloat kMinimumLineSpacing = 1;
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.titleBarView.delegate = self;
     
 //    [self.collectionView registerNib:[UINib nibWithNibName:@"YSCalendarDayCell" bundle:nil] forCellWithReuseIdentifier:CalendarReuseIdentifier];

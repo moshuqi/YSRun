@@ -39,6 +39,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
 //    self.levelLabel.textColor = [UIColor whiteColor];
     
     self.titleLabel.textColor = [UIColor whiteColor];

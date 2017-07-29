@@ -25,6 +25,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    [super awakeFromNib];
     
     self.leftLabel.textColor = RGB(56, 56, 56);
     self.centerLabel.textColor = RGB(56, 56, 56);

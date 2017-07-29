@@ -56,6 +56,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [self addBackgroundPhoto];
     [self setupLabels];
     
@@ -73,7 +75,6 @@
         self.effectLabel.font = [UIFont systemFontOfSize:24];
         self.tipLabel1.font = [UIFont systemFontOfSize:16];
         self.tipLabel2.font = [UIFont systemFontOfSize:16];
-        
     }
 }
 

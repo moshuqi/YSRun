@@ -198,7 +198,7 @@
             startingLineNumber = "281"
             endingLineNumber = "281"
             landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
