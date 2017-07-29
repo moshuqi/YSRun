@@ -35,7 +35,8 @@
 static NSString *ServiceHeartRateUUIDStr = @"180D";
 static NSString *CharacteristicHeartRateUUIDStr = @"2A37";
 
-static BOOL simulationMode = NO;
+// 设为YES时模拟生成心率
+static BOOL simulationMode = YES;
 
 static YSBluetoothConnect *_instance;
 
@@ -224,8 +225,8 @@ static YSBluetoothConnect *_instance;
 - (void)simulateHeartRate
 {
     // 随机生成心率
-    NSInteger minHeartRate = 70;
-    NSInteger maxHeartRate = 90;
+    NSInteger minHeartRate = 90;
+    NSInteger maxHeartRate = 190;
     
     NSInteger heartRate = (NSInteger)(minHeartRate + (arc4random() % (maxHeartRate - minHeartRate + 1)));
     self.heartRate = heartRate;
