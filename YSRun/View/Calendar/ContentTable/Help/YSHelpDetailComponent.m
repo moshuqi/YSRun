@@ -37,6 +37,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.detailLabel.textColor = RGB(136, 136, 136);
     self.detailLabel.font = [UIFont systemFontOfSize:13];
     self.detailLabel.numberOfLines = 0;

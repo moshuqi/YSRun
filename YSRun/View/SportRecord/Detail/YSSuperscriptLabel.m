@@ -36,6 +36,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     // 字体颜色，大小
     self.contentLabel.font = [UIFont systemFontOfSize:[self contentFontSize]];
     self.scriptLabel.font = [UIFont systemFontOfSize:[self scriptFontSize]];

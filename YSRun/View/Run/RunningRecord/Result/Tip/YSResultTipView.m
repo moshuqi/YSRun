@@ -37,6 +37,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self addGesture];
     
     self.tipLabel.textColor = [UIColor whiteColor];

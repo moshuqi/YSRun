@@ -45,6 +45,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.mapView.showsCompass = NO;
     self.mapView.showsScale = NO;
     

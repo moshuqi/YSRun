@@ -38,6 +38,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     // 设置颜色、圆角
     
     // 自身视图的圆角
@@ -56,8 +57,7 @@
     
     self.nameLabel.adjustsFontSizeToFitWidth = YES;
     self.timeLabel.adjustsFontSizeToFitWidth = YES;
-    
-    }
+}
 
 
 - (void)setupWithTimestamp:(NSInteger)timestamp

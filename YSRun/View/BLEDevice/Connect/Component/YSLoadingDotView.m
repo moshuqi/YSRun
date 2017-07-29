@@ -45,6 +45,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.dot0.image = [UIImage imageNamed:@"loading_dot_0"];
     self.dot1.image = [UIImage imageNamed:@"loading_dot_1"];
     self.dot2.image = [UIImage imageNamed:@"loading_dot_2"];

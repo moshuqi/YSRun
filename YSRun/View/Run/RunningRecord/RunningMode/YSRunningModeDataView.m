@@ -21,6 +21,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.backgroundColor = [UIColor clearColor];
     
     // 标签初始默认值

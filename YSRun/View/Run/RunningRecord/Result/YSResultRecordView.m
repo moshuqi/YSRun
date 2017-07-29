@@ -55,6 +55,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self addBackgroundPhoto];
     
 //    [[self.dataLabelsContentView superview] bringSubviewToFront:self.dataLabelsContentView];

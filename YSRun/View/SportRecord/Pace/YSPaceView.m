@@ -44,6 +44,7 @@ static const CGFloat kEdgeDistance = 15;    // 边缘间距
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.backgroundColor = LightgrayBackgroundColor;
     
     UIColor *textColor = RGB(81, 81, 81);

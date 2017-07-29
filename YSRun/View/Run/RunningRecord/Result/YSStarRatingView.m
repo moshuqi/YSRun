@@ -40,6 +40,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self sendSubviewToBack:self.bgImageView];
     
     // 先设为透明，然后有个淡入的动画效果

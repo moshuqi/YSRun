@@ -36,8 +36,9 @@
 
 - (void)awakeFromNib
 {
-    self.titleLabel.textColor = [UIColor whiteColor];
+    [super awakeFromNib];
     
+    self.titleLabel.textColor = [UIColor whiteColor];
     // 这一版先屏蔽掉分享
     self.shareButton.hidden = YES;
 }

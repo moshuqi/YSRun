@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6505F98B1C50B292002ECF26 /* YSSportRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6505F9891C50B292002ECF26 /* YSSportRecordViewController.m */; };
+		6505F98C1C50B292002ECF26 /* YSSportRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6505F98A1C50B292002ECF26 /* YSSportRecordViewController.xib */; };
+		6505F9991C50C795002ECF26 /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 6505F9961C50C795002ECF26 /* HTHorizontalSelectionList.m */; };
+		6505F99A1C50C795002ECF26 /* HTHorizontalSelectionListScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6505F9981C50C795002ECF26 /* HTHorizontalSelectionListScrollView.m */; };
+		6505F99C1C52112D002ECF26 /* Audio.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6505F99B1C52112D002ECF26 /* Audio.bundle */; };
 		6517782E1BF6083800CD6940 /* run_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6517782D1BF6083800CD6940 /* run_highlight@2x.png */; };
 		651778311BF609DA00CD6940 /* password_eye_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6517782F1BF609DA00CD6940 /* password_eye_close@2x.png */; };
 		651778321BF609DA00CD6940 /* password_eye_open@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778301BF609DA00CD6940 /* password_eye_open@2x.png */; };
@@ -14,13 +19,29 @@
 		651778361BF60C0B00CD6940 /* user_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778351BF60C0B00CD6940 /* user_highlight@2x.png */; };
 		651778381BF6152A00CD6940 /* calendar_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778371BF6152A00CD6940 /* calendar_highlight@2x.png */; };
 		6517783A1BF6181F00CD6940 /* calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 651778391BF6181F00CD6940 /* calendar@2x.png */; };
+		651E343C1C7AC01E0026DACF /* YSRunningModeDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651E343B1C7AC01E0026DACF /* YSRunningModeDataView.m */; };
+		651E343E1C7AC0370026DACF /* YSRunningModeDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651E343D1C7AC0370026DACF /* YSRunningModeDataView.xib */; };
+		6526C2631C57214E00FCEE24 /* YSTimeLocationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526C2621C57214E00FCEE24 /* YSTimeLocationModel.m */; };
+		6526C2661C57217E00FCEE24 /* YSTimeLocationArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526C2651C57217E00FCEE24 /* YSTimeLocationArray.m */; };
+		6526C2691C5743CC00FCEE24 /* YSPaceCalculateFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526C2681C5743CC00FCEE24 /* YSPaceCalculateFunc.m */; };
+		6526C26C1C57485300FCEE24 /* YSPaceSectionDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6526C26B1C57485300FCEE24 /* YSPaceSectionDataModel.m */; };
 		652A93F81BFB037A0015E461 /* YSGraphData.m in Sources */ = {isa = PBXBuildFile; fileRef = 652A93F71BFB037A0015E461 /* YSGraphData.m */; };
 		653022BE1C44F84D00101C4C /* navigation_back_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */; };
+		653F94761C4783420005D217 /* KalmanFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F94731C4783420005D217 /* KalmanFilter.m */; };
+		653F94771C4783420005D217 /* LocationData.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F94751C4783420005D217 /* LocationData.m */; };
+		653F947B1C4787BC0005D217 /* KalmanTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 653F94791C4787BC0005D217 /* KalmanTestViewController.m */; };
+		653F947C1C4787BC0005D217 /* KalmanTestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 653F947A1C4787BC0005D217 /* KalmanTestViewController.xib */; };
 		6542880E1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6542880D1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m */; };
 		654288111BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288101BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m */; };
 		654288141BDCC90C00ADBE32 /* YSSetUserRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288131BDCC90C00ADBE32 /* YSSetUserRequestModel.m */; };
 		654288171BDCC9B200ADBE32 /* YSUploadRunDataRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288161BDCC9B200ADBE32 /* YSUploadRunDataRequestModel.m */; };
 		6542881A1BDCCA2A00ADBE32 /* YSUserInfoResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654288191BDCCA2A00ADBE32 /* YSUserInfoResponseModel.m */; };
+		654342631C5856D400368A82 /* YSBarProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 654342621C5856D400368A82 /* YSBarProgressView.m */; };
+		6543426A1C58678500368A82 /* YSPaceDataItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 654342691C58678500368A82 /* YSPaceDataItem.m */; };
+		6543426C1C5867EA00368A82 /* YSPaceDataItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6543426B1C5867EA00368A82 /* YSPaceDataItem.xib */; };
+		6543426F1C586A4600368A82 /* YSPaceDataTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6543426E1C586A4600368A82 /* YSPaceDataTableView.m */; };
+		654342721C58BB3100368A82 /* YSNoHeartRateDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 654342711C58BB3100368A82 /* YSNoHeartRateDataView.m */; };
+		654342741C58BB4300368A82 /* YSNoHeartRateDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 654342731C58BB4300368A82 /* YSNoHeartRateDataView.xib */; };
 		654F211B1BDA3B01002F0A4B /* YSUserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */; };
 		654F211E1BDA3D10002F0A4B /* YSRunInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F211D1BDA3D10002F0A4B /* YSRunInfoModel.m */; };
 		654F21211BDA44F4002F0A4B /* YSCountdownView.m in Sources */ = {isa = PBXBuildFile; fileRef = 654F21201BDA44F4002F0A4B /* YSCountdownView.m */; };
@@ -30,8 +51,6 @@
 		6559FB471C19206600B6ACE3 /* weibo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559FB441C19206600B6ACE3 /* weibo_icon@2x.png */; };
 		6559FB4B1C19549C00B6ACE3 /* YSHeartRateScopeTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6559FB4A1C19549C00B6ACE3 /* YSHeartRateScopeTipView.m */; };
 		6559FB4D1C1954B500B6ACE3 /* YSHeartRateScopeTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6559FB4C1C1954B500B6ACE3 /* YSHeartRateScopeTipView.xib */; };
-		6559FB501C19753000B6ACE3 /* running_end_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559FB4E1C19753000B6ACE3 /* running_end_icon@2x.png */; };
-		6559FB511C19753000B6ACE3 /* running_start_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6559FB4F1C19753000B6ACE3 /* running_start_icon@2x.png */; };
 		655C570A1BCF7CEF00E9073E /* YSCalendarRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57091BCF7CEF00E9073E /* YSCalendarRecordView.m */; };
 		655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C570D1BCF7DFF00E9073E /* YSCalendarTitleBarView.m */; };
 		655C57111BCF7E3300E9073E /* YSCalendarWeekdayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C57101BCF7E3300E9073E /* YSCalendarWeekdayView.m */; };
@@ -41,6 +60,22 @@
 		655C571A1BCF7F5800E9073E /* YSCalendarTitleBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C57191BCF7F5800E9073E /* YSCalendarTitleBarView.xib */; };
 		655C571C1BCF845400E9073E /* YSCalendarRecordView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655C571B1BCF845400E9073E /* YSCalendarRecordView.xib */; };
 		655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */ = {isa = PBXBuildFile; fileRef = 655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */; };
+		655CCB7D1C55BEEF00AC9E70 /* YSDetailDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB7C1C55BEEF00AC9E70 /* YSDetailDataView.m */; };
+		655CCB7F1C55BEFB00AC9E70 /* YSDetailDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB7E1C55BEFB00AC9E70 /* YSDetailDataView.xib */; };
+		655CCB821C55BF5200AC9E70 /* YSHeartRateDataView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB811C55BF5200AC9E70 /* YSHeartRateDataView.m */; };
+		655CCB841C55BF5E00AC9E70 /* YSHeartRateDataView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB831C55BF5E00AC9E70 /* YSHeartRateDataView.xib */; };
+		655CCB871C55BFBD00AC9E70 /* YSLocusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB861C55BFBD00AC9E70 /* YSLocusView.m */; };
+		655CCB891C55BFD600AC9E70 /* YSLocusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB881C55BFD600AC9E70 /* YSLocusView.xib */; };
+		655CCB8C1C55C01C00AC9E70 /* YSPaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB8B1C55C01C00AC9E70 /* YSPaceView.m */; };
+		655CCB8E1C55C02900AC9E70 /* YSPaceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB8D1C55C02900AC9E70 /* YSPaceView.xib */; };
+		655CCB911C55F4B600AC9E70 /* YSLocusTimeLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB901C55F4B600AC9E70 /* YSLocusTimeLabelView.m */; };
+		655CCB931C55F4C200AC9E70 /* YSLocusTimeLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB921C55F4C200AC9E70 /* YSLocusTimeLabelView.xib */; };
+		655CCB961C55F64900AC9E70 /* YSLocusDataLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCB951C55F64900AC9E70 /* YSLocusDataLabelView.m */; };
+		655CCB981C55F65500AC9E70 /* YSLocusDataLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCB971C55F65500AC9E70 /* YSLocusDataLabelView.xib */; };
+		655CCBE01C56185D00AC9E70 /* YSDetailLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCBDF1C56185D00AC9E70 /* YSDetailLabelView.m */; };
+		655CCBE21C5619E800AC9E70 /* YSDetailLabelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCBE11C5619E800AC9E70 /* YSDetailLabelView.xib */; };
+		655CCBE61C561D6400AC9E70 /* YSSuperscriptLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 655CCBE51C561D6400AC9E70 /* YSSuperscriptLabel.m */; };
+		655CCBE81C561D7000AC9E70 /* YSSuperscriptLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 655CCBE71C561D7000AC9E70 /* YSSuperscriptLabel.xib */; };
 		656087771C05913A00F2BCCC /* YSMarkLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 656087761C05913A00F2BCCC /* YSMarkLabelsView.m */; };
 		656087791C05915200F2BCCC /* YSMarkLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656087781C05915200F2BCCC /* YSMarkLabelsView.xib */; };
 		6563AE9E1C43426900E7084A /* YSWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6563AE9D1C43426900E7084A /* YSWaterWaveView.m */; };
@@ -151,60 +186,6 @@
 		657E61051C0E811600DDCE5D /* YSRunDataRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 657E61031C0E811600DDCE5D /* YSRunDataRecordViewController.m */; };
 		657E61061C0E811600DDCE5D /* YSRunDataRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 657E61041C0E811600DDCE5D /* YSRunDataRecordViewController.xib */; };
 		657E610A1C0E9F2700DDCE5D /* YSVoicePrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 657E61091C0E9F2700DDCE5D /* YSVoicePrompt.m */; };
-		657E61951C0ECDF800DDCE5D /* girl_anaerobic_slowdown_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E617A1C0ECDF800DDCE5D /* girl_anaerobic_slowdown_prompt.mp3 */; };
-		657E61961C0ECDF800DDCE5D /* girl_enter_anaerobic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E617B1C0ECDF800DDCE5D /* girl_enter_anaerobic.mp3 */; };
-		657E61971C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E617C1C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 */; };
-		657E61981C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E617D1C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 */; };
-		657E61CB1C0ECE1700DDCE5D /* man_1km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B01C0ECE1700DDCE5D /* man_1km.mp3 */; };
-		657E61CC1C0ECE1700DDCE5D /* man_2km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B11C0ECE1700DDCE5D /* man_2km.mp3 */; };
-		657E61CD1C0ECE1700DDCE5D /* man_3km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B21C0ECE1700DDCE5D /* man_3km.mp3 */; };
-		657E61CE1C0ECE1700DDCE5D /* man_4km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B31C0ECE1700DDCE5D /* man_4km.mp3 */; };
-		657E61CF1C0ECE1700DDCE5D /* man_5km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B41C0ECE1700DDCE5D /* man_5km.mp3 */; };
-		657E61D01C0ECE1700DDCE5D /* man_6km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B51C0ECE1700DDCE5D /* man_6km.mp3 */; };
-		657E61D11C0ECE1700DDCE5D /* man_7km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B61C0ECE1700DDCE5D /* man_7km.mp3 */; };
-		657E61D21C0ECE1700DDCE5D /* man_8km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B71C0ECE1700DDCE5D /* man_8km.mp3 */; };
-		657E61D31C0ECE1700DDCE5D /* man_9km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B81C0ECE1700DDCE5D /* man_9km.mp3 */; };
-		657E61D41C0ECE1700DDCE5D /* man_10km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61B91C0ECE1700DDCE5D /* man_10km.mp3 */; };
-		657E61D51C0ECE1700DDCE5D /* man_11km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BA1C0ECE1700DDCE5D /* man_11km.mp3 */; };
-		657E61D61C0ECE1700DDCE5D /* man_12km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BB1C0ECE1700DDCE5D /* man_12km.mp3 */; };
-		657E61D71C0ECE1700DDCE5D /* man_13km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BC1C0ECE1700DDCE5D /* man_13km.mp3 */; };
-		657E61D81C0ECE1700DDCE5D /* man_14km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BD1C0ECE1700DDCE5D /* man_14km.mp3 */; };
-		657E61D91C0ECE1700DDCE5D /* man_15km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BE1C0ECE1700DDCE5D /* man_15km.mp3 */; };
-		657E61DA1C0ECE1700DDCE5D /* man_16km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61BF1C0ECE1700DDCE5D /* man_16km.mp3 */; };
-		657E61DB1C0ECE1700DDCE5D /* man_17km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C01C0ECE1700DDCE5D /* man_17km.mp3 */; };
-		657E61DC1C0ECE1700DDCE5D /* man_18km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C11C0ECE1700DDCE5D /* man_18km.mp3 */; };
-		657E61DD1C0ECE1700DDCE5D /* man_19km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C21C0ECE1700DDCE5D /* man_19km.mp3 */; };
-		657E61DE1C0ECE1700DDCE5D /* man_20km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C31C0ECE1700DDCE5D /* man_20km.mp3 */; };
-		657E61DF1C0ECE1700DDCE5D /* man_anaerobic_slowdown_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C41C0ECE1700DDCE5D /* man_anaerobic_slowdown_prompt.mp3 */; };
-		657E61E01C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C51C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 */; };
-		657E61E11C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C61C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 */; };
-		657E61E21C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C71C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 */; };
-		657E61E31C0ECE1700DDCE5D /* man_speed_up_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C81C0ECE1700DDCE5D /* man_speed_up_prompt.mp3 */; };
-		657E61E41C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61C91C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 */; };
-		657E61E51C0ECE1700DDCE5D /* man_strength_too_low_speed_up_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61CA1C0ECE1700DDCE5D /* man_strength_too_low_speed_up_prompt.mp3 */; };
-		657E61FD1C0EDC3700DDCE5D /* girl_1km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61E61C0EDC3700DDCE5D /* girl_1km.mp3 */; };
-		657E61FE1C0EDC3700DDCE5D /* girl_2km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61E71C0EDC3700DDCE5D /* girl_2km.mp3 */; };
-		657E61FF1C0EDC3700DDCE5D /* girl_3km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61E81C0EDC3700DDCE5D /* girl_3km.mp3 */; };
-		657E62001C0EDC3700DDCE5D /* girl_4km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61E91C0EDC3700DDCE5D /* girl_4km.mp3 */; };
-		657E62011C0EDC3700DDCE5D /* girl_5km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61EA1C0EDC3700DDCE5D /* girl_5km.mp3 */; };
-		657E62021C0EDC3700DDCE5D /* girl_6km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61EB1C0EDC3700DDCE5D /* girl_6km.mp3 */; };
-		657E62031C0EDC3700DDCE5D /* girl_7km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61EC1C0EDC3700DDCE5D /* girl_7km.mp3 */; };
-		657E62041C0EDC3700DDCE5D /* girl_8km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61ED1C0EDC3700DDCE5D /* girl_8km.mp3 */; };
-		657E62051C0EDC3700DDCE5D /* girl_9km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61EE1C0EDC3700DDCE5D /* girl_9km.mp3 */; };
-		657E62061C0EDC3700DDCE5D /* girl_10km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61EF1C0EDC3700DDCE5D /* girl_10km.mp3 */; };
-		657E62071C0EDC3700DDCE5D /* girl_11km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F01C0EDC3700DDCE5D /* girl_11km.mp3 */; };
-		657E62081C0EDC3700DDCE5D /* girl_12km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F11C0EDC3700DDCE5D /* girl_12km.mp3 */; };
-		657E62091C0EDC3700DDCE5D /* girl_13km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F21C0EDC3700DDCE5D /* girl_13km.mp3 */; };
-		657E620A1C0EDC3700DDCE5D /* girl_14km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F31C0EDC3700DDCE5D /* girl_14km.mp3 */; };
-		657E620B1C0EDC3700DDCE5D /* girl_15km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F41C0EDC3700DDCE5D /* girl_15km.mp3 */; };
-		657E620C1C0EDC3700DDCE5D /* girl_16km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F51C0EDC3700DDCE5D /* girl_16km.mp3 */; };
-		657E620D1C0EDC3700DDCE5D /* girl_17km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F61C0EDC3700DDCE5D /* girl_17km.mp3 */; };
-		657E620E1C0EDC3700DDCE5D /* girl_18km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F71C0EDC3700DDCE5D /* girl_18km.mp3 */; };
-		657E620F1C0EDC3700DDCE5D /* girl_19km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F81C0EDC3700DDCE5D /* girl_19km.mp3 */; };
-		657E62101C0EDC3700DDCE5D /* girl_20km.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61F91C0EDC3700DDCE5D /* girl_20km.mp3 */; };
-		657E62111C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61FA1C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 */; };
-		657E62121C0EDC3700DDCE5D /* girl_speed_up_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61FB1C0EDC3700DDCE5D /* girl_speed_up_prompt.mp3 */; };
-		657E62131C0EDC3700DDCE5D /* girl_strength_too_high_slowdown_prompt.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 657E61FC1C0EDC3700DDCE5D /* girl_strength_too_high_slowdown_prompt.mp3 */; };
 		65807E061C02A4DD007FB336 /* YSBLEConnectFailureHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65807E041C02A4DD007FB336 /* YSBLEConnectFailureHintView.m */; };
 		65807E071C02A4DD007FB336 /* YSBLEConnectFailureHintView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65807E051C02A4DD007FB336 /* YSBLEConnectFailureHintView.xib */; };
 		65807E0B1C02A4E8007FB336 /* YSBLEConnectHintView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65807E091C02A4E8007FB336 /* YSBLEConnectHintView.m */; };
@@ -218,7 +199,7 @@
 		6580D4B81BE30DE400C5FB95 /* YSResetPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6580D4B61BE30DE400C5FB95 /* YSResetPasswordViewController.xib */; };
 		6580D4C21BE3569800C5FB95 /* YSPhotoPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580D4C11BE3569800C5FB95 /* YSPhotoPicker.m */; };
 		658257D81C0D90DC00C9FBA4 /* YSHeartRateDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 658257D71C0D90DC00C9FBA4 /* YSHeartRateDataManager.m */; };
-		658257DE1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m in Sources */ = {isa = PBXBuildFile; fileRef = 658257DD1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m */; };
+		658257DE1C0D9BF100C9FBA4 /* YSMapPaintFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 658257DD1C0D9BF100C9FBA4 /* YSMapPaintFunc.m */; };
 		658258171C0DC10B00C9FBA4 /* YSCommentElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 658258041C0DC10B00C9FBA4 /* YSCommentElement.m */; };
 		658258181C0DC10B00C9FBA4 /* YSCommentElement.xib in Resources */ = {isa = PBXBuildFile; fileRef = 658258051C0DC10B00C9FBA4 /* YSCommentElement.xib */; };
 		658258191C0DC10B00C9FBA4 /* YSHeartRateRecordCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 658258071C0DC10B00C9FBA4 /* YSHeartRateRecordCommentView.m */; };
@@ -299,6 +280,12 @@
 		65AAA34B1BFC777D00C4F84C /* YSMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAA3441BFC777D00C4F84C /* YSMapManager.m */; };
 		65AAA34C1BFC777D00C4F84C /* YSTimeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAA3471BFC777D00C4F84C /* YSTimeManager.m */; };
 		65AAA3531BFC7A8A00C4F84C /* YSRunDataHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AAA3521BFC7A8A00C4F84C /* YSRunDataHandler.m */; };
+		65AB6DAB1C7D6085002FFEFE /* YSResultTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB6DA91C7D6085002FFEFE /* YSResultTipView.m */; };
+		65AB6DAC1C7D6085002FFEFE /* YSResultTipView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AB6DAA1C7D6085002FFEFE /* YSResultTipView.xib */; };
+		65AB6DAF1C7D6186002FFEFE /* YSRatingDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB6DAE1C7D6186002FFEFE /* YSRatingDetailView.m */; };
+		65AB6DB31C7D639A002FFEFE /* YSPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65AB6DB21C7D639A002FFEFE /* YSPopView.m */; };
+		65AB6DB51C7D63AD002FFEFE /* YSPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AB6DB41C7D63AD002FFEFE /* YSPopView.xib */; };
+		65AB6DB71C7D85D7002FFEFE /* YSRatingDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65AB6DB61C7D85D7002FFEFE /* YSRatingDetailView.xib */; };
 		65ABA3701BCF4EAC00154E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA36F1BCF4EAC00154E87 /* main.m */; };
 		65ABA3731BCF4EAC00154E87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 65ABA3721BCF4EAC00154E87 /* AppDelegate.m */; };
 		65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65ABA37A1BCF4EAC00154E87 /* Assets.xcassets */; };
@@ -361,6 +348,9 @@
 		65C16C471C084B8900168722 /* YSDataTransformModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C461C084B8900168722 /* YSDataTransformModel.m */; };
 		65C16C4A1C084B9F00168722 /* YSHeartRateDataTransformModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C491C084B9F00168722 /* YSHeartRateDataTransformModel.m */; };
 		65C16C4D1C084BC700168722 /* YSLocationDataTransformModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C16C4C1C084BC700168722 /* YSLocationDataTransformModel.m */; };
+		65C37AC41C5B404A00AB80AD /* YSShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C37AC21C5B404A00AB80AD /* YSShareViewController.m */; };
+		65C37AC51C5B404A00AB80AD /* YSShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65C37AC31C5B404A00AB80AD /* YSShareViewController.xib */; };
+		65C37AC81C5B4B9000AB80AD /* YSThirdPartShareSelectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C37AC71C5B4B9000AB80AD /* YSThirdPartShareSelectView.m */; };
 		65C5C3151BF07CCE00FA1432 /* YSBluetoothConnect.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C5C3141BF07CCE00FA1432 /* YSBluetoothConnect.m */; };
 		65CCD6AC1C1476A80084CAC1 /* YSThirdPartLoginResponseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CCD6AB1C1476A80084CAC1 /* YSThirdPartLoginResponseModel.m */; };
 		65CD489C1C1A7978002D873A /* YSResultHeartRateDataLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD48971C1A7978002D873A /* YSResultHeartRateDataLabels.m */; };
@@ -368,8 +358,12 @@
 		65CD489E1C1A7978002D873A /* YSResultRunDataLabels.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD489A1C1A7978002D873A /* YSResultRunDataLabels.m */; };
 		65CD489F1C1A7978002D873A /* YSResultRunDataLabels.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65CD489B1C1A7978002D873A /* YSResultRunDataLabels.xib */; };
 		65CD48A31C1A7F10002D873A /* YSCalorieCalculateFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CD48A21C1A7F10002D873A /* YSCalorieCalculateFunc.m */; };
+		65D13CF61C489E4200EA4AAE /* YSCoordinateProcesser.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D13CF51C489E4200EA4AAE /* YSCoordinateProcesser.m */; };
+		65D13CF91C48CE6E00EA4AAE /* YSMapCalculateFunc.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D13CF81C48CE6E00EA4AAE /* YSMapCalculateFunc.m */; };
 		65D568BD1C17DFF50068B165 /* YSGraphCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D568BC1C17DFF50068B165 /* YSGraphCanvas.m */; };
 		65D568C41C18345A0068B165 /* YSIconActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D568C31C18345A0068B165 /* YSIconActionSheet.m */; };
+		65D6AFD61C7C3F0D00C7B97B /* YSResultDataLabelsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D6AFD51C7C3F0D00C7B97B /* YSResultDataLabelsView.m */; };
+		65D6AFD81C7C3F1C00C7B97B /* YSResultDataLabelsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D6AFD71C7C3F1C00C7B97B /* YSResultDataLabelsView.xib */; };
 		65D891311C3A503C00650B56 /* login_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 65D891301C3A503C00650B56 /* login_background@2x.png */; };
 		65D891341C3A654200650B56 /* YSTextFieldComponentCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */; };
 		65DB446E1BD9E081004932E2 /* YSDatabaseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 65DB446D1BD9E081004932E2 /* YSDatabaseHandle.m */; };
@@ -441,6 +435,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6505F9881C50B292002ECF26 /* YSSportRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSSportRecordViewController.h; sourceTree = "<group>"; };
+		6505F9891C50B292002ECF26 /* YSSportRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSSportRecordViewController.m; sourceTree = "<group>"; };
+		6505F98A1C50B292002ECF26 /* YSSportRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSSportRecordViewController.xib; sourceTree = "<group>"; };
+		6505F9951C50C795002ECF26 /* HTHorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionList.h; sourceTree = "<group>"; };
+		6505F9961C50C795002ECF26 /* HTHorizontalSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionList.m; sourceTree = "<group>"; };
+		6505F9971C50C795002ECF26 /* HTHorizontalSelectionListScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListScrollView.h; sourceTree = "<group>"; };
+		6505F9981C50C795002ECF26 /* HTHorizontalSelectionListScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListScrollView.m; sourceTree = "<group>"; };
+		6505F99B1C52112D002ECF26 /* Audio.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Audio.bundle; sourceTree = "<group>"; };
 		6517782D1BF6083800CD6940 /* run_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "run_highlight@2x.png"; sourceTree = "<group>"; };
 		6517782F1BF609DA00CD6940 /* password_eye_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password_eye_close@2x.png"; sourceTree = "<group>"; };
 		651778301BF609DA00CD6940 /* password_eye_open@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "password_eye_open@2x.png"; sourceTree = "<group>"; };
@@ -448,9 +450,27 @@
 		651778351BF60C0B00CD6940 /* user_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "user_highlight@2x.png"; sourceTree = "<group>"; };
 		651778371BF6152A00CD6940 /* calendar_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_highlight@2x.png"; sourceTree = "<group>"; };
 		651778391BF6181F00CD6940 /* calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar@2x.png"; sourceTree = "<group>"; };
+		651E343A1C7AC01E0026DACF /* YSRunningModeDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunningModeDataView.h; sourceTree = "<group>"; };
+		651E343B1C7AC01E0026DACF /* YSRunningModeDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunningModeDataView.m; sourceTree = "<group>"; };
+		651E343D1C7AC0370026DACF /* YSRunningModeDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRunningModeDataView.xib; sourceTree = "<group>"; };
+		6526C2611C57214E00FCEE24 /* YSTimeLocationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTimeLocationModel.h; sourceTree = "<group>"; };
+		6526C2621C57214E00FCEE24 /* YSTimeLocationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeLocationModel.m; sourceTree = "<group>"; };
+		6526C2641C57217E00FCEE24 /* YSTimeLocationArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTimeLocationArray.h; sourceTree = "<group>"; };
+		6526C2651C57217E00FCEE24 /* YSTimeLocationArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeLocationArray.m; sourceTree = "<group>"; };
+		6526C2671C5743CC00FCEE24 /* YSPaceCalculateFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPaceCalculateFunc.h; sourceTree = "<group>"; };
+		6526C2681C5743CC00FCEE24 /* YSPaceCalculateFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPaceCalculateFunc.m; sourceTree = "<group>"; };
+		6526C26A1C57485300FCEE24 /* YSPaceSectionDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPaceSectionDataModel.h; sourceTree = "<group>"; };
+		6526C26B1C57485300FCEE24 /* YSPaceSectionDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPaceSectionDataModel.m; sourceTree = "<group>"; };
 		652A93F61BFB037A0015E461 /* YSGraphData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGraphData.h; sourceTree = "<group>"; };
 		652A93F71BFB037A0015E461 /* YSGraphData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGraphData.m; sourceTree = "<group>"; };
 		653022BD1C44F84D00101C4C /* navigation_back_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigation_back_arrow@2x.png"; sourceTree = "<group>"; };
+		653F94721C4783420005D217 /* KalmanFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalmanFilter.h; sourceTree = "<group>"; };
+		653F94731C4783420005D217 /* KalmanFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalmanFilter.m; sourceTree = "<group>"; };
+		653F94741C4783420005D217 /* LocationData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationData.h; sourceTree = "<group>"; };
+		653F94751C4783420005D217 /* LocationData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationData.m; sourceTree = "<group>"; };
+		653F94781C4787BC0005D217 /* KalmanTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KalmanTestViewController.h; sourceTree = "<group>"; };
+		653F94791C4787BC0005D217 /* KalmanTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KalmanTestViewController.m; sourceTree = "<group>"; };
+		653F947A1C4787BC0005D217 /* KalmanTestViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KalmanTestViewController.xib; sourceTree = "<group>"; };
 		6542880C1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRegisterInfoRequestModel.h; sourceTree = "<group>"; };
 		6542880D1BDCC6FA00ADBE32 /* YSRegisterInfoRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRegisterInfoRequestModel.m; sourceTree = "<group>"; };
 		6542880F1BDCC80100ADBE32 /* YSModifyPasswordRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSModifyPasswordRequestModel.h; sourceTree = "<group>"; };
@@ -461,6 +481,16 @@
 		654288161BDCC9B200ADBE32 /* YSUploadRunDataRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUploadRunDataRequestModel.m; sourceTree = "<group>"; };
 		654288181BDCCA2A00ADBE32 /* YSUserInfoResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoResponseModel.h; sourceTree = "<group>"; };
 		654288191BDCCA2A00ADBE32 /* YSUserInfoResponseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoResponseModel.m; sourceTree = "<group>"; };
+		654342611C5856D400368A82 /* YSBarProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSBarProgressView.h; sourceTree = "<group>"; };
+		654342621C5856D400368A82 /* YSBarProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSBarProgressView.m; sourceTree = "<group>"; };
+		654342681C58678500368A82 /* YSPaceDataItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPaceDataItem.h; sourceTree = "<group>"; };
+		654342691C58678500368A82 /* YSPaceDataItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPaceDataItem.m; sourceTree = "<group>"; };
+		6543426B1C5867EA00368A82 /* YSPaceDataItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPaceDataItem.xib; sourceTree = "<group>"; };
+		6543426D1C586A4600368A82 /* YSPaceDataTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPaceDataTableView.h; sourceTree = "<group>"; };
+		6543426E1C586A4600368A82 /* YSPaceDataTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPaceDataTableView.m; sourceTree = "<group>"; };
+		654342701C58BB3100368A82 /* YSNoHeartRateDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSNoHeartRateDataView.h; sourceTree = "<group>"; };
+		654342711C58BB3100368A82 /* YSNoHeartRateDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSNoHeartRateDataView.m; sourceTree = "<group>"; };
+		654342731C58BB4300368A82 /* YSNoHeartRateDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSNoHeartRateDataView.xib; sourceTree = "<group>"; };
 		654F21191BDA3B01002F0A4B /* YSUserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSUserInfoModel.h; sourceTree = "<group>"; };
 		654F211A1BDA3B01002F0A4B /* YSUserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSUserInfoModel.m; sourceTree = "<group>"; };
 		654F211C1BDA3D10002F0A4B /* YSRunInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunInfoModel.h; sourceTree = "<group>"; };
@@ -474,8 +504,6 @@
 		6559FB491C19549C00B6ACE3 /* YSHeartRateScopeTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHeartRateScopeTipView.h; sourceTree = "<group>"; };
 		6559FB4A1C19549C00B6ACE3 /* YSHeartRateScopeTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHeartRateScopeTipView.m; sourceTree = "<group>"; };
 		6559FB4C1C1954B500B6ACE3 /* YSHeartRateScopeTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHeartRateScopeTipView.xib; sourceTree = "<group>"; };
-		6559FB4E1C19753000B6ACE3 /* running_end_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "running_end_icon@2x.png"; sourceTree = "<group>"; };
-		6559FB4F1C19753000B6ACE3 /* running_start_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "running_start_icon@2x.png"; sourceTree = "<group>"; };
 		655C57071BCF7B9A00E9073E /* YSAppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSAppMacro.h; sourceTree = "<group>"; };
 		655C57081BCF7CEF00E9073E /* YSCalendarRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalendarRecordView.h; sourceTree = "<group>"; };
 		655C57091BCF7CEF00E9073E /* YSCalendarRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalendarRecordView.m; sourceTree = "<group>"; };
@@ -491,6 +519,30 @@
 		655C571B1BCF845400E9073E /* YSCalendarRecordView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCalendarRecordView.xib; sourceTree = "<group>"; };
 		655C571D1BCF865A00E9073E /* NSDate+YSDateLogic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+YSDateLogic.h"; sourceTree = "<group>"; };
 		655C571E1BCF865A00E9073E /* NSDate+YSDateLogic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+YSDateLogic.m"; sourceTree = "<group>"; };
+		655CCB7B1C55BEEF00AC9E70 /* YSDetailDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDetailDataView.h; sourceTree = "<group>"; };
+		655CCB7C1C55BEEF00AC9E70 /* YSDetailDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDetailDataView.m; sourceTree = "<group>"; };
+		655CCB7E1C55BEFB00AC9E70 /* YSDetailDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSDetailDataView.xib; sourceTree = "<group>"; };
+		655CCB801C55BF5200AC9E70 /* YSHeartRateDataView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHeartRateDataView.h; sourceTree = "<group>"; };
+		655CCB811C55BF5200AC9E70 /* YSHeartRateDataView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHeartRateDataView.m; sourceTree = "<group>"; };
+		655CCB831C55BF5E00AC9E70 /* YSHeartRateDataView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSHeartRateDataView.xib; sourceTree = "<group>"; };
+		655CCB851C55BFBD00AC9E70 /* YSLocusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocusView.h; sourceTree = "<group>"; };
+		655CCB861C55BFBD00AC9E70 /* YSLocusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocusView.m; sourceTree = "<group>"; };
+		655CCB881C55BFD600AC9E70 /* YSLocusView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLocusView.xib; sourceTree = "<group>"; };
+		655CCB8A1C55C01C00AC9E70 /* YSPaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPaceView.h; sourceTree = "<group>"; };
+		655CCB8B1C55C01C00AC9E70 /* YSPaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPaceView.m; sourceTree = "<group>"; };
+		655CCB8D1C55C02900AC9E70 /* YSPaceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPaceView.xib; sourceTree = "<group>"; };
+		655CCB8F1C55F4B600AC9E70 /* YSLocusTimeLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocusTimeLabelView.h; sourceTree = "<group>"; };
+		655CCB901C55F4B600AC9E70 /* YSLocusTimeLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocusTimeLabelView.m; sourceTree = "<group>"; };
+		655CCB921C55F4C200AC9E70 /* YSLocusTimeLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLocusTimeLabelView.xib; sourceTree = "<group>"; };
+		655CCB941C55F64900AC9E70 /* YSLocusDataLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocusDataLabelView.h; sourceTree = "<group>"; };
+		655CCB951C55F64900AC9E70 /* YSLocusDataLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocusDataLabelView.m; sourceTree = "<group>"; };
+		655CCB971C55F65500AC9E70 /* YSLocusDataLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSLocusDataLabelView.xib; sourceTree = "<group>"; };
+		655CCBDE1C56185D00AC9E70 /* YSDetailLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSDetailLabelView.h; sourceTree = "<group>"; };
+		655CCBDF1C56185D00AC9E70 /* YSDetailLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSDetailLabelView.m; sourceTree = "<group>"; };
+		655CCBE11C5619E800AC9E70 /* YSDetailLabelView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSDetailLabelView.xib; sourceTree = "<group>"; };
+		655CCBE41C561D6400AC9E70 /* YSSuperscriptLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSSuperscriptLabel.h; sourceTree = "<group>"; };
+		655CCBE51C561D6400AC9E70 /* YSSuperscriptLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSSuperscriptLabel.m; sourceTree = "<group>"; };
+		655CCBE71C561D7000AC9E70 /* YSSuperscriptLabel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSSuperscriptLabel.xib; sourceTree = "<group>"; };
 		656087751C05913A00F2BCCC /* YSMarkLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMarkLabelsView.h; sourceTree = "<group>"; };
 		656087761C05913A00F2BCCC /* YSMarkLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMarkLabelsView.m; sourceTree = "<group>"; };
 		656087781C05915200F2BCCC /* YSMarkLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSMarkLabelsView.xib; sourceTree = "<group>"; };
@@ -655,60 +707,6 @@
 		657E61041C0E811600DDCE5D /* YSRunDataRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRunDataRecordViewController.xib; sourceTree = "<group>"; };
 		657E61081C0E9F2700DDCE5D /* YSVoicePrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSVoicePrompt.h; sourceTree = "<group>"; };
 		657E61091C0E9F2700DDCE5D /* YSVoicePrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSVoicePrompt.m; sourceTree = "<group>"; };
-		657E617A1C0ECDF800DDCE5D /* girl_anaerobic_slowdown_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_anaerobic_slowdown_prompt.mp3; sourceTree = "<group>"; };
-		657E617B1C0ECDF800DDCE5D /* girl_enter_anaerobic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_enter_anaerobic.mp3; sourceTree = "<group>"; };
-		657E617C1C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_enter_burning_fat.mp3; sourceTree = "<group>"; };
-		657E617D1C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_strength_too_low_speed_up_prompt.mp3; sourceTree = "<group>"; };
-		657E61B01C0ECE1700DDCE5D /* man_1km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_1km.mp3; sourceTree = "<group>"; };
-		657E61B11C0ECE1700DDCE5D /* man_2km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_2km.mp3; sourceTree = "<group>"; };
-		657E61B21C0ECE1700DDCE5D /* man_3km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_3km.mp3; sourceTree = "<group>"; };
-		657E61B31C0ECE1700DDCE5D /* man_4km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_4km.mp3; sourceTree = "<group>"; };
-		657E61B41C0ECE1700DDCE5D /* man_5km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_5km.mp3; sourceTree = "<group>"; };
-		657E61B51C0ECE1700DDCE5D /* man_6km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_6km.mp3; sourceTree = "<group>"; };
-		657E61B61C0ECE1700DDCE5D /* man_7km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_7km.mp3; sourceTree = "<group>"; };
-		657E61B71C0ECE1700DDCE5D /* man_8km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_8km.mp3; sourceTree = "<group>"; };
-		657E61B81C0ECE1700DDCE5D /* man_9km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_9km.mp3; sourceTree = "<group>"; };
-		657E61B91C0ECE1700DDCE5D /* man_10km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_10km.mp3; sourceTree = "<group>"; };
-		657E61BA1C0ECE1700DDCE5D /* man_11km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_11km.mp3; sourceTree = "<group>"; };
-		657E61BB1C0ECE1700DDCE5D /* man_12km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_12km.mp3; sourceTree = "<group>"; };
-		657E61BC1C0ECE1700DDCE5D /* man_13km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_13km.mp3; sourceTree = "<group>"; };
-		657E61BD1C0ECE1700DDCE5D /* man_14km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_14km.mp3; sourceTree = "<group>"; };
-		657E61BE1C0ECE1700DDCE5D /* man_15km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_15km.mp3; sourceTree = "<group>"; };
-		657E61BF1C0ECE1700DDCE5D /* man_16km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_16km.mp3; sourceTree = "<group>"; };
-		657E61C01C0ECE1700DDCE5D /* man_17km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_17km.mp3; sourceTree = "<group>"; };
-		657E61C11C0ECE1700DDCE5D /* man_18km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_18km.mp3; sourceTree = "<group>"; };
-		657E61C21C0ECE1700DDCE5D /* man_19km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_19km.mp3; sourceTree = "<group>"; };
-		657E61C31C0ECE1700DDCE5D /* man_20km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_20km.mp3; sourceTree = "<group>"; };
-		657E61C41C0ECE1700DDCE5D /* man_anaerobic_slowdown_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_anaerobic_slowdown_prompt.mp3; sourceTree = "<group>"; };
-		657E61C51C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_enter_anaerobic.mp3; sourceTree = "<group>"; };
-		657E61C61C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_enter_burning_fat.mp3; sourceTree = "<group>"; };
-		657E61C71C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_keep_burning_fat.mp3; sourceTree = "<group>"; };
-		657E61C81C0ECE1700DDCE5D /* man_speed_up_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_speed_up_prompt.mp3; sourceTree = "<group>"; };
-		657E61C91C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_strength_too_high_slowdown_prompt.mp3; sourceTree = "<group>"; };
-		657E61CA1C0ECE1700DDCE5D /* man_strength_too_low_speed_up_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = man_strength_too_low_speed_up_prompt.mp3; sourceTree = "<group>"; };
-		657E61E61C0EDC3700DDCE5D /* girl_1km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_1km.mp3; sourceTree = "<group>"; };
-		657E61E71C0EDC3700DDCE5D /* girl_2km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_2km.mp3; sourceTree = "<group>"; };
-		657E61E81C0EDC3700DDCE5D /* girl_3km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_3km.mp3; sourceTree = "<group>"; };
-		657E61E91C0EDC3700DDCE5D /* girl_4km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_4km.mp3; sourceTree = "<group>"; };
-		657E61EA1C0EDC3700DDCE5D /* girl_5km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_5km.mp3; sourceTree = "<group>"; };
-		657E61EB1C0EDC3700DDCE5D /* girl_6km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_6km.mp3; sourceTree = "<group>"; };
-		657E61EC1C0EDC3700DDCE5D /* girl_7km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_7km.mp3; sourceTree = "<group>"; };
-		657E61ED1C0EDC3700DDCE5D /* girl_8km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_8km.mp3; sourceTree = "<group>"; };
-		657E61EE1C0EDC3700DDCE5D /* girl_9km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_9km.mp3; sourceTree = "<group>"; };
-		657E61EF1C0EDC3700DDCE5D /* girl_10km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_10km.mp3; sourceTree = "<group>"; };
-		657E61F01C0EDC3700DDCE5D /* girl_11km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_11km.mp3; sourceTree = "<group>"; };
-		657E61F11C0EDC3700DDCE5D /* girl_12km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_12km.mp3; sourceTree = "<group>"; };
-		657E61F21C0EDC3700DDCE5D /* girl_13km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_13km.mp3; sourceTree = "<group>"; };
-		657E61F31C0EDC3700DDCE5D /* girl_14km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_14km.mp3; sourceTree = "<group>"; };
-		657E61F41C0EDC3700DDCE5D /* girl_15km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_15km.mp3; sourceTree = "<group>"; };
-		657E61F51C0EDC3700DDCE5D /* girl_16km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_16km.mp3; sourceTree = "<group>"; };
-		657E61F61C0EDC3700DDCE5D /* girl_17km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_17km.mp3; sourceTree = "<group>"; };
-		657E61F71C0EDC3700DDCE5D /* girl_18km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_18km.mp3; sourceTree = "<group>"; };
-		657E61F81C0EDC3700DDCE5D /* girl_19km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_19km.mp3; sourceTree = "<group>"; };
-		657E61F91C0EDC3700DDCE5D /* girl_20km.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_20km.mp3; sourceTree = "<group>"; };
-		657E61FA1C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_keep_burning_fat.mp3; sourceTree = "<group>"; };
-		657E61FB1C0EDC3700DDCE5D /* girl_speed_up_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_speed_up_prompt.mp3; sourceTree = "<group>"; };
-		657E61FC1C0EDC3700DDCE5D /* girl_strength_too_high_slowdown_prompt.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = girl_strength_too_high_slowdown_prompt.mp3; sourceTree = "<group>"; };
 		65807E031C02A4DD007FB336 /* YSBLEConnectFailureHintView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSBLEConnectFailureHintView.h; sourceTree = "<group>"; };
 		65807E041C02A4DD007FB336 /* YSBLEConnectFailureHintView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSBLEConnectFailureHintView.m; sourceTree = "<group>"; };
 		65807E051C02A4DD007FB336 /* YSBLEConnectFailureHintView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSBLEConnectFailureHintView.xib; sourceTree = "<group>"; };
@@ -728,8 +726,8 @@
 		6580D4C11BE3569800C5FB95 /* YSPhotoPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPhotoPicker.m; sourceTree = "<group>"; };
 		658257D61C0D90DC00C9FBA4 /* YSHeartRateDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSHeartRateDataManager.h; sourceTree = "<group>"; };
 		658257D71C0D90DC00C9FBA4 /* YSHeartRateDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHeartRateDataManager.m; sourceTree = "<group>"; };
-		658257DC1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMapScreenshotPaint.h; sourceTree = "<group>"; };
-		658257DD1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMapScreenshotPaint.m; sourceTree = "<group>"; };
+		658257DC1C0D9BF100C9FBA4 /* YSMapPaintFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMapPaintFunc.h; sourceTree = "<group>"; };
+		658257DD1C0D9BF100C9FBA4 /* YSMapPaintFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMapPaintFunc.m; sourceTree = "<group>"; };
 		658258031C0DC10B00C9FBA4 /* YSCommentElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCommentElement.h; sourceTree = "<group>"; };
 		658258041C0DC10B00C9FBA4 /* YSCommentElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCommentElement.m; sourceTree = "<group>"; };
 		658258051C0DC10B00C9FBA4 /* YSCommentElement.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSCommentElement.xib; sourceTree = "<group>"; };
@@ -862,6 +860,15 @@
 		65AAA3471BFC777D00C4F84C /* YSTimeManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTimeManager.m; sourceTree = "<group>"; };
 		65AAA3511BFC7A8A00C4F84C /* YSRunDataHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRunDataHandler.h; sourceTree = "<group>"; };
 		65AAA3521BFC7A8A00C4F84C /* YSRunDataHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRunDataHandler.m; sourceTree = "<group>"; };
+		65AB6DA81C7D6085002FFEFE /* YSResultTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSResultTipView.h; sourceTree = "<group>"; };
+		65AB6DA91C7D6085002FFEFE /* YSResultTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSResultTipView.m; sourceTree = "<group>"; };
+		65AB6DAA1C7D6085002FFEFE /* YSResultTipView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSResultTipView.xib; sourceTree = "<group>"; };
+		65AB6DAD1C7D6186002FFEFE /* YSRatingDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSRatingDetailView.h; sourceTree = "<group>"; };
+		65AB6DAE1C7D6186002FFEFE /* YSRatingDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSRatingDetailView.m; sourceTree = "<group>"; };
+		65AB6DB11C7D639A002FFEFE /* YSPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSPopView.h; sourceTree = "<group>"; };
+		65AB6DB21C7D639A002FFEFE /* YSPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSPopView.m; sourceTree = "<group>"; };
+		65AB6DB41C7D63AD002FFEFE /* YSPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSPopView.xib; sourceTree = "<group>"; };
+		65AB6DB61C7D85D7002FFEFE /* YSRatingDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSRatingDetailView.xib; sourceTree = "<group>"; };
 		65ABA36B1BCF4EAC00154E87 /* 易瘦跑步.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "易瘦跑步.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65ABA36F1BCF4EAC00154E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		65ABA3711BCF4EAC00154E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = YSRun/AppDelegate.h; sourceTree = SOURCE_ROOT; };
@@ -958,6 +965,11 @@
 		65C16C491C084B9F00168722 /* YSHeartRateDataTransformModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSHeartRateDataTransformModel.m; sourceTree = "<group>"; };
 		65C16C4B1C084BC700168722 /* YSLocationDataTransformModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSLocationDataTransformModel.h; sourceTree = "<group>"; };
 		65C16C4C1C084BC700168722 /* YSLocationDataTransformModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSLocationDataTransformModel.m; sourceTree = "<group>"; };
+		65C37AC11C5B404A00AB80AD /* YSShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSShareViewController.h; sourceTree = "<group>"; };
+		65C37AC21C5B404A00AB80AD /* YSShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSShareViewController.m; sourceTree = "<group>"; };
+		65C37AC31C5B404A00AB80AD /* YSShareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSShareViewController.xib; sourceTree = "<group>"; };
+		65C37AC61C5B4B9000AB80AD /* YSThirdPartShareSelectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSThirdPartShareSelectView.h; sourceTree = "<group>"; };
+		65C37AC71C5B4B9000AB80AD /* YSThirdPartShareSelectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSThirdPartShareSelectView.m; sourceTree = "<group>"; };
 		65C5C3131BF07CCE00FA1432 /* YSBluetoothConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSBluetoothConnect.h; sourceTree = "<group>"; };
 		65C5C3141BF07CCE00FA1432 /* YSBluetoothConnect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSBluetoothConnect.m; sourceTree = "<group>"; };
 		65CCD6AA1C1476A80084CAC1 /* YSThirdPartLoginResponseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSThirdPartLoginResponseModel.h; sourceTree = "<group>"; };
@@ -970,11 +982,18 @@
 		65CD489B1C1A7978002D873A /* YSResultRunDataLabels.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSResultRunDataLabels.xib; sourceTree = "<group>"; };
 		65CD48A11C1A7F10002D873A /* YSCalorieCalculateFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCalorieCalculateFunc.h; sourceTree = "<group>"; };
 		65CD48A21C1A7F10002D873A /* YSCalorieCalculateFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCalorieCalculateFunc.m; sourceTree = "<group>"; };
+		65D13CF41C489E4200EA4AAE /* YSCoordinateProcesser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSCoordinateProcesser.h; sourceTree = "<group>"; };
+		65D13CF51C489E4200EA4AAE /* YSCoordinateProcesser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSCoordinateProcesser.m; sourceTree = "<group>"; };
+		65D13CF71C48CE6E00EA4AAE /* YSMapCalculateFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSMapCalculateFunc.h; sourceTree = "<group>"; };
+		65D13CF81C48CE6E00EA4AAE /* YSMapCalculateFunc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSMapCalculateFunc.m; sourceTree = "<group>"; };
 		65D568BA1C17CF390068B165 /* YSStatisticsDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YSStatisticsDefine.h; sourceTree = "<group>"; };
 		65D568BB1C17DFF50068B165 /* YSGraphCanvas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSGraphCanvas.h; sourceTree = "<group>"; };
 		65D568BC1C17DFF50068B165 /* YSGraphCanvas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSGraphCanvas.m; sourceTree = "<group>"; };
 		65D568C21C18345A0068B165 /* YSIconActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSIconActionSheet.h; sourceTree = "<group>"; };
 		65D568C31C18345A0068B165 /* YSIconActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSIconActionSheet.m; sourceTree = "<group>"; };
+		65D6AFD41C7C3F0D00C7B97B /* YSResultDataLabelsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSResultDataLabelsView.h; sourceTree = "<group>"; };
+		65D6AFD51C7C3F0D00C7B97B /* YSResultDataLabelsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSResultDataLabelsView.m; sourceTree = "<group>"; };
+		65D6AFD71C7C3F1C00C7B97B /* YSResultDataLabelsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YSResultDataLabelsView.xib; sourceTree = "<group>"; };
 		65D891301C3A503C00650B56 /* login_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_background@2x.png"; sourceTree = "<group>"; };
 		65D891321C3A654200650B56 /* YSTextFieldComponentCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YSTextFieldComponentCreator.h; sourceTree = "<group>"; };
 		65D891331C3A654200650B56 /* YSTextFieldComponentCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YSTextFieldComponentCreator.m; sourceTree = "<group>"; };
@@ -1109,6 +1128,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6505F9871C50858D002ECF26 /* SportRecord */ = {
+			isa = PBXGroup;
+			children = (
+				65C37AC01C5B3FD300AB80AD /* Share */,
+				655CCB721C55BB8F00AC9E70 /* Detail */,
+				655CCB731C55BB8F00AC9E70 /* HeartRate */,
+				655CCB741C55BB8F00AC9E70 /* Locus */,
+				655CCB751C55BB8F00AC9E70 /* Pace */,
+				6505F9881C50B292002ECF26 /* YSSportRecordViewController.h */,
+				6505F9891C50B292002ECF26 /* YSSportRecordViewController.m */,
+				6505F98A1C50B292002ECF26 /* YSSportRecordViewController.xib */,
+			);
+			path = SportRecord;
+			sourceTree = "<group>";
+		};
+		6505F9941C50C795002ECF26 /* HTHorizontalSelectionList */ = {
+			isa = PBXGroup;
+			children = (
+				6505F9951C50C795002ECF26 /* HTHorizontalSelectionList.h */,
+				6505F9961C50C795002ECF26 /* HTHorizontalSelectionList.m */,
+				6505F9971C50C795002ECF26 /* HTHorizontalSelectionListScrollView.h */,
+				6505F9981C50C795002ECF26 /* HTHorizontalSelectionListScrollView.m */,
+			);
+			path = HTHorizontalSelectionList;
+			sourceTree = "<group>";
+		};
+		6526C25A1C571B5A00FCEE24 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				6526C2611C57214E00FCEE24 /* YSTimeLocationModel.h */,
+				6526C2621C57214E00FCEE24 /* YSTimeLocationModel.m */,
+				6526C2641C57217E00FCEE24 /* YSTimeLocationArray.h */,
+				6526C2651C57217E00FCEE24 /* YSTimeLocationArray.m */,
+				6526C26A1C57485300FCEE24 /* YSPaceSectionDataModel.h */,
+				6526C26B1C57485300FCEE24 /* YSPaceSectionDataModel.m */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		653F94711C4783420005D217 /* Kalman */ = {
+			isa = PBXGroup;
+			children = (
+				653F94721C4783420005D217 /* KalmanFilter.h */,
+				653F94731C4783420005D217 /* KalmanFilter.m */,
+				653F94741C4783420005D217 /* LocationData.h */,
+				653F94751C4783420005D217 /* LocationData.m */,
+				653F94781C4787BC0005D217 /* KalmanTestViewController.h */,
+				653F94791C4787BC0005D217 /* KalmanTestViewController.m */,
+				653F947A1C4787BC0005D217 /* KalmanTestViewController.xib */,
+				65D13CF41C489E4200EA4AAE /* YSCoordinateProcesser.h */,
+				65D13CF51C489E4200EA4AAE /* YSCoordinateProcesser.m */,
+			);
+			path = Kalman;
+			sourceTree = "<group>";
+		};
 		6542880A1BDCC69200ADBE32 /* Request */ = {
 			isa = PBXGroup;
 			children = (
@@ -1133,6 +1207,27 @@
 				65CCD6AB1C1476A80084CAC1 /* YSThirdPartLoginResponseModel.m */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		654342601C58562700368A82 /* BarProgress */ = {
+			isa = PBXGroup;
+			children = (
+				654342611C5856D400368A82 /* YSBarProgressView.h */,
+				654342621C5856D400368A82 /* YSBarProgressView.m */,
+			);
+			path = BarProgress;
+			sourceTree = "<group>";
+		};
+		654342671C58678500368A82 /* PaceDataTable */ = {
+			isa = PBXGroup;
+			children = (
+				654342681C58678500368A82 /* YSPaceDataItem.h */,
+				654342691C58678500368A82 /* YSPaceDataItem.m */,
+				6543426B1C5867EA00368A82 /* YSPaceDataItem.xib */,
+				6543426D1C586A4600368A82 /* YSPaceDataTableView.h */,
+				6543426E1C586A4600368A82 /* YSPaceDataTableView.m */,
+			);
+			path = PaceDataTable;
 			sourceTree = "<group>";
 		};
 		654F21171BDA3A3F002F0A4B /* NetworkModels */ = {
@@ -1234,6 +1329,65 @@
 				65A4310C1BE0D3BF004D7024 /* YSModelReformer.m */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		655CCB721C55BB8F00AC9E70 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				655CCB7B1C55BEEF00AC9E70 /* YSDetailDataView.h */,
+				655CCB7C1C55BEEF00AC9E70 /* YSDetailDataView.m */,
+				655CCB7E1C55BEFB00AC9E70 /* YSDetailDataView.xib */,
+				655CCBDE1C56185D00AC9E70 /* YSDetailLabelView.h */,
+				655CCBDF1C56185D00AC9E70 /* YSDetailLabelView.m */,
+				655CCBE11C5619E800AC9E70 /* YSDetailLabelView.xib */,
+				655CCBE41C561D6400AC9E70 /* YSSuperscriptLabel.h */,
+				655CCBE51C561D6400AC9E70 /* YSSuperscriptLabel.m */,
+				655CCBE71C561D7000AC9E70 /* YSSuperscriptLabel.xib */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		655CCB731C55BB8F00AC9E70 /* HeartRate */ = {
+			isa = PBXGroup;
+			children = (
+				655CCB801C55BF5200AC9E70 /* YSHeartRateDataView.h */,
+				655CCB811C55BF5200AC9E70 /* YSHeartRateDataView.m */,
+				655CCB831C55BF5E00AC9E70 /* YSHeartRateDataView.xib */,
+				654342701C58BB3100368A82 /* YSNoHeartRateDataView.h */,
+				654342711C58BB3100368A82 /* YSNoHeartRateDataView.m */,
+				654342731C58BB4300368A82 /* YSNoHeartRateDataView.xib */,
+			);
+			path = HeartRate;
+			sourceTree = "<group>";
+		};
+		655CCB741C55BB8F00AC9E70 /* Locus */ = {
+			isa = PBXGroup;
+			children = (
+				655CCB851C55BFBD00AC9E70 /* YSLocusView.h */,
+				655CCB861C55BFBD00AC9E70 /* YSLocusView.m */,
+				655CCB881C55BFD600AC9E70 /* YSLocusView.xib */,
+				655CCB8F1C55F4B600AC9E70 /* YSLocusTimeLabelView.h */,
+				655CCB901C55F4B600AC9E70 /* YSLocusTimeLabelView.m */,
+				655CCB921C55F4C200AC9E70 /* YSLocusTimeLabelView.xib */,
+				655CCB941C55F64900AC9E70 /* YSLocusDataLabelView.h */,
+				655CCB951C55F64900AC9E70 /* YSLocusDataLabelView.m */,
+				655CCB971C55F65500AC9E70 /* YSLocusDataLabelView.xib */,
+			);
+			path = Locus;
+			sourceTree = "<group>";
+		};
+		655CCB751C55BB8F00AC9E70 /* Pace */ = {
+			isa = PBXGroup;
+			children = (
+				654342671C58678500368A82 /* PaceDataTable */,
+				6526C25A1C571B5A00FCEE24 /* DataModel */,
+				655CCB8A1C55C01C00AC9E70 /* YSPaceView.h */,
+				655CCB8B1C55C01C00AC9E70 /* YSPaceView.m */,
+				655CCB8D1C55C02900AC9E70 /* YSPaceView.xib */,
+				6526C2671C5743CC00FCEE24 /* YSPaceCalculateFunc.h */,
+				6526C2681C5743CC00FCEE24 /* YSPaceCalculateFunc.m */,
+			);
+			path = Pace;
 			sourceTree = "<group>";
 		};
 		656087741C05912300F2BCCC /* LabelsView */ = {
@@ -1569,83 +1723,6 @@
 			path = Voice;
 			sourceTree = "<group>";
 		};
-		657E610B1C0EC23900DDCE5D /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				657E610C1C0EC25B00DDCE5D /* girl */,
-				657E61281C0EC25B00DDCE5D /* man */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
-		657E610C1C0EC25B00DDCE5D /* girl */ = {
-			isa = PBXGroup;
-			children = (
-				657E61E61C0EDC3700DDCE5D /* girl_1km.mp3 */,
-				657E61E71C0EDC3700DDCE5D /* girl_2km.mp3 */,
-				657E61E81C0EDC3700DDCE5D /* girl_3km.mp3 */,
-				657E61E91C0EDC3700DDCE5D /* girl_4km.mp3 */,
-				657E61EA1C0EDC3700DDCE5D /* girl_5km.mp3 */,
-				657E61EB1C0EDC3700DDCE5D /* girl_6km.mp3 */,
-				657E61EC1C0EDC3700DDCE5D /* girl_7km.mp3 */,
-				657E61ED1C0EDC3700DDCE5D /* girl_8km.mp3 */,
-				657E61EE1C0EDC3700DDCE5D /* girl_9km.mp3 */,
-				657E61EF1C0EDC3700DDCE5D /* girl_10km.mp3 */,
-				657E61F01C0EDC3700DDCE5D /* girl_11km.mp3 */,
-				657E61F11C0EDC3700DDCE5D /* girl_12km.mp3 */,
-				657E61F21C0EDC3700DDCE5D /* girl_13km.mp3 */,
-				657E61F31C0EDC3700DDCE5D /* girl_14km.mp3 */,
-				657E61F41C0EDC3700DDCE5D /* girl_15km.mp3 */,
-				657E61F51C0EDC3700DDCE5D /* girl_16km.mp3 */,
-				657E61F61C0EDC3700DDCE5D /* girl_17km.mp3 */,
-				657E61F71C0EDC3700DDCE5D /* girl_18km.mp3 */,
-				657E61F81C0EDC3700DDCE5D /* girl_19km.mp3 */,
-				657E61F91C0EDC3700DDCE5D /* girl_20km.mp3 */,
-				657E61FA1C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 */,
-				657E61FB1C0EDC3700DDCE5D /* girl_speed_up_prompt.mp3 */,
-				657E61FC1C0EDC3700DDCE5D /* girl_strength_too_high_slowdown_prompt.mp3 */,
-				657E617A1C0ECDF800DDCE5D /* girl_anaerobic_slowdown_prompt.mp3 */,
-				657E617B1C0ECDF800DDCE5D /* girl_enter_anaerobic.mp3 */,
-				657E617C1C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 */,
-				657E617D1C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 */,
-			);
-			path = girl;
-			sourceTree = "<group>";
-		};
-		657E61281C0EC25B00DDCE5D /* man */ = {
-			isa = PBXGroup;
-			children = (
-				657E61B01C0ECE1700DDCE5D /* man_1km.mp3 */,
-				657E61B11C0ECE1700DDCE5D /* man_2km.mp3 */,
-				657E61B21C0ECE1700DDCE5D /* man_3km.mp3 */,
-				657E61B31C0ECE1700DDCE5D /* man_4km.mp3 */,
-				657E61B41C0ECE1700DDCE5D /* man_5km.mp3 */,
-				657E61B51C0ECE1700DDCE5D /* man_6km.mp3 */,
-				657E61B61C0ECE1700DDCE5D /* man_7km.mp3 */,
-				657E61B71C0ECE1700DDCE5D /* man_8km.mp3 */,
-				657E61B81C0ECE1700DDCE5D /* man_9km.mp3 */,
-				657E61B91C0ECE1700DDCE5D /* man_10km.mp3 */,
-				657E61BA1C0ECE1700DDCE5D /* man_11km.mp3 */,
-				657E61BB1C0ECE1700DDCE5D /* man_12km.mp3 */,
-				657E61BC1C0ECE1700DDCE5D /* man_13km.mp3 */,
-				657E61BD1C0ECE1700DDCE5D /* man_14km.mp3 */,
-				657E61BE1C0ECE1700DDCE5D /* man_15km.mp3 */,
-				657E61BF1C0ECE1700DDCE5D /* man_16km.mp3 */,
-				657E61C01C0ECE1700DDCE5D /* man_17km.mp3 */,
-				657E61C11C0ECE1700DDCE5D /* man_18km.mp3 */,
-				657E61C21C0ECE1700DDCE5D /* man_19km.mp3 */,
-				657E61C31C0ECE1700DDCE5D /* man_20km.mp3 */,
-				657E61C41C0ECE1700DDCE5D /* man_anaerobic_slowdown_prompt.mp3 */,
-				657E61C51C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 */,
-				657E61C61C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 */,
-				657E61C71C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 */,
-				657E61C81C0ECE1700DDCE5D /* man_speed_up_prompt.mp3 */,
-				657E61C91C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 */,
-				657E61CA1C0ECE1700DDCE5D /* man_strength_too_low_speed_up_prompt.mp3 */,
-			);
-			path = man;
-			sourceTree = "<group>";
-		};
 		6580D4BF1BE3568300C5FB95 /* PhotoPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1864,6 +1941,9 @@
 		659619981BD1F7D6002110B9 /* General */ = {
 			isa = PBXGroup;
 			children = (
+				65AB6DB01C7D637F002FFEFE /* PopView */,
+				654342601C58562700368A82 /* BarProgress */,
+				6505F9941C50C795002ECF26 /* HTHorizontalSelectionList */,
 				65BAFF041C1E57C60012235F /* LoadingHUD */,
 				65D568C11C1834180068B165 /* IconActionSheet */,
 				659233911C1579FC0046B481 /* SetCell */,
@@ -1916,6 +1996,7 @@
 		65A5559C1BD47CC2003306E7 /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				65AB6DA71C7D6085002FFEFE /* Tip */,
 				65CD48951C1A7978002D873A /* ResultLabel */,
 				65A5559D1BD47CC2003306E7 /* YSResultRecordView.h */,
 				65A5559E1BD47CC2003306E7 /* YSResultRecordView.m */,
@@ -1945,6 +2026,9 @@
 				65A555CA1BD488E0003306E7 /* YSRunningModeStatusView.xib */,
 				656CF7F31BD4EE4400F2A759 /* YSRunningModeView+GetMethod.h */,
 				656CF7F41BD4EE4400F2A759 /* YSRunningModeView+GetMethod.m */,
+				651E343A1C7AC01E0026DACF /* YSRunningModeDataView.h */,
+				651E343B1C7AC01E0026DACF /* YSRunningModeDataView.m */,
+				651E343D1C7AC0370026DACF /* YSRunningModeDataView.xib */,
 			);
 			path = RunningMode;
 			sourceTree = "<group>";
@@ -2001,12 +2085,15 @@
 		65AAA3401BFC777D00C4F84C /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				653F94711C4783420005D217 /* Kalman */,
 				65AAA3411BFC777D00C4F84C /* YSMapAnnotation.h */,
 				65AAA3421BFC777D00C4F84C /* YSMapAnnotation.m */,
 				65AAA3431BFC777D00C4F84C /* YSMapManager.h */,
 				65AAA3441BFC777D00C4F84C /* YSMapManager.m */,
-				658257DC1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.h */,
-				658257DD1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m */,
+				658257DC1C0D9BF100C9FBA4 /* YSMapPaintFunc.h */,
+				658257DD1C0D9BF100C9FBA4 /* YSMapPaintFunc.m */,
+				65D13CF71C48CE6E00EA4AAE /* YSMapCalculateFunc.h */,
+				65D13CF81C48CE6E00EA4AAE /* YSMapCalculateFunc.m */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -2031,6 +2118,29 @@
 				65BAFF091C1E96F70012235F /* YSUserDataHandler.m */,
 			);
 			path = DataHandler;
+			sourceTree = "<group>";
+		};
+		65AB6DA71C7D6085002FFEFE /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				65AB6DA81C7D6085002FFEFE /* YSResultTipView.h */,
+				65AB6DA91C7D6085002FFEFE /* YSResultTipView.m */,
+				65AB6DAA1C7D6085002FFEFE /* YSResultTipView.xib */,
+				65AB6DAD1C7D6186002FFEFE /* YSRatingDetailView.h */,
+				65AB6DAE1C7D6186002FFEFE /* YSRatingDetailView.m */,
+				65AB6DB61C7D85D7002FFEFE /* YSRatingDetailView.xib */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
+		65AB6DB01C7D637F002FFEFE /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				65AB6DB11C7D639A002FFEFE /* YSPopView.h */,
+				65AB6DB21C7D639A002FFEFE /* YSPopView.m */,
+				65AB6DB41C7D63AD002FFEFE /* YSPopView.xib */,
+			);
+			path = PopView;
 			sourceTree = "<group>";
 		};
 		65ABA3621BCF4EAC00154E87 = {
@@ -2121,6 +2231,7 @@
 		65ABA3A21BCF4F3100154E87 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				6505F9871C50858D002ECF26 /* SportRecord */,
 				659BAFA61C3CAA0400C73CF2 /* Launch */,
 				6592337E1C15639A0046B481 /* Settings */,
 				658258011C0DC10B00C9FBA4 /* DataRecord */,
@@ -2176,7 +2287,7 @@
 		65ABA3BF1BCF5C5000154E87 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				657E610B1C0EC23900DDCE5D /* Audio */,
+				6505F99B1C52112D002ECF26 /* Audio.bundle */,
 				65ABA3C31BCF6CA000154E87 /* UI */,
 			);
 			path = Resource;
@@ -2197,8 +2308,6 @@
 				65D891301C3A503C00650B56 /* login_background@2x.png */,
 				657010711C2139FC00B02116 /* clock@2x.png */,
 				65840B721C1FB90000835A41 /* graph_background_image@2x.png */,
-				6559FB4E1C19753000B6ACE3 /* running_end_icon@2x.png */,
-				6559FB4F1C19753000B6ACE3 /* running_start_icon@2x.png */,
 				6559FB411C19206600B6ACE3 /* SDKUI */,
 				65C16C3A1C07EEE800168722 /* heart_rate_back@2x.png */,
 				65C16C381C07EDFA00168722 /* heart_rate_share@2x.png */,
@@ -2397,6 +2506,18 @@
 			path = DataTransformModel;
 			sourceTree = "<group>";
 		};
+		65C37AC01C5B3FD300AB80AD /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				65C37AC11C5B404A00AB80AD /* YSShareViewController.h */,
+				65C37AC21C5B404A00AB80AD /* YSShareViewController.m */,
+				65C37AC31C5B404A00AB80AD /* YSShareViewController.xib */,
+				65C37AC61C5B4B9000AB80AD /* YSThirdPartShareSelectView.h */,
+				65C37AC71C5B4B9000AB80AD /* YSThirdPartShareSelectView.m */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
 		65C5C30F1BF0799800FA1432 /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
@@ -2415,6 +2536,9 @@
 				65CD48991C1A7978002D873A /* YSResultRunDataLabels.h */,
 				65CD489A1C1A7978002D873A /* YSResultRunDataLabels.m */,
 				65CD489B1C1A7978002D873A /* YSResultRunDataLabels.xib */,
+				65D6AFD41C7C3F0D00C7B97B /* YSResultDataLabelsView.h */,
+				65D6AFD51C7C3F0D00C7B97B /* YSResultDataLabelsView.m */,
+				65D6AFD71C7C3F1C00C7B97B /* YSResultDataLabelsView.xib */,
 			);
 			path = ResultLabel;
 			sourceTree = "<group>";
@@ -2725,77 +2849,59 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				657E61D91C0ECE1700DDCE5D /* man_15km.mp3 in Resources */,
 				6570C5E21BE1B9AA004842FE /* register_head.png in Resources */,
 				655C571C1BCF845400E9073E /* YSCalendarRecordView.xib in Resources */,
+				655CCBE81C561D7000AC9E70 /* YSSuperscriptLabel.xib in Resources */,
 				65ABA3EB1BCF6CA000154E87 /* 按钮.png in Resources */,
-				657E61D61C0ECE1700DDCE5D /* man_12km.mp3 in Resources */,
 				659D79431BF6054D00563687 /* user@2x.png in Resources */,
 				65ABA3EC1BCF6CA000154E87 /* 按钮按下.png in Resources */,
-				657E62131C0EDC3700DDCE5D /* girl_strength_too_high_slowdown_prompt.mp3 in Resources */,
-				657E61D71C0ECE1700DDCE5D /* man_13km.mp3 in Resources */,
 				65CD489D1C1A7978002D873A /* YSResultHeartRateDataLabels.xib in Resources */,
 				658907021C112B2800C18543 /* ShareSDKUI.bundle in Resources */,
 				65EF11EE1BFEF40900D3DE85 /* YSBurningMarkView.xib in Resources */,
 				6566F6A81C0FD4A8003362CD /* umeng_fb_audio_play_01@2x.png in Resources */,
-				657E620C1C0EDC3700DDCE5D /* girl_16km.mp3 in Resources */,
-				657E61D01C0ECE1700DDCE5D /* man_6km.mp3 in Resources */,
-				657E62031C0EDC3700DDCE5D /* girl_7km.mp3 in Resources */,
-				657E62081C0EDC3700DDCE5D /* girl_12km.mp3 in Resources */,
 				656F57231C04393B00060361 /* help_icon@2x.png in Resources */,
 				656CF8071BD50C3C00F2A759 /* small_star.png in Resources */,
 				6566F69D1C0FD4A8003362CD /* bubble_min@2x.png in Resources */,
 				658258221C0DC10B00C9FBA4 /* YSHeartRateRecordViewController.xib in Resources */,
-				657E61FF1C0EDC3700DDCE5D /* girl_3km.mp3 in Resources */,
 				65A555BD1BD47EDC003306E7 /* YSTextFieldTableView.xib in Resources */,
-				657E61E51C0ECE1700DDCE5D /* man_strength_too_low_speed_up_prompt.mp3 in Resources */,
 				6517783A1BF6181F00CD6940 /* calendar@2x.png in Resources */,
 				65A555CB1BD488E0003306E7 /* YSRunningModeStatusView.xib in Resources */,
-				657E620F1C0EDC3700DDCE5D /* girl_19km.mp3 in Resources */,
 				6566F6A21C0FD4A8003362CD /* ToolViewInputTextHL@2x.png in Resources */,
 				6566F6A51C0FD4A8003362CD /* umeng_add_photo@2x.png in Resources */,
 				6576989D1BD08D920015B446 /* YSLoginViewController.xib in Resources */,
 				6566F69F1C0FD4A8003362CD /* microphone@2x.png in Resources */,
-				657E61951C0ECDF800DDCE5D /* girl_anaerobic_slowdown_prompt.mp3 in Resources */,
 				65ABA37E1BCF4EAC00154E87 /* LaunchScreen.storyboard in Resources */,
 				65ABA3E21BCF6CA000154E87 /* run.png in Resources */,
-				657E620D1C0EDC3700DDCE5D /* girl_17km.mp3 in Resources */,
+				6505F99C1C52112D002ECF26 /* Audio.bundle in Resources */,
 				65EF11FB1BFEF86500D3DE85 /* loading_dot_3@2x.png in Resources */,
 				6559FB451C19206600B6ACE3 /* qq_icon@2x.png in Resources */,
 				65EF11D61BFEBFF000D3DE85 /* YSBLEHeartRateCountingView.xib in Resources */,
 				6582581E1C0DC10B00C9FBA4 /* YSHeartRateGraphView.xib in Resources */,
+				65C37AC51C5B404A00AB80AD /* YSShareViewController.xib in Resources */,
 				6566F6A01C0FD4A8003362CD /* save@2x.png in Resources */,
-				657E62071C0EDC3700DDCE5D /* girl_11km.mp3 in Resources */,
 				65ABA3F21BCF6CA000154E87 /* 设置按下.png in Resources */,
 				656CF8051BD50C3C00F2A759 /* star_bg.png in Resources */,
-				657E61D21C0ECE1700DDCE5D /* man_8km.mp3 in Resources */,
-				657E620A1C0EDC3700DDCE5D /* girl_14km.mp3 in Resources */,
 				65A3AE301C3A4C9800B6BF85 /* YSModifyPasswordViewController.xib in Resources */,
-				657E61971C0ECDF800DDCE5D /* girl_enter_burning_fat.mp3 in Resources */,
 				659233961C157A270046B481 /* YSUserSetCell.xib in Resources */,
-				657E62051C0EDC3700DDCE5D /* girl_9km.mp3 in Resources */,
+				653F947C1C4787BC0005D217 /* KalmanTestViewController.xib in Resources */,
 				655C57181BCF7F3D00E9073E /* YSCalendarWeekdayView.xib in Resources */,
 				65A555CD1BD489DD003306E7 /* YSSubscriptLabel.xib in Resources */,
 				658906F71C112B2800C18543 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				651778341BF60AB500CD6940 /* login_password@2x.png in Resources */,
-				657E61D51C0ECE1700DDCE5D /* man_11km.mp3 in Resources */,
 				657698CF1BD0D4180015B446 /* YSUserLevelView.xib in Resources */,
 				65ABA3E51BCF6CA000154E87 /* user.png in Resources */,
-				657E61961C0ECDF800DDCE5D /* girl_enter_anaerobic.mp3 in Resources */,
 				656F571C1C04025D00060361 /* YSRunDataRecordCell.xib in Resources */,
 				65ABA3F31BCF6CA000154E87 /* run_mode.png in Resources */,
 				656F573B1C0462D800060361 /* YSHelpDetailComponent.xib in Resources */,
 				6566F6A41C0FD4A8003362CD /* ToolViewInputVoiceHL@2x.png in Resources */,
 				6582581C1C0DC10B00C9FBA4 /* YSTimeShaftView.xib in Resources */,
-				657E61E21C0ECE1700DDCE5D /* man_keep_burning_fat.mp3 in Resources */,
 				656F57101C03FA9B00060361 /* YSContentTable.xib in Resources */,
 				6563AEB41C43B03600E7084A /* medal@2x.png in Resources */,
-				657E61DD1C0ECE1700DDCE5D /* man_19km.mp3 in Resources */,
 				65ABA3E41BCF6CA000154E87 /* tips.png in Resources */,
 				656CF8091BD50C3C00F2A759 /* big_star.png in Resources */,
 				656F57361C04624300060361 /* YSContentHelpView.xib in Resources */,
-				657E62121C0EDC3700DDCE5D /* girl_speed_up_prompt.mp3 in Resources */,
 				65ABA3F71BCF6CA000154E87 /* 首页文字框.png in Resources */,
+				655CCB8E1C55C02900AC9E70 /* YSPaceView.xib in Resources */,
 				65F1BD7F1BE9F144008C3632 /* dropdown_1.png in Resources */,
 				65744AF71BD2488700A15EEE /* YSUserRecordView.xib in Resources */,
 				658258201C0DC10B00C9FBA4 /* YSDataRecordBar.xib in Resources */,
@@ -2803,9 +2909,9 @@
 				656CF8081BD50C3C00F2A759 /* small_no_star.png in Resources */,
 				65C16C3B1C07EEE800168722 /* heart_rate_back@2x.png in Resources */,
 				657698E71BD0F3820015B446 /* YSUserNoLoginView.xib in Resources */,
+				655CCB891C55BFD600AC9E70 /* YSLocusView.xib in Resources */,
 				6582581A1C0DC10B00C9FBA4 /* YSHeartRateRecordCommentView.xib in Resources */,
-				657E61DF1C0ECE1700DDCE5D /* man_anaerobic_slowdown_prompt.mp3 in Resources */,
-				657E61DB1C0ECE1700DDCE5D /* man_17km.mp3 in Resources */,
+				6505F98C1C50B292002ECF26 /* YSSportRecordViewController.xib in Resources */,
 				65A067371BF6E98900E0BC59 /* run@2x.png in Resources */,
 				65F1BD801BE9F144008C3632 /* dropdown_2.png in Resources */,
 				656CF80A1BD50C3C00F2A759 /* big_no_star.png in Resources */,
@@ -2814,65 +2920,52 @@
 				6563AEB21C43AE9300E7084A /* YSMedalView.xib in Resources */,
 				65F1BD811BE9F144008C3632 /* dropdown_3.png in Resources */,
 				656F57211C04030D00060361 /* YSTipCell.xib in Resources */,
-				657E61E41C0ECE1700DDCE5D /* man_strength_too_high_slowdown_prompt.mp3 in Resources */,
 				65ABA3E61BCF6CA000154E87 /* user_highlight.png in Resources */,
 				655C57161BCF7F0800E9073E /* YSCalendarTitleDateView.xib in Resources */,
 				65ABA3F41BCF6CA000154E87 /* 跑步结果页文字黑底.png in Resources */,
 				6566F6AB1C0FD4A8003362CD /* umeng_fb_audio_play_default@2x.png in Resources */,
-				6559FB511C19753000B6ACE3 /* running_start_icon@2x.png in Resources */,
 				657010721C2139FC00B02116 /* clock@2x.png in Resources */,
 				65ABA3AF1BCF525500154E87 /* YSCalendarViewController.xib in Resources */,
 				651778321BF609DA00CD6940 /* password_eye_open@2x.png in Resources */,
 				656F57281C043E7D00060361 /* calendar_left_arrow@2x.png in Resources */,
 				65EF11F91BFEF86500D3DE85 /* loading_dot_1@2x.png in Resources */,
 				65EF11D41BFEBFF000D3DE85 /* YSBLEDeviceConnectView.xib in Resources */,
-				657E61D31C0ECE1700DDCE5D /* man_9km.mp3 in Resources */,
+				655CCB7F1C55BEFB00AC9E70 /* YSDetailDataView.xib in Resources */,
 				6563AEB61C43BD5700E7084A /* wave_circle@2x.png in Resources */,
 				65A067381BF6E98900E0BC59 /* tips@2x.png in Resources */,
 				651778381BF6152A00CD6940 /* calendar_highlight@2x.png in Resources */,
 				6580D4B81BE30DE400C5FB95 /* YSResetPasswordViewController.xib in Resources */,
 				65ABA3EF1BCF6CA000154E87 /* clock.png in Resources */,
-				657E61E01C0ECE1700DDCE5D /* man_enter_anaerobic.mp3 in Resources */,
 				6563AEA81C43459900E7084A /* YSAchievementView.xib in Resources */,
-				657E61DA1C0ECE1700DDCE5D /* man_16km.mp3 in Resources */,
-				657E61FE1C0EDC3700DDCE5D /* girl_2km.mp3 in Resources */,
-				657E61CD1C0ECE1700DDCE5D /* man_3km.mp3 in Resources */,
 				65ABA3EE1BCF6CA000154E87 /* 更多---Assistor.png in Resources */,
 				6563AEA31C43430C00E7084A /* YSWaveProgressView.xib in Resources */,
 				65ABA3F11BCF6CA000154E87 /* set_button.png in Resources */,
-				657E61D41C0ECE1700DDCE5D /* man_10km.mp3 in Resources */,
 				6566F6A61C0FD4A8003362CD /* umeng_fb_audio_dialog_cancel@2x.png in Resources */,
-				657E620B1C0EDC3700DDCE5D /* girl_15km.mp3 in Resources */,
 				655C571A1BCF7F5800E9073E /* YSCalendarTitleBarView.xib in Resources */,
 				65807E141C02E6AD007FB336 /* prompt_checkbox_selected@2x.png in Resources */,
 				656F57291C043E7D00060361 /* calendar_right_arrow@2x.png in Resources */,
-				657E62061C0EDC3700DDCE5D /* girl_10km.mp3 in Resources */,
 				65ABA3BE1BCF56FC00154E87 /* YSMainTabBarViewController.xib in Resources */,
-				657E62011C0EDC3700DDCE5D /* girl_5km.mp3 in Resources */,
 				657698E51BD0F3690015B446 /* YSUserSettingView.xib in Resources */,
 				658906F91C112B2800C18543 /* WeiboSDK.bundle in Resources */,
 				65ABA37B1BCF4EAC00154E87 /* Assets.xcassets in Resources */,
 				6517782E1BF6083800CD6940 /* run_highlight@2x.png in Resources */,
-				6559FB501C19753000B6ACE3 /* running_end_icon@2x.png in Resources */,
-				657E61981C0ECDF800DDCE5D /* girl_strength_too_low_speed_up_prompt.mp3 in Resources */,
-				657E62111C0EDC3700DDCE5D /* girl_keep_burning_fat.mp3 in Resources */,
 				65E62CB61C3BC330002473B0 /* weibo_login@2x.png in Resources */,
-				657E61E11C0ECE1700DDCE5D /* man_enter_burning_fat.mp3 in Resources */,
+				6543426C1C5867EA00368A82 /* YSPaceDataItem.xib in Resources */,
 				6559FB461C19206600B6ACE3 /* wechat_icon@2x.png in Resources */,
 				6563AEB91C43BE8900E7084A /* inner_circle@2x.png in Resources */,
-				657E62021C0EDC3700DDCE5D /* girl_6km.mp3 in Resources */,
-				657E62041C0EDC3700DDCE5D /* girl_8km.mp3 in Resources */,
 				657E61061C0E811600DDCE5D /* YSRunDataRecordViewController.xib in Resources */,
 				653022BE1C44F84D00101C4C /* navigation_back_arrow@2x.png in Resources */,
-				657E61FD1C0EDC3700DDCE5D /* girl_1km.mp3 in Resources */,
 				651778361BF60C0B00CD6940 /* user_highlight@2x.png in Resources */,
 				656F57301C04485100060361 /* YSMarkLabel.xib in Resources */,
-				657E61CE1C0ECE1700DDCE5D /* man_4km.mp3 in Resources */,
 				65744B061BD2794700A15EEE /* AMap.bundle in Resources */,
 				656F57251C04395D00060361 /* right_arrow@2x.png in Resources */,
 				65807E0E1C02B4ED007FB336 /* close@2x.png in Resources */,
 				659619AE1BD22443002110B9 /* YSFindPasswordViewController.xib in Resources */,
 				6566F6A91C0FD4A8003362CD /* umeng_fb_audio_play_02@2x.png in Resources */,
+				655CCB931C55F4C200AC9E70 /* YSLocusTimeLabelView.xib in Resources */,
+				655CCBE21C5619E800AC9E70 /* YSDetailLabelView.xib in Resources */,
+				65AB6DB51C7D63AD002FFEFE /* YSPopView.xib in Resources */,
+				65D6AFD81C7C3F1C00C7B97B /* YSResultDataLabelsView.xib in Resources */,
 				655812481BD6163E0094F07D /* app_icon.png in Resources */,
 				65840B731C1FB90000835A41 /* graph_background_image@2x.png in Resources */,
 				65A555A71BD47CC2003306E7 /* YSRunningResultViewController.xib in Resources */,
@@ -2887,31 +2980,26 @@
 				656CF8061BD50C3C00F2A759 /* small_half_star.png in Resources */,
 				65E5DC571BE1AE2F00462E91 /* YSRegisterUserInfoViewController.xib in Resources */,
 				658258181C0DC10B00C9FBA4 /* YSCommentElement.xib in Resources */,
-				657E61DE1C0ECE1700DDCE5D /* man_20km.mp3 in Resources */,
 				659233891C1565F80046B481 /* YSNavigationBarView.xib in Resources */,
 				659233831C1563C80046B481 /* YSSettingsViewController.xib in Resources */,
 				6566F69B1C0FD4A8003362CD /* UMFeedbackLocalizable.strings in Resources */,
 				65E7F72D1BD5D4E40050DA2A /* running_bg.png in Resources */,
-				657E61D11C0ECE1700DDCE5D /* man_7km.mp3 in Resources */,
 				658906FD1C112B2800C18543 /* ShareSDK.bundle in Resources */,
 				656CF8041BD50C3C00F2A759 /* big_half_star.png in Resources */,
-				657E61E31C0ECE1700DDCE5D /* man_speed_up_prompt.mp3 in Resources */,
 				65EF11FD1BFF127300D3DE85 /* heart_icon@2x.png in Resources */,
 				65EF11D21BFEBFF000D3DE85 /* YSBLEConnectingView.xib in Resources */,
 				6559FB471C19206600B6ACE3 /* weibo_icon@2x.png in Resources */,
 				65807E0C1C02A4E8007FB336 /* YSBLEConnectHintView.xib in Resources */,
-				657E61D81C0ECE1700DDCE5D /* man_14km.mp3 in Resources */,
 				6566F6AA1C0FD4A8003362CD /* umeng_fb_audio_play_03@2x.png in Resources */,
 				6566F69E1C0FD4A8003362CD /* cancel@2x.png in Resources */,
 				65ABA3EA1BCF6CA000154E87 /* background_image1@2x.png in Resources */,
-				657E62001C0EDC3700DDCE5D /* girl_4km.mp3 in Resources */,
-				657E62091C0EDC3700DDCE5D /* girl_13km.mp3 in Resources */,
 				65C16C391C07EDFA00168722 /* heart_rate_share@2x.png in Resources */,
-				657E61DC1C0ECE1700DDCE5D /* man_18km.mp3 in Resources */,
 				659D793B1BF582AF00563687 /* YSDataRecordLabelsView.xib in Resources */,
 				65ABA3B41BCF528300154E87 /* YSRunViewController.xib in Resources */,
+				655CCB981C55F65500AC9E70 /* YSLocusDataLabelView.xib in Resources */,
 				65807E221C031ECE007FB336 /* detail_arrow@2x.png in Resources */,
 				658906FB1C112B2800C18543 /* read_me.txt in Resources */,
+				65AB6DAC1C7D6085002FFEFE /* YSResultTipView.xib in Resources */,
 				65ABA3F61BCF6CA000154E87 /* 透明按钮按下.png in Resources */,
 				65ABA3E31BCF6CA000154E87 /* run_highlight.png in Resources */,
 				65AE8A0D1C16BE030073C454 /* YSVoiceSettingsViewController.xib in Resources */,
@@ -2919,28 +3007,27 @@
 				6566F6A71C0FD4A8003362CD /* umeng_fb_audio_dialog_content@2x.png in Resources */,
 				6559FB4D1C1954B500B6ACE3 /* YSHeartRateScopeTipView.xib in Resources */,
 				65E62CA71C3BA76F002473B0 /* register_head@2x.png in Resources */,
-				657E61CF1C0ECE1700DDCE5D /* man_5km.mp3 in Resources */,
+				654342741C58BB4300368A82 /* YSNoHeartRateDataView.xib in Resources */,
 				656CF7F71BD5058100F2A759 /* YSResultRecordView.xib in Resources */,
 				65ABA3F51BCF6CA000154E87 /* 透明按钮.png in Resources */,
 				65ABA3E11BCF6CA000154E87 /* maf跑步法底色.png in Resources */,
+				65AB6DB71C7D85D7002FFEFE /* YSRatingDetailView.xib in Resources */,
 				659619B41BD224D7002110B9 /* YSRegisterViewController.xib in Resources */,
 				65A067361BF6E98900E0BC59 /* login_user@2x.png in Resources */,
-				657E61CB1C0ECE1700DDCE5D /* man_1km.mp3 in Resources */,
 				65ABA3B91BCF529300154E87 /* YSUserViewController.xib in Resources */,
 				659BAFAB1C3CBB1200C73CF2 /* launch_logo@2x.png in Resources */,
 				65A555CF1BD48AEA003306E7 /* YSTimeLabel.xib in Resources */,
-				657E620E1C0EDC3700DDCE5D /* girl_18km.mp3 in Resources */,
-				657E61CC1C0ECE1700DDCE5D /* man_2km.mp3 in Resources */,
 				65807E071C02A4DD007FB336 /* YSBLEConnectFailureHintView.xib in Resources */,
 				659619A61BD21C0A002110B9 /* login_user.png in Resources */,
 				65CD489F1C1A7978002D873A /* YSResultRunDataLabels.xib in Resources */,
 				65ABA3ED1BCF6CA000154E87 /* star.png in Resources */,
 				65ABA3E01BCF6CA000154E87 /* user_default_photo.png in Resources */,
 				65F1BD821BE9F144008C3632 /* dropdown_4.png in Resources */,
-				657E62101C0EDC3700DDCE5D /* girl_20km.mp3 in Resources */,
 				651778311BF609DA00CD6940 /* password_eye_close@2x.png in Resources */,
 				65BAFF021C1E522C0012235F /* ProgressHUD.bundle in Resources */,
+				655CCB841C55BF5E00AC9E70 /* YSHeartRateDataView.xib in Resources */,
 				65ABA3E81BCF6CA000154E87 /* map_mode.png in Resources */,
+				651E343E1C7AC0370026DACF /* YSRunningModeDataView.xib in Resources */,
 				65E62CB51C3BC330002473B0 /* wechat_login@2x.png in Resources */,
 				65F6A2C11C462CED0054082C /* login_user_has_content@2x.png in Resources */,
 				6566F6A11C0FD4A8003362CD /* ToolViewInputText@2x.png in Resources */,
@@ -2976,10 +3063,12 @@
 				658257D81C0D90DC00C9FBA4 /* YSHeartRateDataManager.m in Sources */,
 				65ABA3B31BCF528300154E87 /* YSRunViewController.m in Sources */,
 				659233881C1565F80046B481 /* YSNavigationBarView.m in Sources */,
+				655CCBE01C56185D00AC9E70 /* YSDetailLabelView.m in Sources */,
 				65AE8A0B1C16BDB60073C454 /* YSVoiceSettingsViewController.m in Sources */,
 				655C571F1BCF865A00E9073E /* NSDate+YSDateLogic.m in Sources */,
 				6576989C1BD08D920015B446 /* YSLoginViewController.m in Sources */,
 				658A807A1C19138100979AE1 /* YSThirdPartLoginFunc.m in Sources */,
+				655CCB961C55F64900AC9E70 /* YSLocusDataLabelView.m in Sources */,
 				657698AF1BD08F900015B446 /* YSCicularProgressView.m in Sources */,
 				65B9F8DF1C32664C00724485 /* YSDatabaseQueue.m in Sources */,
 				65E135501BD8D249001DD824 /* YSTipLabelHUD.m in Sources */,
@@ -2989,11 +3078,16 @@
 				65F1BD7A1BE9EC6D008C3632 /* YSPulldownAnimation.m in Sources */,
 				65744B381BD27FF400A15EEE /* AFURLConnectionOperation.m in Sources */,
 				65F409F51C132C060059CAAD /* YSShareInfo.m in Sources */,
+				6526C2631C57214E00FCEE24 /* YSTimeLocationModel.m in Sources */,
+				655CCB871C55BFBD00AC9E70 /* YSLocusView.m in Sources */,
 				65F6A2BD1C4625FE0054082C /* YSContentCheckIconChange.m in Sources */,
 				65AAA3531BFC7A8A00C4F84C /* YSRunDataHandler.m in Sources */,
 				6563AEA11C4342AA00E7084A /* YSWaveProgressView.m in Sources */,
+				654342721C58BB3100368A82 /* YSNoHeartRateDataView.m in Sources */,
+				65AB6DAF1C7D6186002FFEFE /* YSRatingDetailView.m in Sources */,
 				65B435C31C05D0C10097CC62 /* YSDataRecordModel.m in Sources */,
 				65EF11ED1BFEF40900D3DE85 /* YSBurningMarkView.m in Sources */,
+				65D6AFD61C7C3F0D00C7B97B /* YSResultDataLabelsView.m in Sources */,
 				654288171BDCC9B200ADBE32 /* YSUploadRunDataRequestModel.m in Sources */,
 				65F6A2AB1C45ED410054082C /* YSEditingCheck.m in Sources */,
 				65B2ACE41BF9DFDA00ECB2DB /* YSBarChart.m in Sources */,
@@ -3020,6 +3114,7 @@
 				6566F6B11C0FD4A8003362CD /* UMPostTableViewCell.m in Sources */,
 				65BAFF071C1E57EA0012235F /* YSLoadingHUD.m in Sources */,
 				65BC233C1BE75AB300265FA8 /* YSCalendarDayItem.m in Sources */,
+				653F94761C4783420005D217 /* KalmanFilter.m in Sources */,
 				65A555A81BD47CC2003306E7 /* YSRunningRecordViewController.m in Sources */,
 				6566F6AC1C0FD4A8003362CD /* UMFeedbackViewController.m in Sources */,
 				65F409F21C132BD60059CAAD /* YSShareFunc.m in Sources */,
@@ -3027,10 +3122,12 @@
 				6580D4C21BE3569800C5FB95 /* YSPhotoPicker.m in Sources */,
 				65AAA34A1BFC777D00C4F84C /* YSMapAnnotation.m in Sources */,
 				65A555B61BD47E11003306E7 /* YSRunningMapModeView.m in Sources */,
+				65D13CF91C48CE6E00EA4AAE /* YSMapCalculateFunc.m in Sources */,
 				659233821C1563C80046B481 /* YSSettingsViewController.m in Sources */,
 				65BC233F1BE7616D00265FA8 /* YSDayItemModel.m in Sources */,
 				659233951C157A270046B481 /* YSUserSetCell.m in Sources */,
 				65C5C3151BF07CCE00FA1432 /* YSBluetoothConnect.m in Sources */,
+				653F947B1C4787BC0005D217 /* KalmanTestViewController.m in Sources */,
 				656F57201C04030D00060361 /* YSTipCell.m in Sources */,
 				6582581B1C0DC10B00C9FBA4 /* YSTimeShaftView.m in Sources */,
 				65744B391BD27FF400A15EEE /* AFURLRequestSerialization.m in Sources */,
@@ -3038,6 +3135,7 @@
 				655C57111BCF7E3300E9073E /* YSCalendarWeekdayView.m in Sources */,
 				65CD489C1C1A7978002D873A /* YSResultHeartRateDataLabels.m in Sources */,
 				6580D4B71BE30DE400C5FB95 /* YSResetPasswordViewController.m in Sources */,
+				655CCB7D1C55BEEF00AC9E70 /* YSDetailDataView.m in Sources */,
 				655C570E1BCF7DFF00E9073E /* YSCalendarTitleBarView.m in Sources */,
 				6563AEA61C43452F00E7084A /* YSAchievementView.m in Sources */,
 				657698AB1BD08F000015B446 /* YSUserLevelView.m in Sources */,
@@ -3050,6 +3148,7 @@
 				65807E0B1C02A4E8007FB336 /* YSBLEConnectHintView.m in Sources */,
 				656F57391C0462CB00060361 /* YSHelpDetailComponent.m in Sources */,
 				65F6A2B61C45F4F90054082C /* YSTextFieldDelegateObj.m in Sources */,
+				653F94771C4783420005D217 /* LocationData.m in Sources */,
 				655C57141BCF7EBC00E9073E /* YSCalendarTitleDateView.m in Sources */,
 				6566F6B21C0FD4A8003362CD /* UMRadialView.m in Sources */,
 				65ABA3AE1BCF525500154E87 /* YSCalendarViewController.m in Sources */,
@@ -3062,6 +3161,9 @@
 				65E5DC551BE1ADEB00462E91 /* YSRegisterUserInfoViewController.m in Sources */,
 				6582581F1C0DC10B00C9FBA4 /* YSDataRecordBar.m in Sources */,
 				65E62CAA1C3BBEEC002473B0 /* YSThirdPartLoginView.m in Sources */,
+				65C37AC41C5B404A00AB80AD /* YSShareViewController.m in Sources */,
+				654342631C5856D400368A82 /* YSBarProgressView.m in Sources */,
+				6543426A1C58678500368A82 /* YSPaceDataItem.m in Sources */,
 				654F211E1BDA3D10002F0A4B /* YSRunInfoModel.m in Sources */,
 				6586EB521BDDC645008108A0 /* YSRunDatabaseModel.m in Sources */,
 				65B9F8E21C326FA200724485 /* YSDatabaseTableCreator.m in Sources */,
@@ -3069,15 +3171,19 @@
 				6542881A1BDCCA2A00ADBE32 /* YSUserInfoResponseModel.m in Sources */,
 				65B2ACE11BF9DFD400ECB2DB /* YSPieChart.m in Sources */,
 				65744B371BD27FF400A15EEE /* AFSecurityPolicy.m in Sources */,
+				65AB6DB31C7D639A002FFEFE /* YSPopView.m in Sources */,
 				65CCD6AC1C1476A80084CAC1 /* YSThirdPartLoginResponseModel.m in Sources */,
 				65F1BD771BE9EC1D008C3632 /* YSPulldownView.m in Sources */,
 				65744B3B1BD27FF400A15EEE /* AFURLSessionManager.m in Sources */,
+				6505F98B1C50B292002ECF26 /* YSSportRecordViewController.m in Sources */,
 				65D568BD1C17DFF50068B165 /* YSGraphCanvas.m in Sources */,
 				65A555B31BD47DF9003306E7 /* YSRunningGeneralModeView.m in Sources */,
 				6596198F1BD1E2EA002110B9 /* YSRegisterViewController.m in Sources */,
 				65744B341BD27FF400A15EEE /* AFHTTPRequestOperationManager.m in Sources */,
+				65D13CF61C489E4200EA4AAE /* YSCoordinateProcesser.m in Sources */,
 				65B2ACDD1BF9DFCC00ECB2DB /* YSChartElement.m in Sources */,
 				65A555A51BD47CC2003306E7 /* YSResultRecordView.m in Sources */,
+				655CCB8C1C55C01C00AC9E70 /* YSPaceView.m in Sources */,
 				65CD489E1C1A7978002D873A /* YSResultRunDataLabels.m in Sources */,
 				65D891341C3A654200650B56 /* YSTextFieldComponentCreator.m in Sources */,
 				656F573E1C046AAA00060361 /* YSContentHelp.m in Sources */,
@@ -3086,30 +3192,41 @@
 				656CF7F51BD4EE4400F2A759 /* YSRunningModeView+GetMethod.m in Sources */,
 				652A93F81BFB037A0015E461 /* YSGraphData.m in Sources */,
 				65EF11F11BFEF43500D3DE85 /* YSLoadingDotView.m in Sources */,
+				6526C2661C57217E00FCEE24 /* YSTimeLocationArray.m in Sources */,
 				65ABA3701BCF4EAC00154E87 /* main.m in Sources */,
-				658257DE1C0D9BF100C9FBA4 /* YSMapScreenshotPaint.m in Sources */,
+				658257DE1C0D9BF100C9FBA4 /* YSMapPaintFunc.m in Sources */,
 				656F570E1C03FA5B00060361 /* YSContentTable.m in Sources */,
 				65744B3A1BD27FF400A15EEE /* AFURLResponseSerialization.m in Sources */,
 				654288111BDCC80100ADBE32 /* YSModifyPasswordRequestModel.m in Sources */,
 				656087771C05913A00F2BCCC /* YSMarkLabelsView.m in Sources */,
+				65AB6DAB1C7D6085002FFEFE /* YSResultTipView.m in Sources */,
 				657698B31BD095F80015B446 /* YSUserRecordView.m in Sources */,
 				65A555C51BD480CD003306E7 /* YSSubscriptLabel.m in Sources */,
 				656F572E1C04482F00060361 /* YSMarkLabel.m in Sources */,
 				6566F6AF1C0FD4A8003362CD /* UMChatToolBar.m in Sources */,
+				655CCB821C55BF5200AC9E70 /* YSHeartRateDataView.m in Sources */,
 				65744B351BD27FF400A15EEE /* AFHTTPSessionManager.m in Sources */,
 				65A555B01BD47DE3003306E7 /* YSRunningModeView.m in Sources */,
+				6505F99A1C50C795002ECF26 /* HTHorizontalSelectionListScrollView.m in Sources */,
 				65BAFF0A1C1E96F70012235F /* YSUserDataHandler.m in Sources */,
 				65CD48A31C1A7F10002D873A /* YSCalorieCalculateFunc.m in Sources */,
+				6526C2691C5743CC00FCEE24 /* YSPaceCalculateFunc.m in Sources */,
 				65744B361BD27FF400A15EEE /* AFNetworkReachabilityManager.m in Sources */,
 				65EF11D11BFEBFF000D3DE85 /* YSBLEConnectingView.m in Sources */,
 				658258191C0DC10B00C9FBA4 /* YSHeartRateRecordCommentView.m in Sources */,
+				651E343C1C7AC01E0026DACF /* YSRunningModeDataView.m in Sources */,
+				655CCBE61C561D6400AC9E70 /* YSSuperscriptLabel.m in Sources */,
+				65C37AC81C5B4B9000AB80AD /* YSThirdPartShareSelectView.m in Sources */,
 				656F571B1C04025D00060361 /* YSRunDataRecordCell.m in Sources */,
 				654F21211BDA44F4002F0A4B /* YSCountdownView.m in Sources */,
 				6586EB4F1BDDC516008108A0 /* YSUserDatabaseModel.m in Sources */,
 				65AE8A071C168C030073C454 /* YSConfigManager.m in Sources */,
 				65A555BC1BD47EDC003306E7 /* YSTextFieldTableView.m in Sources */,
+				6505F9991C50C795002ECF26 /* HTHorizontalSelectionList.m in Sources */,
+				6543426F1C586A4600368A82 /* YSPaceDataTableView.m in Sources */,
 				65744B331BD27FF400A15EEE /* AFHTTPRequestOperation.m in Sources */,
 				6566F6B01C0FD4A8003362CD /* UMFullScreenPhotoView.m in Sources */,
+				6526C26C1C57485300FCEE24 /* YSPaceSectionDataModel.m in Sources */,
 				658258171C0DC10B00C9FBA4 /* YSCommentElement.m in Sources */,
 				65BAFF031C1E522C0012235F /* ProgressHUD.m in Sources */,
 				6563AE9E1C43426900E7084A /* YSWaterWaveView.m in Sources */,
@@ -3129,6 +3246,7 @@
 				65A3AE2F1C3A4C9800B6BF85 /* YSModifyPasswordViewController.m in Sources */,
 				65A555A61BD47CC2003306E7 /* YSRunningResultViewController.m in Sources */,
 				65C16C4D1C084BC700168722 /* YSLocationDataTransformModel.m in Sources */,
+				655CCB911C55F4B600AC9E70 /* YSLocusTimeLabelView.m in Sources */,
 				655C570A1BCF7CEF00E9073E /* YSCalendarRecordView.m in Sources */,
 				65744B4B1BD280B200A15EEE /* FMDatabaseQueue.m in Sources */,
 			);
@@ -3274,6 +3392,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P58M7X6YB7;
@@ -3306,6 +3425,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P58M7X6YB7;

@@ -39,7 +39,7 @@
 
 - (void)awakeFromNib
 {
-//    self.levelLabel.textColor = [UIColor whiteColor];
+    [super awakeFromNib];
     
     self.titleLabel.textColor = [UIColor whiteColor];
     self.titleLabel.font = [UIFont systemFontOfSize:12];

@@ -27,6 +27,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     CGFloat fontSize = 16;
     UIColor *color = [UIColor colorWithRed:51 / 255.0 green:51 / 255.0 blue:51 / 255.0 alpha:1.0];
     

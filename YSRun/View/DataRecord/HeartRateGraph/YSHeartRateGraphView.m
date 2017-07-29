@@ -47,6 +47,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.titleLabel.text = @"心率图表：";
     self.titleLabel.font = [UIFont systemFontOfSize:12];
     self.titleLabel.textColor = RGB(136, 136, 136);

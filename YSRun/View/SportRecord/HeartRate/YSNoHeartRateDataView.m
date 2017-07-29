@@ -21,6 +21,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.topConstraint.constant = [self topConstant];
     
     // 提示标签设置

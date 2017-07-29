@@ -37,6 +37,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     self.distanceLabel.adjustsFontSizeToFitWidth = YES;
     self.timeLabel.adjustsFontSizeToFitWidth = YES;
     

@@ -30,6 +30,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     UIColor *color = RGB(86, 86, 86);
     self.backgroundColor = color;
     

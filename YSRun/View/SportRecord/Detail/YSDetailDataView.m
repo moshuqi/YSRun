@@ -29,6 +29,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self setupSuperscript];
     
     self.backgroundColor = LightgrayBackgroundColor;

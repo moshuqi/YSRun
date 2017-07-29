@@ -35,6 +35,7 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     self.commentLabel.adjustsFontSizeToFitWidth = YES;
 //    self.commentLabel.textAlignment = NSTextAlignmentCenter;
     

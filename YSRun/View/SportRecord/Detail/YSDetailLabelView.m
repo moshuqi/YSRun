@@ -37,8 +37,9 @@
 
 - (void)awakeFromNib
 {
-    // 设置标签旁的圆默认颜色
+    [super awakeFromNib];
     
+    // 设置标签旁的圆默认颜色
     CGFloat cornerRadius = CGRectGetHeight(self.colorView.frame) / 2;
     self.colorView.layer.cornerRadius = cornerRadius;
     self.colorView.clipsToBounds = YES;

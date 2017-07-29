@@ -59,6 +59,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     // 头像设置成圆形
     CGFloat cornerRadius = CGRectGetWidth(self.headPhoto.frame) / 2;
     self.headPhoto.layer.cornerRadius = cornerRadius;

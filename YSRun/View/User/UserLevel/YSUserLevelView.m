@@ -42,6 +42,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [self setupSubviewsBackgroundColor];
     [self addGesture];
 //    [self addAchieveLabel];

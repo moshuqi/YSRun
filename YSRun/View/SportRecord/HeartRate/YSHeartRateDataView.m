@@ -37,6 +37,8 @@
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
+    
     [self setupMarkLabelsView];
     [self setupCommentView];
     
